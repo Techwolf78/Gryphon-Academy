@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Bootstrap CSS -->
+   <link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+   crossorigin="anonymous"
+ />
+ <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <title>Job Portal</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      box-sizing: border-box;
+      min-height: 100vh;
+    }
+
+    .content {
+      max-width: 50%;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: slideInFromLeft 1s ease-in-out;
+    }
+
+    .highlight {
+      color: #FFC700;
+    }
+
+    .content p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      animation: slideInFromRight 1s ease-in-out;
+    }
+
+    .buttons {
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .btn-primary {
+      background-color: #091327;
+      
+      color: white;
+    }
+
+    .btn-secondary {
+      background: none;
+      color: #ffffff;
+      border: 2px solid #fac208;
+    }
+
+    .image {
+      max-width: 50%;
+      text-align: center;
+    }
+
+    .image img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .jobs {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+
+    .job-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 30%;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .job-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .job-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .video-section {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .video-container {
+      display: inline-block;
+      border: 5px solid #091327;
+      border-radius: 10px;
+      overflow: hidden;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .content, .image {
+        max-width: 100%;
+      }
+
+      .jobs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .job-card {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes slideInFromRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    /*  */
+   
+    .card-container{
+  display:grid;
+  grid-template-columns:repeat(100,1fr);
+  overflow-x:scroll;
+}
+  
+  .cutout-card{
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    margin:10px;
+    box-shadow:0 0 10px black;
+    flex:0 0 auto;
+    width:300px;
+    height:350px;
+    background-color:#666;
+    &:hover > .cutout-card__text {
+        margin-top:-100%;
+      }
+    &:hover > .cutout-card__secondary {
+        top:0%;
+      }
+    .cutout-card__background{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:0;
+      background-size:cover!important;
+      background-position:center!important;
+    }
+    .cutout-card__text{
+      position:absolute;
+      padding:5px;
+      z-index:1;
+      text-align:center;
+      min-width:60%;
+      height:60px;
+      border-radius:10px 10px;
+      text-align:center;
+      vertical-align:middle;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      background-color:rgba(255,255,255,0.8);
+      color:black;
+      font-family:'Bungee shade',cursive;
+      font-weight:bold;
+      line-height:60px;
+      font-size:30px;
+      mix-blend-mode:screen;
+      transition:all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      &:before{
+        position:absolute;
+        content:'';
+         background-color:rgba(255,255,255,0.8);
+        top:-100%;
+        width:5px;
+        height:60%;
+        left:50%;
+      }
+      &:after{
+        position:absolute;
+        content:'';
+         background-color:rgba(255,255,255,0.8);
+        top:130%;
+        width:5px;
+        height:60%;
+        left:50%;
+      }
+    }
+   
+    .--space{
+      background:url($space);
+    }
+    .--time{
+      background:url($time);
+    }
+    .--energy{
+      background:url($energy);
+    }
+    .--matter{
+      background:url($matter);
+    }
+     .--art1{
+      background:url($art1);
+    }
+    .--art2{
+      background:url($art2);
+    }
+    .--art3{
+      background:url($art3);
+    }
+     .--art4{
+      background:url($art4);
+    }
+    .cutout-card__secondary{
+      overflow-y:scroll;
+      cursor:pointer;
+      padding:5px;
+      position:absolute;
+      z-index:3;
+      top:100%;
+      left:0;
+      width:100%;
+      height:100%;
+      background-color:rgb(0, 0, 0);
+        font-family:'Permanent Marker',cursive;
+      font-size:15px;
+      transition: all 0.5s ;
+      &::-webkit-scrollbar-thumb{
+      background-color:#fda800;
+      }
+      p{
+       background:url($bgnotepad);
+      background-repeat:repeat;
+       background-position:-30px;
+     
+      }
+    }
+    }
+
+  
+@media screen and (max-width:768px){
+  .cutout-card{
+    width:250px;
+  }
+}
+.card-container {
+    position: relative;
+    left: 5rem;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+    overflow-x: scroll;
+}
+
+/* video section */
+.main-wrapper {
+            padding: 20px;
+        }
+
+        .videoTag {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .videoTag video {
+            width: 100%;
+            height: 15rem;
+            margin-top: 10rem;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+        }
+
+        .fa-arrows-alt {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .level {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            color: #333;
+        }
+
+        .level.nine {
+            background-color: #ffebcd;
+        }
+
+        .level.eight {
+            background-color: #e6e6fa;
+        }
+
+        .play-video {
+            margin-bottom: 30px;
+        }
+
+/** Use .sticky */
+
+.ytvideo .is-sticky,.videoTag .is-sticky{
+    position: fixed;
+    right: 3px;
+    bottom: 3px;
+    top: auto;
+    left: auto;
+    max-width: 280px;
+    max-height: 158px;
+    width: 280px;
+    height: 158px;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+section.main-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+section.level {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+section.level.one {
+    background: #FFC300;
+    margin-top: 25px;
+}
+
+section.level.two {
+    background: #C70039;
+}
+
+section.level.three {
+    background: #FF5733;
+}
+
+section.level.four {
+    background: #C6E2FF;
+}
+
+section.level.five {
+    background: #0085ca;
+}
+
+section.level.six {
+    background: #0085ca;
+}
+
+section.level.seven {
+    background: #C6E2FF;
+}
+
+section.level.eight {
+    background: #FF5733;
+    margin-top: 10rem;
+}
+
+section.level.nine {
+    background: #C70039;
+}
+
+section.level.ten {
+    background: #FFC300;
+}
+
+.close-button {
+    position: fixed;
+    box-sizing: border-box;
+    display: block;
+    right: 24px;
+    bottom: 175px;
+    top: auto;
+    left: auto;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: none;
+}
+
+.close-button:before,
+.close-button:after {
+    width: 20px;
+    height: 5px;
+    transform: rotate(-45deg);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background-color: #4F2121;
+    transition: all 0.2s ease-out;
+}
+
+.close-button:after {
+    transform: rotate(45deg);
+}
+
+.close-button:hover:after {
+    transform: rotate(-45deg);
+}
+
+.close-button:hover:before {
+    transform: rotate(45deg);
+}
+
+.gradient-overlay {
+    position: fixed;
+    right: 3px;
+    bottom: 3px;
+    top: auto;
+    left: auto;
+    max-width: 280px;
+    max-height: 158px;
+    width: 280px;
+    height: 158px;
+    opacity: .01;
+    background: #000;
+    z-index: 1;
+    display: none;
+}
+
+i.fa.fa-arrows-alt {
+    position: fixed;
+    right: 8px;
+    bottom: 5px;
+    top: auto;
+    left: auto;
+    color: #fff;
+    z-index: 2;
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width:1023px) {
+    section.main-wrapper {
+        width: 95%;
+    }
+    section.level {
+        height: 150px;
+        margin-bottom: 50px;
+    }
+}
+
+/* new logo section */
+.logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .auth-buttons button {
+            background-color: #ffffff;
+            border: none;
+            color: #1b263b;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #ffcc00;
+            color: #1b263b;
+        }
+
+        main {
+            padding: 50px 20px;
+        }
+
+        .text-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .text-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .explore-button {
+            background-color: #00c853;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-button:hover {
+            background-color: #00a149;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .grid-item {
+            width: 100px;
+            height: 100px;
+            background-color: #1b263b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.1);
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .info-popup {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            transform: translate(-50%, -100%);
+        }
+
+        body {
+            background-color: #0d1b2a;
+            color: #ffffff;
+        }
+
+        main {
+            padding: 50px 20px;
+        }
+
+        .text-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .text-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .explore-button {
+            background-color: #00c853;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .explore-button:hover {
+            background-color: #00a149;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .grid-item {
+            width: 100px;
+            height: 100px;
+            background-color: #1b263b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.1);
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .info-popup {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            transform: translate(-50%, -100%);
+        }
+
+       /* New Section Styles */
+       .company-section {
+      text-align: center;
+      background-color: #0b0f2f;
+      color: #fff;
+      padding: 50px 0;
+    }
+    .company-logos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      height: 100px;
+    }
+    .company-logos-inner {
+      display: flex;
+      white-space: nowrap;
+      animation: slide 20s linear infinite;
+    }
+    .company-logos-inner:nth-child(2) {
+      animation-direction: reverse;
+    }
+    .company-logos-inner img {
+      margin: 0 10px;
+      height: 50px;
+    }
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+     /* New Section Styles */
+     .company-section {
+            padding: 50px 20px;
+            background-color: #1b263b;
+            text-align: center;
+        }
+
+        .company-section h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .company-logos {
+            display: flex;
+            gap: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .company-logos-inner {
+            display: flex;
+            animation: slide 20s linear infinite;
+        }
+
+        .company-logos img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .company-logos img:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background-color: #ffffff;
+            color: #1b263b;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 calc(25% - 40px);
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        /* video */
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .play-video {
+            margin: 30px 0;
+        }
+
+        .heading {
+            text-align: center;
+            margin-top: 7rem;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #ffffff;
+        }
+
+        .video-wrapper {
+            position: relative;
+            left: 5.5rem;
+            width: 90%;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .video-wrapper:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 10px solid transparent;
+            border-top-color: #e50abd;
+            border-bottom-color: #db189a;
+            animation: border-animation 5s infinite linear;
+        }
+
+        @keyframes border-animation {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* navbar */
+        .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .toggle-Button {
+      display: none;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        position: relative;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header class="header">
+        <a class="navbar-brand" href="about-alternative.html">
+          <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+        </a>
+      
+        <nav class="navbar">
+          <a href="index.html">HOME</a>
+          <div class="dropdown">
+            <a href="training copy.html" button class="dropbtn">TRAINING
+               <i class="bx bx-chevron-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="college-training.html">college-training</a>
+                        <a href="corporate.html">corporate-training</a>
+                        <a href="faculty.html">faculty</a>
+            </div>
+          </div>
+          <a href="placement-final-copy.html">PLACEMENT</a>
+          <a href="digitalcopy.html">DIGITAL MARKETING</a>
+          <a href="gax-copy.html">GAX</a>
+          <a href="BLOG.html">BLOG</a>
+        </nav>
+      
+        <div class="toggle-Button">
+          <span class="openbtn" onclick="openNav()">☰</span>
+        </div>
+      
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <a href="index.html">HOME</a>
+          <a href="training copy.html">TRAINING</a>
+          <a href="placement-final-copy.html">PLACEMENT</a>
+          <a href="digitalcopy.html">DIGITAL MARKETING</a>
+          <a href="gax-copy.html">GAX</a>
+          <a href="BLOG.html">BLOG</a>
+        </div>
+      </header>
+
+      
+  <div class="container">
+    <div class="content">
+      <h1>Find a skilled <span class="highlight">individual</span> to do the job.</h1>
+      <p>Creative Peoples lets you find the right job for any challenge from development to marketing.</p>
+      <div class="buttons">
+        <button class="btn-primary">Get Started</button>
+        <button class="btn-secondary">Watch a Demo</button>
+      </div>
+    </div>
+    <div class="image">
+      <img src="colorful-pen-tool.png" alt="Colorful Pen Tool">
+    </div>
+  </div>
+
+  <section class="wrapper">
+	<div class="flex-wrapper">
+        <h1 style="font-size:40px">Collections</h1>
+
+
+<div class="card-container">
+        <div class="cutout-card">
+            <div class="cutout-card__background --time"></div>
+            <div class="cutout-card__text">Time</div>
+              <div class="cutout-card__secondary"><p>Time is the indefinite continued progress of existence and events that occur in apparently irreversible succession from the past through the present to the future. Time is a component quantity of various measurements used to sequence events, to compare the duration of events or the intervals between them, and to quantify rates of change of quantities in material reality or in the conscious experience. Time is often referred to as a fourth dimension, along with three spatial dimensions. Time has long been an important subject of study in religion, philosophy, and science, but defining it in a manner applicable to all fields without circularity has consistently eluded scholars.Nevertheless, diverse fields such as business, industry, sports, the sciences, and the performing arts all incorporate some notion of time into their respective measuring systems. Time in physics is unambiguously operationally defined as "what a clock reads".See Units of Time. Time is one of the seven fundamental physical quantities in both the International System of Units and International System of Quantities. Time is used to define other quantities – such as velocity – so defining time in terms of such quantities would result in circularity of definition. An operational definition of time, wherein one says that observing a certain number of repetitions of one or another standard cyclical event (such as the passage of a free-swinging pendulum) constitutes one standard unit such as the second, is highly useful in the conduct of both advanced experiments and everyday affairs of life. The operational definition leaves aside the question whether there is something called time, apart from the counting activity just mentioned, that flows and that can be measured. Investigations of a single continuum called spacetime bring questions about space into questions about time, questions that have their roots in the works of early students of natural philosophy.</p></div>
+          </div>
+          
+          <div class="cutout-card">
+            <div class="cutout-card__background --space"></div>
+            <div class="cutout-card__text">Space</div>
+             <div class="cutout-card__secondary"><p>Space is the boundless three-dimensional extent in which objects and events have relative position and direction. Physical space is often conceived in three linear dimensions, although modern physicists usually consider it, with time, to be part of a boundless four-dimensional continuum known as spacetime. The concept of space is considered to be of fundamental importance to an understanding of the physical universe.</p></div>
+          </div>
+          
+          
+          <div class="cutout-card">
+            <div class="cutout-card__background --energy"></div>
+            <div class="cutout-card__text">Energy</div>
+             <div class="cutout-card__secondary">
+               <p>In physics, energy is the quantitative property that must be transferred to an object in order to perform work on, or to heat, the object. Energy is a conserved quantity; the law of conservation of energy states that energy can be converted in form, but not created or destroyed. The SI unit of energy is the joule, which is the energy transferred to an object by the work of moving it a distance of 1 metre against a force of 1 newton. Common forms of energy include the kinetic energy of a moving object, the potential energy stored by an object's position in a force field (gravitational, electric or magnetic), the elastic energy stored by stretching solid objects, the chemical energy released when a fuel burns, the radiant energy carried by light, and the thermal energy due to an object's temperature. Mass and energy are closely related. Due to mass–energy equivalence, any object that has mass when stationary (called rest mass) also has an equivalent amount of energy whose form is called rest energy, and any additional energy (of any form) acquired by the object above that rest energy will increase the object's total mass just as it increases its total energy. For example, after heating an object, its increase in energy could be measured as a small increase in mass, with a sensitive enough scale.</p>
+            </div>
+          </div> 
+            
+            <div class="cutout-card">
+            <div class="cutout-card__background --matter"></div>
+            <div class="cutout-card__text">Matter</div>
+             <div class="cutout-card__secondary">
+               <p>Matter is any substance that has mass and takes up space by having volume.All everyday objects that we can touch are ultimately composed of atoms, which are made up of interacting subatomic particles, and in everyday as well as scientific usage, "matter" generally includes atoms and anything made up of them, and any particles (or combination of particles) that act as if they have both rest mass and volume. However it does not include massless particles such as photons, or other energy phenomena or waves such as light or sound.Matter exists in various states (also known as phases). These include classical everyday phases such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous steam – but other states are possible, including plasma, Bose–Einstein condensates, fermionic condensates, and quark–gluon plasma.</p></div>
+          </div> 
+          </div>
+          
+         
+          
+          <!-- video sectionn -->
+          <!-- <section class="main-wrapper container">
+             <h1 class="play-video text-center">Play the Video and Scroll Down !!!</h1> -->
+<!--     
+            <div class="row">
+                <div class="col-md-6">
+                    <section class="videowrapper videoTag">
+                        <a href="javascript:void(0);" class="close-button">X</a>
+                        <div class="gradient-overlay"></div>
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        <video class="initial_video" loop="" controls="">
+                            <source src="http://brightcove.vo.llnwd.net/e1/uds/pd/340485632/340485632_4817584832001_4817498778001.mp4" type="video/mp4">
+                        </video>
+                        <section class="level nine">Content for the first video section</section>
+                    </section>
+                   
+                </div>
+                <div class="col-md-6">
+                   
+                    <section class="level eight">Content for the second video section</section>
+                    <section class="videowrapper videoTag">
+                        <a href="javascript:void(0);" class="close-button">X</a>
+                        <div class="gradient-overlay"></div>
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        <video class="initial_video1" loop="" controls="">
+                            <source src="https://d2cstorage-a.akamaihd.net/atl/Brunomars/Bruno-VersaceOnTheFloor.mp4" type="video/mp4">
+                        </video>
+                    </section>
+                </div>
+            </div>
+        </section> --> 
+
+	
+</section>
+<!-- video section -->
+<section class="container-fluid p-0">
+    <div class="row no-gutters">
+        <div class="col-12">
+            <div class="heading">Welcome to Our Video Section</div>
+            <div class="video-wrapper">
+                <div class="video-section">
+                    <video class="initial_video" loop controls autoplay muted>
+                        <source src="IMG_5815.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-section">
+                <h1>Become the Top 1%</h1>
+                <p>Whether it is Product, Growth, Design, Management, Business, Tech & Data, GrowthSchool is the place to learn from top experts in the field.</p>
+                <button class="explore-button">Explore Programs</button>
+            </div>
+            <div class="col-md-6">
+                <div class="grid">
+                    <div class="grid-item" data-info="PhonePe"><img src="phonepe.png" alt="PhonePe"></div>
+                    <div class="grid-item" data-info="Flipkart"><img src="flipkart.png" alt="Flipkart"></div>
+                    <div class="grid-item" data-info="Google"><img src="google.png" alt="Google"></div>
+                    <div class="grid-item" data-info="Teachmint"><img src="teachmint.png" alt="Teachmint"></div>
+                    <div class="grid-item" data-info="Capgemini"><img src="capgemini.png" alt="Capgemini"></div>
+                    <div class="grid-item" data-info="Simplilearn"><img src="simplilearn.png" alt="Simplilearn"></div>
+                    <div class="grid-item" data-info="Juspay"><img src="juspay.png" alt="Juspay"></div>
+                    <div class="grid-item" data-info="DeHaat"><img src="dehaat.png" alt="DeHaat"></div>
+                    <div class="grid-item" data-info="Nykaa"><img src="nykaa.png" alt="Nykaa"></div>
+                    <div class="grid-item" data-info="Livspace"><img src="livspace.png" alt="Livspace"></div>
+                    <div class="grid-item" data-info="Porter"><img src="porter.png" alt="Porter"></div>
+                    <div class="grid-item" data-info="ShareChat"><img src="sharechat.png" alt="ShareChat"></div>
+                    <div class="grid-item" data-info="Walmart"><img src="walmart.png" alt="Walmart"></div>
+                    <div class="grid-item" data-info="MoneyView"><img src="moneyview.png" alt="MoneyView"></div>
+                    <div class="grid-item" data-info="Darwinbox"><img src="darwinbox.png" alt="Darwinbox"></div>
+                    <div class="grid-item" data-info="Vivo"><img src="vivo.png" alt="Vivo"></div>
+                    <div class="grid-item" data-info="Apna"><img src="apna.png" alt="Apna"></div>
+                    <div class="grid-item" data-info="Cognizant"><img src="cognizant.png" alt="Cognizant"></div>
+                    <div class="grid-item" data-info="Purelengo"><img src="purelengo.png" alt="Purelengo"></div>
+                    <div class="grid-item" data-info="PhonePe"><img src="phonepe.png" alt="PhonePe"></div>
+                    <div class="grid-item" data-info="Google"><img src="google.png" alt="Google"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- New Company Section -->
+<section class="company-section">
+<h2>and many more who are working at some of the top companies</h2>
+<div class="company-logos">
+  <div class="company-logos-inner">
+    <img src="ogilvy.png" alt="Ogilvy">
+    <img src="canva.png" alt="Canva">
+    <img src="paytm.png" alt="Paytm">
+    <img src="mpl.png" alt="MPL">
+    <img src="nvidia.png" alt="NVIDIA">
+    <img src="walmart.png" alt="Walmart">
+    <img src="expedia.png" alt="Expedia">
+    <img src="licious.png" alt="Licious">
+    <img src="disney-hotstar.png" alt="Disney Hotstar">
+    <img src="cocacola.png" alt="Coca Cola">
+    <img src="adobe.png" alt="Adobe">
+    <img src="meta.png" alt="Meta">
+  </div>
+  <div class="company-logos-inner">
+    <img src="razorpay.png" alt="Razorpay">
+    <img src="microsoft.png" alt="Microsoft">
+    <img src="oyo.png" alt="Oyo">
+    <img src="swiggy.png" alt="Swiggy">
+    <img src="amazon.png" alt="Amazon">
+    <img src="google.png" alt="Google">
+    <img src="uber.png" alt="Uber">
+    <img src="linkedin.png" alt="LinkedIn">
+    <img src="ogilvy.png" alt="Ogilvy">
+    <img src="canva.png" alt="Canva">
+    <img src="paytm.png" alt="Paytm">
+    <img src="mpl.png" alt="MPL">
+  </div>
+</div>
+</section>
+</main>
+<div class="info-popup" id="infoPopup"></div>
+
+
+<!-- new section -->
+<!-- <div class="stats">
+    <div class="stat-card">
+        <h3>LinkedIn</h3>
+        <p>Top Startup India 2023</p>
+    </div>
+    <div class="stat-card">
+        <h3>Trustpilot</h3>
+        <p>Rated 4.7/5 (4192)</p>
+    </div>
+    <div class="stat-card">
+        <h3>Google Reviews</h3>
+        <p>Rated 4.6/5 (3500+)</p>
+    </div>
+    <div class="stat-card">
+        <h3>Total Learners</h3>
+        <p>300k+</p>
+    </div>
+    <div class="stat-card">
+        <h3>Programs</h3>
+        <p>60+</p>
+    </div>
+    <div class="stat-card">
+        <h3>CSAT</h3>
+        <p>4.2/5</p>
+    </div>
+</div> -->
+
+<!-- -->
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+
+
+
+var ytIframeList, videoList, currentPlayer, closeButton, gradientOverlay, fullScreenIcon;
+
+var inViewPortBol = true;
+
+var ytIframeIdList = [];
+
+var ytVideoId = [];
+
+var ytPlayerId = [];
+
+var videoTagId = [];
+
+var events = new Array("ended", "pause", "playing");
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+
+    /*Adding Youtube Iframe API to body*/
+
+
+
+    var youTubeVideoTag = document.createElement('script');
+
+    youTubeVideoTag.src = "//www.youtube.com/iframe_api";
+
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+
+    document.body.appendChild(youTubeVideoTag, firstScriptTag);
+
+
+
+    /*Getting all the iframe from the Page and finding out valid URL and ID. Then creating instance of players*/
+
+
+
+    ytIframeList = document.getElementsByTagName("iframe");
+
+    for (i = 0; i < ytIframeList.length; i++) {
+
+        if (new RegExp("\\b" + "enablejsapi" + "\\b").test(ytIframeList[i].src)) {
+
+            var url = ytIframeList[i].src.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+
+            if (url[2] !== undefined) {
+
+                ID = url[2].split(/[^0-9a-z_\-]/i);
+
+                ID = ID[0];
+
+                ytIframeIdList.push(ID);
+
+                ytIframeList[i].id = "featured-video" + i;
+
+                ytVideoId.push("ytVideoId" + i);
+
+                ytVideoId[i] = document.getElementById(ytIframeList[i].id);
+
+                ytPlayerId.push("player" + i);
+
+            }
+
+        }
+
+    }
+
+
+
+    /*Getting Video Tag List and Creating instances*/
+
+
+
+    videoList = document.getElementsByTagName("video");
+
+    for (i = 0; i < videoList.length; i++) {
+
+        videoList[i].id = "video-featured" + i;
+
+        videoTagId.push("videoPlayerId" + i);
+
+        videoTagId[i] = document.getElementById(videoList[i].id);
+
+
+
+    }
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        for (var j in events) {
+
+            videoTagId[i].addEventListener(events[j], videoTagPlayerhandler, false);
+
+        }
+
+    }
+
+
+
+    closeButton = document.querySelector("a.close-button");
+
+    gradientOverlay = document.querySelector(".gradient-overlay");
+
+    fullScreenIcon = document.querySelector("i.fa.fa-arrows-alt");
+
+    fullScreenPlay();
+
+
+
+});
+
+
+
+window.onYouTubeIframeAPIReady = function () {
+
+    for (i = 0; i < ytIframeIdList.length; i++) {
+
+        ytPlayerId[i] = new YT.Player(ytIframeList[i].id, {
+
+            events: {
+
+                "onStateChange": onPlayerStateChange
+
+            }
+
+        });
+
+    }
+
+};
+
+
+
+function videoTagPlayerhandler(e) {
+
+    /*Play Rules*/
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        if (e.target == videoTagId[i]) {
+
+            if (e.type == "playing") {
+
+                currentPlayer = videoTagId[i];
+
+                videoTagId[i].classList.remove("is-paused");
+
+                videoTagId[i].classList.add("is-playing");
+
+                break;
+
+            }
+
+        }
+
+    }
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        if (currentPlayer == videoTagId[i]) {
+
+            continue;
+
+        }
+
+        videoTagId[i].classList.remove("is-playing");
+
+        videoTagId[i].classList.add("is-paused");
+
+    }
+
+
+
+    /*Pause Rules*/
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        if (e.target == videoTagId[i]) {
+
+            if (e.type == "pause") {
+
+                videoTagId[i].classList.add("is-paused");
+
+                videoTagId[i].classList.remove("is-playing");
+
+                videoTagId[i].pause();
+
+            }
+
+        }
+
+    }
+
+
+
+    /*Sticky Rules*/
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        if (videoTagId[i].classList.contains("is-sticky")) {
+
+            videoTagId[i].pause();
+
+            fullScreenIcon.style.display = "none";
+
+
+
+        }
+
+    }
+
+
+
+    for (i = 0; i < ytPlayerId.length; i++) {
+
+        if (ytVideoId[i].classList.contains("is-sticky")) {
+
+            ytPlayerId[i].pauseVideo();
+
+            fullScreenIcon.style.display = "none";
+
+
+
+        }
+
+    }
+
+
+    /*End Rules*/
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        if (e.target == videoTagId[i]) {
+
+            if (e.type == "ended") {
+
+                videoTagId[i].classList.remove("is-playing");
+
+                videoTagId[i].classList.remove("is-paused");
+
+            }
+
+        }
+
+    }
+
+    videohandler();
+
+};
+
+
+
+function onPlayerStateChange(event) {
+
+
+
+    /*Play Rules*/
+
+
+
+    for (i = 0; i < ytPlayerId.length; i++) {
+
+        if (ytPlayerId[i].getPlayerState() === 1) {
+
+            currentPlayer = ytVideoId[i];
+
+            ytVideoId[i].classList.remove("is-paused");
+
+            ytVideoId[i].classList.add("is-playing");
+
+            break;
+
+        }
+
+    }
+
+    for (i = 0; i < ytVideoId.length; i++) {
+
+        if (currentPlayer == ytVideoId[i]) {
+
+            continue;
+
+        }
+
+        ytVideoId[i].classList.remove("is-playing");
+
+        ytVideoId[i].classList.add("is-paused");
+
+    }
+
+
+
+    /*Pause Rules*/
+
+
+
+    for (i = 0; i < ytPlayerId.length; i++) {
+
+        if (ytPlayerId[i].getPlayerState() === 2) {
+
+            ytVideoId[i].classList.add("is-paused");
+
+            ytVideoId[i].classList.remove("is-playing");
+
+            ytPlayerId[i].pauseVideo();
+
+        }
+
+    }
+
+
+
+
+
+    /*Sticky Rules*/
+
+
+
+    for (i = 0; i < ytPlayerId.length; i++) {
+
+        if (ytVideoId[i].classList.contains("is-sticky")) {
+
+            ytPlayerId[i].pauseVideo();
+
+            fullScreenIcon.style.display = "none";
+
+
+
+        }
+
+    }
+
+
+
+    for (i = 0; i < videoTagId.length; i++) {
+
+        if (videoTagId[i].classList.contains("is-sticky")) {
+
+            videoTagId[i].pause();
+
+            fullScreenIcon.style.display = "none";
+
+
+
+        }
+
+    }
+
+
+
+    /*End Rule*/
+
+
+
+    for (i = 0; i < ytPlayerId.length; i++) {
+
+        if (ytPlayerId[i].getPlayerState() === 0) {
+
+            ytVideoId[i].classList.remove("is-playing");
+
+            ytVideoId[i].classList.remove("is-paused");
+
+        }
+
+    }
+
+    videohandler();
+
+}
+
+
+
+function videohandler() {
+
+
+
+    if (currentPlayer) {
+
+        if (closeButton) {
+
+            closeButton.addEventListener("click", function (e) {
+
+                if (currentPlayer.classList.contains("is-sticky")) {
+
+                    currentPlayer.classList.remove("is-sticky");
+
+                    closeFloatVideo();
+
+                    for (i = 0; i < ytVideoId.length; i++) {
+
+                        if (currentPlayer == ytVideoId[i]) {
+
+                            ytPlayerId[i].pauseVideo();
+
+                        }
+
+                    }
+
+                    for (i = 0; i < videoTagId.length; i++) {
+
+                        if (currentPlayer == videoTagId[i]) {
+
+                            videoTagId[i].pause();
+
+                        }
+
+                    }
+
+
+
+                } else {
+
+                    for (i = 0; i < ytVideoId.length; i++) {
+
+                        if (currentPlayer != ytVideoId[i]) {
+
+                            ytVideoId[i].classList.remove("is-sticky");
+
+                            closeFloatVideo();
+
+                        }
+
+                    }
+
+                    for (i = 0; i < videoTagId.length; i++) {
+
+                        if (currentPlayer != videoTagId[i]) {
+
+                            videoTagId[i].classList.remove("is-sticky");
+
+                            closeFloatVideo();
+
+                        }
+
+                    }
+
+                }
+
+
+
+            });
+
+        }
+
+    }
+
+}
+
+
+
+window.addEventListener('scroll', function () {
+
+
+
+    inViewPortBol = inViewPort();
+
+    if (currentPlayer) {
+
+        if (!inViewPortBol && currentPlayer.classList.contains("is-playing")) {
+
+            for (i = 0; i < ytVideoId.length; i++) {
+
+                if (currentPlayer != ytVideoId[i]) {
+
+                    ytVideoId[i].classList.remove("is-sticky");
+
+                }
+
+            }
+
+            for (i = 0; i < videoTagId.length; i++) {
+
+                if (currentPlayer != videoTagId[i]) {
+
+                    videoTagId[i].classList.remove("is-sticky");
+
+                }
+
+            }
+
+            currentPlayer.classList.add("is-sticky");
+
+            openFloatVideo();
+
+        } else {
+
+            if (currentPlayer.classList.contains("is-sticky")) {
+
+                currentPlayer.classList.remove("is-sticky");
+
+                closeFloatVideo();
+
+            }
+
+        }
+
+    }
+
+});
+
+
+
+
+
+function fullScreenPlay() {
+
+
+
+    if (fullScreenIcon) {
+
+        fullScreenIcon.addEventListener("click", function () {
+
+            if (currentPlayer.requestFullscreen) {
+
+                currentPlayer.requestFullscreen();
+
+            } else if (currentPlayer.msRequestFullscreen) {
+
+                currentPlayer.msRequestFullscreen();
+
+            } else if (currentPlayer.mozRequestFullScreen) {
+
+                currentPlayer.mozRequestFullScreen();
+
+            } else if (currentPlayer.webkitRequestFullscreen) {
+
+                currentPlayer.webkitRequestFullscreen();
+
+            }
+
+        });
+
+    }
+
+}
+
+
+
+function inViewPort() {
+
+
+
+    if (currentPlayer) {
+
+        var videoParentLocal = currentPlayer.parentElement.getBoundingClientRect();
+
+        return videoParentLocal.bottom > 0 &&
+
+            videoParentLocal.right > 0 &&
+
+            videoParentLocal.left < (window.innerWidth || document.documentElement.clientWidth) &&
+
+            videoParentLocal.top < (window.innerHeight || document.documentElement.clientHeight);
+
+    }
+
+}
+
+
+
+function openFloatVideo() {
+
+    closeButton.style.display = "block";
+
+    gradientOverlay.style.display = "block";
+
+    fullScreenIcon.style.display = "block";
+
+}
+
+
+
+function closeFloatVideo() {
+
+    closeButton.style.display = "none";
+
+    gradientOverlay.style.display = "none";
+
+    fullScreenIcon.style.display = "none";
+
+
+    // team
+      // for animation 
+
+$(document).ready(function(){
+  $('.pp-quote').click(function(){
+    $('.pp-quote').removeClass("active");
+    $(this).addClass("active");
+});
+});
+
+$(document).ready(function(){
+    
+       // hide-top
+
+        $('.li-quote-1').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');
+            $('.quote-text-1').addClass('show');
+            $('.quote-text-1').removeClass('hide-bottom');             
+        });
+
+        $('.li-quote-2').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');
+            $('.quote-text-2').addClass('show');             
+            $('.quote-text-2').removeClass('hide-bottom');
+        });
+
+        $('.li-quote-3').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');         
+            $('.quote-text-3').addClass('show');             
+            $('.quote-text-3').removeClass('hide-bottom');
+        });
+        $('.li-quote-4').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-4').addClass('show');             
+            $('.quote-text-4').removeClass('hide-bottom');
+        });
+        $('.li-quote-5').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-5').addClass('show');             
+            $('.quote-text-5').removeClass('hide-bottom');
+        });
+        $('.li-quote-6').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-6').addClass('show');             
+            $('.quote-text-6').removeClass('hide-bottom');
+        });
+        $('.li-quote-7').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-7').addClass('show');             
+            $('.quote-text-7').removeClass('hide-bottom');
+        });
+        $('.li-quote-8').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-8').addClass('show');             
+            $('.quote-text-8').removeClass('hide-bottom');
+        });
+           
+    
+});
+
+
+$(document).ready(function(){
+    
+       // hide-top
+
+        $('.li-quote-1').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-1').addClass('look');
+            $('.dp-name-1').removeClass('hide-dp-bottom');             
+        });
+
+        $('.li-quote-2').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-2').addClass('look');
+            $('.dp-name-2').removeClass('hide-dp-bottom');             
+        });
+
+        $('.li-quote-3').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-3').addClass('look');
+            $('.dp-name-3').removeClass('hide-dp-bottom');             
+        });
+		$('.li-quote-4').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-4').addClass('look');
+            $('.dp-name-4').removeClass('hide-dp-bottom');             
+        });
+		
+        $('.li-quote-5').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-5').addClass('look');
+            $('.dp-name-5').removeClass('hide-dp-bottom');             
+        });
+		
+        $('.li-quote-6').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-6').addClass('look');
+            $('.dp-name-6').removeClass('hide-dp-bottom');             
+        });
+        $('.li-quote-7').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-7').addClass('look');
+            $('.dp-name-7').removeClass('hide-dp-bottom');             
+        });
+        $('.li-quote-8').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-8').addClass('look');
+            $('.dp-name-8').removeClass('hide-dp-bottom');             
+        });
+           
+    
+});
+}
+
+// navbar
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+
+</script>
+</html>

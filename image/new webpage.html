@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <title>Class 33</title>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?6mauk7');
+    src: url('fonts/icomoon.eot?6mauk7#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?6mauk7') format('truetype'),
+        url('fonts/icomoon.woff?6mauk7') format('woff'),
+        url('fonts/icomoon.svg?6mauk7#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-down-arrow .path1:before {
+    content: "\e900";
+    color: rgb(255, 193, 7);
+}
+
+.icon-down-arrow .path2:before {
+    content: "\e901";
+    margin-left: -1em;
+    color: rgb(0, 0, 0);
+}
+
+.icon-speed:before {
+    content: "\e908";
+}
+
+.icon-guarantee:before {
+    content: "\e909";
+}
+
+.icon-twitter1:before {
+    content: "\e90a";
+}
+
+.icon-telegram:before {
+    content: "\e90b";
+}
+
+.icon-linkedin:before {
+    content: "\e90c";
+}
+
+.icon-facebook:before {
+    content: "\e90d";
+}
+
+.icon-twitter:before {
+    content: "\e90e";
+}
+
+.icon-whatsapp:before {
+    content: "\e90f";
+}
+
+.icon-instagram:before {
+    content: "\e910";
+}
+
+.icon-youtube:before {
+    content: "\e911";
+}
+
+.icon-email:before {
+    content: "\e912";
+}
+
+.icon-pin:before {
+    content: "\e913";
+}
+
+.icon-left-quote:before {
+    content: "\e914";
+}
+
+.icon-right-quote:before {
+    content: "\e915";
+}
+
+.icon-loan2:before {
+    content: "\e916";
+}
+
+.icon-loan1:before {
+    content: "\e917";
+}
+
+.icon-scholarship:before {
+    content: "\e918";
+}
+
+.icon-loan:before {
+    content: "\e919";
+}
+
+.icon-personal:before {
+    content: "\e91a";
+}
+
+.icon-agriculture:before {
+    content: "\e91b";
+}
+
+.icon-responsibility:before {
+    content: "\e91c";
+}
+
+.icon-keys:before {
+    content: "\e91d";
+}
+
+.icon-talent:before {
+    content: "\e91e";
+}
+
+.icon-idea:before {
+    content: "\e91f";
+}
+
+.icon-call:before {
+    content: "\e920";
+}
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Spartan";
+}
+
+
+.clear::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+
+.container {
+    max-width: 1465px;
+    margin: auto;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.header {
+    background: #e0e0e0;
+    /*! position: sticky; */
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.header a {}
+
+.header a img {
+    width: 100px;
+}
+
+.header .primary-menu {}
+
+.header .primary-menu ul {
+    margin-left: auto;
+}
+
+.header .primary-menu ul li {
+    margin: 0 14px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.header .primary-menu ul li a {
+    display: inline-block;
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
+
+
+.header .primary-menu ul li:hover>a {
+    color: #3763eb;
+}
+
+.header .primary-menu ul li a.hme {
+    color: #3763eb;
+}
+
+.header .primary-menu ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #3763eb;
+    position: absolute;
+    bottom: -31px;
+    left: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+
+}
+
+.header .primary-menu ul li a.hme::after {
+    opacity: 1;
+    visibility: visible;
+    width: 70%;
+}
+
+
+.header .primary-menu ul li:hover>a::after {
+    opacity: 1;
+    visibility: visible;
+    width: 70%;
+}
+
+.header .primary-menu ul li ul {
+    position: absolute;
+    top: 270%;
+    width: 214px;
+    background: #fff;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    right: -162px;
+    border-radius: 5px;
+}
+
+
+.header .primary-menu ul li:hover>ul {
+    opacity: 1;
+    visibility: visible;
+    top: 231%;
+}
+
+.header .primary-menu ul li ul li {
+    margin: 0;
+    display: block;
+    padding: 12px 21px;
+}
+
+.header .primary-menu ul li ul li a {
+    display: block;
+    padding: 11px 38px;
+    background: #3763eb;
+    color: #fff;
+    border-radius: 4px;
+    font-size: .9rem;
+    line-height: 18px;
+    transition: .5s;
+}
+
+.header .primary-menu ul li ul li a:hover {
+    background: #fff;
+    color: #3763eb;
+}
+
+
+
+.header .primary-menu .btn-part {
+    margin-right: 65px;
+    text-align: end;
+}
+
+a.dflt-btn {
+    display: inline-block;
+    background: #3763eb;
+    padding: 15px 44px;
+    border-radius: 38px;
+    font-weight: 500;
+    color: #fff;
+    transition: .5s;
+    margin-left: 77px;
+}
+
+
+a.dflt-btn:hover {
+    background: #fff;
+    color: #3763eb;
+}
+
+
+
+
+
+.banner-section {}
+
+.banner-section .banner-content {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 128px;
+}
+
+.banner-section .banner-content h2 {
+    color: #000;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.banner-section .banner-content p {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.banner-section .banner-content .banner-btn {}
+
+.banner-section .banner-content .banner-btn a {
+    margin: 0;
+    margin-top: 40px;
+    padding: 14px 30px;
+}
+
+.banner-section .banner-img {
+    overflow: hidden;
+}
+
+.banner-section .banner-img img {
+    width: 688px;
+    height: 593px;
+    border-radius: 60%;
+    position: relative;
+    top: -125px;
+    right: -91px;
+}
+
+
+
+
+/* .features-section {
+    background: #ffffff;
+    background-image: url(../../Assignment/service-patern.png);
+    background-repeat: no-repeat;
+    background-position: 155px bottom;
+    background-size: auto;
+  
+  
+    padding-bottom: 40px;
+  } */
+
+.features-section .pattern {
+
+    padding: 40px 0;
+}
+
+.features-section .features-content {}
+
+.features-section .features-content h5 {
+    color: #3763eb;
+    font-size: 1rem;
+    margin-bottom: 17px;
+}
+
+.features-section .features-content h2 {
+    color: #081828;
+    font-weight: 600;
+    position: relative;
+}
+
+.features-section .features-content h2.aft::after {
+    content: '';
+    width: 8%;
+    height: 2px;
+    background-color: #3763eb;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+
+}
+
+.features-section .features-content p {
+    color: gray;
+    max-width: 563px;
+    margin: 30px 0px;
+}
+
+.features-section .features-box {
+    background: #f6f9fc;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    transition: .5s;
+    text-align: left;
+    position: relative;
+}
+
+.features-section .features-box .false {
+    position: absolute;
+    bottom: -49px;
+    left: -54px;
+    z-index: -1;
+}
+
+.features-section .features-box .false img {}
+
+.features-section .features-box .f-title {}
+
+.features-section .features-box .f-title h3 {
+    color: #081828;
+    font-size: 19px;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.features-section .features-box span {
+    display: inline-block;
+    background: #3763eb;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 50% 50% 50% 0;
+    margin: 25px 0;
+    position: relative;
+    transition: .5s;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.features-section .features-box span::after {
+    /*! content: ''; */
+    width: 45%;
+    height: 2px;
+    background-color: #3763eb;
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    transition: .8s cubic-bezier(0, 6.66, 0, 8.18);
+}
+
+
+.features-section .features-box .f-subtitle {}
+
+.features-section .features-box .f-subtitle p {
+    color: grey;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.features-section .features-box:hover {
+    background: #3763eb;
+    transform: scaleY(1.1);
+
+}
+
+.features-section .features-box:hover h3 {
+    color: #fff;
+    transform: translate(0, 220%);
+}
+
+.features-section .features-box:hover span {
+    background: #fff;
+    color: #3763eb;
+    border-radius: 50% 50% 0% 50%;
+    transform: translate(0, -130%);
+}
+
+.features-section .features-box:hover span::after {
+    background-color: #fff;
+    width: 60%;
+    transform: translateX(70%);
+}
+
+.features-section .features-box:hover p {
+    color: #fff;
+}
+
+.video-section {
+    padding: 50px 0;
+}
+
+.video-section .video-area {
+    position: relative;
+}
+
+.video-section .video-area a {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.video-section .video-area a.ovr::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #031139db;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.video-section .video-area a img {}
+
+.video-section .video-area .video-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(50%, 50%);
+    z-index: 3;
+}
+
+.video-section .video-area .video-text h4 {
+    color: gray;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.video-section .video-area .video-text h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 33px;
+    font-weight: 600;
+    position: relative;
+}
+
+.video-section .video-area .video-text h1::after {
+    content: '';
+    width: 7%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -11px;
+    left: 46%;
+}
+
+.video-section .video-area .video-text p {
+    color: #dfd5d5;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 115px;
+    font-size: 15px;
+}
+
+.video-section .video-area .video-text .video-btn {
+    text-align: center;
+}
+
+.video-section .video-area .video-text .video-btn a {
+    display: inline-block;
+}
+
+.video-section .video-area .video-text .video-btn a span {
+    display: inline-block;
+    font-size: 23px;
+    color: #3763eb;
+    background: #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    position: relative;
+    transition: .5s;
+}
+
+
+.video-area .video-text .video-btn a span::after,
+.video-area .video-text .video-btn a span::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    animation-name: animate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+}
+
+.video-area .video-text .video-btn a span::before {
+    animation-delay: .3s;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+
+    100% {
+        transform: scale(1.6);
+
+    }
+
+
+
+
+}
+
+
+
+.video-section .video-area .video-text .video-btn a span:hover {
+    background-color: #3763ebbf;
+    color: #fff;
+}
+
+.video-area .video-text .video-btn a span:hover::after,
+.video-area .video-text .video-btn a span:hover:before {
+    border: 1px solid #3763eb;
+    animation-duration: 1.2s;
+
+}
+
+
+
+/* pricing-section */
+.pricing-tabel {
+    background-color: #f6f9fc;
+    padding: 15px;
+    text-align: center;
+}
+
+.pricing-title {
+    position: relative;
+}
+
+.pricing-title::before {
+    content: '';
+    position: absolute;
+    left: 47%;
+    width: 61px;
+    height: 2px;
+    background-color: #3763eb;
+    bottom: 38px;
+}
+
+.pricing-title h5 {
+    margin-top: 70px;
+    color: #3763eb;
+}
+
+.pricing-title h1 {
+    margin: 25px;
+}
+
+.pricing-title p {}
+
+/* row */
+
+.pricing-card {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    padding: 30px;
+    margin-top: 60px
+}
+
+.pricing-card h5 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: .7rem;
+}
+
+.pricing-card h1 {
+    font-size: 65px;
+    margin-top: 4rem;
+    font-weight: 600;
+}
+
+.pricing-card p {
+    color: #606060;
+    font-weight: 500;
+    margin-top: .6rem;
+}
+
+.pricing-card span {
+    width: 284px;
+    height: 2px;
+    display: inline-block;
+    border-bottom: 2px solid #ddd;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.pricing-card ul {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.pricing-card li {
+    padding: 10px;
+}
+
+.pricing-card .button1 {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 35px;
+    background-color: #3763eb;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .4s;
+    box-shadow: 1rem rem rgba(0, 0, 0, .175);
+}
+
+.pricing-card .button1:hover {
+    background-color: #fff;
+    color: #3763eb;
+}
+
+/* slider-section*/
+
+
+
+.slider-section {
+    margin-top: 40px;
+    position: relative;
+}
+
+.slider-section {
+    background-image: url(https://i.ibb.co/kG7C5jG/free-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    padding: 183px 0;
+}
+
+.slider-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(49, 90, 213, 0.89);
+    z-index: 1;
+}
+
+.slider-section .slider-subtitle {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.slider-section .slider-subtitle::before {
+    content: '';
+    position: absolute;
+    bottom: 85px;
+    right: 47%;
+    width: 101px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.slider-section .slider-subtitle h1 {
+    color: #fff;
+    width: 550px;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.slider-section .slider-subtitle p {
+    font-size: 20px;
+    color: #dcdcdc;
+    margin-bottom: 1rem !important;
+    width: 780px;
+    margin: auto;
+}
+
+
+/* subscribe-section */
+
+
+.subscribe-section {
+    background-color: #f6f9fc;
+    padding: 70px 0;
+    margin-top: 50px;
+}
+
+.sub-row {
+    background-color: #3763eb;
+    padding: 60px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.sub-row .sub-content {}
+
+.sub-row .sub-content h3 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.sub-row .sub-content p {
+    color: #c3c3c3;
+    width: 382px;
+    margin-top: 25px;
+}
+
+.form {}
+
+.form .form-group {}
+
+.form .form-group input {
+    padding: 15px 15px;
+    width: 421px;
+    border-radius: 27px;
+}
+
+.form .form-group form-control {}
+
+.sub-batton {}
+
+.sub-batton .batton {
+    background: #3763eb;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 16px 50px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 24px -64px;
+}
+
+.sub-text {
+    background: #f3f1f1;
+    padding: 50px 30px;
+}
+
+.sub-text h3 {
+    font-weight: 600;
+    color: #000;
+}
+
+.sub-text p {
+    margin-top: 30px;
+    color: #606060;
+}
+
+.sub-text a {
+    display: inline-block;
+    border-radius: 26px;
+    border: 1px solid #fff !important;
+    color: #ffff;
+    padding: 12px 31px;
+    background-color: #3763eb;
+    margin-top: 25px;
+    font-weight: 500;
+}
+
+
+/* client-section */
+.client-section {
+    margin-top: 60px;
+}
+.client-content{
+    position: relative;
+}
+.client-content::before{
+    content: '';
+
+    position: absolute;
+    top: 74%;
+    left: 0;
+    width: 56px;
+    height: 2px;
+    background: #3763eb;
+}
+.client-content h6 {
+    color: #3763eb;
+    margin-bottom: 40px;
+}
+
+.client-content h1 {
+    color: #000;
+    font-weight: 600;
+}
+
+.client-content p {
+    margin-top: 56px;
+    color: #424242;
+}
+
+.company-logo {}
+
+.company-logo .table-bordered {}
+
+.company-logo .table-bordered tr {}
+
+.company-logo .table-bordered th {
+    padding: 30px;
+    transition: .4s;
+    opacity: .7;
+}
+
+.company-logo .table-bordered th:hover {
+    background-color: #f4f8fbeb;
+
+    opacity: 1;
+}
+
+.company-logo .table-bordered thead {}
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl header">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="https://i.ibb.co/nLvrVDq/logo.png" alt=""></a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic"
+        aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="bar-m"><i class="fas fa-bars"></i></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse show primary-menu" id="navbarBasic">
+
+        <ul class="navbar-nav">
+          <li><a class="hme" href="">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Services</a></li>
+
+          <li><a href="">Portfolio </a></li>
+          <li><a href="">Pages</a>
+            <ul>
+              <li><a href="">404 Error</a></li>
+            </ul>
+          </li>
+          <li><a href="">Blog</a></li>
+
+          <li><a href="">Contact</a></li>
+        </ul>
+
+
+
+        <div class="btn-part">
+          <a class="dflt-btn" href="">Get It Now</a>
+
+        </div>
+
+
+
+
+      </div>
+
+
+
+    </div>
+    </div>
+  </nav>
+
+  <section class="banner-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="banner-content">
+            <h2>Take your business to </h2>
+            <h2>next level. </h2>
+
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard
+              dummy text ever since.</p>
+
+
+            <div class="banner-btn">
+              <a class="dflt-btn" href="">Discover More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="banner-img">
+            <img src="https://i.ibb.co/CwvX65S/hero-image.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="features-content">
+            <h5>CORE FEATURES </h5>
+            <h2>Provide Awesome Service
+            </h2>
+            <h2 class="aft">With Our Tools</h2>
+
+            <p>There are many variations Of passages Of Lorem Ipsum available, but
+              the majority have suffered alteration in some form.
+            </p>
+          </div>
+
+        </div>
+        <div class="col-lg-6"></div>
+      </div>
+
+
+      <div class="row pattern g-0 text-center">
+        <div class="col-lg-3">
+          <div class="features-box">
+            <div class="f-title">
+              <h3>Discover, Explore the
+                Product
+              </h3>
+
+              <span><i class="fab fa-accusoft"></i></span>
+
+              <div class="f-subtitle">
+                <p>Discover. Explore &
+                  Understanding The Product </p>
+              </div>
+            </div>
+
+            <div class="false">
+              <img src="https://i.ibb.co/qr16zqB/service-patern.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="features-box">
+            <div class="f-title">
+              <h3>Discover, Explore the
+                Product
+              </h3>
+
+              <span><i class="fab fa-accusoft"></i></span>
+
+              <div class="f-subtitle">
+                <p>Discover. Explore &
+                  Understanding The Product </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="features-box">
+            <div class="f-title">
+              <h3>Discover, Explore the
+                Product
+              </h3>
+
+              <span><i class="fab fa-accusoft"></i></span>
+
+              <div class="f-subtitle">
+                <p>Discover. Explore &
+                  Understanding The Product </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="features-box">
+            <div class="f-title">
+              <h3>Discover, Explore the
+                Product
+              </h3>
+
+              <span><i class="fab fa-accusoft"></i></span>
+
+              <div class="f-subtitle">
+                <p>Discover. Explore &
+                  Understanding The Product </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="video-section">
+    <div class="row">
+      <div class="col">
+        <div class="video-area text-center">
+          <a class="ovr" href="">
+            <img src="https://i.ibb.co/84bkqD7/video-bg.jpg" alt="">
+          </a>
+
+          <div class="video-text">
+            <h4>CREATE YOUR OWN EXPERIENCE </h4>
+            <h1>Ready To Grow Faster? </h1>
+            <p>There are many variations Of passages Of Lorem Ipsum available, but
+              the majority have suffered alteration in some form. </p>
+
+            <div class="video-btn">
+              <a href=""><span><i class="fas fa-play-circle"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="pricing-tabel">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="pricing-title">
+            <h5>PRICING TABEL</h5>
+            <h1>Our Pricing Plan</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolor magnam reiciendis!</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4">
+          <div class="pricing-card">
+            <h5>Single Use</h5>
+            <h1>$10</h1>
+            <p>Per Month</p>
+            <span></span>
+            <ul>
+              <li>Up to 5 user</li>
+              <li>Basic Support On GitHub</li>
+              <li>Monthly Update</li>
+              <li>Free cancelation</li>
+            </ul>
+            <a class="button1 shadow" href="#">Start Free trial</a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="pricing-card">
+            <h5>Single Use</h5>
+            <h1>$10</h1>
+            <p>Per Month</p>
+            <span></span>
+            <ul>
+              <li>Up to 5 user</li>
+              <li>Basic Support On GitHub</li>
+              <li>Monthly Update</li>
+              <li>Free cancelation</li>
+            </ul>
+            <a class="button1 shadow" href="#">Start Free trial</a>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="pricing-card">
+            <h5>Single Use</h5>
+            <h1>$10</h1>
+            <p>Per Month</p>
+            <span></span>
+            <ul>
+              <li>Up to 5 user</li>
+              <li>Basic Support On GitHub</li>
+              <li>Monthly Update</li>
+              <li>Free cancelation</li>
+            </ul>
+            <a class="button1 shadow" href="#">Start Free trial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="slider-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="slider-subtitle">
+            <p>LFWF FREE LITE</p>
+            <h1> Currently You are Free Lite Version Of massive</h1>
+            <p>Please purchase full version of template to get all pages.
+              Features and commerical licence
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="subscribe-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="sub-row">
+          <div class="sub-content">
+            <h3>Sing up for Newsletter</h3>
+            <p>sing up for start Using a Free account to see What it,s all about</p>
+          </div>
+          <div class="row">
+            <div class="col-xl-8">
+              <div class="form">
+                <div class="form-group">
+                  <label for=""></label>
+                  <input  id="sadman" type="Email"
+                    class="form-control" name="" id="sadman" aria-describedby="helpId" placeholder="Your E-mail Adress">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="sub-batton">
+                <button class="batton">Subscribe now!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="sub-text">
+            <h3>Do you Want grow your online bussiness with Massive</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque illo repudiandae ipsum libero aut!</p>
+            <a class="" href="#">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="client-section">
+    <div class="container">
+      <div class="row">
+       <div class="col-xl-4">
+        <div class="client-content">
+          <h6>OUR AWSOME CLIENTS</h6>
+          <h1>We built best solutions For your Company</h1>
+          <p>There are varitions of passage Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id esse .</p>
+        </div>
+       </div>
+       <div class="col-xl-8">
+         <div class="company-logo">
+           <table class="table table-bordered">
+             <thead>
+               <tr>
+                 <th scope="col">
+                  <img src="https://i.ibb.co/v3NQD8W/client1.png" alt="">
+                 </th> 
+                 <th scope="col">
+                  <img src="https://i.ibb.co/NyFSnRF/client2.png" alt="">
+                 </th>
+                 <th scope="col">
+                  <img src="https://i.ibb.co/k4zg79K/client3.png" alt="">
+               
+                
+               </tr>
+             </thead>
+             <thead>
+               <tr>
+                 <th scope="col">
+                  <img src="https://i.ibb.co/RH2TTfw/client4.png" alt="">
+                 </th>
+                 <th scope="col">
+                  <img src="https://i.ibb.co/dcqCb2Y/client5.png" alt="">
+                 </th>
+                 <th scope="col">
+                  <img src="https://i.ibb.co/B4nxRrD/client6.png" alt="">
+                 </th>
+                
+               </tr>
+             </thead>
+            
+           </table>
+         </div>
+       </div>
+      </div>
+    </div>
+  </section>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

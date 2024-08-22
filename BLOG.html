@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+         /* new navbar */
+         .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .toggle-Button {
+      display: none;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        position: relative;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+    
+    /* navbar end */
+
+
+        .content {
+            transition: margin-right .5s;
+            padding: 16px;
+        }
+       
+      .dropbtn {
+    background: #091327;
+    color: #fff;
+    border: none;
+}
+
+        .blog-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .blog-section h2 {
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+        .main-blog-card, .blog-card {
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .main-blog-card:hover, .blog-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .main-blog-card img, .blog-card img {
+            width: 100%;
+            height: auto;
+        }
+        .main-blog-card-content, .blog-card-content {
+            padding: 20px;
+        }
+        .main-blog-card-content h3, .blog-card-content h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .main-blog-card-content p, .blog-card-content p {
+            font-size: 1em;
+            color: #b0b0b0;
+        }
+        .main-blog-card-content a, .blog-card-content a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .main-blog-card-content a:hover, .blog-card-content a:hover {
+            background-color: #e3396f;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a class="navbar-brand" href="about-alternative.html">
+          <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+        </a>
+      
+        <nav class="navbar">
+          <a href="index.html">HOME</a>
+          <div class="dropdown">
+            <a href="training copy.html" button class="dropbtn">TRAINING
+               <i class="bx bx-chevron-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="college-training.html">college-training</a>
+                        <a href="corporate.html">corporate-training</a>
+                        <a href="faculty.html">faculty</a> 
+            </div>
+          </div>
+          <a href="placement-final-copy.html">PLACEMENT</a>
+          <a href="digitalcopy.html">DIGITAL MARKETING</a>
+          <a href="gax-copy.html">GAX</a>
+          <a href="BLOG.html">BLOG</a>
+        </nav>
+      
+        <div class="toggle-Button">
+          <span class="openbtn" onclick="openNav()">☰</span>
+        </div>
+      
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <a href="index.html">HOME</a>
+          <a href="training copy.html">TRAINING</a>
+          <a href="placement-final-copy.html">PLACEMENT</a>
+          <a href="digitalcopy.html">DIGITAL MARKETING</a>
+          <a href="gax-copy.html">GAX</a>
+          <a href="BLOG.html">BLOG</a>
+        </div>
+      </header>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2>Latest Blog Posts</h2>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="main-blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/1000x400" alt="Main Blog">
+                        <div class="main-blog-card-content">
+                            <h3>It takes a planet to explore the universe.</h3>
+                            <p>80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog 1">
+                        <div class="blog-card-content">
+                            <h3>I would like to die on Mars. Just not on impact.</h3>
+                            <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog 1">
+                        <div class="blog-card-content">
+                            <h3>I would like to die on Mars. Just not on impact.</h3>
+                            <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog 1">
+                        <div class="blog-card-content">
+                            <h3>I would like to die on Mars. Just not on impact.</h3>
+                            <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog 1">
+                        <div class="blog-card-content">
+                            <h3>I would like to die on Mars. Just not on impact.</h3>
+                            <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog 2">
+                        <div class="blog-card-content">
+                            <h3>Life is too short for long-term grudges.</h3>
+                            <p>Discover how to let go and move forward, because life is too precious to be wasted on negativity.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card" onclick="location.href='https://www.linkedin.com/in/your-profile';">
+                        <img src="https://via.placeholder.com/400x300" alt="Blog 3">
+                        <div class="blog-card-content">
+                            <h3>Don't go through life, grow through life.</h3>
+                            <p>Explore ways to grow and evolve through every experience life throws at you.</p>
+                            <a href="https://www.linkedin.com/in/your-profile">Continue Reading →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous">
+    //   navbar
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+    </script>
+</body>
+</html>

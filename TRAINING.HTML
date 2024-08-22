@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>TRAINING</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="Trainstyle" type="text/script" href="Trainstyle.css.">
+
+
+    <style>
+  
+         
+body{
+	overflow-x: hidden;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #091327;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.dropbtn{
+	background: #091327;
+	color: #fff;
+	border: none;
+}
+.dropdown-content{
+	background: #091327;
+}
+.navbar {
+  display: flex;
+  margin-right: 2rem;
+}
+.navbar-brand {
+	margin-left: 2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+.navbar a:hover {
+  color: #eec80b;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #f9dd03;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.toggle-Button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    padding: 10px 15px;
+  }
+
+  .toggle-Button {
+    display: block;
+    margin-right: 10px;
+  }
+}
+
+
+/* homepage */
+.Training-home{
+	background-image:url('image/3119.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+          }
+
+
+
+
+.Training-content p{
+	position: relative;
+    margin-top: 34%;
+    margin-bottom: 0;
+    padding: 40px 190px 4rem 190px;
+    background-color: #091327;
+	color: aliceblue;
+}
+
+.Training-head h1{
+	position: relative;
+    right: 20rem;
+    top: 6rem;
+	color: #FFFFFF;
+}
+
+/* train-2 */
+body {
+	margin:0;
+	font-family: sans-serif;
+}
+
+#color {
+	position: absolute;
+	bottom: 75px;
+	right: 25px;
+	box-shadow: 0 7px 15px -4px rgba(0,0,0,0.4);
+	background: #fff;
+	border-radius: 50%;
+	min-width: 80px;
+	min-height: 80px;
+	cursor:pointer;
+	transform:scale(1.0);
+	transition:all ease 0.3s;
+	z-index:999999;
+}
+
+
+
+
+h2 {
+	
+	color:#f91942;
+	font-weight:700;
+	margin:0;
+	padding:90px 10% 0 10%;
+	text-align:center;
+	text-transform:uppercase;
+	letter-spacing:4px;
+	line-height:23px;
+}
+
+/* --- Start progress bar --- */
+
+.process-wrapper {
+	margin:auto;
+	max-width:1080px;
+}
+
+#progress-bar-container {
+	position:relative;
+	width:90%;
+	margin:auto;
+	height:100px;
+	margin-top:65px;
+}
+
+#progress-bar-container ul {
+	padding:0;
+	margin:0;
+	padding-top:15px;
+	z-index:9999;
+	position:absolute;
+	width:100%;
+	margin-top:-40px
+}
+
+#progress-bar-container li:before {
+	content:" ";
+	display:block;
+	margin:auto;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	border:solid 2px #aaa;
+	transition:all ease 0.3s;
+}
+
+#progress-bar-container li.active:before, #progress-bar-container li:hover:before {
+	border:solid 2px #444;
+}
+
+#progress-bar-container li {
+	list-style:none;
+	float:left;
+	width:20%;
+	text-align:center;
+	color:#aaa;
+	text-transform:uppercase;
+	font-size:11px;
+	cursor:pointer;
+	font-weight:700;
+	transition:all ease 0.2s;
+	vertical-align:bottom;
+	height:60px;
+	position:relative;
+}
+
+#progress-bar-container li .step-inner {
+	position:absolute;
+	width:100%;
+	bottom:0;
+}
+
+#progress-bar-container li.active, #progress-bar-container li:hover {
+	color:#444;
+}
+
+#progress-bar-container li:after {
+	content:" ";
+	display:block;
+	width:6px;
+	height:6px;
+	background:#777;
+	margin:auto;
+	border:solid 7px #fff;
+	border-radius:50%;
+	margin-top:40px;
+	box-shadow:0 2px 13px -1px rgba(0,0,0,0.3);
+	transition:all ease 0.2s;
+}
+
+#progress-bar-container li:hover:after {
+	background:#555;
+}
+
+#progress-bar-container li.active:after {
+	background:#207893;
+}
+
+#progress-bar-container #line {
+	width:80%;
+	margin:auto;
+	background: #eee;
+	height:6px;
+	position:absolute;
+	left:10%;
+	top:57px;
+	z-index:1;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #091327;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:center;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#cec9c9;
+	letter-spacing:1px;
+	padding: 0 28px 7% 5px;
+}
+
+#progress-content-section .section-content p {
+	font-size:15px;
+	line-height:1.8em;
+	color:#ffffff;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+
+
+
+
+
+/* train4 */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {}
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        a,
+        a:active,
+        a:focus {
+            color: #333;
+            text-decoration: none;
+            transition-timing-function: ease-in-out;
+            -ms-transition-timing-function: ease-in-out;
+            -moz-transition-timing-function: ease-in-out;
+            -webkit-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+            -ms-transition-duration: .2s;
+            -moz-transition-duration: .2s;
+            -webkit-transition-duration: .2s;
+            -o-transition-duration: .2s;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+    max-width: 100%;
+    height: 100;
+        }
+
+span, a, a:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+.section-head {
+  margin-bottom: 60px;
+}
+.section-head h4 {
+  position: relative;
+  padding:0;
+  color:#f91942;
+  line-height: 1;
+  letter-spacing:0.3px;
+  font-size: 34px;
+  font-weight: 700;  
+  text-align:center;
+  text-transform:none;
+  margin-bottom:30px;
+}
+.section-head h4:before {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #f91942;
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  right:0;  
+  margin:0 auto;
+}
+.section-head h4 span {
+  font-weight: 700;
+  padding-bottom: 5px;
+  color:#2f2f2f
+}
+p.service_text{
+  color:#cccccc !important;
+  font-size:16px;
+  line-height:28px;
+  text-align:center;    
+}
+.section-head p, p.awesome_line{
+  color:#818181;
+  font-size:16px;
+  line-height:28px;
+  text-align:center;  
+}
+
+.extra-text {
+    font-size:34px;
+    font-weight: 700;
+    color:#2f2f2f;
+    margin-bottom: 25px;
+    position:relative;
+    text-transform: none;
+}
+.extra-text::before {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: #f91942;
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    right: 0;
+    margin: 0 auto;
+}
+.extra-text span {
+    font-weight: 700;
+    color:#f91942;
+}
+.item {
+    background: #fff;
+    text-align: center;
+    padding: 30px 25px;
+    -webkit-box-shadow:0 0px 25px rgba(0, 0, 0, 0.07);
+    box-shadow:0 0px 25px rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    border:5px solid rgba(0, 0, 0, 0.07);
+    margin-bottom: 30px;
+    -webkit-transition: all .5s ease 0;
+    transition: all .5s ease 0;
+    transition: all 0.5s ease 0s;
+}
+.item:hover{
+    background:#FFC700;
+    box-shadow:0 8px 20px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .5s ease 0;
+    transition: all .5s ease 0;
+    transition: all 0.5s ease 0s;
+}
+.item:hover .item, .item:hover span.icon{
+    background:#fff;
+    border-radius:10px;
+    -webkit-transition: all .5s ease 0;
+    transition: all .5s ease 0;
+    transition: all 0.5s ease 0s;
+}
+.item:hover h6, .item:hover p{
+    color:#fff;
+    -webkit-transition: all .5s ease 0;
+    transition: all .5s ease 0;
+    transition: all 0.5s ease 0s;
+}
+.item .icon {
+    font-size: 40px;
+    margin-bottom:25px;
+    color: #f91942;   
+    width: 90px;
+    height: 90px;
+    line-height: 96px;
+    border-radius: 50px;
+}
+.item .feature_box_col_one{
+    background:rgba(247, 198, 5, 0.20);
+    color:#f91942
+}
+.item .feature_box_col_two{
+    background:rgba(255, 77, 28, 0.15);
+    color:#f91942
+}
+.item .feature_box_col_three{
+    background:rgba(0, 147, 38, 0.15);
+    color:#f91942
+}
+.item .feature_box_col_four{
+    background:rgba(0, 108, 255, 0.15);
+    color:#f91942
+}
+.item .feature_box_col_five{
+    background:rgba(146, 39, 255, 0.15);
+    color:#f91942
+}
+.item .feature_box_col_six{
+    background:rgba(23, 39, 246, 0.15);
+    color:#f91942
+}
+.item p{
+    font-size:15px;
+    line-height:26px;
+}
+.item h6 {
+    margin-bottom:20px;
+    color:#2f2f2f;
+}
+.mission p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 500;
+}
+.mission i {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #f91942;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 25px;
+}
+.mission .small-text {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #666;
+}
+.skills {
+    padding-top:0px;
+}
+.skills .prog-item {
+    margin-bottom: 25px;
+}
+.skills .prog-item:last-child {
+    margin-bottom: 0;
+}
+.skills .prog-item p {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.skills .prog-item .skills-progress {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius:20px;
+    position: relative;
+}
+.skills .prog-item .skills-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #f91942;
+    width: 10%;
+    border-radius: 10px;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.skills .prog-item .skills-progress span:after {
+    content: attr(data-value);
+    position: absolute;
+    top: -5px;
+    right: 0;
+    font-size: 10px;
+    font-weight:600;    
+    color: #fff;
+    background:rgba(0, 0, 0, 0.9);
+    padding: 3px 7px;
+    border-radius: 30px;
+}
+
+/* train-5 */
+/*----  Main Style  ----*/
+#cards_landscape_wrap-2{
+  text-align: center;
+  background: #F7F7F7;
+}
+#cards_landscape_wrap-2 .container{
+  padding-top: 80px; 
+  padding-bottom: 100px;
+}
+#cards_landscape_wrap-2 a{
+  text-decoration: none;
+  outline: none;
+}
+#cards_landscape_wrap-2 .card-flyer {
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box{
+  background: #ffffff;
+  overflow: hidden;
+  background: linear-gradient(45deg, #0835e5, black);
+  border-radius: 5px;
+}
+#cards_landscape_wrap-2 .card-flyer .image-box img{
+  -webkit-transition:all .9s ease; 
+  -moz-transition:all .9s ease; 
+  -o-transition:all .9s ease;
+  -ms-transition:all .9s ease; 
+  width: 100%;
+  height: 200px;
+}
+#cards_landscape_wrap-2 .card-flyer:hover .image-box img{
+  opacity: 0.7;
+  -webkit-transform:scale(1.15);
+  -moz-transform:scale(1.15);
+  -ms-transform:scale(1.15);
+  -o-transform:scale(1.15);
+  transform:scale(1.15);
+}
+#cards_landscape_wrap-2 .card-flyer .text-box{
+  text-align: center;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box .text-container{
+  padding: 30px 18px;
+}
+#cards_landscape_wrap-2 .card-flyer{
+  background: #FFFFFF;
+  margin-top: 50px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+}
+#cards_landscape_wrap-2 .card-flyer:hover{
+  background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 50px;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box p{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px; 
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+#cards_landscape_wrap-2 .card-flyer .text-box h6{
+  margin-top: 0px;
+  margin-bottom: 4px; 
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Roboto Black', sans-serif;
+  letter-spacing: 1px;
+  color: #00acc1;
+}
+
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 20%;
+       
+    }
+}
+
+
+
+
+/*  */
+
+h1{
+  font-size: 2.5rem;
+  font-family: 'Montserrat';
+  font-weight: normal;
+  color: #444;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.cols{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.col{
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.container{
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+}
+
+.front,
+.back{
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+  border-radius: 10px;
+	background-position: center;
+	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	text-align: center;
+	min-height: 280px;
+	height: auto;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+.back{
+  background: #cedce7;
+  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+}
+
+.front:after{
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: .6;
+    background-color: #000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 10px;
+}
+.container:hover .front,
+.container:hover .back{
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner{
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+    z-index: 2;
+}
+
+.container .back{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container .front{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container:hover .back{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.container:hover .front{
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.front .inner p{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.front .inner p:after{
+  content: '';
+  width: 4rem;
+  height: 2px;
+  position: absolute;
+  background: #C6D4DF;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -.75rem;
+}
+
+.front .inner span{
+  color: rgba(255,255,255,0.7);
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
+@media screen and (max-width: 64rem){
+  .col{
+    width: calc(33.333333% - 2rem);
+  }
+}
+
+@media screen and (max-width: 48rem){
+  .col{
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 32rem){
+  .col{
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+
+.card {
+      margin-bottom: 30px;
+      height: 18rem; /* Adjust the height of the cards as needed */
+	  
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d; /* Specify that child elements should be positioned in 3D space */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Rotate on hover */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back side initially */
+}
+
+.card-front {
+  z-index: 2; /* Ensure the front side is on top */
+}
+
+.card-back {
+  transform: rotateY(180deg); /* Initially rotate the back side */
+}.testimonial-section {
+  overflow: hidden;
+}
+
+
+/* testimonals */
+.review {
+  min-height: 100vh;
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3rem 0;
+  position: relative;
+}
+
+
+.review__marquee {
+    background-color: transparent;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.review__marquee__container {
+      flex-shrink: 0;
+      gap: 2rem;
+      padding-right: var(--gap-space);
+      animation: infinityScroll 17s linear 0s infinite forwards;
+      display: flex;
+      align-items: center;
+      width: max-content;
+      max-width: unset;
+      overflow: hidden;
+}
+
+.review__marquee__container:hover {
+    animation-play-state: paused;
+}
+
+.review__marquee__container__two {
+    flex-shrink: 0;
+    gap: 2rem;
+    padding-right: var(--gap-space);
+    animation: infinityScroll 22s linear 0s infinite reverse;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    max-width: unset;
+    overflow: hidden;
+}
+
+.review__marquee__container__two:hover {
+    animation-play-state: paused;
+}
+
+.scroll {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: unset;
+}
+
+.itemOdd {
+    background-color: #030303;
+    border-radius: 1.25rem;
+    border-style:double;
+    padding: 30px 40px;
+    width: 573px;
+    height: auto;
+}
+
+.itemEven {
+    background-color: #E2E7FF;
+    /* background-color: black; */
+    border-radius: 1.25rem;
+    border-style:solid;
+    padding: 30px 40px;
+    width: 573px;
+    height: auto;
+}
+
+.top {
+    margin-bottom: 0.6rem;
+}
+
+.itemOdd h6 {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size:  18px;
+    line-height: 125%;
+    color: #ffffff;
+    margin-bottom: 0.15rem;
+  }
+
+  .itemEven h6 {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size:  18px;
+    line-height: 125%;
+    color: #000000;
+    margin-bottom: 0.15rem;
+  }
+
+  .itemEven p ,.itemOdd p {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    color: #f50f95;
+  }
+
+
+.itemEven h5 {
+  font-family: "Neurial Grotesk", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 125%;
+  color: rgb(0, 0, 0);
+} 
+.itemOdd h5 {
+  font-family: "Neurial Grotesk", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 125%;
+  color: rgb(255, 255, 255);
+} 
+.testimonials h3{
+    padding: 2em 5em;
+    position: relative;
+    text-align: left;
+    background: #ffffff;
+    display: -ms-grid;
+    display: grid;
+    height: auto;
+  }
+ 
+.titles {
+  color: #fdfdfd;
+  position: relative;
+  text-align: center;
+}
+  
+
+
+@keyframes infinityScroll {
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes infinityScroll2 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+
+/* registration */
+.signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .signup-card {
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      width: 100%;
+    }
+    .signup-image {
+      background: #fbc02d;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    .signup-form {
+      padding: 30px;
+    }
+    .signup-form h2 {
+      margin-bottom: 30px;
+    }
+    .btn-group-toggle .btn {
+      border: 1px solid #ddd;
+      border-radius: 30px;
+    }
+    .btn-group-toggle .btn.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+
+	/* footer */
+	#footer{
+	background: #000000;
+    padding: 3rem;
+	/* padding-top: 5rem; */
+	
+    
+}
+
+
+
+.footer-about{
+  color: #ccc;
+}
+.logo-footer{
+	max-width: 200px;
+    position: relative;
+   top:4rem;
+}
+.social-links{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+
+}
+.social-links h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+    color: #fefefe;
+}
+.social-links img{
+	padding-bottom: 25px;
+}
+.social-icons{
+	/* display: flex;
+    gap: 3rem; */
+	display: flex;
+    flex-direction: column;
+    gap: 1rem;
+	color: #ffffff;
+}
+.social-icons a{
+	/* font-size: 18px; */
+    /* background: #ffffff; */
+    /* box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+	color: #82074a; */
+	/* margin-right: 18px; */
+	color: #b3b2b2;
+}
+.social-icons a:hover{
+	color: #fdd700;
+}
+.social-icons a i{
+	box-shadow: rgba(255, 255, 255, 0.08) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+    color: #82074a;
+	font-size: 16px;
+	margin-right: 12px;
+}
+li{
+	list-style: none;
+}
+.useful-link h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+    color: #e3e3e3;
+}
+.useful-link img{
+	padding-bottom: 15px;
+}
+.use-links{
+	line-height: 32px;
+}
+.use-links li i{
+	font-size: 14px;
+    padding-right: 8px;
+    color: #ffffff;
+}
+.use-links li a{
+	color: #ffffff;
+	position: relative;
+    left: 7.5rem;
+    font-size: 15px;
+    font-weight: 500;
+	color: #b3b2b2;
+}
+.use-links li a:hover{
+	color: #fdd700;
+}
+.address h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+    color: #e3e3e3;
+}
+.address img{
+	padding-bottom: 15px;
+}
+.address-links li a{
+	color: #b3b2b2;
+    font-size: 15px;
+    font-weight: 500;
+	
+
+}
+.address-links li i{
+	font-size: 16px;
+    padding-right: 8px;
+	color: #82074a;
+
+}
+.address-links li i:nth-child(1){
+	padding-top: 9px;
+}
+.address-links .address1{
+	font-weight: 500;
+    font-size: 15px;
+	display: flex;
+}
+.address-links{
+	    line-height: 32px;
+		color: #b3b2b2;
+}
+.copy-right-sec{
+	padding: 1.8rem;
+    background: #000000;
+    color: #fff;
+    text-align: center;
+}
+.copy-right-sec a{
+	color:#fdd700;
+    font-weight: 500;
+}
+a{
+  text-decoration:none;
+}
+	
+	
+
+	
+  
+</style>
+
+
+
+  
+   
+  </head>
+
+ 
+  <body>
+
+   
+	<header class="header">
+		<a class="navbar-brand" href="#">
+		  <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" width="180px" height="100px" alt="logo2" class="logo">
+		</a>
+	  
+		<nav class="navbar">
+		  <a href="#" class="active">HOME</a>
+		  <div class="dropdown">
+			<button class="dropbtn">TRAINING
+			  <i class="bx bx-chevron-down"></i>
+			</button>
+			<div class="dropdown-content">
+			  <a href="#">Course 1</a>
+			  <a href="#">Course 2</a>
+			  <a href="#">Course 3</a>
+			</div>
+		  </div>
+		  <a href="#">PLACEMENT</a>
+		  <a href="#">DIGITAL MARKETING</a>
+		  <a href="#">GAX</a>
+		  <a href="#">BLOG</a>
+		  <div class="toggle-Button">
+			<a href="#"><i class='bx bx-menu'></i></a>
+		  </div>
+		</nav>
+	  
+		
+	  </header>
+	  
+
+    <section class="Training-home">
+        <div class="Training-head">
+        
+         
+          <h1>
+            Get Trained <br>
+              with Gryphon!
+          </h1>
+
+
+		    <div class="Training-content">
+                <p>
+                    Our training sessions are meticulously crafted and tailored to meet the specific requirements of the industry.
+                     We stay updated on the latest trends and developments, incorporating them into our training modules. We take 
+                    into account both industry and academic needs, integrating insights from our seasoned trainers and addressing 
+					relevant topics.Our approach is student-centric, catering directly to the needs of individuals and educational institutions. 
+                </p>
+
+
+                
+            </div>
+        </div>
+
+
+     </section>
+	 <section>
+		<div>
+	 <img src="image/gax-bridge.svg" alt="" srcset="">
+	</div>
+	 </section>
+
+	 <section class="train-2">
+		   
+		
+		<h2>Our Process</h2>
+		
+		<div class="process-wrapper">
+		<div id="progress-bar-container">
+			<ul>
+				<li class="step step01 active"><div class="step-inner">Discovery</div></li>
+				<li class="step step02"><div class="step-inner">Strategy Development</div></li>
+				<li class="step step03"><div class="step-inner">Creative Concepting</div></li>
+				<li class="step step04"><div class="step-inner">Production &amp; Execution</div></li>
+				<li class="step step05"><div class="step-inner">Ongoing Analysis &amp; Results</div></li>
+			</ul>
+			
+			<div id="line">
+				<div id="line-progress"></div>
+			</div>
+		</div>
+		
+		<div id="progress-content-section">
+			<div class="section-content discovery active">
+				<h2>Discovery</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+			</div>
+			
+			<div class="section-content strategy">
+				<h2>Strategy Development</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+			</div>
+			
+			<div class="section-content creative">
+				<h2>Creative Concepting</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+			</div>
+			
+			<div class="section-content production">
+				<h2>Production &amp; Execution</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+			</div>
+			
+			<div class="section-content analysis">
+				<h2>Ongoing Analysis &amp; Results</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+			</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+ <section class="Train-4">
+	<div class="feat bg-gray pt-5 pb-5">
+		<div class="container">
+		  <div class="row">
+			<div class="section-head col-sm-12">
+			  <h4><span>Why Choose</span> US</h4>
+			  <p>Here's what sets our trainings apart from others</p>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+			  <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
+				<h6>Modern Design</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+			  </div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+			  <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
+				<h6>Creative Design</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+			  </div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+			  <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
+				<h6>Your Photoshoping</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+			  </div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+			  <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
+				<h6>Business Growth</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+			  </div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+			  <div class="item"> <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
+				<h6>Market Strategy</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+			  </div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+			  <div class="item"> <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
+				<h6>Retina Ready</h6>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
+ </section>
+
+
+
+
+
+
+
+
+
+
+ <section class="train-5">
+	       <!-- Topic Cards -->
+		   <div id="cards_landscape_wrap-2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/Corporate etiquettes.svg" alt="" />
+									</div>
+									<div class="text-container">
+										<h6>Corporate etiquettes and Mannerism</h6>
+									
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/Effective Communication Skills.svg" alt="" />
+									</div>
+									<div class="text-container">                                    
+										<h6>Effective Communication Skills</h6>
+										
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/S-Interview.svg" alt="" />
+									</div>
+	
+									<div class="text-container">
+										<h6>Interview Skills and GD-PI Techniques</h6>
+									  
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/S-Presentation.svg" alt="" />
+									</div>
+
+
+									<div class="text-container">
+										<h6>Presentation Skills</h6>
+									 
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/S-Time management.svg" alt="" />
+									</div>
+									<div class="text-container">
+										<h6>Time Management</h6>
+									   
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/A-Quantitative AptitudeQuantitative Ability [ Basic Mathematics].svg" alt="" />
+									</div>
+									<div class="text-container">
+										<h6>Quantitative Ability[Basic Mathematics].</h6>
+									   
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/A-lOGICAL.svg" alt="" />
+									</div>
+									<div class="text-container">
+										<h6>Quantitative Aptitude</h6>
+									   
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/A-DATA.svg" alt=""/>
+									</div>
+									<div class="text-container">
+										<h6>Data Interpretation.</h6>
+									   
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/A-10.svg" alt="" />
+									</div>
+									<div class="text-container">
+										<h6>Logical Reasoning.</h6>
+									  
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a href="">
+							<div class="card-flyer">
+								<div class="text-box">
+									<div class="image-box">
+										<img src="image/A-7.svg" alt="" />
+									</div>
+									<div class="text-container">
+										<h6>Critical<br> Thinking.</h6>
+									  
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+ </section>
+
+
+<!-- select your course -->
+	<section class="train-6">
+		<div class="container mt-5" style="min-height: 100vh;"> <!-- Adjust the minimum height of the container -->
+			<!-- Heading Row -->
+			<div class="row mb-4">
+			  <div class="col text-center">
+				<h2>Select Your Course</h2>
+			  </div>
+			</div>
+		  
+			<!-- Main Content Row -->
+			<div class="row">
+			  <!-- Course Selection Section -->
+			  <div class="col-md-4">
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">MECHANICAL ENGINEERING</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">CIVIL<BR> ENGINEERING</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">COMPUTER ENGINEERING</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">ELECTRICAL ENGINEERING</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">MCA</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">MBA</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">PHARMA</button>
+					  </div>
+				</div>
+				<div class="row mb-2">
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<button class="btn btn-primary" type="button">ARTIFICIAL INTELLIGENCE</button>
+					  </div>
+				</div>
+			  </div>
+		  
+			
+    <!-- Course Cards Section -->
+      <div class="col-md-8 course-card">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card h-100 border">
+              <img src="image/3119.jpg" class="card-img-top" alt="Course 1">
+              <div class="card-body">
+                <h5 class="card-title">Course 1</h5>
+                <p class="card-text">Description of Course 1.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border">
+              <img src="image/3119.jpg" class="card-img-top" alt="Course 2">
+              <div class="card-body">
+                <h5 class="card-title">Course 2</h5>
+                <p class="card-text">Description of Course 2.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border">
+              <img src="image/3119.jpg" class="card-img-top" alt="Course 3">
+              <div class="card-body">
+                <h5 class="card-title">Course 3</h5>
+                <p class="card-text">Description of Course 3.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Second row of course cards -->
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <div class="card h-100 border">
+              <img src="image/3119.jpg" class="card-img-top" alt="Course 4">
+              <div class="card-body">
+                <h5 class="card-title">Course 4</h5>
+                <p class="card-text">Description of Course 4.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border">
+              <img src="image/3119.jpg" class="card-img-top" alt="Course 5">
+              <div class="card-body">
+                <h5 class="card-title">Course 5</h5>
+                <p class="card-text">Description of Course 5.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border">
+              <img src="image/3119.jpg" class="card-img-top" alt="Course 6">
+              <div class="card-body">
+                <h5 class="card-title">Course 6</h5>
+                <p class="card-text">Description of Course 6.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+		  
+
+  <!-- testimonals -->
+  <section>
+	<div class="review">
+	  <div id="Testimonials">
+	  <div class="titles">
+		<h3>Testimonials</h3>
+		  <h2>This is why we do it! </h2>
+		 
+  
+	  
+  
+	  <div class="review__marquee">
+		  <div class="review__marquee__container">
+			  <div class="scroll">
+				  <div class="itemOdd">
+					<div class="item__text">
+					  <div class="item__text__top">
+						<h6>Customer Review</h6>
+						<p>Top Notch</p>
+					  </div>
+					  <h5 >
+						"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					  </h5>
+					</div>
+				  </div>
+	
+				  <div class="itemEven">
+					<div class="item__text">
+					  <div class="item__text__top">
+						<h6>Customer Review</h6>
+						<p 
+						>Satisfied</p>
+					  </div>
+					  <h5>
+						"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					  </h5>
+					</div>
+				  </div>
+	
+				  <div class="itemOdd">
+					<div class="item__text">
+					  <div class="item__text__top">
+						<h6>Customer Review</h6>
+						<p>Top Notch</p>
+					  </div>
+					  <h5>
+						"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+						that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+						and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					  </h5>
+					</div>
+				  </div>
+	
+				  <div class="itemEven">
+					<div class="item__text">
+					  <div class="item__text__top">
+						<h6>Customer Review</h6>
+						<p>Satisfied</p>
+					  </div>
+					  <h5>
+						"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					  </h5>
+					</div>
+				  </div>
+	
+				  <div class="itemOdd">
+					<div class="item__text">
+					  <div class="item__text__top">
+						<h6>Customer Review</h6>
+						<p>Top Notch</p>
+					  </div>
+					  <h5>
+						"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+						that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+						and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					  </h5>
+					</div>
+				  </div>
+			  </div>
+			</div>
+		  </div>
+	  </div>
+  
+	  <div class="review__marquee">
+		<div id="testimonials">
+		  <div class="review__marquee__container__two">
+			
+			  <div class="scroll">
+				<div class="itemOdd">
+				  <div class="item__text">
+					<div class="item__text__top">
+					  <h6>Customer Review</h6>
+					  <p>Top Notch</p>
+					</div>
+					<h5>
+					  "I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					</h5>
+				  </div>
+				</div>
+  
+				<div class="itemEven">
+				  <div class="item__text">
+					<div class="item__text__top">
+					  <h6>Customer Review</h6>
+					  <p>Satisfied</p>
+					</div>
+					<h5>
+					  "I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					</h5>
+				  </div>
+				</div>
+  
+				<div class="itemOdd">
+				  <div class="item__text">
+					<div class="item__text__top">
+					  <h6 >Customer Review</h6>
+					  <p >Top Notch</p>
+					</div>
+					<h5>
+					  "I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+					</h5>
+				  </div>
+				</div>
+  
+				<div class="itemEven">
+				  <div class="item__text">
+					<div class="item__text__top">
+					  <h6>Customer Review</h6>
+					  <p>Satisfied</p>
+					</div>
+					<h5>
+					  rt"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide suppo.
+					</h5>
+				  </div>
+				</div>
+  
+				<div class="itemOdd">
+				  <div class="item__text">
+					<div class="item__text__top">
+					  <h6>Customer Review</h6>
+					  <p>Top Notch</p>
+					</div>
+					<h5>
+					  "I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile 
+					  that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview 
+					  and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.
+				  </div>
+				</div>
+  
+				</div>
+			  </div>
+		</div>
+	  </div>
+   
+  
+  </section>
+</div>
+
+<!-- registratoin -->
+<section>
+
+    <div class="container signup-container">
+        <div class="signup-card row no-gutters">
+          <div class="col-md-6 signup-image">
+            <div>
+              <h1>Unstop</h1>
+              <p>Learn from 200+ courses</p>
+            </div>
+          </div>
+          <div class="col-md-6 signup-form">
+            <h2>Create an account</h2>
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-outline-secondary active">
+                <input type="radio" name="options" id="candidate" autocomplete="off" checked> Candidate
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" id="company" autocomplete="off"> Company
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" id="college" autocomplete="off"> College
+              </label>
+            </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="username" placeholder="User Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="phone" placeholder="Phone">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                </div>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck">
+                <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Next</button>
+              <div class="text-center mt-3">
+                <p>Already have an account? <a href="#">Login</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+  
+ 		  
+
+	  
+	<!-- footer -->
+	<section class="footer">
+		<!-- footer section start -->
+	  <footer id="footer">
+	   <div class="container">
+		 <div class="row">
+		   <div class="col-md-3">
+			 <a href="index.html"><img src="image/GAXLOGO.png" alt="" class="img-fluid logo-footer"></a>
+					   <div class="footer-about">
+						  
+					   </div>
+   
+		   </div>
+		   <div class="col-md-3">
+			 <div class="useful-link">
+			   <h2>Links</h2>
+			  
+			   <div class="use-links">
+				 <li><a href="index.html"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+				 <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+				 <li><a href="gallery.html"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
+				 <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+			   </div>
+			 </div>
+   
+		   </div>
+				 <div class="col-md-3">
+					  <div class="social-links">
+			   <h2>Follow-Us</h2>
+			   
+			   <div class="social-icons">
+				 <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+				 <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+				 <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+			   </div>
+			 </div>
+					 
+   
+					 </div>
+		   <div class="col-md-3">
+			 <div class="address">
+			   <h2>Address</h2>
+			   
+			   <div class="address-links">
+				 <li class="address1"><i class="fa-solid fa-location-dot">
+   
+				 </i> 
+				   Seasons business square by 
+					Naiknavare Office no 301, 3rd floor, 
+					Seasons Rd, Sanewadi, Aundh, 
+					Pune, Maharashtra 411007
+					+91 89836 14509 / 8983339099
+					connect@gryphonacademy.co.in</li>
+					<li><a href=""><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
+					<li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+			   </div>
+			 </div>
+		   </div>
+				   
+		 </div>
+	   </div>
+   
+	 </footer>
+	 <!-- footer section end -->
+	 <!-- footer copy right section start -->
+	 <section id="copy-right">
+	   <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
+		 @2019 All Rights Reserved Powerd By <a href="#">Gryphon Academy</a> 
+	   </div>
+   
+	 </section>
+	 <!-- footer copy right section end -->
+   
+   
+   </section>
+	
+   
+
+	  
+	  
+
+
+
+
+
+
+
+
+
+
+   </section>
+   
+
+
+
+
+   <script>
+   src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+   crossorigin="anonymous"
+ </script>
+
+ <script>
+	
+	$(".step").click( function() {
+		$(this).addClass("active").prevAll().addClass("active");
+		$(this).nextAll().removeClass("active");
+	});
+	
+	$(".step01").click( function() {
+		$("#line-progress").css("width", "3%");
+		$(".discovery").addClass("active").siblings().removeClass("active");
+	});
+	
+	$(".step02").click( function() {
+		$("#line-progress").css("width", "25%");
+		$(".strategy").addClass("active").siblings().removeClass("active");
+	});
+	
+	$(".step03").click( function() {
+		$("#line-progress").css("width", "50%");
+		$(".creative").addClass("active").siblings().removeClass("active");
+	});
+	
+	$(".step04").click( function() {
+		$("#line-progress").css("width", "75%");
+		$(".production").addClass("active").siblings().removeClass("active");
+	});
+	
+	$(".step05").click( function() {
+		$("#line-progress").css("width", "100%");
+		$(".analysis").addClass("active").siblings().removeClass("active");
+	});
+	
+	$("#color").click( function() {
+		$("body").toggleClass("blue")
+	});
+
+ </script>
+	
+
+
+
+
+
+  </body>
+</html>
+
+   
+
+
+
+
+
+
+
+
+            

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <title>Faculty</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="Trainstyle" type="text/script" href="Trainstyle.css.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+
+  <style>
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: #091327;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .dropbtn {
+      background: #091327;
+      color: #fff;
+      border: none;
+    }
+
+    .dropdown-content {
+      background: #091327;
+    }
+
+    .navbar {
+      display: flex;
+      margin-right: 2rem;
+    }
+
+    .navbar-brand {
+      margin-left: 2rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 0 20px;
+    }
+
+    .navbar a:hover {
+      color: #eec80b;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f9dd03;
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .toggle-Button {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar a {
+        padding: 10px 15px;
+      }
+
+      .toggle-Button {
+        display: block;
+        margin-right: 10px;
+      }
+    }
+
+    /* home */
+
+    .faculty {
+      background-image: url("image/MicrosoftTeams.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .faculty-content {
+      position: relative;
+      margin-top: 34%;
+      margin-bottom: 0;
+      padding: 40px 190px 4rem 190px;
+      background-color: #091327;
+      color: aliceblue;
+    }
+
+    .faculty-head h1 {
+      position: relative;
+      top: 5rem;
+
+      color: #FFFFFF;
+    }
+
+    /* FDPS */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #007bff;
+    }
+
+    .section p {
+      margin-bottom: 20px;
+    }
+
+    .icon-box {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .icon-box i {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    .icon-box h4 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    /* 6 FDPS */
+
+    .qualities {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .qualities h2 {
+      margin-bottom: 50px;
+    }
+
+    .qualities .card {
+      border: none;
+      background: none;
+    }
+
+    .qualities .card-body1 {
+      padding: 0;
+    }
+
+    .qualities .card-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .qualities .card-title {
+      font-weight: bold;
+    }
+
+    /* registration */
+    .signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .signup-card {
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .signup-image {
+      background: #fbc02d;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .signup-form {
+      padding: 30px;
+    }
+
+    .signup-form h2 {
+      margin-bottom: 30px;
+    }
+
+    .btn-group-toggle .btn {
+      border: 1px solid #ddd;
+      border-radius: 30px;
+    }
+
+    .btn-group-toggle .btn.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    /* problem solving */
+    .problems-section {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .problems-section h2 {
+      margin-bottom: 40px;
+    }
+
+    .card {
+      border: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 15px;
+    }
+
+    .card img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      text-align: left;
+      padding: 20px;
+    }
+
+    /* CTA BUTTON */
+    .cta-section {
+      background: #091327;
+      color: #fff;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .cta-btn {
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      background-color: #fbc02d;
+      color: #091327;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #218838;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form .form-control {
+      margin-bottom: 20px;
+    }
+
+    .contact-form button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* footer */
+    /* footer */
+    #footer {
+      background: #000000;
+      padding: 3rem;
+      /* padding-top: 5rem; */
+
+
+    }
+
+
+
+    .footer-about {
+      color: #ccc;
+    }
+
+    .logo-footer {
+      max-width: 200px;
+      position: relative;
+      top: 4rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .social-links h2 {
+      padding-bottom: 15px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fefefe;
+    }
+
+    .social-links img {
+      padding-bottom: 25px;
+    }
+
+    .social-icons {
+      /* display: flex;
+    gap: 3rem; */
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: #ffffff;
+    }
+
+    .social-icons a {
+      /* font-size: 18px; */
+      /* background: #ffffff; */
+      /* box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+	color: #82074a; */
+      /* margin-right: 18px; */
+      color: #b3b2b2;
+    }
+
+    .social-icons a:hover {
+      color: #fdd700;
+    }
+
+    .social-icons a i {
+      box-shadow: rgba(255, 255, 255, 0.08) 0px 4px 12px;
+      padding: 0.4rem 1rem 0.4rem 1rem;
+      border-radius: 3px;
+      color: #82074a;
+      font-size: 16px;
+      margin-right: 12px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .useful-link h2 {
+      padding-bottom: 15px;
+      position: relative;
+      left: 8rem;
+      font-size: 20px;
+      font-weight: 600;
+      color: #e3e3e3;
+    }
+
+    .useful-link img {
+      padding-bottom: 15px;
+    }
+
+    .use-links {
+      line-height: 32px;
+    }
+
+    .use-links li i {
+      font-size: 14px;
+      padding-right: 8px;
+      color: #ffffff;
+    }
+
+    .use-links li a {
+      color: #ffffff;
+      position: relative;
+      left: 7.5rem;
+      font-size: 15px;
+      font-weight: 500;
+      color: #b3b2b2;
+    }
+
+    .use-links li a:hover {
+      color: #fdd700;
+    }
+
+    .address h2 {
+      padding-bottom: 15px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #e3e3e3;
+    }
+
+    .address img {
+      padding-bottom: 15px;
+    }
+
+    .address-links li a {
+      color: #b3b2b2;
+      font-size: 15px;
+      font-weight: 500;
+
+
+    }
+
+    .address-links li i {
+      font-size: 16px;
+      padding-right: 8px;
+      color: #82074a;
+
+    }
+
+    .address-links li i:nth-child(1) {
+      padding-top: 9px;
+    }
+
+    .address-links .address1 {
+      font-weight: 500;
+      font-size: 15px;
+      display: flex;
+    }
+
+    .address-links {
+      line-height: 32px;
+      color: #b3b2b2;
+    }
+
+    .copy-right-sec {
+      padding: 1.8rem;
+      background: #000000;
+      color: #fff;
+      text-align: center;
+    }
+
+    .copy-right-sec a {
+      color: #fdd700;
+      font-weight: 500;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* navbar */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .toggle-Button {
+      display: none;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+
+      .dropdown-content {
+        position: relative;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+  </style>
+
+<body>
+
+  <header class="header">
+    <a class="navbar-brand" href="about-alternative.html">
+      <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2"
+        class="logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" button class="dropbtn">TRAINING
+          <i class="bx bx-chevron-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="college-training.html">college-training</a>
+            <a href="corporate.html">corporate-training</a>
+            <a href="faculty.html">faculty</a>
+          </div>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </nav>
+
+    <div class="toggle-Button">
+      <span class="openbtn" onclick="openNav()">☰</span>
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">HOME</a>
+      <a href="training copy.html">TRAINING</a>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </div>
+  </header>
+
+
+
+
+  <section class="faculty">
+
+
+
+    <div class="faculty-head wow slideInLeft ">
+
+
+      <h1>
+        FDP <br>
+        (Faculty Development Programme)
+      </h1>
+
+
+      <div class="faculty-content ">
+        <p>
+          We specialize in empowering college professors, and faculty members to excel
+          in their roles and drive academic success. Our tailored approach ensures that
+          your institution's unique needs are met through a comprehensive training program
+          designed to elevate teaching standards and foster professional growth.
+        </p>
+
+
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <!-- FDPS -->
+  <section>
+
+    <body>
+      <div class="container section  ">
+        <h2>Why Choose Gryphon Academy’s FDP?</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="icon-box wow animate__animated animate__slideInLeft">
+              <i class="fas fa-cogs "></i>
+              <h4>Tailored Training</h4>
+              <p>We begin with a comprehensive pre-assessment test to understand your institution's specific
+                requirements. This allows us to customize the training program to address your faculty's areas of
+                improvement effectively.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="icon-box wow animate__animated animate__slideInRight">
+              <i class="fas fa-user-tie"></i>
+              <h4>Expert Instructors</h4>
+              <p>Our team comprises the industry's best subject matter experts, with a wealth of experience exceeding
+                10+ years. Many of our instructors hold esteemed positions as directors and CEOs in successful
+                organizations, bringing real-world insights and strategies to the training sessions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="icon-box wow animate__animated animate__slideInLeft">
+              <i class="fas fa-book"></i>
+              <h4>Proven Methodology</h4>
+              <p>Gryphon Academy's FDP is built on a proven methodology that combines theoretical knowledge with
+                practical applications. Our hands-on approach ensures that faculty members not only understand concepts
+                but also gain the skills needed to implement them effectively in their teaching practices.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="icon-box wow animate__animated animate__slideInRight">
+              <i class="fas fa-life-ring"></i>
+              <h4>Continuous Support</h4>
+              <p>Our commitment to your institution doesn't end with the training sessions. Gryphon Academy provides
+                ongoing support and resources to ensure that the knowledge and skills gained during the program are
+                sustained and applied for long-term success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- 6 FDPS -->
+
+  <section>
+    <div class="container qualities ">
+      <h2>Our FDP Modules Include</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body1">
+              <div class="card-icon">📜</div>
+              <h5 class="card-title">Pedagogy Enhancement</h5>
+              <p class="card-text">Build real products while learning</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body1">
+              <div class="card-icon">📜</div>
+              <h5 class="card-title">Curriculum Development</h5>
+              <p class="card-text">Learn industry-relevant skills</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body1">
+              <div class="card-icon">📜</div>
+              <h5 class="card-title">Technology Integration in Teaching</h5>
+              <p class="card-text">Get help & support from your peers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body1">
+              <div class="card-icon">🎨</div>
+              <h5 class="card-title">Assessment and Evaluation Strategies </h5>
+              <p class="card-text">Learn at your own pace</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body1">
+              <div class="card-icon">📜</div>
+              <h5 class="card-title">Research and Publication Guidance</h5>
+              <p class="card-text">Finish the path to get certificate</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body1">
+              <div class="card-icon">📜</div>
+              <h5 class="card-title"> Leadership and Management Skills for Educators</h5>
+              <p class="card-text">1% of the price of a bootcamp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section>
+    <!-- problem solving -->
+    <div class="container problems-section ">
+      <h2>What problem we are solving</h2>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/1 4.jpg" class="card-img-top" alt="Difficult Finding Qualified Candidates">
+            <div class="card-body">
+              <!-- <p class="card-text">Difficult Finding Qualified Candidates</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/2 4.jpg" class="card-img-top" alt="Interviewer Burnout">
+            <div class="card-body">
+              <!-- <p class="card-text">Interviewer Burnout</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/3 4.jpg" class="card-img-top" alt="High Turn Around Time">
+            <div class="card-body">
+              <!-- <p class="card-text">High Turn Around Time</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/4 4.jpg" class="card-img-top" alt="Conflicting Priorities">
+            <div class="card-body">
+              <!-- <p class="card-text">Conflicting Priorities</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/5 4.jpg" class="card-img-top" alt="Lack of Skills">
+            <div class="card-body">
+              <!-- <p class="card-text">Lack of Skills</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/6 4.jpg" class="card-img-top" alt="BIAS">
+            <div class="card-body">
+              <!-- <p class="card-text">BIAS</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/7 4.jpg" class="card-img-top" alt="Delayed Feedbacks">
+            <div class="card-body">
+              <!-- <p class="card-text">Delayed Feedbacks</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="faculty-img/8 4.jpg" class="card-img-top" alt="Interview Scheduling Challenges">
+            <div class="card-body">
+              <!-- <p class="card-text">Interview Scheduling Challenges</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- contact us -->
+  <section>
+    <div class="cta-section  mx-auto  wow zoomIn">
+      <div class="container wow animate__animated animate__zoomIn">
+        <h2>Contact Us</h2>
+        <p>Contact us to schedule a consultation and learn more about elevating your institution's teaching standards
+          and faculty performance. </p>
+        <a href="#contactForm" class="cta-btn">Schedule a Consultation</a>
+      </div>
+    </div>
+
+    <!-- registration -->
+    <section>
+      <div class="container signup-container ">
+        <div class="signup-card row no-gutters wow animate__animated animate__zoomIn">
+          <div class="col-md-6 signup-image">
+            <div>
+              <h1>Gryphon Academy</h1>
+
+            </div>
+          </div>
+          <div class="col-md-6 signup-form ">
+            <h2>Register Yourself</h2>
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-outline-secondary active">
+                <input type="radio" name="options" id="candidate" autocomplete="off" checked> Candidate
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" id="company" autocomplete="off"> Company
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" id="college" autocomplete="off"> College
+              </label>
+            </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="phone" placeholder="Phone">
+              </div>
+
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck">
+                <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Next</button>
+              <div class="text-center mt-3">
+                <p>Already have an account? <a href="#">Login</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <section class="footer">
+      <!-- footer section start -->
+      <footer id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <a href="index.html"><img src="image/GAXLOGO.png" alt="" class="img-fluid logo-footer"></a>
+              <div class="footer-about">
+
+              </div>
+
+            </div>
+            <div class="col-md-3">
+              <div class="useful-link">
+                <h2>Links</h2>
+
+                <div class="use-links">
+                  <li><a href="index.html"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+                  <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+                  <li><a href="gallery.html"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
+                  <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-3">
+              <div class="social-links">
+                <h2>Follow-Us</h2>
+
+                <div class="social-icons">
+                  <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+                  <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                  <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="col-md-3">
+              <div class="address">
+                <h2>Address</h2>
+
+                <div class="address-links">
+                  <li class="address1"><i class="fa-solid fa-location-dot">
+
+                    </i>
+                    Seasons business square by
+                    Naiknavare Office no 301, 3rd floor,
+                    Seasons Rd, Sanewadi, Aundh,
+                    Pune, Maharashtra 411007
+                    +91 89836 14509 / 8983339099
+                    connect@gryphonacademy.co.in</li>
+                  <li><a href=""><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
+                  <li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </footer>
+      <!-- footer section end -->
+      <!-- footer copy right section start -->
+      <section id="copy-right">
+        <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>
+          @2019 All Rights Reserved Powerd By <a href="#">Gryphon Academy</a>
+        </div>
+
+      </section>
+      <!-- footer copy right section end -->
+
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>new WOW().init();</script>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    </script>
+
+</body>
+
+</html>

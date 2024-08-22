@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gryphon Academy - Corporate Trainings</title>
+    <meta name="description" content="Gryphon Academy offers top-tier corporate training programs designed to boost productivity and bridge skill gaps in various industries.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #091327;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .bg-primary {
+            background-color: #091327 !important;
+        }
+
+        /* navbar */
+         /* navbar */
+         .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .toggle-Button {
+      display: none;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        position: relative;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+      .sidebar a {
+        font-size: 18px;
+      }
+    }  
+/* carousel */
+        .carousel-item img {
+            opacity: 0.7;
+        }
+
+        .carousel-caption h5 {
+            font-size: 2.5rem;
+            animation: fadeInDown 1s;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-primary {
+            background-color: #ffd500;
+            border-color: #000000;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #091327;
+            border-color: #e70092;
+            color: white;
+        }
+
+        .container {
+            margin-top: 3rem;
+        }
+
+        .container h2 {
+            margin-top: 2rem;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .content-section .text-section {
+            padding-right: 2rem;
+        }
+
+        .challenges-section, .solutions-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            border: 2px solid #FFC700;
+            border-radius: 10px;
+            animation: fadeIn 1.5s;
+        }
+
+        .challenges-section h3, .solutions-section h3 {
+            margin-bottom: 1.5rem;
+            color: #FFC700;
+        }
+
+        .challenges-section p, .solutions-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .cta-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .cta-button {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            color: #091327;
+            background-color: #ffb000;
+            border: 2px solid #000000;
+            border-radius: 50px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: color 0.4s, background-color 0.4s;
+            margin: 0.5rem;
+            animation: bounceIn 1s;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 100%);
+            border-radius: 50px;
+            animation: shimmer 1.5s infinite;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            color: white;
+            background-color: #091327;
+            border-color: #b800ef;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        footer {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <a class="navbar-brand" href="about-alternative.html">
+          <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+        </a>
+      
+        <nav class="navbar">
+          <a href="index.html">HOME</a>
+          <div class="dropdown">
+            <a href="training copy.html" button class="dropbtn">TRAINING
+               <i class="bx bx-chevron-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="college-training.html">college-training</a>
+                        <a href="corporate.html">corporate-training</a>
+                        <a href="faculty.html">faculty</a>
+            </div>
+          </div>
+          <a href="placement-final-copy.html">PLACEMENT</a>
+          <a href="digitalcopy.html">DIGITAL MARKETING</a>
+          <a href="gax-copy.html">GAX</a>
+          <a href="BLOG.html">BLOG</a>
+        </nav>
+      
+        <div class="toggle-Button">
+          <span class="openbtn" onclick="openNav()">☰</span>
+        </div>
+      
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <a href="index.html">HOME</a>
+          <a href="training copy.html">TRAINING</a>
+          <a href="placement-final-copy.html">PLACEMENT</a>
+          <a href="digitalcopy.html">DIGITAL MARKETING</a>
+          <a href="gax-copy.html">GAX</a>
+          <a href="BLOG.html">BLOG</a>
+        </div>
+      </header>
+
+
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Corporate Training Page Zip/1.jpg" class="d-block w-100" alt="Boost Productivity & Engagement">
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Boost Productivity & Engagement</h5>
+                    <p>Effective Corporate Training from Gryphon Academy</p> -->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Corporate Training Page Zip/2.jpg" class="d-block w-100" alt="Bridge the Skills Gap, Build Your Dream Team">
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Bridge the Skills Gap, Build Your Dream Team</h5>
+                    <p>Partner with Gryphon Academy</p> -->
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="Corporate Training Page Zip/3.jpg" class="d-block w-100" alt="Invest in Your Employees, Invest in Your Organization’s Future">
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Invest in Your Employees, Invest in Your Organization’s Future</h5>
+                    <p>Gryphon Academy Corporate Training</p> -->
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container text-center">
+        <h2 class="display-4 text-primary">Join us in the pursuit of excellence</h2>
+        <p class="lead">We empower professionals to thrive in the ever-evolving corporate landscape.</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    </div>
+
+    <!-- Two-Column Section -->
+    <div class="container content-section">
+        <div class="row">
+            <div class="col-md-6 text-section">
+                <h3>Our Training Programs</h3>
+                <p>Our specifically curated training programs are designed to meet your unique needs and requirements. With affiliations to over 300 corporate entities across diverse industries such as manufacturing, telecommunications, IT, power, textile and government, we address industry-specific challenges.</p>
+                <p>We address your challenges by offering personalized and handpicked "Gryphon's" solutions designed to help you overcome them!</p>
+            </div>
+            <div class="col-md-6">
+                <img src="Training Page/1 11.jpg" class="img-fluid" alt="Training Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Challenges Section -->
+    <div class="container challenges-section">
+        <h3>The Challenges</h3>
+        <p>1. Elevated Attrition Rates: High turnover negatively impacts stability and continuity within the organization.</p>
+        <p>2. Dwindling Employee Morale: Low morale affects engagement, productivity, and overall workplace satisfaction.</p>
+        <p>3. Unfavorable Workplace Culture: A negative culture can lead to poor collaboration, low motivation, and high stress levels.</p>
+        <p>4. Communication Gaps: Ineffective communication can cause misunderstandings, delays, and conflicts.</p>
+        <p>5. Decreasing Productivity and Outcomes: Reduced efficiency and poor performance outcomes hinder organizational goals.</p>
+        <p>6. Suboptimal Project Management: Inefficient project management leads to missed deadlines, budget overruns, and poor-quality deliverables.</p>
+        <p>7. Reluctance to Embrace Change: Resistance to change hampers innovation and adaptability in a dynamic business environment.</p>
+        <p>8. Challenges in Remote Team Management: Managing remote teams effectively requires addressing communication, collaboration, and productivity issues.</p>
+    </div>
+
+    <!-- Solutions Section -->
+    <div class="container solutions-section">
+        <h3>The Solutions</h3>
+        <p>- Identifying and analyzing key factors that are driving employee engagement.</p>
+        <p>- Measuring areas of success and hurdles for organizational effectiveness.</p>
+        <p>- Step-by-step analysis for identifying pain points and converting them into strengths.</p>
+        <p>- Curating Customized Technical Trainings according to your organizational needs, Goals, Skills, Vision & Mission.</p>
+        <p>- Understanding your Efficiency, dissatisfaction, loyalty, attitude, leader, managing, upscaling, prioritizing.</p>
+        <p>Addressing the skill gaps in the core training, Gryphon Academy provides unique solutions through a pool of expert coaches, enhancing employee skills at the workplace.</p>
+        <p>Bridging the gap between fresh talent and industry needs, Gryphon Academy connects colleges (55+) with top companies (200+ including KPIT, Force Motors) for free recruitment support. We equip students with essential skills through free training programs, ensuring a smooth transition into the workforce. No placement fees, just successful partnerships.</p>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container cta-section">
+        <a href="#" class="cta-button">Build Your Dream Team: Learn More About Gryphon's Corporate Training Programs Now!</a>
+        <a href="#" class="cta-button mt-3">Empower Your Employees, Drive Growth: Request a Customized Training Quote!</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-3">
+        <p>&copy; 2024 Gryphon Academy. All rights reserved.</p>
+    </footer>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+       //   navbar
+    function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+        }
+    
+    </script>
+</body>
+</html>

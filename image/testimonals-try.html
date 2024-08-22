@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+html, body {
+  background-color: #1a1a1a;
+}
+
+.tiles-main,
+.tiles-wrap-layer1,
+.tiles-wrap-layer2,
+.tiles-inner,
+.tiles {
+  pointer-events: none;
+}
+
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.tiles {
+  position: relative;
+  width: calc(100% / 6);
+  perspective: 1000px;
+
+  &:not(:last-child) { margin-right: -2% }
+
+  &:hover {
+    .tiles-inner {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.tiles-inner {
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transition: transform 0.6s cubic-bezier(0.35, 0.1, 0.6, 1.51);
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.tiles-border {
+  margin: 0 auto;
+
+  &:before, &:after {
+    content: '';
+    display: block;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before  {
+    transform: rotate(60deg) translate(18%, -18%);
+  }
+
+  &:after {
+    transform: rotate(-60deg) translate(18%, 18%);
+  }
+
+  &, &:before, &:after {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    cursor: pointer;
+    display: block;
+    padding-bottom: 100%;
+    width: 58%;
+    pointer-events: auto;
+  }
+}
+
+.tiles-wrap {
+  overflow: hidden;
+  position: absolute;
+  top: 1px;
+  transform: rotate(120deg);
+  visibility: hidden;
+
+  &.-front, &.-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  &.-back {
+    transform: rotateY(180deg);
+
+    .tiles-main {
+      transform: rotate(120deg);
+    }
+  }
+}
+
+.tiles-wrap-layer1 {
+  height: 100%;
+  overflow: hidden;
+  transform: rotate(-60deg);
+  visibility: hidden;
+  width: 100%;
+}
+
+.tiles-wrap-layer2 {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transform: rotate(-60deg);
+  visibility: visible;
+  width: 100%;
+}
+
+.tiles-main 
+  background: {
+    size: cover;
+    position: center center;
+  
+  height:100%;
+  left:0;
+  position: absolute;
+  top: 0;
+  transition: background 0.5s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiles-main--inner {
+  padding: 20px 30px;
+
+  p {
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.93);
+    text-align: center;
+  }
+}
+
+
+
+/*  */
+.honeycomb {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    transform: translateY(80px);
+}
+
+.honeycomb-cell {
+    -webkit-box-flex: 0;
+    flex: 0 1 250px;
+    max-width: 250px;
+    height: 137.5px;
+    margin: 65.4px 12.5px 25px;
+    position: relative;
+    padding: 0.5em;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.honeycomb-cell_img {
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+
+.honeycomb-cell_title {
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.75em;
+    transition: opacity 350ms;
+}
+
+.honeycomb-cell_title>small {
+    font-weight: 300;
+    margin-top: 0.25em;
+}
+
+.honeycomb-cell::before,
+.honeycomb-cell::after {
+    content: '';
+}
+
+.honeycomb-cell::before,
+.honeycomb-cell::after,
+.honeycomb-cell_img {
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    display: block;
+    position: absolute;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);                                                       
+    z-index: -1;
+}
+
+.honeycomb-cell::before {
+    background: #fff;
+    transform: scale(1.055);
+}
+
+.honeycomb-cell::after {
+    background: #111111;
+    opacity: 0.7;
+    transition: opacity 350ms;
+    -webkit-transition: opacity 350ms;
+}
+
+.honeycomb-cell:hover .honeycomb-cell_title {
+    opacity: 0;
+}
+
+.honeycomb-cell:hover .honeycomb-cell_img {
+    filter: grayscale(0%);
+}
+
+.honeycomb-cell:hover::before {
+    background: #fc5130;
+}
+
+.honeycomb-cell:hover::after {
+    opacity: 0;
+}
+
+.honeycomb_Hidden {
+    display: none;
+    opacity: 0;
+    width: 250px;
+    margin: 0 12.5px;
+}
+
+/****** Responsive *******/
+
+@media (max-width: 550px) {
+    .honeycomb-cell {
+        margin: 81.25px 25px;
+    }
+}
+
+
+@media (min-width: 550px) and (max-width: 825px) {
+    .honeycomb-cell:nth-child(3n) {
+        margin-right: calc(50% - 125px);
+        margin-left: calc(50% - 125px);
+    }
+
+    .honeycomb_Hidden:nth-child(3n + 5) {
+        display: block;
+    }
+}
+
+
+@media (min-width: 825px) and (max-width: 1100px) {
+
+    .honeycomb-cell:nth-child(5n + 4) {
+        margin-left: calc(50% - 275px);
+    }
+
+    .honeycomb-cell:nth-child(5n + 5) {
+        margin-right: calc(50% - 275px);
+    }
+
+    .honeycomb_Hidden:nth-child(5n),
+    .honeycomb_Hidden:nth-child(5n + 3) {
+        display: block;
+    }
+}
+
+@media (min-width: 1100px) {
+    .honeycomb-cell:nth-child(7n + 5) {
+        margin-left: calc(50% - 400px);
+    }
+
+    .honeycomb-cell:nth-child(7n + 7),
+    .honeycomb-cell:nth-child(7n + 5):nth-last-child(2) {
+        margin-right: calc(50% - 400px);
+    }
+
+    .honeycomb_Hidden:nth-child(7n + 7),
+    .honeycomb_Hidden:nth-child(7n + 9),
+    .honeycomb_Hidden:nth-child(7n + 11) {
+        display: block;
+    }
+}
+</style>
+<body>
+  
+  
+    
+    
+    
+    
+        <ul class="honeycomb">
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://i.pinimg.com/originals/be/96/94/be969491155717f0b26bd4ae21d463f6.jpg">
+                <div class="honeycomb-cell_title">iron man</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://www.pixelstalk.net/wp-content/uploads/images6/Captain-Marvel-Wallpaper-Free-Download.jpg">
+                <div class="honeycomb-cell_title">captain marvel</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://www.chromethemer.com/download/hd-wallpapers/black-widow-3d-3840x2160.jpg">
+                <div class="honeycomb-cell_title">black widow</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://img.freepik.com/premium-photo/incredible-hulk-wallpapers-hd-wallpapers_853177-21137.jpg">
+                <div class="honeycomb-cell_title">hulk</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://www.wallpaperflare.com/static/823/649/247/doctor-strange-2016-movies-4k-8k-wallpaper-preview.jpg  ">
+                <div class="honeycomb-cell_title">dr<small>strange</small></div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://w0.peakpx.com/wallpaper/25/713/HD-wallpaper-captain-america-comics-marvel-comics-superheroes-3d.jpg">
+                <div class="honeycomb-cell_title">captain<small>america</small></div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://wallpaperaccess.com/full/1709926.jpg">
+                <div class="honeycomb-cell_title">thor</div>
+            </li>
+            <li class="honeycomb-cell honeycomb_Hidden">
+            </li>
+          <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://e0.pxfuel.com/wallpapers/312/174/desktop-wallpaper-avengers-characters-avengers-villain-loki.jpg">
+                <div class="honeycomb-cell_title">loki</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://i.pinimg.com/originals/99/2b/51/992b514bede595d9b8f026fdd9ec07ab.jpg">
+                <div class="honeycomb-cell_title">moon knight</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701206534.jpg">
+                <div class="honeycomb-cell_title">robot</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://wallpapercave.com/wp/wp9971137.jpg">
+                <div class="honeycomb-cell_title">deadpool</div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://assets-prd.ignimgs.com/2022/05/12/doctorstrange-1652395043059.jpg">
+                <div class="honeycomb-cell_title">dr<small>strange</small></div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://siachenstudios.com/wp-content/uploads/2021/08/scarlet-witch-2020-4k-ze.jpg.webp">
+                <div class="honeycomb-cell_title">scarlet<small>witch</small></div>
+            </li>
+            <li class="honeycomb-cell">
+                <img class="honeycomb-cell_img" src="https://cdn.wallpapersafari.com/65/76/9frYbo.jpg">
+                <div class="honeycomb-cell_title">ant man</div>
+            </li>
+            <li class="honeycomb-cell honeycomb_Hidden">
+            </li>
+        </ul>
+    
+    </body>
+    
+    </html>
+
+</div>
+</body>
+<script>
+    // for animation 
+
+$(document).ready(function(){
+  $('.pp-quote').click(function(){
+    $('.pp-quote').removeClass("active");
+    $(this).addClass("active");
+});
+});
+
+$(document).ready(function(){
+    
+       // hide-top
+
+        $('.li-quote-1').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');
+            $('.quote-text-1').addClass('show');
+            $('.quote-text-1').removeClass('hide-bottom');             
+        });
+
+        $('.li-quote-2').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');
+            $('.quote-text-2').addClass('show');             
+            $('.quote-text-2').removeClass('hide-bottom');
+        });
+
+        $('.li-quote-3').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');         
+            $('.quote-text-3').addClass('show');             
+            $('.quote-text-3').removeClass('hide-bottom');
+        });
+        $('.li-quote-4').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-4').addClass('show');             
+            $('.quote-text-4').removeClass('hide-bottom');
+        });
+        $('.li-quote-5').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-5').addClass('show');             
+            $('.quote-text-5').removeClass('hide-bottom');
+        });
+        $('.li-quote-6').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-6').addClass('show');             
+            $('.quote-text-6').removeClass('hide-bottom');
+        });
+        $('.li-quote-7').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-7').addClass('show');             
+            $('.quote-text-7').removeClass('hide-bottom');
+        });
+        $('.li-quote-8').click(function(e){ 
+            e.stopPropagation();
+            $(".show").addClass('hide-top');
+            $(".hide-top").removeClass('show');      
+            $('.quote-text-8').addClass('show');             
+            $('.quote-text-8').removeClass('hide-bottom');
+        });
+           
+    
+});
+
+
+$(document).ready(function(){
+    
+       // hide-top
+
+        $('.li-quote-1').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-1').addClass('look');
+            $('.dp-name-1').removeClass('hide-dp-bottom');             
+        });
+
+        $('.li-quote-2').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-2').addClass('look');
+            $('.dp-name-2').removeClass('hide-dp-bottom');             
+        });
+
+        $('.li-quote-3').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-3').addClass('look');
+            $('.dp-name-3').removeClass('hide-dp-bottom');             
+        });
+		$('.li-quote-4').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-4').addClass('look');
+            $('.dp-name-4').removeClass('hide-dp-bottom');             
+        });
+		
+        $('.li-quote-5').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-5').addClass('look');
+            $('.dp-name-5').removeClass('hide-dp-bottom');             
+        });
+		
+        $('.li-quote-6').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-6').addClass('look');
+            $('.dp-name-6').removeClass('hide-dp-bottom');             
+        });
+        $('.li-quote-7').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-7').addClass('look');
+            $('.dp-name-7').removeClass('hide-dp-bottom');             
+        });
+        $('.li-quote-8').click(function(e){ 
+            e.stopPropagation();
+            $(".look").addClass('hide-dp-top');
+            $(".hide-dp-top").removeClass('look');
+            $('.dp-name-8').addClass('look');
+            $('.dp-name-8').removeClass('hide-dp-bottom');             
+        });
+           
+    
+});
+</script>
+</html>

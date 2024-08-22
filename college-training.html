@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Ready Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  
+    <style>
+
+
+       body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #dfdfdf;
+}
+
+
+/* navbar */
+
+
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #091327;
+    padding: 50px;
+}
+
+ 
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeInLeft 2s;
+}
+  
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    animation: fadeInLeft 2s;
+}
+ 
+.cta-button {
+    background-color: #FFC700;
+    color: #091327;
+    border: 2px solid transparent;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInLeft 2s;
+    transition: color 0.4s, background-color 0.4s;
+}
+ 
+.cta-button:hover {
+    background-color: #e6b800;
+    color: #ffffff;
+}
+ 
+.cta-button:before, .cta-button:after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #FFC700;
+    transition: transform 0.5s;
+}
+ 
+.cta-button:before {
+    border-top: 0;
+    border-bottom: 0;
+    transform: translate(-50%, -50%) scaleX(0);
+}
+ 
+.cta-button:after {
+    border-left: 0;
+    border-right: 0;
+    transform: translate(-50%, -50%) scaleY(0);
+}
+ 
+.cta-button:hover:before, .cta-button:hover:after {
+    transform: translate(-50%, -50%) scale(1);
+}
+ 
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+ 
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #091327;
+    color: #fff;
+    padding: 50px 0;
+}
+ 
+.stats-section .stat {
+    text-align: center;
+}
+ 
+.stats-section .stat h2 {
+    font-size: 3rem;
+    color: #FFC700;
+    margin: 10px 0;
+    animation: count 2s;
+}
+ 
+.stats-section .stat p {
+    font-size: 1.2rem;
+}
+ 
+.logo-slider {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+ 
+.logo-slider .slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: calc(250px * 12);
+}
+ 
+.logo-slider .slide {
+    height: 100px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.logo-slider img {
+    max-width: 100%;
+    max-height: 100%;
+}
+ 
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 6)); }
+}
+ 
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+ 
+/* logo */
+/* Logo Slider Styles */
+.logo-slider-section {
+      background-color: #f0f2f5;
+    }
+ 
+    .logo-slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+    }
+ 
+    .logo-slider-track {
+      display: flex;
+      width: calc(150px * 12); /* Adjust based on the number of logos */
+      animation: scroll 20s linear infinite;
+    }
+ 
+    .logo-slider-track:hover {
+      animation-play-state: paused;
+    }
+ 
+    .logo-slider-item {
+      flex: 0 0 auto;
+      margin: 0 20px;
+      opacity: 0.7;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+ 
+    .logo-slider-item img {
+      height: 100px;
+      max-width: 150px;
+      object-fit: contain;
+    }
+ 
+    .logo-slider-item:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+ 
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
+    }
+ 
+  
+   
+          /* train-5 */
+/* /----  Main Style  ----/ */
+.sidebar {
+      width: 100%;
+      background-color: #FFF;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      height: 100vh;
+      box-sizing: border-box;
+    }
+ 
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+ 
+    .sidebar button:hover {
+      background-color: #0056b3;
+    }
+ 
+    .content {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+ 
+    .course-card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+ 
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+ 
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+ 
+    .card h3 {
+      font-size: 1.25rem;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: #000000;
+    }
+ 
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+ 
+    .card button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+    }
+ 
+    @media (max-width: 768px) {
+      .content, .mysidebar {
+        width: 100%;
+        padding: 10px;
+      }
+      .stats-section .stat h2{
+        font-size: 1.8rem;
+      }
+      .course-card {
+        flex-direction: column;
+        align-items: center;
+      }
+ 
+      .card {
+        width: 80%;
+      }
+    }
+ 
+
+          /* footer */
+/* footer section start */
+
+#footer{
+	background: #000000;
+    padding: 3rem;
+	/* padding-top: 5rem; */
+	padding-top: 7rem;
+    padding-bottom: 80px;
+	
+}
+#footer2{
+	background: #f7f7f7;
+    padding: 3rem;
+    margin-top: 0px;
+	/* padding-top: 5rem; */
+	padding-top: 7rem;
+    padding-bottom: 80px;
+	
+}
+
+.footer-about{
+  color: #ccc;
+}
+.logo-footer{
+	max-width: 200px;
+    position: relative;
+    bottom: 50px;
+}
+.social-links{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+
+}
+.social-links h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+    color: #fefefe;
+}
+.social-links img{
+	padding-bottom: 25px;
+}
+.social-icons{
+	/* display: flex;
+    gap: 3rem; */
+	display: flex;
+    flex-direction: column;
+    gap: 1rem;
+	color: #ffffff;
+}
+.social-icons a{
+	/* font-size: 18px; */
+    /* background: #ffffff; */
+    /* box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+	color: #82074a; */
+	/* margin-right: 18px; */
+	color: #b3b2b2;
+}
+.social-icons a:hover{
+	color: #fdd700;
+}
+.social-icons a i{
+	box-shadow: rgba(255, 255, 255, 0.08) 0px 4px 12px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 3px;
+    color: #82074a;
+	font-size: 16px;
+	margin-right: 12px;
+}
+li{
+	list-style: none;
+}
+.useful-link h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+    color: #e3e3e3;
+}
+.useful-link img{
+	padding-bottom: 15px;
+}
+.use-links{
+	line-height: 32px;
+}
+.use-links li i{
+	font-size: 14px;
+    padding-right: 8px;
+    color: #ffffff;
+}
+.use-links li a{
+	color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+	color: #b3b2b2;
+}
+.use-links li a:hover{
+	color: #fdd700;
+}
+.address h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+    color: #e3e3e3;
+}
+.address img{
+	padding-bottom: 15px;
+}
+.address-links li a{
+	color: #b3b2b2;
+    font-size: 15px;
+    font-weight: 500;
+	
+
+}
+.address-links li i{
+	font-size: 16px;
+    padding-right: 8px;
+	color: #82074a;
+
+}
+.address-links li i:nth-child(1){
+	padding-top: 9px;
+}
+.address-links .address1{
+	font-weight: 500;
+    font-size: 15px;
+	display: flex;
+}
+.address-links{
+	    line-height: 32px;
+		color: #b3b2b2;
+}
+.copy-right-sec{
+	padding: 1.8rem;
+    background: #000000;
+    color: #fff;
+    text-align: center;
+}
+.copy-right-sec a{
+	color:#fdd700;
+    font-weight: 500;
+}
+a{
+  text-decoration:none;
+}
+/* footer section end */
+
+/* navbar */
+.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .toggle-Button {
+      display: none;
+    }
+    .mysidebar {
+      height: 100%;
+      width: auto;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      display: none;
+      padding-top: 60px;
+    }
+     
+
+    .mysidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+    .mysidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+    .mysidebar .closebtn {
+      position: absolute;
+      top: 1rem;
+      right: 10px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        position: relative;
+      }
+      .header{
+        padding-top: 0 ;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 1rem;
+        right: 9px;
+        font-size: 40px;
+        margin-left: 50px;
+    }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+        display: none;
+      }
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+
+    
+ 
+    </style>
+</head>
+<body>
+  <header class="header">
+    <a class="navbar-brand" href="about-alternative.html">
+      <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+    </a>
+  
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" button class="dropbtn">TRAINING
+           <i class="bx bx-chevron-down"></i>
+        </button>
+        <div class="dropdown-content">
+           <a href="college-training.html">college-training</a>
+                        <a href="corporate.html">corporate-training</a>
+                        <a href="faculty.html">faculty</a>
+        </div>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </nav>
+  
+    <div class="toggle-Button">
+      <span class="openbtn" onclick="openNav()">☰</span>
+    </div>
+  </header>
+
+  <div id="mySidebar" class="mysidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">HOME</a>
+    <a href="training copy.html">TRAINING</a>
+    <a href="placement-final-copy.html">PLACEMENT</a>
+    <a href="digitalcopy.html">DIGITAL MARKETING</a>
+    <a href="gax-copy.html">GAX</a>
+    <a href="BLOG.html">BLOG</a>
+  </div>
+
+  
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-text">
+              <h1>Making You Corporate Ready</h1>
+              <p>India's best mentorship platform for training and placement preparation</p>
+              <button class="cta-button" onclick="window.location.href='contact.html'">Connect With Us</button>
+          </div>
+  
+          </div>
+          <div class="col-lg-6">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="faculty-img/Make You Corporate Training .jpg" class="d-block w-100" alt="Classroom Image 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="clg-training/2 17.jpg" class="d-block w-100" alt="Classroom Image 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="clg-training/3 10.jpg" class="d-block w-100" alt="Classroom Image 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+
+        <!-- <div id="simpleCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Classroom Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Classroom Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Classroom Image 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> -->
+    </section>
+ 
+    <section class="stats-section">
+        <div class="stat">
+            <h2 id="stat1">0+</h2>
+            <p>Clients Partnered</p>
+        </div>
+        <div class="stat">
+            <h2 id="stat2">0/5</h2>
+            <p>Average Rating</p>
+        </div>
+        <div class="stat">
+            <h2 id="stat3">0+</h2>
+            <p>Institutions Partnered</p>
+        </div>
+        <div class="stat">
+            <h2 id="stat4">0+</h2>
+            <p>Hours of Mentorship</p>
+        </div>
+    </section>
+ 
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <!-- course section -->
+
+            
+<div class="sidebar">
+  <button onclick="changeCourse('MECH')">MECHANICAL ENGINEERING</button>
+  <button onclick="changeCourse('CIVIL')">CIVIL ENGINEERING</button>
+  <button onclick="changeCourse('COMP')">COMPUTER ENGINEERING</button>
+  <button onclick="changeCourse('ELECT')">ELECTRICAL ENGINEERING</button>
+  <button onclick="changeCourse('MCA')">MCA</button>
+  <button onclick="changeCourse('MBA')">MBA</button>
+  <button onclick="changeCourse('PHARMA')">PHARMA</button>
+  <button onclick="changeCourse('AI')">ARTIFICIAL INTELLIGENCE</button>
+</div>
+
+          </div>
+
+          <div class="col-lg-9">
+            <div class="row">
+              <div class="col-lg-4 content">
+              <div class="course-card" id="course-cards">
+                <!-- Course cards will be dynamically inserted here -->
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  
+ 
+    <!-- logo slider -->
+     <!-- Infinite Logo Slider Section -->
+  <div class="logo-slider-section mt-5">
+    <div class="container">
+      <h2 class="section-heading">Our Partners</h2>
+      <div class="logo-slider">
+        <div class="logo-slider-track">
+          <div class="logo-slider-item"><img src="LOGOS/ADANI-WILMAR- copy.png" alt="Logo 1"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 2"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 3"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 4"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 5"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 6"></div>
+          <!-- Repeat the logos to create the infinite effect -->
+          <div class="logo-slider-item"><img src="LOGOS/ADANI-WILMAR-.png" alt="Logo 1"></div>
+          <div class="logo-slider-item"><img src="LOGOS/ATLAS-.png" alt="Logo 2"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 3"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 4"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 5"></div>
+          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <section class="footer">
+    <!-- footer section start -->
+  <footer id="footer">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-3">
+         <a href="index.html"><img src="image/GAXLOGO.png" alt="" class="img-fluid logo-footer"></a>
+                   <div class="footer-about">
+                      
+                   </div>
+
+       </div>
+       <div class="col-md-3">
+         <div class="useful-link">
+           <h2>Useful Links</h2>
+          
+           <div class="use-links">
+             <li><a href="index.html"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+             <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+             <li><a href="gallery.html"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
+             <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+           </div>
+         </div>
+
+       </div>
+             <div class="col-md-3">
+                  <div class="social-links">
+           <h2>Follow-Us</h2>
+           
+           <div class="social-icons">
+             <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+             <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+             <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+           </div>
+         </div>
+                 
+
+                 </div>
+       <div class="col-md-3">
+         <div class="address">
+           <h2>Address</h2>
+           
+           <div class="address-links">
+             <li class="address1"><i class="fa-solid fa-location-dot">
+
+             </i> 
+               Seasons business square by 
+                Naiknavare Office no 301, 3rd floor, 
+                Seasons Rd, Sanewadi, Aundh, 
+                Pune, Maharashtra 411007
+                +91 89836 14509 / 8983339099
+                connect@gryphonacademy.co.in</li>
+                <li><a href=""><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
+                <li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+           </div>
+         </div>
+       </div>
+               
+     </div>
+   </div>
+
+ </footer>
+ <!-- footer section end -->
+ <!-- footer copy right section start -->
+ <section id="copy-right">
+   <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
+     @2019 All Rights Reserved Powerd By <a href="#">Gryphon Academy</a> 
+   </div>
+
+ </section>
+ <!-- footer copy right section end -->
+
+
+</section>
+ 
+   
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function animateValue(id, start, end, duration) {
+                var obj = document.getElementById(id);
+                var range = end - start;
+                var minTimer = 50;
+                var stepTime = Math.abs(Math.floor(duration / range));
+                
+                stepTime = Math.max(stepTime, minTimer);
+                
+                var startTime = new Date().getTime();
+                var endTime = startTime + duration;
+                var timer;
+                
+                function run() {
+                    var now = new Date().getTime();
+                    var remaining = Math.max((endTime - now) / duration, 0);
+                    var value = Math.round(end - (remaining * range));
+                    obj.innerHTML = value + (id === "stat2" ? "/5" : "+");
+                    if (value == end) {
+                        clearInterval(timer);
+                    }
+                }
+                
+                timer = setInterval(run, stepTime);
+                run();
+            }
+ 
+            animateValue("stat1", 0, 300, 2000);
+            animateValue("stat2", 0, 4.8, 2000);
+            animateValue("stat3", 0, 5000, 2000);
+            animateValue("stat4", 0, 15000, 2000);
+        });
+ 
+ 
+       
+    const courses = {
+      MECH: [
+        { title: 'ME Course 1', description: 'Description of ME Course 1.', image: 'MECH/1.jpg' },
+        { title: 'ME Course 2', description: 'Description of ME Course 2.', image: 'MECH/2.jpg' },
+        { title: 'ME Course 3', description: 'Description of ME Course 3.', image: 'MECH/3.jpg' },
+        { title: 'ME Course 4', description: 'Description of ME Course 4.', image: 'MECH/4.jpg' },
+        // { title: 'ME Course 5', description: 'Description of ME Course 5.', image: 'MECH/5.jpg' },
+        // { title: 'ME Course 6', description: 'Description of ME Course 6.', image: 'MECH/5.jpg' }
+      ],
+      CIVIL: [
+        { title: 'Civil Course 1', description: 'Description of Civil Course 1.', image: 'Civil Engineering/1.jpg' },
+        { title: 'Civil Course 2', description: 'Description of Civil Course 2.', image: 'Civil Engineering/2.jpg' },
+        { title: 'Civil Course 3', description: 'Description of Civil Course 3.', image: 'Civil Engineering/3.jpg' },
+        { title: 'Civil Course 4', description: 'Description of Civil Course 4.', image: 'Civil Engineering/4.jpg' },
+        { title: 'Civil Course 5', description: 'Description of Civil Course 5.', image: 'Civil Engineering/5.jpg' },
+        { title: 'Civil Course 6', description: 'Description of Civil Course 6.', image: 'https://via.placeholder.com/150' }
+      ],
+      COMP: [
+        { title: 'Comp Course 1', description: 'Description of Comp Course 1.', image: 'computr-science/Full Stack Development.jpg' },
+        { title: 'Comp Course 2', description: 'Description of Comp Course 2.', image: 'computr-science/IOT.jpg' },
+        { title: 'Comp Course 3', description: 'Description of Comp Course 3.', image: 'computr-science/JAVA.jpg' },
+        { title: 'Comp Course 4', description: 'Description of Comp Course 4.', image: 'computr-science/Linux.jpg' },
+        { title: 'Comp Course 5', description: 'Description of Comp Course 5.', image: 'computr-science/MERN.jpg' },
+        { title: 'Comp Course 6', description: 'Description of Comp Course 6.', image: 'computr-science/Python.jpg' }
+      ],
+      ELECT: [
+        { title: 'Elect Course 1', description: 'Description of Elect Course 1.', image: 'Electrical Eng/1.jpg' },
+        { title: 'Elect Course 2', description: 'Description of Elect Course 2.', image: 'Electrical Eng/2.jpg' },
+        { title: 'Elect Course 3', description: 'Description of Elect Course 3.', image: 'Electrical Eng/3.jpg' },
+        { title: 'Elect Course 4', description: 'Description of Elect Course 4.', image: 'Electrical Eng/4.jpg' },
+        { title: 'Elect Course 5', description: 'Description of Elect Course 5.', image: 'Electrical Eng/5.jpg' },
+        { title: 'Elect Course 6', description: 'Description of Elect Course 6.', image: 'Electrical Eng/6.jpg' }
+      ],
+      MCA: [
+        { title: 'MCA Course 1', description: 'Description of MCA Course 1.', image: 'MCA/1.jpg' },
+        { title: 'MCA Course 2', description: 'Description of MCA Course 2.', image: 'MCA/2.jpg' },
+        { title: 'MCA Course 3', description: 'Description of MCA Course 3.', image: 'MCA/3.jpg' },
+        { title: 'MCA Course 4', description: 'Description of MCA Course 4.', image: 'MCA/4.jpg' },
+        // { title: 'MCA Course 5', description: 'Description of MCA Course 5.', image: 'https://via.placeholder.com/150' },
+        // { title: 'MCA Course 6', description: 'Description of MCA Course 6.', image: 'https://via.placeholder.com/150' }
+      ],
+      MBA: [
+        { title: 'MBA Course 1', description: 'Description of MBA Course 1.', image: 'https://via.placeholder.com/150' },
+        { title: 'MBA Course 2', description: 'Description of MBA Course 2.', image: 'https://via.placeholder.com/150' },
+        { title: 'MBA Course 3', description: 'Description of MBA Course 3.', image: 'https://via.placeholder.com/150' },
+        { title: 'MBA Course 4', description: 'Description of MBA Course 4.', image: 'https://via.placeholder.com/150' },
+        { title: 'MBA Course 5', description: 'Description of MBA Course 5.', image: 'https://via.placeholder.com/150' },
+        { title: 'MBA Course 6', description: 'Description of MBA Course 6.', image: 'https://via.placeholder.com/150' }
+      ],
+      PHARMA: [
+        { title: 'Pharma Course 1', description: 'Description of Pharma Course 1.', image: 'https://via.placeholder.com/150' },
+        { title: 'Pharma Course 2', description: 'Description of Pharma Course 2.', image: 'https://via.placeholder.com/150' },
+        { title: 'Pharma Course 3', description: 'Description of Pharma Course 3.', image: 'https://via.placeholder.com/150' },
+        { title: 'Pharma Course 4', description: 'Description of Pharma Course 4.', image: 'https://via.placeholder.com/150' },
+        { title: 'Pharma Course 5', description: 'Description of Pharma Course 5.', image: 'https://via.placeholder.com/150' },
+        { title: 'Pharma Course 6', description: 'Description of Pharma Course 6.', image: 'https://via.placeholder.com/150' }
+      ],
+      AI: [
+        { title: 'AI Course 1', description: 'Description of AI Course 1.', image: 'https://via.placeholder.com/150' },
+        { title: 'AI Course 2', description: 'Description of AI Course 2.', image: 'https://via.placeholder.com/150' },
+        { title: 'AI Course 3', description: 'Description of AI Course 3.', image: 'https://via.placeholder.com/150' },
+        { title: 'AI Course 4', description: 'Description of AI Course 4.', image: 'https://via.placeholder.com/150' },
+        { title: 'AI Course 5', description: 'Description of AI Course 5.', image: 'https://via.placeholder.com/150' },
+        { title: 'AI Course 6', description: 'Description of AI Course 6.', image: 'https://via.placeholder.com/150' }
+      ],
+    };
+ 
+    function changeCourse(courseKey) {
+      const courseCardsContainer = document.getElementById('course-cards');
+      courseCardsContainer.innerHTML = '';
+      const selectedCourses = courses[courseKey];
+      selectedCourses.forEach(course => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${course.image}" alt="${course.title}">
+          <h3>${course.title}</h3>
+          <p>${course.description}</p>
+          <button>Learn More</button>
+        `;
+        courseCardsContainer.appendChild(card);
+      });
+    }
+ 
+    // Initialize with the first set of courses
+    changeCourse('MECH');
+
+
+
+
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+  </script>
+
+<script>
+  $(document).ready(function(){
+    $(".toggle-Button").click(function(){
+      $("#mySidebar").slideDown();
+      $(".toggle-Button").hide();
+    });
+    $(".closebtn").click(function(){
+      $("#mySidebar").hide();
+      $(".toggle-Button").show();
+    });
+  });
+  </script>
+    
+</body>
+</html>

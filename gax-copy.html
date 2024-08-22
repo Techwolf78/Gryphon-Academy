@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gryphon Academy</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #091327;
+        color: white;
+        font-family: "Arial", sans-serif;
+      }
+      .primary-color {
+        color: #ffc700;
+      }
+      .btn-primary {
+        background-color: #ffc700;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #e6b500;
+      }
+      .form-control,
+      .btn {
+        border-radius: 20px;
+      }
+      .container {
+        margin-top: 50px;
+        animation: fadeIn 2s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .features-list li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+      .features-list li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #ffc700;
+      }
+      .form-control:focus {
+        box-shadow: none;
+        border-color: #ffc700;
+      }
+      h1 {
+        animation: slideInLeft 1s;
+      }
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+     /* navbar */
+     .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .toggle-Button {
+      display: none;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        position: relative;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+
+    
+    /*  */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #091327;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 22px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #FFC700;
+            color: #091327;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #091327;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+        .openbtn:hover {
+            background-color: #FFC700;
+            color: #091327;
+        }
+
+        .content {
+            transition: margin-right .5s;
+            padding: 16px;
+        }
+
+
+      .highlight-box-dark {
+        background-color: #333333;
+      }
+      /* Why choose us card start */
+.why-choose-us .card {
+  background-color: #072f55;
+  border: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+  min-height: 180px;
+  color: #fff; /* Ensure text is white */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-us .card p {
+  margin: 0;
+}
+
+.why-choose-us .card .highlight {
+  display: block;
+  font-size: 1.8rem; /* Adjust font size as needed */
+  color: #3498db; /* Dark blue color */
+  font-weight: bold;
+}
+
+.why-choose-us .card span {
+  display: block;
+  font-size: 1rem; /* Adjust font size as needed */
+  color: #fff;
+}
+
+.why-choose-us .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(255, 199, 0, 0.2);
+}
+
+/* Why choose us card ends */
+
+      
+      .bg-primary {
+        background-color: #091327 !important;
+      }
+
+      .text-secondary {
+        color: #ffffff !important;
+      }
+
+      .profile-card {
+        text-align: center;
+        margin: 0 auto;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .profile-card img {
+        /* border-radius: 50%;
+            border: 5px solid #FFC700; */
+        max-width: 100%;
+        height: auto;
+      }
+
+      .stat-box {
+        background-color: #091327;
+        color: #ffc700;
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s, background-color 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .stat-box:hover {
+        transform: scale(1.1);
+        background-color: #ffc700;
+        color: #091327;
+      }
+
+      header {
+        background-color: #091327;
+        color: #ffc700;
+        padding: 20px 0;
+        text-align: center;
+        animation: fadeInDown 1.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .carousel-inner {
+        display: flex;
+        align-items: center;
+      }
+
+      .carousel-item {
+        display: flex;
+        justify-content: center;
+      }
+
+      .card {
+        background-color: #1c1f2b;
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        min-height: 150px;
+        margin: 0 10px;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .card p {
+        margin: 10px;
+        color: #ffffff;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: #ffc700;
+        border-radius: 50%;
+      }
+
+      /* box */
+      .programme-container {
+        background-color: #6a1b9a;
+        padding: 40px;
+        position: relative;
+        left: 10rem;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 10rem 10rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .programme-details {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .programme-details h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .programme-details p {
+        margin: 10px 0;
+      }
+
+      .programme-details .price {
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: line-through;
+        color: #ffcccb;
+      }
+
+      .programme-details .discounted-price {
+        font-size: 26px;
+        font-weight: bold;
+        color: #fdd835;
+      }
+
+      .programme-buttons {
+        margin-top: 20px;
+      }
+
+      .programme-buttons button {
+        background-color: #fdd835;
+        color: #091327;
+        border: none;
+        padding: 0px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+        margin-top: 5%;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .programme-buttons button:hover {
+        background-color: #ffec3a;
+      }
+
+      .programme-info {
+        flex: 0;
+        min-width: 245px;
+        margin-left: 20px;
+      }
+
+      .programme-info p {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .programme-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .programme-info {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        .programme-buttons button {
+          margin-bottom: 10px;
+        }
+      }
+
+      /* maps */
+      .container {
+        margin-top: 50px;
+        animation: fadeIn 2s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      .map-section {
+        text-align: center;
+        margin: 120px 0;
+      }
+
+      .map-section h2 {
+        margin-bottom: 20px;
+      }
+
+      .map-embed {
+        border: none;
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-map {
+        background-color: #ffc700;
+        color: #091327;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+
+      .btn-map:hover {
+        background-color: #ffec3a;
+      }
+
+      /* doubt section */
+      .faq-section {
+        text-align: center;
+        margin: 50px 0;
+      }
+      .faq-section h2 {
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
+      .faq-section p {
+        font-size: 18px;
+      }
+      .custom-accordion .custom-card {
+        background-color: #1a1b1f;
+        border: none;
+        margin-bottom: 10px;
+      }
+      .custom-accordion .custom-card-header {
+        background-color: #1a1b1f;
+        border: none;
+        padding: 0;
+      }
+      .custom-accordion .custom-btn-link {
+        color: white;
+        font-size: 18px;
+        text-align: left;
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #26272b;
+        border: 1px solid #3e3f44;
+        border-radius: 5px;
+        text-decoration: none;
+        position: relative;
+      }
+      .custom-accordion .custom-btn-link.collapsed {
+        background-color: #1a1b1f;
+      }
+      .custom-accordion .custom-btn-link:after {
+        content: "+";
+        position: absolute;
+        right: 20px;
+      }
+      .custom-accordion .custom-btn-link:not(.collapsed):after {
+        content: "-";
+      }
+      .custom-accordion .custom-btn-link:hover {
+        text-decoration: none;
+      }
+      .custom-accordion .custom-card-body {
+        background-color: #1a1b1f;
+        color: #d0d0d0;
+        border-top: none;
+        padding: 20px;
+      }
+
+      /* footer */
+      .footer {
+        background-color: #6a1b9a; /* Replace with your preferred background color */
+        color: white;
+        padding: 90px 0 120px 0;
+        text-align: center;
+      }
+      .footer-logo {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      /* partners */
+      .partner-section {
+        background-color: #121212;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .partner-section h2 {
+        color: #ffffff;
+        margin-bottom: 40px;
+      }
+      .partner-logo {
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        transition: transform 0.3s;
+      }
+      .partner-logo img {
+        max-width: 100%;
+        height: auto;
+      }
+      .partner-logo:hover {
+        transform: scale(1.05);
+      }
+      /* companies */
+      .faq-section {
+        text-align: center;
+        margin: 120px 0;
+      }
+      .faq-section h2 {
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
+      .faq-section p {
+        font-size: 18px;
+      }
+      .accordion .card {
+        background-color: #1a1b1f;
+        border: none;
+        margin-bottom: 10px;
+      }
+      .accordion .card-header {
+        background-color: #1a1b1f;
+        border: none;
+        padding: 0;
+      }
+      .accordion .btn-link {
+        color: white;
+        font-size: 18px;
+        text-align: left;
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #26272b;
+        border: 1px solid #3e3f44;
+        border-radius: 5px;
+        text-decoration: none;
+        position: relative;
+      }
+      .accordion .btn-link.collapsed {
+        background-color: #1a1b1f;
+      }
+      .accordion .btn-link:after {
+        content: "+";
+        position: absolute;
+        right: 20px;
+      }
+      .accordion .btn-link:not(.collapsed):after {
+        content: "-";
+      }
+      .accordion .btn-link:hover {
+        text-decoration: none;
+      }
+      .accordion .card-body {
+        background-color: #1a1b1f;
+        color: #d0d0d0;
+        border-top: none;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="header">
+      <a class="navbar-brand" href="about-alternative.html">
+        <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+      </a>
+    
+      <nav class="navbar">
+        <a href="index.html">HOME</a>
+        <div class="dropdown">
+          <a href="training copy.html" button class="dropbtn">TRAINING
+             <i class="bx bx-chevron-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="college-training.html">college-training</a>
+            <a href="corporate.html">corporate-training</a>
+            <a href="faculty.html">faculty</a>
+          </div>
+        </div>
+        <a href="placement-final-copy.html">PLACEMENT</a>
+        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="gax-copy.html">GAX</a>
+        <a href="BLOG.html">BLOG</a>
+      </nav>
+    
+      <div class="toggle-Button">
+        <span class="openbtn" onclick="openNav()">☰</span>
+      </div>
+    
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="index.html">HOME</a>
+        <a href="training copy.html">TRAINING</a>
+        <a href="placement-final-copy.html">PLACEMENT</a>
+        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="gax-copy.html">GAX</a>
+        <a href="BLOG.html">BLOG</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h1>
+            Power up your Electrical Engineering career by just clearing GNET!
+          </h1>
+          <p>
+            Clear GNET (Gryphon’s National Employability Test) and get eligible
+            for 100% job guarantee
+          </p>
+          <ul
+            class="features-list list-unstyled text-left mx-auto"
+            style="max-width: 400px"
+          >
+            <li>100% Job Guarantee with GNET</li>
+            <li>Gain the Industry-recognized Certificate</li>
+            <li>Masterclasses from Industry Experts</li>
+            <li>300+ Hiring Partner Companies in Mechanical Domain</li>
+            <li><span id="hours">0</span>+ Hours of Comprehensive Training</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="card p-4">
+            <h3 class="card-title text-center">Get Your Brochure!</h3>
+            <form>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="Full Name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email ID"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="mobile"
+                  placeholder="Mobile Number"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="passOutYear"
+                  placeholder="Pass out Year"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Download
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="container mt-5">
+      <div class="row text-center">
+        <div class="col-md-4 highlight-box">
+          <p class="primary-color">Next Batch</p>
+          <h3>July</h3>
+        </div>
+        <div class="col-md-4 highlight-box">
+          <p class="primary-color">Available Seats</p>
+          <h3>30</h3>
+        </div>
+        <div class="col-md-4 highlight-box">
+          <p class="primary-color">Location</p>
+          <h3>Pune</h3>
+        </div>
+      </div>
+      <div class="row mt-5 text-center">
+        <div class="col-md-12">
+          <h2>Programme at Glance</h2>
+          <p>This programme focuses on in-person personalised training</p>
+        </div>
+      </div>
+      <div class="row text-center mt-3">
+        <div class="col-md-3 highlight-box">
+          <h3>10 LPA</h3>
+          <p>Highest CTC</p>
+        </div>
+        <div class="col-md-3 highlight-box highlight-box-dark">
+          <h3>1 on 1</h3>
+          <p>Industrial Training</p>
+        </div>
+        <div class="col-md-3 highlight-box">
+          <h3>500+</h3>
+          <p>Trained & Placed</p>
+        </div>
+        <div class="col-md-3 highlight-box highlight-box-dark">
+          <h3>Monday to Saturday</h3>
+          <p>Classes</p>
+        </div>
+      </div>
+    </div>
+   <!-- Why choose us card starts -->
+<div class="container mt-5">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h2>Why should you choose us?</h2>
+    </div>
+  </div>
+  <div class="row mt-3 text-center why-choose-us">
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">3 Months</span><br>
+          Offline Intensive Programme
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">200+ Hours</span><br>
+          Company Specific Technical Training (CSTT)
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">100 Hours</span><br>
+          Soft Skills, Aptitude, and Domain Specific Training
+        </p>
+      </div>
+    </div>  
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">Learn </span><br>
+          3 Industry Core and In-Demand Tools
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">300+ Hiring</span><br>
+          Partner Companies in the Core Mechanical Domain
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">1-Year Placement</span><br>
+          Support for Core Mechanical Companies
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">Resume Assistance</span><br>
+          Professional Resume Building
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">1 on 1</span><br>
+          Masterclasses from Industry Experts
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <p>
+          <span class="highlight">Unlimited Mockup</span><br>
+          Group Discussion & Personal Interviews
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Why choose us card ends -->
+
+<!-- animation -->
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-3">
+      <h1>Chief Content Advisory Board</h1>
+    </header>
+
+    <!-- Main Section -->
+    <section class="container mt-5">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <div class="profile-card">
+            <img
+              src="image/Dr.K .S Sagngwan.png"
+              class="img-fluid"
+              alt="Dr. Kuldip Singh Sangwan"
+            />
+          </div>
+        </div>
+        <div class="col-md-8 text-white">
+          <h2>Dr. Kuldip Singh Sangwan</h2>
+          <p class="text-secondary">
+            Chair Professor – Department of Mechanical Engineering at BITS
+            Pilani
+          </p>
+          <p>
+            With numerous research projects, Dr. Sangwan, our Chief Advisor
+            (course content), ensures your grasp of Mechanical concepts becomes
+            effortless and highly effective.
+          </p>
+          <div class="d-flex justify-content-around text-center mt-4">
+            <div class="stat-box">
+              <i class="bx bxs-graduation bx-lg"></i>
+              <h4 class="mt-2">25+</h4>
+              <p>Years in Mechanical Engineering</p>
+            </div>
+            <div class="stat-box">
+              <i class="bx bx-user bx-lg"></i>
+              <h4 class="mt-2">5k+</h4>
+              <p>Mechanical Engineers Trained</p>
+            </div>
+            <div class="stat-box">
+              <i class="bx bx-research bx-lg"></i>
+              <h4 class="mt-2">10+</h4>
+              <p>Research Projects Managed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Section -->
+    <section class="container mt-5 mb-5">
+      <div class="row align-items-center py-5">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="profile-card">
+            <img
+              src="image/Mr. Mohan Patel.png"
+              class="img-fluid"
+              alt="Dr. Kuldip Singh Sangwan"
+            />
+          </div>
+        </div>
+        <div class="col-md-8 text-white">
+          <h2>Dr. Kuldip Singh Sangwan</h2>
+          <p class="text-secondary">
+            Chair Professor, Department of Mechanical Engineering at BITS Pilani
+          </p>
+          <p>
+            With numerous research projects, Dr. Sangwan, our Chief Advisor
+            (course content), ensures your grasp of Mechanical concepts becomes
+            effortless and highly effective.
+          </p>
+          <div class="d-flex justify-content-around text-center mt-4">
+            <div class="stat-box">
+              <i class="bx bxs-graduation bx-lg"></i>
+              <h4 class="mt-2">25+</h4>
+              <p>Years in Mechanical Engineering</p>
+            </div>
+            <div class="stat-box">
+              <i class="bx bx-user bx-lg"></i>
+              <h4 class="mt-2">5k+</h4>
+              <p>Mechanical Engineers Trained</p>
+            </div>
+            <div class="stat-box">
+              <i class="bx bx-research bx-lg"></i>
+              <h4 class="mt-2">10+</h4>
+              <p>Research Projects Managed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- companies -->
+    <!-- Our Hiring Partner Companies Section -->
+    <section class="partner-section">
+      <div class="container">
+        <h2>Our Hiring Partner Companies</h2>
+        <div class="row">
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/ADANI-WILMAR-.png" alt="Adwani Wilmar" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/bajaj-auto.png" alt="Bajaj Auto" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/BLUE-STAR.png" alt="Blue Star" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/BRIDGESTONE-.png" alt="Bridgestone" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/DASSAULT-SYSTEM.png" alt="Dassault System" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/FLEXTRONICS-.png" alt="Flextronics" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/GEETANJALI-.png" alt="Geetanjali Homestate" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/GO-COMET-.png" alt="Go Comet" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/HETTICH-.png" alt="Hettich" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/philips.png" alt="Philips" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/WIPRO-PARI-.png" alt="Wippro Pari" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/TCS.png" alt="TCS" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/TATA-MOTORS.png" alt="Tata Motors" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/tata_motors.png" alt="Tata Motors" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/kotak.png" alt="Kotak" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/bri" alt="Bridgestone" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/thyssenkrupp.png" alt="Thyssenkrupp" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/hettich.png" alt="Hettich" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/tata_motors.png" alt="Tata Motors" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/philips.png" alt="Philips" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/bridgestone.png" alt="Bridgestone" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/thyssenkrupp.png" alt="Thyssenkrupp" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/hettich.png" alt="Hettich" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/tata_motors.png" alt="Tata Motors" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/philips.png" alt="Philips" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/bridgestone.png" alt="Bridgestone" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/thyssenkrupp.png" alt="Thyssenkrupp" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/hettich.png" alt="Hettich" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/tata_motors.png" alt="Tata Motors" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/philips.png" alt="Philips" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/bridgestone.png" alt="Bridgestone" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/thyssenkrupp.png" alt="Thyssenkrupp" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/hettich.png" alt="Hettich" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/tata_motors.png" alt="Tata Motors" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/philips.png" alt="Philips" />
+            </div>
+          </div>
+          <div class="col-md-2 col-4">
+            <div class="partner-logo">
+              <img src="image/logo/poly_rubber.png" alt="Poly Rubber" />
+            </div>
+          </div>
+          <!-- Add more logos as needed, following the same structure -->
+        </div>
+      </div>
+    </section>
+
+    <!--               -->
+    <!-- success stories -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2>Our Success Stories</h2>
+          <p>
+            Mentees who achieved remarkable career transitions through our
+            programme
+          </p>
+        </div>
+        <div
+          id="successStoriesCarousel"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="card text-center">
+                    <img
+                      src="path_to_image1.jpg"
+                      class="img-fluid rounded-circle mb-3"
+                      alt="Abhishek Tambe"
+                    />
+                    <p>Abhishek Tambe</p>
+                    <p>POLYRUB</p>
+                    <p>November 2023</p>
+                    <p>
+                      Engineering Student to Graduate Engineer Trainee (GET)
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card text-center">
+                    <img
+                      src="path_to_image2.jpg"
+                      class="img-fluid rounded-circle mb-3"
+                      alt="Shubham Maskar"
+                    />
+                    <p>Shubham Maskar</p>
+                    <p>POLYRUB</p>
+                    <p>November 2023</p>
+                    <p>
+                      Engineering Student to Graduate Engineer Trainee (GET)
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card text-center">
+                    <img
+                      src="path_to_image3.jpg"
+                      class="img-fluid rounded-circle mb-3"
+                      alt="Rohit Patil"
+                    />
+                    <p>Rohit Patil</p>
+                    <p>CYIENT</p>
+                    <p>December 2023</p>
+                    <p>
+                      Engineering Student to Graduate Engineer Trainee (GET)
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="col-md-3">
+                  <div class="card text-center">
+                    <img
+                      src="path_to_image4.jpg"
+                      class="img-fluid rounded-circle mb-3"
+                      alt="Suraj Pawar"
+                    />
+                    <p>Suraj Pawar</p>
+                    <p>MAN Truck & Bus</p>
+                    <p>December 2023</p>
+                    <p>
+                      Engineering Student to GET - Engine Dataset Management
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add more carousel-item divs as needed -->
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#successStoriesCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#successStoriesCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- box -->
+    <section class="programme-container">
+      <div class="programme-details">
+        <h2>Industry Readiness Programme (Electrical Engineering)</h2>
+        <p class="price">₹1,20,000</p>
+        <p class="discounted-price">₹90,000</p>
+        <p>Payment options available for this programme.</p>
+        <div class="programme-buttons">
+          <button onclick="window.location.href='register.html'">Apply Now at ₹90,000</button>
+          <button>Apply For GNET</button>
+        </div>
+        <p>Cohort is filling up fast. Only 20 seats left.</p>
+      </div>
+      <div class="programme-info">
+        <p>Duration: <strong>3 Months</strong></p>
+        <p>Cohort Intake: <strong>30 Seats</strong></p>
+        <p>Upcoming Cohort: <strong>July Batch</strong></p>
+      </div>
+    </section>
+
+    <!-- Student Testimonials Section -->
+    <div class="container my-5 testimonials">
+      <h2 class="text-center">Student Testimonials</h2>
+      <div class="row">
+        <!-- Repeat this block for each video -->
+        <div class="col-md-3 col-sm-6 my-2">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/video_id"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <!-- Repeat end -->
+        <div class="col-md-3 col-sm-6 my-2">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/video_id"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 my-2">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/video_id"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 my-2">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/video_id"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- map -->
+    <div class="container">
+      <div class="map-section">
+        <h2>Where will all this happen?</h2>
+        <p>
+          Join us in our Headquarters and get trained with like-minded engineers
+        </p>
+        <iframe
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.171872621238!2d73.79815231543714!3d18.51881308742345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf6002363171%3A0x601c5cfded1c77af!2sGryphon%20Academy%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1623859633645!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        <br />
+        <a
+          href="https://goo.gl/maps/Xa76kK2dYgE2"
+          target="_blank"
+          class="btn btn-map"
+          >View On Map</a
+        >
+      </div>
+    </div>
+
+    <!-- doubt secton -->
+    <div class="container">
+      <div class="faq-section">
+        <h2>Still have Doubts?</h2>
+        <p>We have addressed some of the frequently asked questions for you!</p>
+        <div class="custom-accordion" id="customFaqAccordion">
+          <div class="custom-card">
+            <div class="custom-card-header" id="customHeadingOne">
+              <h5 class="mb-0">
+                <button
+                  class="custom-btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#customCollapseOne"
+                  aria-expanded="true"
+                  aria-controls="customCollapseOne"
+                >
+                  Will this program help in gaining a job?
+                </button>
+              </h5>
+            </div>
+            <div
+              id="customCollapseOne"
+              class="collapse show"
+              aria-labelledby="customHeadingOne"
+              data-parent="#customFaqAccordion"
+            >
+              <div class="custom-card-body">
+                Certainly! Our program is designed to not just provide you with
+                the necessary skills but to make you a well-rounded professional
+                ready for the industry's demands. We work on grooming you with
+                the required skills. Moreover, we offer guaranteed top
+                placements upon completing the training. Your journey towards a
+                promising career starts here!
+              </div>
+            </div>
+          </div>
+          <div class="custom-card">
+            <div class="custom-card-header" id="customHeadingTwo">
+              <h5 class="mb-0">
+                <button
+                  class="custom-btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#customCollapseTwo"
+                  aria-expanded="false"
+                  aria-controls="customCollapseTwo"
+                >
+                  What are the payment options available?
+                </button>
+              </h5>
+            </div>
+            <div
+              id="customCollapseTwo"
+              class="collapse"
+              aria-labelledby="customHeadingTwo"
+              data-parent="#customFaqAccordion"
+            >
+              <div class="custom-card-body">
+                You can choose from multiple payment options including
+                credit/debit cards, net banking, and installment plans. Our team
+                is here to help you with the most convenient payment method for
+                you.
+              </div>
+            </div>
+          </div>
+          <div class="custom-card">
+            <div class="custom-card-header" id="customHeadingThree">
+              <h5 class="mb-0">
+                <button
+                  class="custom-btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#customCollapseThree"
+                  aria-expanded="false"
+                  aria-controls="customCollapseThree"
+                >
+                  Will I get study materials to study?
+                </button>
+              </h5>
+            </div>
+            <div
+              id="customCollapseThree"
+              class="collapse"
+              aria-labelledby="customHeadingThree"
+              data-parent="#customFaqAccordion"
+            >
+              <div class="custom-card-body">
+                Yes, we provide comprehensive study materials, including
+                e-books, video lectures, and practice tests to ensure you are
+                well-prepared for your exams and projects.
+              </div>
+            </div>
+          </div>
+          <div class="custom-card">
+            <div class="custom-card-header" id="customHeadingFour">
+              <h5 class="mb-0">
+                <button
+                  class="custom-btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#customCollapseFour"
+                  aria-expanded="false"
+                  aria-controls="customCollapseFour"
+                >
+                  What companies do you offer?
+                </button>
+              </h5>
+            </div>
+            <div
+              id="customCollapseFour"
+              class="collapse"
+              aria-labelledby="customHeadingFour"
+              data-parent="#customFaqAccordion"
+            >
+              <div class="custom-card-body">
+                We have partnerships with numerous leading companies in the
+                industry, offering you a wide range of opportunities for
+                internships and placements.
+              </div>
+            </div>
+          </div>
+          <div class="custom-card">
+            <div class="custom-card-header" id="customHeadingFive">
+              <h5 class="mb-0">
+                <button
+                  class="custom-btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#customCollapseFive"
+                  aria-expanded="false"
+                  aria-controls="customCollapseFive"
+                >
+                  Will I be tailored for GD rounds and interviews?
+                </button>
+              </h5>
+            </div>
+            <div
+              id="customCollapseFive"
+              class="collapse"
+              aria-labelledby="customHeadingFive"
+              data-parent="#customFaqAccordion"
+            >
+              <div class="custom-card-body">
+                Absolutely! We provide specialized training for group
+                discussions and interviews to ensure you stand out and excel in
+                all aspects of the hiring process.
+              </div>
+            </div>
+          </div>
+          <div class="custom-card">
+            <div class="custom-card-header" id="customHeadingSix">
+              <h5 class="mb-0">
+                <button
+                  class="custom-btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#customCollapseSix"
+                  aria-expanded="false"
+                  aria-controls="customCollapseSix"
+                >
+                  What is GNET?
+                </button>
+              </h5>
+            </div>
+            <div
+              id="customCollapseSix"
+              class="collapse"
+              aria-labelledby="customHeadingSix"
+              data-parent="#customFaqAccordion"
+            >
+              <div class="custom-card-body">
+                GNET is our exclusive network that connects you with industry
+                professionals, alumni, and peers, providing you with invaluable
+                resources and support throughout your career.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer mt-5">
+      <div class="container-fluid">
+        <p>
+          GryphonX (a product of Gryphon Academy Pvt. Ltd.) provides an
+          immersive classroom learning experience designed to make Mechanical
+          and Electrical Engineers industry-ready. We train early professionals,
+          young graduates, and college students to acquire skills and get jobs
+          in their aspirational careers.
+        </p>
+        <div class="footer-logo">
+          GR<span style="color: #ffffff">X</span>PHON
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let hoursElement = document.getElementById("hours");
+      let count = 0;
+      let target = 800;
+      let increment = 10;
+
+      function updateCount() {
+        count += increment;
+        if (count > target) {
+          count = target;
+        }
+        hoursElement.innerText = count + "+ Hours of Comprehensive Training";
+        if (count < target) {
+          setTimeout(updateCount, 20);
+        }
+      }
+
+      updateCount();
+    });
+
+    $(document).ready(function () {
+      $("#customFaqAccordion").on("show.bs.collapse", function (e) {
+        $(e.target)
+          .prev(".custom-card-header")
+          .find(".custom-btn-link")
+          .text(function (i, text) {
+            return text.replace("+", "-");
+          });
+      });
+      $("#customFaqAccordion").on("hide.bs.collapse", function (e) {
+        $(e.target)
+          .prev(".custom-card-header")
+          .find(".custom-btn-link")
+          .text(function (i, text) {
+            return text.replace("-", "+");
+          });
+      });
+    });
+
+    // navbar
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
+</script>
+
+  
+</html>

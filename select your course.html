@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      width: 90%;
+      height: 80%;
+    }
+    .sidebar {
+      width: 20%;
+      background-color: #000;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .category-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      border-radius: 5px;
+    }
+    .category-button:hover {
+      background-color: #0056b3;
+    }
+    .main {
+      width: 80%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .course-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .course-card {
+      background-color: #fff;
+      color: #000;
+      width: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .course-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .course-card img {
+      width: 100%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .course-card button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: 100%;
+    }
+    .course-card button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <button class="category-button" onclick="updateCourses('mechanical')">MECHANICAL ENGINEERING</button>
+      <button class="category-button" onclick="updateCourses('civil')">CIVIL ENGINEERING</button>
+      <button class="category-button" onclick="updateCourses('computer')">COMPUTER ENGINEERING</button>
+      <button class="category-button" onclick="updateCourses('electrical')">ELECTRICAL ENGINEERING</button>
+      <button class="category-button" onclick="updateCourses('mca')">MCA</button>
+      <button class="category-button" onclick="updateCourses('mba')">MBA</button>
+      <button class="category-button" onclick="updateCourses('pharma')">PHARMA</button>
+      <button class="category-button" onclick="updateCourses('ai')">ARTIFICIAL INTELLIGENCE</button>
+    </div>
+    <div class="main">
+      <h1>Select Your Course</h1>
+      <div id="course-container" class="course-container">
+        <!-- Courses will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const courses = {
+      mechanical: [
+        { title: 'Mechanical Course 1', description: 'Description of Mechanical Course 1.' },
+        { title: 'Mechanical Course 2', description: 'Description of Mechanical Course 2.' },
+        { title: 'Mechanical Course 3', description: 'Description of Mechanical Course 3.' },
+        { title: 'Mechanical Course 4', description: 'Description of Mechanical Course 4.' },
+        { title: 'Mechanical Course 5', description: 'Description of Mechanical Course 5.' },
+        { title: 'Mechanical Course 6', description: 'Description of Mechanical Course 6.' }
+      ],
+      civil: [
+        { title: 'Civil Course 1', description: 'Description of Civil Course 1.' },
+        { title: 'Civil Course 2', description: 'Description of Civil Course 2.' },
+        { title: 'Civil Course 3', description: 'Description of Civil Course 3.' },
+        { title: 'Civil Course 4', description: 'Description of Civil Course 4.' },
+        { title: 'Civil Course 5', description: 'Description of Civil Course 5.' },
+        { title: 'Civil Course 6', description: 'Description of Civil Course 6.' }
+      ],
+      computer: [
+        { title: 'Computer Course 1', description: 'Description of Computer Course 1.' },
+        { title: 'Computer Course 2', description: 'Description of Computer Course 2.' },
+        { title: 'Computer Course 3', description: 'Description of Computer Course 3.' },
+        { title: 'Computer Course 4', description: 'Description of Computer Course 4.' },
+        { title: 'Computer Course 5', description: 'Description of Computer Course 5.' },
+        { title: 'Computer Course 6', description: 'Description of Computer Course 6.' }
+      ],
+      electrical: [
+        { title: 'Electrical Course 1', description: 'Description of Electrical Course 1.' },
+        { title: 'Electrical Course 2', description: 'Description of Electrical Course 2.' },
+        { title: 'Electrical Course 3', description: 'Description of Electrical Course 3.' },
+        { title: 'Electrical Course 4', description: 'Description of Electrical Course 4.' },
+        { title: 'Electrical Course 5', description: 'Description of Electrical Course 5.' },
+        { title: 'Electrical Course 6', description: 'Description of Electrical Course 6.' }
+      ],
+      mca: [
+        { title: 'MCA Course 1', description: 'Description of MCA Course 1.' },
+        { title: 'MCA Course 2', description: 'Description of MCA Course 2.' },
+        { title: 'MCA Course 3', description: 'Description of MCA Course 3.' },
+        { title: 'MCA Course 4', description: 'Description of MCA Course 4.' },
+        { title: 'MCA Course 5', description: 'Description of MCA Course 5.' },
+        { title: 'MCA Course 6', description: 'Description of MCA Course 6.' }
+      ],
+      mba: [
+        { title: 'MBA Course 1', description: 'Description of MBA Course 1.' },
+        { title: 'MBA Course 2', description: 'Description of MBA Course 2.' },
+        { title: 'MBA Course 3', description: 'Description of MBA Course 3.' },
+        { title: 'MBA Course 4', description: 'Description of MBA Course 4.' },
+        { title: 'MBA Course 5', description: 'Description of MBA Course 5.' },
+        { title: 'MBA Course 6', description: 'Description of MBA Course 6.' }
+      ],
+      pharma: [
+        { title: 'Pharma Course 1', description: 'Description of Pharma Course 1.' },
+        { title: 'Pharma Course 2', description: 'Description of Pharma Course 2.' },
+        { title: 'Pharma Course 3', description: 'Description of Pharma Course 3.' },
+        { title: 'Pharma Course 4', description: 'Description of Pharma Course 4.' },
+        { title: 'Pharma Course 5', description: 'Description of Pharma Course 5.' },
+        { title: 'Pharma Course 6', description: 'Description of Pharma Course 6.' }
+      ],
+      ai: [
+        { title: 'AI Course 1', description: 'Description of AI Course 1.' },
+        { title: 'AI Course 2', description: 'Description of AI Course 2.' },
+        { title: 'AI Course 3', description: 'Description of AI Course 3.' },
+        { title: 'AI Course 4', description: 'Description of AI Course 4.' },
+        { title: 'AI Course 5', description: 'Description of AI Course 5.' },
+        { title: 'AI Course 6', description: 'Description of AI Course 6.' }
+      ]
+    };
+
+    function updateCourses(category) {
+      const courseContainer = document.getElementById('course-container');
+      courseContainer.innerHTML = '';
+
+      courses[category].forEach(course => {
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card';
+        courseCard.innerHTML = `
+          <img src="https://via.placeholder.com/300" alt="${course.title}">
+          <h3>${course.title}</h3>
+          <p>${course.description}</p>
+          <button>Learn More</button>
+        `;
+        courseContainer.appendChild(courseCard);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCourses('mechanical');
+
+      document.querySelectorAll('.category-button').forEach(button => {
+        button.addEventListener('click', () => {
+          updateCourses(button.innerText.toLowerCase());
+        });
+      });
+    });
+  </script>
+</body>
+</html>

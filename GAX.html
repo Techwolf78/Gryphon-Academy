@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GryphonX</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f8f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .jumbotron {
+            background-color: #000;
+            color: #fff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .jumbotron .highlight {
+            color: #e0be01;
+        }
+
+        .jumbotron .cta-button {
+            background-color: #fde406;
+            border: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .jumbotron .cta-button:hover {
+            background-color: #d6336c;
+        }
+
+        .jumbotron .average-salaries, .jumbotron .for-developers {
+            color: #bbb;
+        }
+
+        .cards-section .card {
+            border: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cards-section .card:hover {
+            transform: scale(1.05);
+        }
+
+        .cards-section .card-body {
+            text-align: center;
+        }
+
+        .cards-section .card-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .cards-section .card-text {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .cards-section .salary, .cards-section .remote {
+            color: #888;
+        }
+
+        .carousel-section .testimonial {
+            text-align: center;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .carousel-section .testimonial p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .carousel-section .testimonial h5 {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #ff79c6;
+            border-radius: 50%;
+        }
+
+        /* testimonal */
+        .testimonials-section {
+            padding: 60px 0;
+        }
+
+        .testimonials-section h2 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonials-section p.subtitle {
+            color: #d6336c;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            min-height: 200px;
+            background-color: #f7f8f9;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-card h5 {
+            color: #555;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .testimonial-card:nth-child(1) {
+            background-color: #e0d4fd; /* Light purple */
+        }
+
+        .testimonial-card:nth-child(2) {
+            background-color: #fff3cd; /* Light yellow */
+        }
+
+        .testimonial-card:nth-child(3) {
+            background-color: #cfe2ff; /* Light blue */
+        }
+
+        .testimonial-card:nth-child(4) {
+            background-color: #f8d7da; /* Light pink */
+        }
+
+        .testimonial-card:nth-child(5) {
+            background-color: #ffe8cc; /* Light orange */
+        }
+    </style>
+</head>
+<body>
+    <!-- Jumbotron Section -->
+    <section class="jumbotron text-center text-light">
+        <div class="container">
+            <h1 class="display-4">Find remote jobs with companies that care about <span class="highlight">your work</span> more than your resume.</h1>
+            <p class="lead">Break into a successful remote tech career with GryphonX. Get flexible jobs with direct access to top companies.</p>
+            <p class="average-salaries">Average salaries of $80k+ <span class="for-developers">For developers in</span></p>
+            <button class="btn btn-primary btn-lg cta-button" onclick="joinGryphonX()">Join GryphonX today</button>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Luminai</h5>
+                            <p class="card-text">Senior Software Developer</p>
+                            <p class="salary">$80-120k</p>
+                              <p class="remote">Remote</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Pulley</h5>
+                            <p class="card-text">Technical Lead Developer</p>
+                            <p class="salary">$90-130k</p>
+                            <p class="remote">Remote</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Pulley</h5>
+                            <p class="card-text">Technical Lead Developer</p>
+                            <p class="salary">$90-130k</p>
+                            <p class="remote">Remote</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+        <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Our students love GryphonX. Here's why:</h2>
+            <p class="subtitle">We get the recruiters to you. We help you thrive. We only work with the best in the business. But that's not all.</p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <h5>Guarantee</h5>
+                        <p>GryphonX offers full term health insurance and assists you with all contractual paperwork during hiring. We keep your employers accountable every step of the way.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <h5>Join a global dev aggregate</h5>
+                        <p>Local recognition does not cut it anymore. Get vetted and join a curated list of top developers from around the world.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <h5>Find a lifelong career partner</h5>
+                        <p>Your journey with GryphonX doesn't end when you land a job. Use our platform to find exciting career growth opportunities when you want to switch jobs, and find mentors for life.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <h5>Attend events with speakers you look up to</h5>
+                        <p>Access live community events, monthly town-halls, workshops and more with GryphonX Alums and guest speakers throughout the year.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <h5>Get deals and benefits that last a lifetime</h5>
+                        <p>Access premium deals, subscriptions and discounts for top dev tools in the market, exclusive for GryphonX members.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Testimonials Carousel Section -->
+    <section class="carousel-section py-5">
+        <div id="testimonialsCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial">
+                        <p>"GryphonX helped me land my dream job in no time. The process was smooth and efficient!"</p>
+                        <h5>- John Doe</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <p>"The best platform for remote tech jobs. I found exactly what I was looking for."</p>
+                        <h5>- Jane Smith</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial">
+                        <p>"Highly recommend GryphonX for anyone seeking quality remote job opportunities."</p>
+                        <h5>- Mike Johnson</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonialsCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonialsCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function joinGryphonX() {
+            window.location.href = 'https://gryphonx.com/join';
+        }
+
+        $(document).ready(function () {
+            $('.cta-button').hover(function () {
+                $(this).css('background-color', '#d6336c');
+            }, function () {
+                $(this).css('background-color', '#ff79c6');
+            });
+        });
+    </script>
+</body>
+</html>

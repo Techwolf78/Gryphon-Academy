@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+      
+    />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <title>TRAINING</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+      
+      body {
+        overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+        background-color: #030303;
+       
+      }
+
+      
+      /* homepage */
+      .Training-home {
+        background-image: url('image/3119.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .Training-content p {
+        position: relative;
+        margin-top: 34%;
+        margin-bottom: 0;
+        padding: 40px 190px 4rem 190px;
+        background-color: #091327;
+        color: aliceblue;
+        animation: fadeInUp 2s;
+      }
+
+      .Training-head h1 {
+        position: relative;
+        right: 23%;
+        top: 6rem;
+        color: #FFFFFF;
+        animation: fadeInDown 2s;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* h2{
+        color: #ddd;
+        position: relative;
+        left: 18rem;
+        margin-top: 4rem;
+       
+      } */
+      /* process
+      .process-wrapper {
+        margin: auto;
+        max-width: 1080px;
+        padding: 40px 0 5rem;
+      }
+
+      #progress-bar-container {
+        position: relative;
+        width: 90%;
+        margin: auto;
+        height: 100px;
+        margin-top: 65px;
+      }
+.train-2 h2{
+  position: relative;
+  left: 19rem;
+  margin-top: 5rem;
+  font-size: 3cap;
+  color: #FFFFFF;
+}
+      #progress-bar-container ul {
+        padding: 0;
+        margin: 0;
+        padding-top: 15px;
+        z-index: 9999;
+        position: absolute;
+        width: 100%;
+        margin-top: -40px;
+      }
+
+      #progress-bar-container li:before {
+        content: " ";
+        display: block;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: solid 2px #aaa;
+        transition: all ease 0.3s;
+      }
+
+      #progress-bar-container li.active:before,
+      #progress-bar-container li:hover:before {
+        border: solid 2px #444;
+      }
+
+      #progress-bar-container li {
+        list-style: none;
+        float: left;
+        width: 20%;
+        text-align: center;
+        color: #aaa;
+        text-transform: uppercase;
+        font-size: 11px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all ease 0.2s;
+        vertical-align: bottom;
+        height: 60px;
+        position: relative;
+      }
+
+      #progress-bar-container li .step-inner {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+      }
+
+      #progress-bar-container li.active,
+      #progress-bar-container li:hover {
+        color: #444;
+      }
+
+      #progress-bar-container li:after {
+        content: " ";
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: #777;
+        margin: auto;
+        border: solid 7px #fff;
+        border-radius: 50%;
+        margin-top: 40px;
+        box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+        transition: all ease 0.2s;
+      }
+
+      #progress-bar-container li:hover:after {
+        background: #555;
+      }
+
+      #progress-bar-container li.active:after {
+        background: #207893;
+      }
+
+      #progress-bar-container #line {
+        width: 80%;
+        margin: auto;
+        background: #eee;
+        height: 6px;
+        position: absolute;
+        left: 10%;
+        top: 57px;
+        z-index: 1;
+        border-radius: 50px;
+        transition: all ease 0.9s;
+      }
+
+      #progress-bar-container #line-progress {
+        content: " ";
+        width: 3%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        border-radius: 50px;
+        transition: all ease 0.9s;
+      }
+
+      #progress-content-section {
+        width: 90%;
+        margin: auto;
+        background: #091327;
+        border-radius: 4px;
+        padding: 40px;
+        color: #fff;
+      }
+
+      #progress-content-section .section-content {
+        display: none;
+        animation: FadeInUp 700ms ease 1;
+        animation-fill-mode: forwards;
+        transform: translateY(15px);
+        opacity: 0;
+      }
+
+      #progress-content-section .section-content.active {
+        display: block;
+      }
+
+      @keyframes FadeInUp {
+        0% {
+          transform: translateY(15px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      } */
+
+      .container-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .container-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #e2e7ff;
+    }
+
+    .hero-section {
+      background-image: url('image/3119.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-section .text-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .animate-text {
+      display: inline-block;
+      animation: fadeText 3s infinite;
+    }
+
+    @keyframes fadeText {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+/* progtress */
+.progress-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #progress-bar-wrapper {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .steps-list {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            margin: 0;
+        }
+        .steps-list li {
+            text-align: center;
+            width: 18%;
+            position: relative;
+        }
+        .steps-list li .step-label {
+            padding: 15px;
+            background: #eceff1;
+            border-radius: 50px;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        .steps-list li.active .step-label,
+        .steps-list li .step-label:hover {
+            background: #272209;
+            color: #fff;
+        }
+        #progress-line {
+            width: 100%;
+            height: 5px;
+            background: #eceff1;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: -1;
+            border-radius: 2.5px;
+        }
+        #progress-line-fill {
+            height: 5px;
+            background: #091327;
+            width: 0;
+            transition: width 0.3s;
+            border-radius: 2.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        #progress-line-fill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background: #FFC700;
+            animation: borderBeam 2s infinite;
+        }
+        .content-section {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f1f3f4;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .content-section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #091327;
+        }
+        .content-section p {
+            line-height: 1.6;
+        }
+        @keyframes borderBeam {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+
+
+
+      /* Why Choose Us */
+      
+    .Train-4 {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .Train-4 h4 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      color: #ddd;
+    }
+
+    .Train-4 h4 span {
+      color: #FFC700;
+    }
+
+    .Train-4 h4::after {
+      content: '';
+      width: 100%;
+      height: 4px;
+      background-color: #FFC700;
+      display: block;
+      margin-top: 10px;
+      position: absolute;
+      left: 0;
+      animation: borderBeam 2s infinite;
+    }
+
+    @keyframes borderBeam {
+      0% { left: -100%; }
+      50% { left: 0; }
+      100% { left: 100%; }
+    }
+
+    .Train-4 .item {
+      background: #1c2331;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .Train-4 .item:hover {
+      transform: scale(1.05);
+    }
+
+    .Train-4 .item h6 {
+      font-size: 20px;
+      margin: 15px 0;
+      color: #FFC700;
+    }
+
+    .Train-4 .item p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #e2e7ff;
+    }
+
+    .Train-4 .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #FFC700;
+    }
+
+    .section-head p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #b0bec5;
+    }
+
+
+
+
+/* course cards */
+.train-5 {
+      padding: 50px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #FFC700;
+    }
+
+    .card-flyer {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      margin-bottom: 30px;
+    }
+
+    .card-flyer:hover {
+      transform: scale(1.05);
+    }
+
+    .text-box {
+      padding: 15px;
+    }
+
+    .image-box img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .text-container {
+      text-align: center;
+      padding: 10px 0;
+      height: 60px;
+    }
+
+    .text-container h6 {
+      font-size: 16px;
+      color: #091327;
+      margin: 0;
+    }
+      
+      /* Testimonials */
+      .review {
+        min-height: 100vh;
+        background-color: #091327;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 3rem 0;
+        position: relative;
+      }
+
+      .review__marquee {
+        background-color: transparent;
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .review__marquee__container {
+        flex-shrink: 0;
+        gap: 2rem;
+        padding-right: var(--gap-space);
+        animation: infinityScroll 17s linear 0s infinite forwards;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        max-width: unset;
+        overflow: hidden;
+      }
+
+      .review__marquee__container:hover {
+        animation-play-state: paused;
+      }
+
+      .review__marquee__container__two {
+        flex-shrink: 0;
+        gap: 2rem;
+        padding-right: var(--gap-space);
+        animation: infinityScroll 22s linear 0s infinite reverse;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        max-width: unset;
+        overflow: hidden;
+      }
+
+      .review__marquee__container__two:hover {
+        animation-play-state: paused;
+      }
+   h3{
+    color: #fff;
+   }
+      .scroll {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        max-width: unset;
+      }
+
+      .itemOdd,
+      .itemEven {
+        padding: 30px 40px;
+        width: 573px;
+        height: auto;
+        border-radius: 1.25rem;
+        margin: 10px;
+      }
+
+      .itemOdd {
+        background-color: #030303;
+        border-style: double;
+      }
+
+      .itemEven {
+        background-color: #e2e7ff;
+        border-style: solid;
+      }
+
+      .itemOdd h6,
+      .itemEven h6 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 125%;
+        margin-bottom: 0.15rem;
+      }
+
+      .itemOdd h6 {
+        color: #fff;
+      }
+
+      .itemEven h6 {
+        color: #000;
+      }
+
+      .itemOdd p,
+      .itemEven p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 125%;
+        color: #f50f95;
+      }
+
+      .itemOdd h5,
+      .itemEven h5 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 125%;
+      }
+
+      .itemOdd h5 {
+        color: #fff;
+      }
+
+      .itemEven h5 {
+        color: #000;
+      }
+
+      .titles {
+        color: #fdfdfd;
+        position: relative;
+        text-align: center;
+        margin: 20px;
+      }
+
+      @keyframes infinityScroll {
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes infinityScroll2 {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Registration Form */
+      .signup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .signup-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+      }
+
+      .signup-image {
+        background: #fbc02d;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .signup-form {
+        padding: 30px;
+      }
+
+      .signup-form h2 {
+        margin-bottom: 30px;
+      }
+
+      .btn-group-toggle .btn {
+        border: 1px solid #ddd;
+        border-radius: 30px;
+      }
+
+      .btn-group-toggle .btn.active {
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      /* Footer */
+      #footer {
+        background: #000000;
+        padding: 3rem;
+      }
+
+      .footer-about {
+        color: #ccc;
+      }
+
+      .logo-footer {
+        max-width: 200px;
+        position: relative;
+        top: 4rem;
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .social-links h2 {
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #fefefe;
+      }
+
+      .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        color: #ffffff;
+      }
+
+      .social-icons a {
+        color: #b3b2b2;
+      }
+
+      .social-icons a:hover {
+        color: #fdd700;
+      }
+
+      .social-icons a i {
+        box-shadow: rgba(255, 255, 255, 0.08) 0px 4px 12px;
+        padding: 0.4rem 1rem;
+        border-radius: 3px;
+        color: #82074a;
+        font-size: 16px;
+        margin-right: 12px;
+      }
+
+      .useful-link h2 {
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #e3e3e3;
+      }
+
+      .use-links {
+        line-height: 32px;
+      }
+
+      .use-links li i {
+        font-size: 14px;
+        padding-right: 8px;
+        color: #ffffff;
+      }
+
+      .use-links li a {
+        color: #b3b2b2;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .use-links li a:hover {
+        color: #fdd700;
+      }
+
+      .address h2 {
+        padding-bottom: 15px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #e3e3e3;
+      }
+
+      .address-links {
+        line-height: 32px;
+        color: #b3b2b2;
+      }
+
+      .address-links li i {
+        font-size: 16px;
+        padding-right: 8px;
+        color: #82074a;
+      }
+
+      .copy-right-sec {
+        padding: 1.8rem;
+        background: #000000;
+        color: #fff;
+        text-align: center;
+      }
+
+      .copy-right-sec a {
+        color: #fdd700;
+        font-weight: 500;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+ 
+/*  */
+.programme-section {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.programme-section .programme-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.programme-section .programme-card:hover {
+    transform: translateY(-10px);
+}
+
+.programme-section .programme-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.programme-section .programme-card-body {
+    padding: 20px;
+}
+
+.programme-section .programme-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.programme-section .programme-card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.programme-section .programme-card-button {
+    background-color: #FFC700;
+    color: #091327;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.programme-section .programme-card-button:hover {
+    background-color: #e6b800;
+    color: #fff;
+}
+
+/* navbar */
+.header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #091327;
+      color: #fff;
+      position: relative;
+    }
+    .navbar-brand img {
+      width: 180px;
+      height: 100px;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+    }
+    .navbar a:hover{
+      background-color: #FFC700;
+      border-radius: 5px;
+      color: #091327;
+    }
+
+
+    .dropdown {
+      position: relative;
+    }
+
+    
+    .dropbtn {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #FFC700;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown-content a {
+      color: #091327;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #FFC700;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .toggle-Button {
+      display: none;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #fff;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #FFC700;
+      color: #091327;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+      .toggle-Button {
+        display: block;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        position: relative;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+
+
+    /* last container */
+    .section-title {
+      margin: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFC700;
+    }
+
+    .training-section {
+      padding: 50px 0;
+    }
+
+    .hook-line {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .animated-text {
+      display: inline-block;
+      animation: fadeInOut 3s infinite;
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .info-box {
+      background-color: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 5px;
+      border-left: 5px solid #FFC700;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .info-box h4 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #091327;
+      margin-bottom: 15px;
+    }
+
+    .pedagogy-list, .domains-list, .programme-list, .highlight-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pedagogy-list li, .domains-list li, .programme-list li, .highlight-list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .highlight-section {
+      margin-top: 50px;
+    }
+
+    .highlight-box {
+      background-color: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 5px;
+      border-left: 5px solid #FFC700;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .highlight-box h4 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #091327;
+      margin-bottom: 15px;
+    }
+
+    .download-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #FFC700;
+      color: #091327;
+      border: none;
+    }
+
+    .download-btn:hover {
+      background-color: #091327;
+      color: #FFC700;
+    }
+
+    /* logo section */
+
+    .logo-section {
+      padding: 80px 0; /* Increased top and bottom padding */
+      text-align: center;
+      background-color: #1c2331;
+    }
+
+    .logo-section h4 {
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: rgb(223, 182, 0);
+    }
+
+    .logo-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      animation: scroll 20s linear infinite;
+    }
+
+    .logo-row.reverse {
+      animation-direction: reverse;
+    }
+
+    .logo-row img {
+      height: 120px; /* Increased size of the logos */
+      margin: 0 15px; /* Adjusted spacing between logos */
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-row img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 768px) {
+      .logo-row img {
+        height: 80px; /* Adjust size for smaller screens */
+        margin: 0 10px; /* Adjust spacing for smaller screens */
+      }
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="navbar-brand" href="about-alternative.html">
+        <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+      </a>
+    
+      <nav class="navbar">
+        <a href="index.html" class="active">HOME</a>
+        <div class="dropdown">
+          <a href="training copy.html" button class="dropbtn">TRAINING
+             <i class="bx bx-chevron-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="college-training.html">college-training</a>
+            <a href="corporate.html">corporate-training</a>
+            <a href="faculty.html">faculty</a>
+          </div>
+        </div>
+        <a href="placement-final-copy.html">PLACEMENT</a>
+        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="gax-copy.html">GAX</a>
+        <a href="BLOG.html">BLOG</a>
+      </nav>
+    
+      <div class="toggle-Button">
+        <span class="openbtn" onclick="openNav()">☰</span>
+      </div>
+    
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="index.html">HOME</a>
+        <a href="training copy.html">TRAINING</a>
+        <a href="placement-final-copy.html">PLACEMENT</a>
+        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="gax-copy.html">GAX</a>
+        <a href="BLOG.html">BLOG</a>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="text-container">
+        <h1 class="animate__animated animate__fadeInUp">Get <span class="animate-text">Trained</span> with Gryphon!</h1>
+        <h1 class="animate__animated animate__fadeInUp">Get <span class="animate-text">Placed</span> with Gryphon!</h1>
+        <h1 class="animate__animated animate__fadeInUp">Get Industry-Ready with Gryphon!</h1>
+      </div>
+    </section>
+    
+    <div class="container-content">
+      <p>
+        Our training sessions are meticulously crafted and tailored to meet the specific requirements of the industry.
+        We stay updated on the latest trends and developments, incorporating them into our training modules. We take
+        into account both industry and academic needs, integrating insights from our seasoned trainers and addressing
+        relevant topics. Our approach is student-centric, catering directly to the needs of individuals and educational institutions.
+      </p>
+    </div>
+    
+
+    <section>
+      <img src="image/gax-bridge.svg" alt="">
+    </section>
+
+   
+<div class="progress-container mt-5">
+  <div id="progress-bar-wrapper">
+      <ul class="steps-list">
+          <li class="step step01 active"><div class="step-label" data-step="discovery">Discovery</div></li>
+          <li class="step step02"><div class="step-label" data-step="strategy">Strategy Development</div></li>
+          <li class="step step03"><div class="step-label" data-step="creative">Creative Concepting</div></li>
+          <li class="step step04"><div class="step-label" data-step="production">Production & Execution</div></li>
+          <li class="step step05"><div class="step-label" data-step="analysis">Ongoing Analysis & Results</div></li>
+      </ul>
+
+      <div id="progress-line">
+          <div id="progress-line-fill"></div>
+      </div>
+  </div>
+
+  <div id="content-section-wrapper">
+      <div class="content-section discovery active">
+          <h2>Discovery</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+      </div>
+
+      <div class="content-section strategy">
+          <h2>Strategy Development</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+      </div>
+
+      <div class="content-section creative">
+          <h2>Creative Concepting</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+      </div>
+
+      <div class="content-section production">
+          <h2>Production & Execution</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+      </div>
+
+      <div class="content-section analysis">
+          <h2>Ongoing Analysis & Results</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+      </div>
+  </div>
+</div>
+
+<section class="Train-4">
+  <div class="container">
+    <div class="row">
+      <div class="section-head col-sm-12">
+        <h4><span>Why Choose</span> US</h4>
+        <p>Here's what sets our trainings apart from others</p>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
+          <h6>Modern Design</h6>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
+          <h6>Creative Design</h6>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
+          <h6>Your Photoshoping</h6>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
+          <h6>Business Growth</h6>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
+          <h6>Market Strategy</h6>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="item">
+          <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
+          <h6>Retina Ready</h6>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="train-5">
+      <div id="cards_landscape_wrap-2">
+        <div class="container">
+          <!-- First Row: Soft Skills -->
+          <h2 class="section-heading">Soft Skills</h2>
+          <div class="row justify-content-center">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Corporate etiquettes" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Corporate etiquettes and Mannerism</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Effective Communication Skills" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Effective Communication Skills</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Interview Skills" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Interview Skills and GD-PI Techniques</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Presentation Skills" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Presentation Skills</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Time Management" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Time Management</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Second Row: Aptitude -->
+          <h2 class="section-heading">Aptitude</h2>
+          <div class="row justify-content-center">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Quantitative Ability" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Quantitative Ability [Basic Mathematics]</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Quantitative Aptitude" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Quantitative Aptitude</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Data Interpretation" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Data Interpretation</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Logical Reasoning" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Logical Reasoning</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+              <a href="">
+                <div class="card-flyer">
+                  <div class="text-box">
+                    <div class="image-box">
+                      <img src="https://via.placeholder.com/150" alt="Critical Thinking" />
+                    </div>
+                    <div class="text-container">
+                      <h6>Critical Thinking</h6>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+     <!-- Programme Section -->
+     <section class="programme-section">
+      <div class="container">
+          <h2 class="text-center mb-5">Our Programmes</h2>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="programme-card">
+                      <img src="Training Page/Training Pge.svg1_Images/Training Pge.svg1_ImgID1.png" alt="Programme Image 1">
+                      <div class="programme-card-body">
+                          <h5 class="programme-card-title">COLLEGE TRAINING</h5>
+                          <p class="programme-card-text">Brief description of Programme 1.</p>
+                          <button class="programme-card-button" onclick="window.location.href='college-training.html'">Learn More</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="programme-card">
+                      <img src="Training Page/Training Pge.svg2_Images/Training Pge.svg2_ImgID1.png" alt="Programme Image 2">
+                      <div class="programme-card-body">
+                          <h5 class="programme-card-title">CORPORATE TRAINING</h5>
+                          <p class="programme-card-text">Brief description of Programme 2.</p>
+                          <button class="programme-card-button" onclick="window.location.href='corporate.html'">Learn More</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="programme-card">
+                      <img src="Training Page/Training Pge.svg3_Images/Training Pge.svg3_ImgID1.png" alt="Programme Image 3">
+                      <div class="programme-card-body">
+                          <h5 class="programme-card-title">FACULTY DEVELOPMENT</h5>
+                          <p class="programme-card-text">Brief description of Programme 3.</p>
+                          <button class="programme-card-button" onclick="window.location.href='faculty.html'">Learn More</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div class="row highlight-section">
+    <div class="col-lg-12 text-center wow animate__animated animate__fadeInUp">
+      <h2 class="section-title">Training USP’s</h2>
+      <h2 class="section-title">Here’s what sets our trainings apart from others</h2>
+      <h2 class="section-title">Learning outcome of our Trainings</h2>
+    </div>
+
+    <div class="col-lg-6 wow animate__animated animate__fadeInLeft">
+      <div class="highlight-box">
+        <h4>Students</h4>
+        <ul class="highlight-list">
+          <li>Students are groomed for industry according to its specifications</li>
+          <li>Primed for employment</li>
+          <li>Holistic upskilling of students</li>
+          <li>Industry guest lectures offer valuable industry insights</li>
+          <li>Access to placement opportunities with premier brands and companies</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow animate__animated animate__fadeInRight">
+      <div class="highlight-box">
+        <h4>Colleges</h4>
+        <ul class="highlight-list">
+          <li>Enhanced placement rates</li>
+          <li>Empowered students taking the college to new heights</li>
+          <li>Elevated brand stature</li>
+          <li>Establishment of corporate partnerships</li>
+          <li>Provision of industry-relevant knowledge and exposure to real-world scenarios</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow animate__animated animate__fadeInLeft">
+      <div class="highlight-box">
+        <h4>FDP</h4>
+        <ul class="highlight-list">
+          <li>Faculty Development Programs to enhance teaching skills</li>
+          <li>Exposure to the latest industry trends and technologies</li>
+          <li>Workshops and seminars by industry experts</li>
+          <li>Access to research and development resources</li>
+          <li>Networking opportunities with professionals</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-6 wow animate__animated animate__fadeInRight">
+      <div class="highlight-box">
+        <h4>Corporate</h4>
+        <ul class="highlight-list">
+          <li>Customized training programs for corporate employees</li>
+          <li>Upskilling and reskilling opportunities</li>
+          <li>Industry-relevant certifications</li>
+          <li>Enhancement of leadership and management skills</li>
+          <li>Support for continuous professional development</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- logos -->
+    <section class="logo-section">
+      <div class="container">
+        <h4><span>Our</span> College Partners</h4>
+        <div class="logo-container">
+          <div class="logo-row">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+          </div>
+          <div class="logo-row reverse">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+            <img src="https://via.placeholder.com/150" alt="College Logo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review">
+      <div id="Testimonials">
+        <div class="titles">
+          <h3>Testimonials</h3>
+          <h3>This is why we do it!</h3>
+        </div>
+        <div class="review__marquee">
+          <div class="review__marquee__container">
+            <div class="scroll">
+              <div class="itemOdd">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Top Notch</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemEven">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Satisfied</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemOdd">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Top Notch</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemEven">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Satisfied</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemOdd">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Top Notch</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="review__marquee">
+          <div class="review__marquee__container__two">
+            <div class="scroll">
+              <div class="itemOdd">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Top Notch</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemEven">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Satisfied</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemOdd">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Top Notch</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemEven">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Satisfied</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+              <div class="itemOdd">
+                <div class="item__text">
+                  <div class="item__text__top">
+                    <h6>Customer Review</h6>
+                    <p>Top Notch</p>
+                  </div>
+                  <h5>"I was most impressed with Pesto's ability to assess my skills and craft an outstanding profile that resulted in interview opportunities within just two weeks. I also appreciated the fact that the interview and onboarding experience was seamless. Pesto was always available to answer my questions and provide support.</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container signup-container">
+        <div class="signup-card row no-gutters">
+          <div class="col-md-6 signup-image">
+            <div>
+              <h1>Gryphon Academy</h1>
+              <!-- <p>Learn from 200+ courses</p> -->
+            </div>
+          </div>
+          <div class="col-md-6 signup-form">
+            <h2>Create an account</h2>
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-outline-secondary active">
+                <input type="radio" name="options" id="candidate" autocomplete="off" checked> Candidate
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" id="company" autocomplete="off"> Company
+              </label>
+              <label class="btn btn-outline-secondary">
+                <input type="radio" name="options" id="college" autocomplete="off"> College
+              </label>
+            </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                <input type="text" class="form-control" id="username" placeholder="User Name">
+              </div> -->
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="phone" placeholder="Phone">
+              </div>
+              <!-- <div class="form-row"> -->
+                <!-- <div class="form-group col-md-6">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                </div>
+              </div> -->
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck">
+                <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Next</button>
+              <div class="text-center mt-3">
+                <p>Already have an account? <a href="#">Login</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="index.html"><img src="image/GAXLOGO.png" alt="" class="img-fluid logo-footer"></a>
+          </div>
+          <div class="col-md-3">
+            <div class="useful-link">
+              <h2>Links</h2>
+              <div class="use-links">
+                <li><a href="index.html"><i class="fa-solid fa-angles-right"></i> Home</a></li>
+                <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
+                <li><a href="gallery.html"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="social-links">
+              <h2>Follow-Us</h2>
+              <div class="social-icons">
+                <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+                <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="address">
+              <h2>Address</h2>
+              <div class="address-links">
+                <li class="address1"><i class="fa-solid fa-location-dot"></i>
+                  Seasons business square by 
+                  Naiknavare Office no 301, 3rd floor, 
+                  Seasons Rd, Sanewadi, Aundh, 
+                  Pune, Maharashtra 411007
+                  +91 89836 14509 / 8983339099
+                  connect@gryphonacademy.co.in</li>
+                <li><a href=""><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
+                <li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <section id="copy-right">
+      <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
+        @2019 All Rights Reserved Powered By <a href="#">Gryphon Academy</a> 
+      </div>
+    </section>
+
+      <!-- Include Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      document.querySelectorAll(".step").forEach((step, index) => {
+        step.addEventListener("click", function () {
+          document.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
+          document.querySelectorAll(".section-content").forEach(s => s.classList.remove("active"));
+          step.classList.add("active");
+          document.querySelector(`.section-content:nth-child(${index + 1})`).classList.add("active");
+          document.getElementById("line-progress").style.width = `${index * 25}%`;
+        });
+      });
+
+      // navbar
+      //   navbar
+      function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+
+
+
+
+  document.querySelectorAll('.step-label').forEach(item => {
+        item.addEventListener('mouseover', event => {
+            document.querySelectorAll('.content-section').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelector(`.${event.target.dataset.step}`).classList.add('active');
+            
+            // Update the progress bar
+            let stepIndex = Array.from(event.target.parentElement.parentElement.children).indexOf(event.target.parentElement) + 1;
+            document.getElementById('progress-line-fill').style.width = (stepIndex * 20) + '%';
+        });
+    });
+    </script>
+  </body>
+</html>
+ 

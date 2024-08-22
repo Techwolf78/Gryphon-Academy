@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why GrowthSchool?</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #101827;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .grid-background {
+            background-image: linear-gradient(0deg, transparent 24%, #1e293b 25%, #1e293b 26%, transparent 27%, transparent), 
+                              linear-gradient(90deg, transparent 24%, #1e293b 25%, #1e293b 26%, transparent 27%, transparent);
+            background-size: 30px 30px;
+            padding: 50px 20px;
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .heading {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subheading {
+            font-size: 1.2em;
+            margin-bottom: 50px;
+        }
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .icon-row div {
+            margin: 0 10px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .icon-row div:hover {
+            transform: scale(1.1);
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #1e293b;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #2d3b55;
+        }
+        .card img, .card video {
+            border-radius: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: auto;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background">
+        <div class="heading">Why GryphonX?</div>
+        <div class="subheading">Focus on real-world applications, learning through action, and community building</div>
+        <div class="icon-row">
+            <div>Icon 1</div>
+            <div>Icon 2</div>
+            <div>Icon 3</div>
+            <div>Icon 4</div>
+            <div>Icon 5</div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <video controls>
+                    <source src="path/to/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-title">Career Opportunities</div>
+                <div class="card-text">Discover career opportunities within our network.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Practical Approach</div>
+                <div class="card-text">Learn by doing by solving real-life problems from real companies.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Community at the Center</div>
+                <div class="card-text">Join the curated community of other learners, alumni, and mentors.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

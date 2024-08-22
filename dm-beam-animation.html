@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gryphon Academy - Digital Marketing Solutions</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FAFCFE;
+            --secondary-color: #1b1b1b;
+            --background-color: #000;
+            --text-color: #FAFCFE;
+            --accent-color: #ff01fb;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--text-color) !important;
+        }
+
+        .hero-section {
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            animation: fadeInDown 1.5s;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            animation: fadeInUp 1.5s;
+        }
+
+        .services-section, .admissions-section, .events-section {
+            padding: 60px 0;
+        }
+
+        .service-card, .admission-card, .event-card {
+            background-color: var(--secondary-color);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+        }
+
+        .service-card:hover, .admission-card:hover, .event-card:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-color);
+            color: var(--background-color);
+        }
+
+        .service-card::before, .admission-card::before, .event-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent-color);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before, .admission-card:hover::before, .event-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card::after, .admission-card::after, .event-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent-color);
+            transition: right 0.5s;
+        }
+
+        .service-card:hover::after, .admission-card:hover::after, .event-card:hover::after {
+            right: 100%;
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            animation: fadeInUp 1s;
+        }
+
+        .section-description {
+            margin-bottom: 50px;
+            animation: fadeInUp 1s;
+        }
+
+        ul.list-unstyled li {
+            color: var(--text-color);
+            animation: fadeInLeft 1s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">Gryphon Academy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#admissions">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">Events</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Comprehensive Digital Marketing Solutions</h1>
+            <p>Maximize your marketing impact with Gryphon and deliver exceptional results.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services-section text-center">
+        <div class="container">
+            <h2 class="section-title">Our Commitment</h2>
+            <p class="section-description">End-to-end digital marketing campaign management, ensuring positive lead generation and enhanced social media reach.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Lead Generation</h5>
+                            <p class="card-text">Customized strategies to generate positive leads and attract top talent.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Reach</h5>
+                            <p class="card-text">Boost your social media presence with tailored campaigns and engaging content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketing Strategies</h5>
+                            <p class="card-text">Bespoke marketing strategies to help you stand out in a crowded market.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="admissions" class="admissions-section text-center">
+        <div class="container">
+            <h2 class="section-title">Admissions for Colleges</h2>
+            <p class="section-description">Leveraging our admission services means a well-rounded and focused approach to increasing student enrolment. We handle everything from admission campaigns and social media marketing to offline branding like hoardings. Our region-wise and domain-wise targeting ensures your college’s message reaches the right students.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Targeted Admission Campaigns</h5>
+                            <p class="card-text">We design and execute effective admission campaigns tailored to your college’s unique strengths and offerings, ensuring maximum reach and engagement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Marketing</h5>
+                            <p class="card-text">Leverage the power of social media to connect with prospective students. Our expertise in social media marketing helps you reach your audience on platforms they frequent, boosting visibility and engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Offline Branding</h5>
+                            <p class="card-text">From hoardings to banners, we create impactful offline branding materials that capture attention and reinforce your college’s presence in the region.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Region-Wise Targeting</h5>
+                            <p class="card-text">Our region-specific strategies ensure that your college’s message reaches the right students in the right locations, maximizing the effectiveness of your recruitment efforts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Domain-Wise Targeting</h5>
+                            <p class="card-text">We understand that different programs appeal to different audiences. Our domain-wise targeting ensures that marketing efforts are tailored to the specific interests and needs of potential students for various programs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Customized Marketing Plans</h5>
+                            <p class="card-text">We develop personalized marketing strategies based on your college’s goals and target demographics, ensuring a strategic approach to admissions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Innovative Techniques</h5>
+                            <p class="card-text">Utilizing the latest in digital marketing and branding innovations, we ensure your college stays ahead of the competition and attracts the best talent.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Expert Consultation</h5>
+                            <p class="card-text">Our team of marketing and branding experts provides ongoing support and consultation, ensuring your college’s admissions strategies remain effective and up to date.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card admission-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Increased Enrolment</h5>
+                            <p class="card-text">With our comprehensive approach, your college can expect a significant boost in inquiries, applications, and ultimately, enrolments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section text-center">
+        <div class="container">
+            <h2 class="section-title">Events</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card event-card">
+                        <div class="card-body">
+                            <h3>For Corporates</h3>
+                            <p>At Gryphon Academy, we specialize in hosting exceptional, high-profile events that elevate brands to new heights. With a proven track record of successfully organizing prestigious gatherings featuring renowned celebrities and industry experts, we ensure your event stands out.</p>
+                            <ul class="list-unstyled">
+                                <li>Brand Elevation: Amplify your brand’s visibility among key industry players.</li>
+                                <li>Collaborative Opportunities: Work with prestigious brands that can elevate your market presence.</li>
+                                <li>Industry Recognition: Attract attention from leading companies, enhancing your credibility.</li>
+                                <li>Audience Reach: Tap into our extensive network to engage a broad audience, increasing your event's impact.</li>
+                                <li>Enhanced Branding and Marketing: Leverage our strategies to refine your marketing efforts and elevate your brand narrative.</li>
+                                <li>Brand Identity Development: Create a strong and memorable identity that aligns with your vision.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card event-card">
+                        <div class="card-body">
+                            <h3>For Colleges</h3>
+                            <p>Choose Gryphon Academy to organize your college events for a transformative experience that elevates your institution's profile. With a proven track record of hosting prestigious gatherings featuring renowned speakers and industry leaders, we ensure your events are impactful and memorable.</p>
+                            <ul class="list-unstyled">
+                                <li>Stress-Free Execution: Our team handles everything - planning, vendors, and execution, so that you can focus on showcasing your college.</li>
+                                <li>Elevated Brand Image: Collaborate with Gryphon Academy to elevate your college's brand as a leader in innovation and thought leadership.</li>
+                                <li>Massive Audience Reach: Attract a large audience of prospective students, industry professionals, and media that will boost your reputation.</li>
+                                <li>Expand Your Network: Gain connections with established brands and influential figures, creating opportunities for students with increased internship and placement opportunities, guest lectures, and workshops.</li>
+                                <li>Investment in Your College's Future: Choose Gryphon Academy for long-term benefits like increased visibility and strong brand recognition.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Gryphon Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

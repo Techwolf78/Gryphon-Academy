@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gryphon Academy</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .navbar-nav .nav-item .nav-link {
+      color: white !important;
+    }
+    .navbar-dark .navbar-nav .nav-item .nav-link:hover {
+      color: #FFC700 !important;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .dropdown-menu {
+      background-color: #091327;
+    }
+    .dropdown-item {
+      color: white !important;
+    }
+    .dropdown-item:hover {
+      background-color: #495057;
+    }
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      background-color: #091327;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #FFC700;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #091327;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+    }
+
+    .openbtn:hover {
+      background-color: #444;
+    }
+    .btn-warning {
+      background-color: #FFC700;
+      border: none;
+    }
+    .btn-warning:hover {
+      background-color: #e6b800;
+    }
+    .btn-link {
+      color: #FFC700;
+    }
+    .btn-link:hover {
+      color: #e6b800;
+    }
+    .animated-building {
+      width: 100%;
+      height: 200px;
+      background: url('https://path/to/your/building/image.png') no-repeat;
+      background-size: cover;
+      animation: developBuilding 5s linear infinite;
+    }
+
+    @keyframes developBuilding {
+      0% {
+        background-position: 0 100%;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #091327;">
+    <a class="navbar-brand" href="#">Gryphon Academy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">HOME</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="trainingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            TRAINING
+          </a>
+          <div class="dropdown-menu" aria-labelledby="trainingDropdown">
+            <a class="dropdown-item" href="#">Course 1</a>
+            <a class="dropdown-item" href="#">Course 2</a>
+            <a class="dropdown-item" href="#">Course 3</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">PLACEMENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">DIGITAL MARKETING</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">GAX</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">BLOG</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="openNav()">☰</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container text-center mt-5">
+    <h1 style="color: #091327;">Gryphon Academy</h1>
+    <p>Bridging the Gap to Career Success</p>
+    <a href="#" class="btn btn-warning">Enroll now</a>
+    <a href="#" class="btn btn-link">know more > > ></a>
+  </div>
+
+  <!-- Animated Building Section -->
+  <div class="container text-center mt-5 animated-building">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("sidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("sidebar").style.width = "0";
+    }
+  </script>
+</body>
+</html>
+
