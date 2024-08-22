@@ -115,22 +115,29 @@
       height: 100vh;
     }
 
-    .faculty-content {
-      position: relative;
-      margin-top: 34%;
-      margin-bottom: 0;
-      padding: 40px 190px 4rem 190px;
-      background-color: #091327;
-      color: aliceblue;
-    }
+/* FDP text  and its para text start*/
+.faculty-head {
+  align-items: center;
+  gap: 2rem; /* Space between heading and paragraph */
+  padding-left: 20px;
+}
 
-    .faculty-head h1 {
-      position: relative;
-      top: 5rem;
+.fdp-heading {
+  font-size: 2rem; /* Adjust size as needed */
+  color: #FFFFFF;
+  padding-left: 10px;
+  padding-top: 10px;
+}
 
-      color: #FFFFFF;
-    }
+#fdp-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #FFFFFF;
+  max-width: 50%; /* Limit width for readability */
+  padding-left: 30px;
+}
 
+/* FDP text  and its para text end*/
     /* FDPS */
     .section {
       padding: 60px 0;
@@ -704,30 +711,18 @@
 
   <section class="faculty">
 
-
-
-    <div class="faculty-head wow slideInLeft ">
-
-
-      <h1>
+    <div class="faculty-head wow slideInLeft">
+      <h1 class="fdp-heading">
         FDP <br>
         (Faculty Development Programme)
       </h1>
-
-
-      <div class="faculty-content ">
-        <p>
-          We specialize in empowering college professors, and faculty members to excel
-          in their roles and drive academic success. Our tailored approach ensures that
-          your institution's unique needs are met through a comprehensive training program
-          designed to elevate teaching standards and foster professional growth.
-        </p>
-
-
-
-      </div>
+      <p id="fdp-text">
+        - We specialize in empowering college professors, and faculty members to excel
+        in their roles and drive academic success. Our tailored approach ensures that
+        your institution's unique needs are met through a comprehensive training program
+        designed to elevate teaching standards and foster professional growth.
+      </p>
     </div>
-
 
   </section>
 

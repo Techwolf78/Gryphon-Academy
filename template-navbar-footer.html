@@ -92,8 +92,7 @@
         color: #091327; /* Text color turns dark blue */
       }
 
-      /* To display dropdown menu on hover */
-      .dropdown:hover .dropdown-content {
+      To display dropdown menu on hover .dropdown:hover .dropdown-content {
         display: block;
       }
 
@@ -136,32 +135,49 @@
         margin-left: 50px;
       }
 
-      /* Add hover effect for sidebar dropdown items */
+      /* Sidebar structure */
       .sidebar .dropdown-content {
-        display: none; /* Hide dropdown content by default */
+        display: block; /* Ensure dropdown content is always visible */
         position: relative;
         background-color: #091327;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px;
+        list-style: none;
         padding: 0;
+        margin: 0;
       }
 
-      .sidebar .dropdown:hover .dropdown-content {
-        display: block; /* Show dropdown content on hover */
+      .sidebar .dropdown-content li {
+        margin: 0;
+        padding: 0;
       }
 
       .sidebar .dropdown-content a {
         color: #ffffff;
-        padding: 12px 16px;
+        padding: 12px 32px; /* Adjust padding for better alignment */
         text-decoration: none;
         display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
       .sidebar .dropdown-content a:hover {
-        background-color: #ffc700;
-        color: #091327;
+        background-color: #ffc700; /* Background color turns yellow */
+        color: #091327; /* Text color turns dark blue */
+      }
+
+      /* Media query for mobile view */
+      @media screen and (max-width: 768px) {
+        /* Ensure dropdown content is always visible */
+        .sidebar .dropdown-content {
+          display: block;
+        }
+
+        /* Remove hover effect for the main dropdown in the sidebar */
+        .sidebar .dropdown:hover .dropdown-content {
+          display: block; /* Prevent hiding on hover */
+        }
+
+        .sidebar .dropdown-content a {
+          padding: 12px 32px; /* Adjust padding for better alignment */
+        }
       }
 
       /* Ensure proper display of dropdown on mobile */
@@ -353,7 +369,7 @@
   </head>
   <body>
     <header class="header">
-      <a class="navbar-brand" href="about-alternative.html">
+      <a class="navbar-brand" href="about-us.html">
         <img
           src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
           alt="logo2"
@@ -384,16 +400,18 @@
         <span class="openbtn" onclick="toggleNav()">☰</span>
       </div>
 
+      <!-- Sidebar structure in the mobile view -->
       <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="index.html">HOME</a>
         <div class="dropdown">
           <a href="training copy.html" class="dropbtn">TRAINING</a>
-          <div class="dropdown-content">
-            <a href="college-training.html">College Training</a>
-            <a href="corporate.html">Corporate Training</a>
-            <a href="faculty.html">Faculty</a>
-          </div>
+          <!-- Sub-menu items are always visible on mobile -->
+          <ul class="dropdown-content">
+            <li><a href="college-training.html">College Training</a></li>
+            <li><a href="corporate.html">Corporate Training</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+          </ul>
         </div>
         <a href="placement-final-copy.html">PLACEMENT</a>
         <a href="digitalcopy.html">DIGITAL MARKETING</a>
@@ -474,7 +492,7 @@
       </section>
 
       <div class="copy-right-sec">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Gryphon Academy.Pvt.Ltd. All rights reserved.</p>
       </div>
     </footer>
     <!-- footer section end -->
