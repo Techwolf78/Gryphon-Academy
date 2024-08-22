@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
     <style>
+      /* Navbar CSS starts */
       body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -92,7 +93,7 @@
         color: #091327; /* Text color turns dark blue */
       }
 
-      To display dropdown menu on hover .dropdown:hover .dropdown-content {
+      .dropdown:hover .dropdown-content {
         display: block;
       }
 
@@ -203,6 +204,7 @@
           font-size: 18px;
         }
       }
+      /* Navbar CSS ends */
 
       /* Footer section start */
       #footer {
@@ -216,6 +218,7 @@
       .address {
         margin: 1rem;
         flex: 1;
+        text-align: center; /* Center align the content */
       }
 
       /* Center footer content and adjust alignment */
@@ -240,48 +243,49 @@
         text-align: center;
       }
 
-      .useful-link h2,
-      .social-links h2,
-      .address h2 {
+      .useful-link {
+        display: flex;
+        flex-direction: column; /* Stack heading and list vertically */
+        align-items: center; /* Center horizontally */
+      }
+
+      .useful-link h2 {
         font-size: 1.5rem;
         font-weight: 600;
         color: #fefefe;
         margin-bottom: 1rem;
       }
 
-      .useful-link ul,
-      .social-icons,
-      .address-links {
+      .useful-link ul {
         font-size: 0.875rem;
         color: #b3b2b2;
         line-height: 1.5;
-      }
-
-      .use-links,
-      .address-links {
         padding: 0;
         margin: 0;
         list-style: none;
       }
 
-      .use-links li,
-      .social-icons a,
-      .address-links li {
+      .useful-link li {
         margin-bottom: 0.5rem;
       }
 
       /* Styling for useful links */
-      .use-links a,
-      .address-links a,
-      .social-icons a {
+      .use-links a {
         color: #b3b2b2;
         text-decoration: none;
+        display: flex;
+        align-items: center; /* Align icons and text */
+        font-size: 1rem; /* Adjust font size */
       }
 
-      .use-links a:hover,
-      .address-links a:hover,
-      .social-icons a:hover {
+      .use-links a:hover {
         color: #fdd700;
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the icons */
       }
 
       .social-icons {
@@ -294,6 +298,7 @@
         color: #b3b2b2;
         display: flex;
         align-items: center;
+        font-size: 1rem; /* Adjust font size */
       }
 
       .social-icons a:hover {
@@ -301,7 +306,7 @@
       }
 
       .social-icons i {
-        font-size: 1.25rem;
+        font-size: 1.5rem; /* Adjust size for better visibility */
         margin-right: 0.5rem;
       }
 
@@ -441,7 +446,7 @@
                 <ul class="use-links">
                   <li><a href="index.html">Home</a></li>
                   <li><a href="about-us.html">About Us</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="training copy.html">Training</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
                 </ul>
               </div>
@@ -450,9 +455,15 @@
               <div class="social-links">
                 <h2>Follow Us</h2>
                 <div class="social-icons">
-                  <a href="#"><i class="bx bxl-facebook"></i>Facebook</a>
-                  <a href="#"><i class="bx bxl-twitter"></i>Twitter</a>
-                  <a href="#"><i class="bx bxl-instagram"></i>Instagram</a>
+                  <a href="https://www.facebook.com/gryphonnacademy/"
+                    ><i class="bx bxl-facebook"></i>Facebook</a
+                  >
+                  <a href="https://www.linkedin.com/company/gryphonacademy/"
+                    ><i class="bx bxl-linkedin"></i>LinkedIn</a
+                  >
+                  <a href="https://www.instagram.com/gryphon_academy/"
+                    ><i class="bx bxl-instagram"></i>Instagram</a
+                  >
                 </div>
               </div>
             </div>
