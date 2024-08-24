@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    rel="stylesheet"
+  />
+  <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   <style>
     body {
       font-family: 'Roboto', 'Montserrat', sans-serif;
@@ -16,7 +24,6 @@
       scroll-behavior: smooth;
     }
  
-
     .carousel-item {
       height: 100vh;
       background-color: #091327;
@@ -487,154 +494,219 @@
     transform: scale(2.5);
 }
 
-#footer{
-	background: #000000;
-    padding: 3rem;
-	/* padding-top: 5rem; */
-	padding-top: 7rem;
-    padding-bottom: 80px;
-	
-}
-#footer2{
-	background: #f7f7f7;
-    padding: 3rem;
-    margin-top: 0px;
-	/* padding-top: 5rem; */
-	padding-top: 7rem;
-    padding-bottom: 80px;
-	
-}
+/* Footer section start */
+#footer {
+        background: #000000;
+        padding: 3rem 1.5rem;
+        color: #e3e3e3;
+      }
 
-.footer-about{
-  color: #ccc;
-}
-.logo-footer{
-	max-width: 200px;
-    position: relative;
-    bottom: 50px;
-}
-.social-links{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
+      .useful-link,
+      .social-links,
+      .address {
+        margin: 1rem;
+        flex: 1;
+        text-align: center;
+      }
 
-}
-.social-links h2{
-	padding-bottom: 15px;
-	font-size: 20px;
-    font-weight: 600;
-    color: #fefefe;
-}
-.social-links img{
-	padding-bottom: 25px;
-}
-.social-icons{
-	/* display: flex;
-    gap: 3rem; */
-	display: flex;
-    flex-direction: column;
-    gap: 1rem;
-	color: #ffffff;
-}
-.social-icons a{
-	/* font-size: 18px; */
-    /* background: #ffffff; */
-    /* box-shadow: rgb(0 0 0 / 8%) 0px 4px 12px;
-    padding: 0.4rem 1rem 0.4rem 1rem;
-    border-radius: 3px;
-	color: #82074a; */
-	/* margin-right: 18px; */
-	color: #b3b2b2;
-}
-.social-icons a:hover{
-	color: #fdd700;
-}
-.social-icons a i{
-	box-shadow: rgba(255, 255, 255, 0.08) 0px 4px 12px;
-    padding: 0.4rem 1rem 0.4rem 1rem;
-    border-radius: 3px;
-    color: #82074a;
-	font-size: 16px;
-	margin-right: 12px;
-}
-li{
-	list-style: none;
-}
-.useful-link h2{
-	padding-bottom: 15px;
-	font-size: 20px;
-    font-weight: 600;
-    color: #e3e3e3;
-}
-.useful-link img{
-	padding-bottom: 15px;
-}
-.use-links{
-	line-height: 32px;
-}
-.use-links li i{
-	font-size: 14px;
-    padding-right: 8px;
-    color: #ffffff;
-}
-.use-links li a{
-	color: #ffffff;
-    font-size: 15px;
-    font-weight: 500;
-	color: #b3b2b2;
-}
-.use-links li a:hover{
-	color: #fdd700;
-}
-.address h2{
-	padding-bottom: 15px;
-	font-size: 20px;
-    font-weight: 600;
-    color: #e3e3e3;
-}
-.address img{
-	padding-bottom: 15px;
-}
-.address-links li a{
-	color: #b3b2b2;
-    font-size: 15px;
-    font-weight: 500;
-	
+      #footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
 
-}
-.address-links li i{
-	font-size: 16px;
-    padding-right: 8px;
-	color: #82074a;
+      #footer .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-}
-.address-links li i:nth-child(1){
-	padding-top: 9px;
-}
-.address-links .address1{
-	font-weight: 500;
-    font-size: 15px;
-	display: flex;
-}
-.address-links{
-	    line-height: 32px;
-		color: #b3b2b2;
-}
-.copy-right-sec{
-	padding: 1.8rem;
-    background: #000000;
-    color: #fff;
-    text-align: center;
-}
-.copy-right-sec a{
-	color:#fdd700;
-    font-weight: 500;
-}
-a{
-  text-decoration:none;
-}
-/* footer section end */
+      /* Ensure sections stack vertically and are centered on small screens */
+      .useful-link,
+      .social-links,
+      .address,
+      .logo-container {
+        text-align: center;
+      }
+
+      .useful-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Consistent font size for all headings in the footer */
+      #footer h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fefefe;
+        margin-bottom: 1rem;
+      }
+
+      .useful-link ul {
+        font-size: 0.875rem;
+        color: #b3b2b2;
+        line-height: 1.5;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .useful-link li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Styling for useful links */
+      .use-links a {
+        color: #b3b2b2;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+      }
+
+      .use-links a:hover {
+        color: #fdd700;
+      }
+
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .social-icons a {
+        color: #b3b2b2;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+      }
+
+      .social-icons a:hover {
+        color: #fdd700;
+      }
+
+      .social-icons i {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+
+      .copy-right-sec {
+        padding: 1rem;
+        background: #000000;
+        color: #fff;
+        text-align: center;
+      }
+
+      .copy-right-sec a {
+        color: #fdd700;
+        font-weight: 500;
+      }
+
+      /* Responsive design for footer */
+      @media screen and (max-width: 768px) {
+        #footer .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .logo-container {
+          margin-bottom: 2rem; /* Space between logo and other sections */
+        }
+
+        .useful-link,
+        .social-links,
+        .address {
+          margin: 1rem 0;
+          text-align: center;
+        }
+
+        .use-links,
+        .social-icons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .use-links li,
+        .social-icons a {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      /* Logo styling */
+      .logo-footer {
+        max-width: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 15px;
+      }
+
+      .logo-footer:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Ensure container around the logo is properly spaced */
+      .logo-container {
+        margin-right: 2rem;
+      }
+
+      .address-links a:hover {
+        color: #ffc700; /* Text color turns yellow */
+      }
+
+      /* Add space between the box icons and text in the 'Contact Us' list items */
+      .address-links li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+
+      .address-links i {
+        margin-right: 10px; /* Adjust this value to add space between the icon and the text */
+        font-size: 1.2rem; /* Adjust icon size if needed */
+      }
+
+      /* Target all icons in the footer */
+      #footer .social-icons i {
+        color: #ff69b4; /* Pink color */
+      }
+
+      /* Ensure icon color changes on hover */
+      #footer .social-icons a:hover i {
+        color: #ff1493; /* Darker pink color on hover for better visibility */
+      }
+
+      /* Target icons in the Contact Us section */
+      #footer .address-links i {
+        color: #ff69b4; /* Pink color for icons */
+      }
+
+      /* Ensure icon color changes on hover */
+      #footer .address-links a:hover i {
+        color: #ff1493; /* Darker pink color on hover */
+      }
+      /* Ensure phone numbers stay on the same line */
+      #footer .address-links li a {
+        white-space: nowrap; /* Prevent phone numbers and email from wrapping */
+      }
+
+      #footer .address-links a {
+        align-items: center; /* Align items vertically */
+        gap: 0.5rem; /* Space between icon and text */
+      }
+
+      /* Footer section end */
+
 /* cta button 2 starts */
 .cta-button-2 {
       display: inline-block;
@@ -683,125 +755,190 @@ a{
     }
 /* Cta button 2 ends */
 
-    /*  navbar*/
+    /* Navbar CSS starts */
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #091327;
-      color: #fff;
-      position: relative;
-    }
-    .navbar-brand img {
-      width: 180px;
-      height: 100px;
-    }
-    .navbar {
-      display: flex;
-      align-items: center;
-    }
-    .navbar a {
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      display: block;
-    }
-    .navbar a:hover,
-    .navbar a.active {
-      background-color: #FFC700;
-      border-radius: 5px;
-      color: #091327;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropbtn {
-      background: none;
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;  
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #FFC700;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 5px;
-    }
-    .dropdown-content a {
-      color: #091327;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #FFC700;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .toggle-Button {
-      display: none;
-    }
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #091327;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    .sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #fff;
-      display: block;
-      transition: 0.3s;
-    }
-    .sidebar a:hover {
-      background-color: #FFC700;
-      color: #091327;
-    }
-    .sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
-    @media screen and (max-width: 768px) {
-      .navbar {
-        display: none;
-      }
-      .toggle-Button {
-        display: block;
-        cursor: pointer;
-      }
-      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #091327;
+        color: #fff;
         position: relative;
       }
-    }
-
-    @media screen and (max-width: 768px) {
+    
+      .navbar-brand img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+      }
+    
+      .navbar {
+        display: flex;
+        align-items: center;
+      }
+    
+      .navbar a {
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+      }
+    
+      .navbar a:hover,
+      .navbar a.active {
+        background-color: #ffc700;
+        border-radius: 5px;
+        color: #091327;
+      }
+    
+      .dropdown {
+        position: relative;
+      }
+    
+      .dropbtn {
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    
+      /* For dropdown items */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #091327;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+    
+      .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    
+      .toggle-Button {
+        display: none;
+      }
+    
       .sidebar {
-        padding-top: 15px;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #091327;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
       }
+    
       .sidebar a {
-        font-size: 18px;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
       }
-    } 
+    
+      .sidebar a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    
+      /* Sidebar structure */
+      .sidebar .dropdown-content {
+        display: block; /* Ensure dropdown content is always visible */
+        position: relative;
+        background-color: #091327;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .sidebar .dropdown-content li {
+        margin: 0;
+        padding: 0;
+      }
+    
+      .sidebar .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 32px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .sidebar .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      /* Media query for mobile view */
+      @media screen and (max-width: 768px) {
+        .sidebar .dropdown-content {
+          display: block;
+        }
+    
+        .sidebar .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    
+        .sidebar .dropdown-content a {
+          padding: 12px 32px;
+        }
+      }
+    
+      @media screen and (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+    
+        .toggle-Button {
+          display: block;
+          cursor: pointer;
+        }
+    
+        .dropdown-content {
+          position: relative;
+        }
+    
+        .sidebar {
+          padding-top: 15px;
+        }
+    
+        .sidebar a {
+          font-size: 18px;
+        }
+      }
+      /* Navbar CSS ends */
+    
     /* placement process */
     .placement-section {
             padding: 60px 20px;
@@ -968,21 +1105,27 @@ a{
 </head>
 
 <body>
+  <!-- Header Section Start -->
   <header class="header">
-    <a class="navbar-brand" href="about-alternative.html">
-      <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+    <a class="navbar-brand" href="about-us.html">
+      <img
+        src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+        alt="logo2"
+        class="logo"
+      />
     </a>
-  
+
     <nav class="navbar">
       <a href="index.html">HOME</a>
       <div class="dropdown">
-        <a href="training copy.html" button class="dropbtn">TRAINING
-           <i class="bx bx-chevron-down"></i>
-        </button>
+        <a href="training copy.html" class="dropbtn"
+          >TRAINING
+          <i class="bx bx-chevron-down"></i>
+        </a>
         <div class="dropdown-content">
-          <a href="college-training.html">Course 1</a>
-          <a href="corporate.html">Course 2</a>
-          <a href="faculty.html">Course 3</a>
+          <a href="college-training.html">College Training</a>
+          <a href="corporate.html">Corporate Training</a>
+          <a href="faculty.html">Faculty</a>
         </div>
       </div>
       <a href="placement-final-copy.html">PLACEMENT</a>
@@ -990,21 +1133,33 @@ a{
       <a href="gax-copy.html">GAX</a>
       <a href="BLOG.html">BLOG</a>
     </nav>
-  
+
     <div class="toggle-Button">
-      <span class="openbtn" onclick="openNav()">☰</span>
+      <span class="openbtn" onclick="toggleNav()">☰</span>
     </div>
-  
+
+    <!-- Sidebar structure in the mobile view -->
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
       <a href="index.html">HOME</a>
-      <a href="training copy.html">TRAINING</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn">TRAINING</a>
+        <!-- Sub-menu items are always visible on mobile -->
+        <ul class="dropdown-content">
+          <li><a href="college-training.html">College Training</a></li>
+          <li><a href="corporate.html">Corporate Training</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+        </ul>
+      </div>
       <a href="placement-final-copy.html">PLACEMENT</a>
       <a href="digitalcopy.html">DIGITAL MARKETING</a>
       <a href="gax-copy.html">GAX</a>
       <a href="BLOG.html">BLOG</a>
     </div>
   </header>
+
+  <!-- Header Section End -->
+
   <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
@@ -1291,80 +1446,107 @@ a{
     <a href="contact.html" class="cta-button-2">Contact Us Today!</a>
   </div>
 
-  <section class="footer">
-    <!-- footer section start -->
-  <footer id="footer">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-3">
-         <a href="index.html"><img src="image/GAXLOGO.png" alt="" class="img-fluid logo-footer"></a>
-                   <div class="footer-about">
-                      
-                   </div>
+    <!-- Footer Section Start -->
+    <section class="footer">
+      <footer>
+        <section id="footer">
+          <div class="container">
+            <div class="row">
+              <div class="logo-container">
+                <a href="about-us.html">
+                  <img
+                    src="image/GAXLOGO.png"
+                    alt=""
+                    class="img-fluid logo-footer animate__animated animate__fadeIn"
+                  />
+                </a>
+              </div>
+  
+              <div class="col-md-3">
+                <div
+                  class="useful-link animate__animated animate__fadeIn animate__delay-1s"
+                >
+                  <h2>Useful Links</h2>
+                  <ul
+                    class="use-links animate__animated animate__fadeIn animate__delay-2s"
+                  >
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="training copy.html">Training</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div
+                  class="social-links animate__animated animate__fadeIn animate__delay-3s"
+                >
+                  <h2>Follow Us</h2>
+                  <div
+                    class="social-icons animate__animated animate__fadeIn animate__delay-4s"
+                  >
+                    <a href="https://www.facebook.com/gryphonnacademy/"
+                      ><i class="bx bxl-facebook"></i>Facebook</a
+                    >
+                    <a href="https://www.linkedin.com/company/gryphonacademy/"
+                      ><i class="bx bxl-linkedin"></i>LinkedIn</a
+                    >
+                    <a href="https://www.instagram.com/gryphon_academy/"
+                      ><i class="bx bxl-instagram"></i>Instagram</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div
+                  class="address animate__animated animate__fadeIn animate__delay-5s"
+                >
+                  <h2>Contact Us</h2>
+                  <ul
+                    class="address-links animate__animated animate__fadeIn animate__delay-6s"
+                  >
+                    <li>
+                      <a
+                        href="https://maps.app.goo.gl/ftpdk38mzttVv9Kv8"
+                        target="_blank"
+                      >
+                        <i class="bx bx-map"></i>Seasons Business Square<br/>  by
+                          Naiknavare Office no 301,<br/>3rd floor, Seasons Rd, Sanewadi,<br/>Aundh, Pune, Maharashtra 411007
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="tel:+918983614509"
+                        class="address-link animate__animated animate__bounce"
+                      >
+                        <i id="footer-tele" class="bx bx-phone"></i>+91 89836 14509 / 8983339099
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:gryphonx@gryphonacademy.co.in"
+                        class="address-link"
+                      >
+                        <i  class="bx bx-envelope"></i
+                        >gryphonx@gryphonacademy.co.in
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <div  class="copy-right-sec">
+          <p>&copy; 2024 Gryphon Academy.Pvt.Ltd. All rights reserved.</p>
+        </div>
+      </footer>
+    </section>
+      <!-- footer section end -->
 
-       </div>
-       <div class="col-md-3">
-         <div class="useful-link">
-           <h2>Useful Links</h2>
-          
-           <div class="use-links">
-             <li><a href="index.html"><i class="fa-solid fa-angles-right"></i> Home</a></li>
-             <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
-             <li><a href="gallery.html"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
-             <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
-           </div>
-         </div>
-
-       </div>
-             <div class="col-md-3">
-                  <div class="social-links">
-           <h2>Follow-Us</h2>
-           
-           <div class="social-icons">
-             <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
-             <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-             <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
-           </div>
-         </div>
-                 
-
-                 </div>
-       <div class="col-md-3">
-         <div class="address">
-           <h2>Address</h2>
-           
-           <div class="address-links">
-             <li class="address1"><i class="fa-solid fa-location-dot">
-
-             </i> 
-               Seasons business square by 
-                Naiknavare Office no 301, 3rd floor, 
-                Seasons Rd, Sanewadi, Aundh, 
-                Pune, Maharashtra 411007
-                +91 89836 14509 / 8983339099
-                connect@gryphonacademy.co.in</li>
-                <li><a href=""><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
-                <li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
-           </div>
-         </div>
-       </div>
-               
-     </div>
-   </div>
-
- </footer>
- <!-- footer section end -->
- <!-- footer copy right section start -->
- <section id="copy-right">
-   <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
-     @2019 All Rights Reserved Powerd By <a href="#">Gryphon Academy</a> 
-   </div>
-
- </section>
- <!-- footer copy right section end -->
 
 
-</section>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -1569,6 +1751,20 @@ document.getElementById('btn4').addEventListener('click', function(){
         // Check elements on scroll and on load
         window.addEventListener('scroll', checkElements);
         window.addEventListener('load', checkElements);
+              // Function to toggle sidebar
+      function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+          sidebar.style.width = "0";
+        } else {
+          sidebar.style.width = "250px";
+        }
+      }
+
+      // Function to close sidebar with the close button
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
    </script>
 
 </body>

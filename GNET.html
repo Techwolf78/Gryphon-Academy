@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Header</title>
+    <title>GNET - Gryphon National Employability Test</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -23,7 +23,7 @@
         margin: 0;
         padding: 0;
       }
-      /* Navbar CSS starts */
+    /* Navbar CSS starts */
       .header {
         display: flex;
         justify-content: space-between;
@@ -33,36 +33,36 @@
         color: #fff;
         position: relative;
       }
-
+    
       .navbar-brand img {
         width: 100%;
         max-width: 180px;
         height: auto;
       }
-
+    
       .navbar {
         display: flex;
         align-items: center;
       }
-
+    
       .navbar a {
         color: #fff;
         padding: 10px 20px;
         text-decoration: none;
         display: block;
       }
-
+    
       .navbar a:hover,
       .navbar a.active {
         background-color: #ffc700;
         border-radius: 5px;
         color: #091327;
       }
-
+    
       .dropdown {
         position: relative;
       }
-
+    
       .dropbtn {
         background: none;
         border: none;
@@ -72,7 +72,7 @@
         display: flex;
         align-items: center;
       }
-
+    
       /* For dropdown items */
       .dropdown-content {
         display: none;
@@ -83,7 +83,7 @@
         z-index: 1;
         border-radius: 5px;
       }
-
+    
       .dropdown-content a {
         color: #ffffff;
         padding: 12px 16px;
@@ -91,20 +91,20 @@
         display: block;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-
+    
       .dropdown-content a:hover {
         background-color: #ffc700;
         color: #091327;
       }
-
+    
       .dropdown:hover .dropdown-content {
         display: block;
       }
-
+    
       .toggle-Button {
         display: none;
       }
-
+    
       .sidebar {
         height: 100%;
         width: 0;
@@ -117,7 +117,7 @@
         transition: 0.5s;
         padding-top: 60px;
       }
-
+    
       .sidebar a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
@@ -126,12 +126,12 @@
         display: block;
         transition: 0.3s;
       }
-
+    
       .sidebar a:hover {
         background-color: #ffc700;
         color: #091327;
       }
-
+    
       .sidebar .closebtn {
         position: absolute;
         top: 0;
@@ -139,7 +139,7 @@
         font-size: 36px;
         margin-left: 50px;
       }
-
+    
       /* Sidebar structure */
       .sidebar .dropdown-content {
         display: block; /* Ensure dropdown content is always visible */
@@ -149,12 +149,12 @@
         padding: 0;
         margin: 0;
       }
-
+    
       .sidebar .dropdown-content li {
         margin: 0;
         padding: 0;
       }
-
+    
       .sidebar .dropdown-content a {
         color: #ffffff;
         padding: 12px 32px;
@@ -162,58 +162,168 @@
         display: block;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-
+    
       .sidebar .dropdown-content a:hover {
         background-color: #ffc700;
         color: #091327;
       }
-
+    
       /* Media query for mobile view */
       @media screen and (max-width: 768px) {
         .sidebar .dropdown-content {
           display: block;
         }
-
+    
         .sidebar .dropdown:hover .dropdown-content {
           display: block;
         }
-
+    
         .sidebar .dropdown-content a {
           padding: 12px 32px;
         }
       }
-
+    
       @media screen and (max-width: 768px) {
         .navbar {
           display: none;
         }
-
+    
         .toggle-Button {
           display: block;
           cursor: pointer;
         }
-
+    
         .dropdown-content {
           position: relative;
         }
-
+    
         .sidebar {
           padding-top: 15px;
         }
-
+    
         .sidebar a {
           font-size: 18px;
         }
       }
       /* Navbar CSS ends */
 
+      .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group .error-message {
+            display: none;
+            color: #ff0000;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .form-group button {
+            background-color: #091327;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0d1b2a;
+        }
+
+        /* Register Here Section */
+
+        /* Style for the section */
+        .registration-section {
+            background-color: #000;
+            /* Black background */
+            color: #fff;
+            /* White text color */
+            text-align: center;
+            /* Center-align text */
+            padding: 20px;
+            /* Add padding for spacing */
+        }
+
+        /* Style for the primary heading */
+        .registration-section h1 {
+            font-size: 2.5em;
+            /* Increase font size */
+            margin-bottom: 10px;
+            /* Gap below the primary heading */
+        }
+
+        /* Style for the secondary heading */
+        .registration-section h2 {
+            font-size: 1.2em;
+            /* Slightly smaller font size */
+            color: #775f5f;
+            /* Light grey color for text */
+            margin-top: 0;
+            /* Remove default top margin */
+            margin-bottom: 0;
+            /* Remove default bottom margin */
+        }
+
+        .registration-section p {
+            font-size: 1em;
+            /* Font size for paragraph */
+            margin-top: 10px;
+            /* Add space above the paragraph */
+            color:darkred;
+        }
+
+        .registration-section a {
+            color: #ffc700;
+            /* Color for links */
+            text-decoration: none;
+            /* Remove underline */
+            font-weight: bold;
+            /* Make text bold */
+        }
+
+        .registration-section a:hover {
+            text-decoration: underline;
+            /* Add underline on hover */
+        }
+
+        /* Register Here Section Ends*/
+    
       /* Footer section start */
       #footer {
         background: #000000;
         padding: 3rem 1.5rem;
         color: #e3e3e3;
       }
-
+    
       .useful-link,
       .social-links,
       .address {
@@ -221,20 +331,20 @@
         flex: 1;
         text-align: center;
       }
-
+    
       #footer .container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
       }
-
+    
       #footer .row {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
       }
-
+    
       /* Ensure sections stack vertically and are centered on small screens */
       .useful-link,
       .social-links,
@@ -242,13 +352,13 @@
       .logo-container {
         text-align: center;
       }
-
+    
       .useful-link {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
-
+    
       /* Consistent font size for all headings in the footer */
       #footer h2 {
         font-size: 2rem;
@@ -256,7 +366,7 @@
         color: #fefefe;
         margin-bottom: 1rem;
       }
-
+    
       .useful-link ul {
         font-size: 0.875rem;
         color: #b3b2b2;
@@ -265,11 +375,11 @@
         margin: 0;
         list-style: none;
       }
-
+    
       .useful-link li {
         margin-bottom: 0.5rem;
       }
-
+    
       /* Styling for useful links */
       .use-links a {
         color: #b3b2b2;
@@ -278,103 +388,103 @@
         align-items: center;
         font-size: 1rem;
       }
-
+    
       .use-links a:hover {
         color: #fdd700;
       }
-
+    
       .social-links {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
-
+    
       .social-icons {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
       }
-
+    
       .social-icons a {
         color: #b3b2b2;
         display: flex;
         align-items: center;
         font-size: 1rem;
       }
-
+    
       .social-icons a:hover {
         color: #fdd700;
       }
-
+    
       .social-icons i {
         font-size: 1.5rem;
         margin-right: 0.5rem;
       }
-
+    
       .copy-right-sec {
         padding: 1rem;
         background: #000000;
         color: #fff;
         text-align: center;
       }
-
+    
       .copy-right-sec a {
         color: #fdd700;
         font-weight: 500;
       }
-
+    
       /* Responsive design for footer */
       @media screen and (max-width: 768px) {
         #footer .container {
           flex-direction: column;
           align-items: center;
         }
-
+    
         .logo-container {
           margin-bottom: 2rem; /* Space between logo and other sections */
         }
-
+    
         .useful-link,
         .social-links,
         .address {
           margin: 1rem 0;
           text-align: center;
         }
-
+    
         .use-links,
         .social-icons {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-
+    
         .use-links li,
         .social-icons a {
           margin-bottom: 0.5rem;
         }
       }
-
+    
       /* Logo styling */
       .logo-footer {
         max-width: 200px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         margin-top: 15px;
       }
-
+    
       .logo-footer:hover {
         transform: scale(1.05);
         box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
       }
-
+    
       /* Ensure container around the logo is properly spaced */
       .logo-container {
         margin-right: 2rem;
       }
-
+    
       .address-links a:hover {
         color: #ffc700; /* Text color turns yellow */
       }
-
+    
       /* Add space between the box icons and text in the 'Contact Us' list items */
       .address-links li a {
         display: flex;
@@ -383,40 +493,42 @@
         color: #ffffff;
         font-size: 1rem;
       }
-
+    
       .address-links i {
         margin-right: 10px; /* Adjust this value to add space between the icon and the text */
         font-size: 1.2rem; /* Adjust icon size if needed */
       }
+      
+/* Target all icons in the footer */
+#footer .social-icons i {
+  color: #ff69b4; /* Pink color */
+}
 
-      /* Target all icons in the footer */
-      #footer .social-icons i {
-        color: #ff69b4; /* Pink color */
-      }
+/* Ensure icon color changes on hover */
+#footer .social-icons a:hover i {
+  color: #ff1493; /* Darker pink color on hover for better visibility */
+}
 
-      /* Ensure icon color changes on hover */
-      #footer .social-icons a:hover i {
-        color: #ff1493; /* Darker pink color on hover for better visibility */
-      }
+/* Target icons in the Contact Us section */
+#footer .address-links i {
+  color: #ff69b4; /* Pink color for icons */
+}
 
-      /* Target icons in the Contact Us section */
-      #footer .address-links i {
-        color: #ff69b4; /* Pink color for icons */
-      }
+/* Ensure icon color changes on hover */
+#footer .address-links a:hover i {
+  color: #ff1493; /* Darker pink color on hover */
+}
+/* Ensure phone numbers stay on the same line */
+#footer .address-links li a
+ {
+  white-space: nowrap; /* Prevent phone numbers and email from wrapping */
+}
 
-      /* Ensure icon color changes on hover */
-      #footer .address-links a:hover i {
-        color: #ff1493; /* Darker pink color on hover */
-      }
-      /* Ensure phone numbers stay on the same line */
-      #footer .address-links li a {
-        white-space: nowrap; /* Prevent phone numbers and email from wrapping */
-      }
 
-      #footer .address-links a {
-        align-items: center; /* Align items vertically */
-        gap: 0.5rem; /* Space between icon and text */
-      }
+#footer .address-links a {
+  align-items: center; /* Align items vertically */
+  gap: 0.5rem; /* Space between icon and text */
+}
 
       /* Footer section end */
     </style>
@@ -477,6 +589,117 @@
 
     <!-- Header Section End -->
 
+    <!-- Register Here Section -->
+    <section class="registration-section">
+        <h1 class="registration-heading">Apply for the GNET</h1>
+        <h2 class="breadcrumb">
+            <a href="index.html" class="home-link">Home</a> > Apply Here >>>
+            <p>Test your knowledge with the Gryphon National Employability Test (GNET) and see if you are eligible for a guaranteed placement!
+            </p>
+        </h2>
+    </section>
+
+        <!-- Registration Form -->
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            <form id="registrationForm" action="https://formspree.io/f/mdknpqbk" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Full Name of Student *</label>
+                    <input type="text" id="fullName" name="fullName" required />
+                    <div class="error-message" id="fullNameError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID *</label>
+                    <input type="email" id="email" name="email" required />
+                    <div class="error-message" id="emailError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile No. *</label>
+                    <input type="tel" id="mobile" name="mobile" required />
+                    <div class="error-message" id="mobileError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="currently">What are you currently doing?*</label>
+                    <select id="currently" name="currently" required>
+                        <option value="" disabled selected>
+                            Select your option
+                        </option>
+                        <option value="Fresher with Zero Experience">Fresher with Zero Experience</option>
+                        <option value="Looking for a Job">Looking for a Job</option>
+                        <option value="Studying in Last Semester">Studying in Last Semester</option>
+                        <option value="Working in Mechanical Domain">Working in Mechanical Domain</option>
+                        <option value="Working in Other Domain">Working in Other Domain</option>
+                    </select>
+                    <div class="error-message" id="specializationError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="collegeName">College Name *</label>
+                    <input type="text" id="collegeName" name="collegeName" required />
+                    <div class="error-message" id="collegeNameError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="specialization">BE/BTech Specialization *</label>
+                    <select id="specialization" name="specialization" required>
+                        <option value="" disabled selected>
+                            Select your specialization
+                        </option>
+                        <option value="mechanical">Mechanical</option>
+                        <option value="civil">Civil</option>
+                        <option value="computer-science">Computer Science</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="chemical">Chemical</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="error-message" id="specializationError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="percentage">B.E./B.Tech Percentage *</label>
+                    <input type="text" id="percentage" name="percentage" required pattern="\d+(\.\d{1,2})?"
+                        title="Enter a valid percentage (e.g., 85 or 85.50)" />
+                    <div class="error-message" id="percentageError">
+                        This field is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passoutYear">B.E./B.Tech Passout Year *</label>
+                    <select id="passoutYear" name="passoutYear" required>
+                        <option value="" disabled selected>Select your passout year</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                    </select>
+                    <div class="error-message" id="passoutYearError">
+                        This field is required.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        <!-- Form Ends -->
+
     <!-- Footer Section Start -->
     <section class="footer">
       <footer>
@@ -492,7 +715,7 @@
                   />
                 </a>
               </div>
-
+  
               <div class="col-md-3">
                 <div
                   class="useful-link animate__animated animate__fadeIn animate__delay-1s"
@@ -541,9 +764,8 @@
                         href="https://maps.app.goo.gl/ftpdk38mzttVv9Kv8"
                         target="_blank"
                       >
-                        <i class="bx bx-map"></i>Seasons Business Square<br />
-                        by Naiknavare Office no 301,<br />3rd floor, Seasons Rd,
-                        Sanewadi,<br />Aundh, Pune, Maharashtra 411007
+                        <i class="bx bx-map"></i>Seasons Business Square<br/>  by
+                          Naiknavare Office no 301,<br/>3rd floor, Seasons Rd, Sanewadi,<br/>Aundh, Pune, Maharashtra 411007
                       </a>
                     </li>
                     <li>
@@ -551,8 +773,7 @@
                         href="tel:+918983614509"
                         class="address-link animate__animated animate__bounce"
                       >
-                        <i id="footer-tele" class="bx bx-phone"></i>+91 89836
-                        14509 / 8983339099
+                        <i id="footer-tele" class="bx bx-phone"></i>+91 89836 14509 / 8983339099
                       </a>
                     </li>
                     <li>
@@ -560,7 +781,7 @@
                         href="mailto:gryphonx@gryphonacademy.co.in"
                         class="address-link"
                       >
-                        <i class="bx bx-envelope"></i
+                        <i  class="bx bx-envelope"></i
                         >gryphonx@gryphonacademy.co.in
                       </a>
                     </li>
@@ -570,13 +791,13 @@
             </div>
           </div>
         </section>
-
-        <div class="copy-right-sec">
+  
+        <div  class="copy-right-sec">
           <p>&copy; 2024 Gryphon Academy.Pvt.Ltd. All rights reserved.</p>
         </div>
       </footer>
-    </section>
-    <!-- footer section end -->
+  
+      <!-- footer section end -->
 
     <script>
       // Function to toggle sidebar
