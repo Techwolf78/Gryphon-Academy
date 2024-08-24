@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Remixicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css"
+    />
+
+    <title>Profile card with tooltip</title>
+    <style>
+      /* Tooltip Section CSS Starts */
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f7f8fc;
+        color: #333;
+      }
+
+      .tooltip-class {
+        padding: 2rem;
+      }
+
+      .card__article {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        width: 150px; /* Increased width for card container */
+      }
+
+      .card__profile {
+        width: 100px;
+        height: 100px;
+        background-color: #e1e4ea;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border: 4px solid white;
+        transition: transform 0.4s, opacity 0.4s;
+      }
+
+      .card__profile img {
+        width: 95px;
+      }
+
+      /* tooltip card css starts */
+      .card__tooltip {
+        position: absolute;
+        bottom: 100%; /* Move tooltip above the profile picture */
+        left: 50%; /* Center the tooltip horizontally */
+        transform: translateX(-50%); /* Center the tooltip horizontally */
+        transition: opacity 0.4s, bottom 0.4s;
+        pointer-events: none;
+        opacity: 0;
+        background-color: white;
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        width: 250px; /* Default width */
+      }
+
+      /* Show tooltip card with animation on hover */
+      .card__article:hover .card__tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        bottom: calc(
+          100% + 1rem
+        ); /* Adjust the position above the profile picture */
+      }
+
+      /* Scale profile image */
+      .card__article:hover .card__profile {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+
+      /* Adjust tooltip width for smaller screens */
+      @media (max-width: 500px) {
+        .card__tooltip {
+          width: 200px; /* Smaller width for screens below 500px */
+          padding: 0.5rem; /* Reduce padding */
+          left: 10%; /* Add left margin for better spacing */
+          transform: translateX(0); /* Adjust position */
+        }
+      }
+
+      /* Adjust tooltip width for smaller screens */
+      @media (max-width: 700px) {
+        .card__tooltip {
+          width: 225px; /* Smaller width for screens below 500px */
+          padding: 0.5rem; /* Reduce padding */
+          left: 10%; /* Add left margin for better spacing */
+          right: 10%; /* Add right margin for better spacing */
+          transform: translateX(0); /* Adjust position */
+        }
+      }
+
+      /* tooltip card css ends */
+
+      /* Keyframes for fadeInUp animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Grid layout adjustments */
+      .profile-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 1rem; /* Space between cards */
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 991px) {
+        .profile-cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .profile-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 380px) {
+        .profile-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Explore Programs section CSS starts */
+      .text-section h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .text-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .explore-button {
+        background-color: #00c853;
+        color: #ffffff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .explore-button:hover {
+        background-color: #00a149;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      style="background-color: #00c853; color: #ffffff; padding: 10px 20px"
+    >
+      <h2>GrowthSchool</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Programs</a></li>
+      </ul>
+    </header>
+
+    <!-- Explore Programs section starts -->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-section">
+            <h1>Become the Top 1%</h1>
+            <p>
+              Whether it is Product, Growth, Design, Management, Business, Tech
+              & Data, GrowthSchool is the place to learn from top experts in the
+              field.
+            </p>
+            <button class="explore-button">Explore Programs</button>
+          </div>
+
+          <!-- Wrapper div for profile cards -->
+          <div class="col-md-6 profile-cards">
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+    </section>
+    <!-- Explore Programs section ends -->
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

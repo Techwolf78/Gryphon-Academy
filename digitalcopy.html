@@ -1,309 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Bootstrap CSS -->
-   <link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-   rel="stylesheet"
-   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-   crossorigin="anonymous"
- />
- <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-  <title>Job Portal</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #000000;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
 
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 50px;
-      box-sizing: border-box;
-      min-height: 100vh;
-    }
+    <title>Job Portal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
 
-    .content {
-      max-width: 50%;
-      animation: fadeIn 2s ease-in-out;
-    }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
 
-    .content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      animation: slideInFromLeft 1s ease-in-out;
-    }
+        .content {
+            max-width: 50%;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-    .highlight {
-      color: #FFC700;
-    }
+        .content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideInFromLeft 1s ease-in-out;
+        }
 
-    .content p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-      animation: slideInFromRight 1s ease-in-out;
-    }
+        .highlight {
+            color: #FFC700;
+        }
 
-    .buttons {
-      margin-bottom: 30px;
-      animation: fadeIn 2s ease-in-out;
-    }
+        .content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            animation: slideInFromRight 1s ease-in-out;
+        }
 
-    .btn-primary, .btn-secondary {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-right: 10px;
-    }
+        .buttons {
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-    .btn-primary {
-      background-color: #091327;
-      
-      color: white;
-    }
+        .btn-primary,
+        .btn-secondary {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 10px;
+        }
 
-    .btn-secondary {
-      background: none;
-      color: #ffffff;
-      border: 2px solid #fac208;
-    }
+        .btn-primary {
+            background-color: #091327;
 
-    .image {
-      max-width: 50%;
-      text-align: center;
-    }
+            color: white;
+        }
 
-    .image img {
-      width: 100%;
-      max-width: 400px;
-    }
+        .btn-secondary {
+            background: none;
+            color: #ffffff;
+            border: 2px solid #fac208;
+        }
 
-    .jobs {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 50px;
-    }
+        .image {
+            max-width: 50%;
+            text-align: center;
+        }
 
-    .job-card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 30%;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
+        .image img {
+            width: 100%;
+            max-width: 400px;
+        }
 
-    .job-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
+        .jobs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
 
-    .job-card p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
+        .job-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-    .video-section {
-      text-align: center;
-      margin: 50px 0;
-    }
+        .job-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
 
-    .video-container {
-      display: inline-block;
-      border: 5px solid #091327;
-      border-radius: 10px;
-      overflow: hidden;
-      animation: fadeIn 2s ease-in-out;
-    }
+        .job-card p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
+        .video-section {
+            text-align: center;
+            margin: 50px 0;
+        }
 
-      .content, .image {
-        max-width: 100%;
-      }
+        .video-container {
+            display: inline-block;
+            border: 5px solid #091327;
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-      .jobs {
-        flex-direction: column;
-        align-items: center;
-      }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-      .job-card {
-        width: 80%;
-        margin-bottom: 20px;
-      }
-    }
+            .content,
+            .image {
+                max-width: 100%;
+            }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+            .jobs {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    @keyframes slideInFromLeft {
-      from { transform: translateX(-100%); }
-      to { transform: translateX(0); }
-    }
+            .job-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
 
-    @keyframes slideInFromRight {
-      from { transform: translateX(100%); }
-      to { transform: translateX(0); }
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-    /*  */
-   
-    .card-container{
-  display:grid;
-  grid-template-columns:repeat(100,1fr);
-  overflow-x:scroll;
-}
-  
-  .cutout-card{
-    position:relative;
-    overflow:hidden;
-    display:inline-block;
-    margin:10px;
-    box-shadow:0 0 10px black;
-    flex:0 0 auto;
-    width:300px;
-    height:350px;
-    background-color:#666;
-    &:hover > .cutout-card__text {
-        margin-top:-100%;
-      }
-    &:hover > .cutout-card__secondary {
-        top:0%;
-      }
-    .cutout-card__background{
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      z-index:0;
-      background-size:cover!important;
-      background-position:center!important;
-    }
-    .cutout-card__text{
-      position:absolute;
-      padding:5px;
-      z-index:1;
-      text-align:center;
-      min-width:60%;
-      height:60px;
-      border-radius:10px 10px;
-      text-align:center;
-      vertical-align:middle;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      background-color:rgba(255,255,255,0.8);
-      color:black;
-      font-family:'Bungee shade',cursive;
-      font-weight:bold;
-      line-height:60px;
-      font-size:30px;
-      mix-blend-mode:screen;
-      transition:all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-      &:before{
-        position:absolute;
-        content:'';
-         background-color:rgba(255,255,255,0.8);
-        top:-100%;
-        width:5px;
-        height:60%;
-        left:50%;
-      }
-      &:after{
-        position:absolute;
-        content:'';
-         background-color:rgba(255,255,255,0.8);
-        top:130%;
-        width:5px;
-        height:60%;
-        left:50%;
-      }
-    }
-   
-    .--space{
-      background:url($space);
-    }
-    .--time{
-      background:url($time);
-    }
-    .--energy{
-      background:url($energy);
-    }
-    .--matter{
-      background:url($matter);
-    }
-     .--art1{
-      background:url($art1);
-    }
-    .--art2{
-      background:url($art2);
-    }
-    .--art3{
-      background:url($art3);
-    }
-     .--art4{
-      background:url($art4);
-    }
-    .cutout-card__secondary{
-      overflow-y:scroll;
-      cursor:pointer;
-      padding:5px;
-      position:absolute;
-      z-index:3;
-      top:100%;
-      left:0;
-      width:100%;
-      height:100%;
-      background-color:rgb(0, 0, 0);
-        font-family:'Permanent Marker',cursive;
-      font-size:15px;
-      transition: all 0.5s ;
-      &::-webkit-scrollbar-thumb{
-      background-color:#fda800;
-      }
-      p{
-       background:url($bgnotepad);
-      background-repeat:repeat;
-       background-position:-30px;
-     
-      }
-    }
-    }
+            to {
+                opacity: 1;
+            }
+        }
 
-  
-@media screen and (max-width:768px){
-  .cutout-card{
-    width:250px;
-  }
-}
-.card-container {
-    position: relative;
-    left: 5rem;
-    display: grid;
-    grid-template-columns: repeat(100, 1fr);
-    overflow-x: scroll;
-}
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
 
-/* video section */
-.main-wrapper {
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /*  */
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(100, 1fr);
+            overflow-x: scroll;
+        }
+
+        .cutout-card {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin: 10px;
+            box-shadow: 0 0 10px black;
+            flex: 0 0 auto;
+            width: 300px;
+            height: 350px;
+            background-color: #666;
+
+            &:hover>.cutout-card__text {
+                margin-top: -100%;
+            }
+
+            &:hover>.cutout-card__secondary {
+                top: 0%;
+            }
+
+            .cutout-card__background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                background-size: cover !important;
+                background-position: center !important;
+            }
+
+            .cutout-card__text {
+                position: absolute;
+                padding: 5px;
+                z-index: 1;
+                text-align: center;
+                min-width: 60%;
+                height: 60px;
+                border-radius: 10px 10px;
+                text-align: center;
+                vertical-align: middle;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(255, 255, 255, 0.8);
+                color: black;
+                font-family: 'Bungee shade', cursive;
+                font-weight: bold;
+                line-height: 60px;
+                font-size: 30px;
+                mix-blend-mode: screen;
+                transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    background-color: rgba(255, 255, 255, 0.8);
+                    top: -100%;
+                    width: 5px;
+                    height: 60%;
+                    left: 50%;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    background-color: rgba(255, 255, 255, 0.8);
+                    top: 130%;
+                    width: 5px;
+                    height: 60%;
+                    left: 50%;
+                }
+            }
+
+            .--space {
+                background: url($space);
+            }
+
+            .--time {
+                background: url($time);
+            }
+
+            .--energy {
+                background: url($energy);
+            }
+
+            .--matter {
+                background: url($matter);
+            }
+
+            .--art1 {
+                background: url($art1);
+            }
+
+            .--art2 {
+                background: url($art2);
+            }
+
+            .--art3 {
+                background: url($art3);
+            }
+
+            .--art4 {
+                background: url($art4);
+            }
+
+            .cutout-card__secondary {
+                overflow-y: scroll;
+                cursor: pointer;
+                padding: 5px;
+                position: absolute;
+                z-index: 3;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(0, 0, 0);
+                font-family: 'Permanent Marker', cursive;
+                font-size: 15px;
+                transition: all 0.5s;
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #fda800;
+                }
+
+                p {
+                    background: url($bgnotepad);
+                    background-repeat: repeat;
+                    background-position: -30px;
+
+                }
+            }
+        }
+
+
+        @media screen and (max-width:768px) {
+            .cutout-card {
+                width: 250px;
+            }
+        }
+
+        .card-container {
+            position: relative;
+            left: 5rem;
+            display: grid;
+            grid-template-columns: repeat(100, 1fr);
+            overflow-x: scroll;
+        }
+
+        /* video section */
+        .main-wrapper {
             padding: 20px;
         }
 
@@ -369,194 +402,198 @@
             margin-bottom: 30px;
         }
 
-/** Use .sticky */
+        /** Use .sticky */
 
-.ytvideo .is-sticky,.videoTag .is-sticky{
-    position: fixed;
-    right: 3px;
-    bottom: 3px;
-    top: auto;
-    left: auto;
-    max-width: 280px;
-    max-height: 158px;
-    width: 280px;
-    height: 158px;
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
+        .ytvideo .is-sticky,
+        .videoTag .is-sticky {
+            position: fixed;
+            right: 3px;
+            bottom: 3px;
+            top: auto;
+            left: auto;
+            max-width: 280px;
+            max-height: 158px;
+            width: 280px;
+            height: 158px;
+            -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
 
-@-webkit-keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
+        @-webkit-keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+            }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
 
-section.main-wrapper {
-    max-width: 760px;
-    margin: 0 auto;
-}
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+            }
 
-section.level {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    text-transform: uppercase;
-    height: 250px;
-    margin-bottom: 50px;
-}
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
 
-section.level.one {
-    background: #FFC300;
-    margin-top: 25px;
-}
+        section.main-wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+        }
 
-section.level.two {
-    background: #C70039;
-}
+        section.level {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            text-transform: uppercase;
+            height: 250px;
+            margin-bottom: 50px;
+        }
 
-section.level.three {
-    background: #FF5733;
-}
+        section.level.one {
+            background: #FFC300;
+            margin-top: 25px;
+        }
 
-section.level.four {
-    background: #C6E2FF;
-}
+        section.level.two {
+            background: #C70039;
+        }
 
-section.level.five {
-    background: #0085ca;
-}
+        section.level.three {
+            background: #FF5733;
+        }
 
-section.level.six {
-    background: #0085ca;
-}
+        section.level.four {
+            background: #C6E2FF;
+        }
 
-section.level.seven {
-    background: #C6E2FF;
-}
+        section.level.five {
+            background: #0085ca;
+        }
 
-section.level.eight {
-    background: #FF5733;
-    margin-top: 10rem;
-}
+        section.level.six {
+            background: #0085ca;
+        }
 
-section.level.nine {
-    background: #C70039;
-}
+        section.level.seven {
+            background: #C6E2FF;
+        }
 
-section.level.ten {
-    background: #FFC300;
-}
+        section.level.eight {
+            background: #FF5733;
+            margin-top: 10rem;
+        }
 
-.close-button {
-    position: fixed;
-    box-sizing: border-box;
-    display: block;
-    right: 24px;
-    bottom: 175px;
-    top: auto;
-    left: auto;
-    -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    display: none;
-}
+        section.level.nine {
+            background: #C70039;
+        }
 
-.close-button:before,
-.close-button:after {
-    width: 20px;
-    height: 5px;
-    transform: rotate(-45deg);
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    background-color: #4F2121;
-    transition: all 0.2s ease-out;
-}
+        section.level.ten {
+            background: #FFC300;
+        }
 
-.close-button:after {
-    transform: rotate(45deg);
-}
+        .close-button {
+            position: fixed;
+            box-sizing: border-box;
+            display: block;
+            right: 24px;
+            bottom: 175px;
+            top: auto;
+            left: auto;
+            -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            display: none;
+        }
 
-.close-button:hover:after {
-    transform: rotate(-45deg);
-}
+        .close-button:before,
+        .close-button:after {
+            width: 20px;
+            height: 5px;
+            transform: rotate(-45deg);
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            background-color: #4F2121;
+            transition: all 0.2s ease-out;
+        }
 
-.close-button:hover:before {
-    transform: rotate(45deg);
-}
+        .close-button:after {
+            transform: rotate(45deg);
+        }
 
-.gradient-overlay {
-    position: fixed;
-    right: 3px;
-    bottom: 3px;
-    top: auto;
-    left: auto;
-    max-width: 280px;
-    max-height: 158px;
-    width: 280px;
-    height: 158px;
-    opacity: .01;
-    background: #000;
-    z-index: 1;
-    display: none;
-}
+        .close-button:hover:after {
+            transform: rotate(-45deg);
+        }
 
-i.fa.fa-arrows-alt {
-    position: fixed;
-    right: 8px;
-    bottom: 5px;
-    top: auto;
-    left: auto;
-    color: #fff;
-    z-index: 2;
-    cursor: pointer;
-    display: none;
-}
+        .close-button:hover:before {
+            transform: rotate(45deg);
+        }
 
-@media only screen and (max-width:1023px) {
-    section.main-wrapper {
-        width: 95%;
-    }
-    section.level {
-        height: 150px;
-        margin-bottom: 50px;
-    }
-}
+        .gradient-overlay {
+            position: fixed;
+            right: 3px;
+            bottom: 3px;
+            top: auto;
+            left: auto;
+            max-width: 280px;
+            max-height: 158px;
+            width: 280px;
+            height: 158px;
+            opacity: .01;
+            background: #000;
+            z-index: 1;
+            display: none;
+        }
 
-/* new logo section */
-.logo img {
+        i.fa.fa-arrows-alt {
+            position: fixed;
+            right: 8px;
+            bottom: 5px;
+            top: auto;
+            left: auto;
+            color: #fff;
+            z-index: 2;
+            cursor: pointer;
+            display: none;
+        }
+
+        @media only screen and (max-width:1023px) {
+            section.main-wrapper {
+                width: 95%;
+            }
+
+            section.level {
+                height: 150px;
+                margin-bottom: 50px;
+            }
+        }
+
+        /* new logo section */
+        .logo img {
             height: 40px;
             margin-right: 10px;
         }
@@ -585,79 +622,7 @@ i.fa.fa-arrows-alt {
             background-color: #ffcc00;
             color: #1b263b;
         }
-
-        main {
-            padding: 50px 20px;
-        }
-
-        .text-section h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .text-section p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .explore-button {
-            background-color: #00c853;
-            color: #ffffff;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .explore-button:hover {
-            background-color: #00a149;
-        }
-
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            position: relative;
-        }
-
-        .grid-item {
-            width: 100px;
-            height: 100px;
-            background-color: #1b263b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .grid-item:hover {
-            transform: scale(1.1);
-        }
-
-        .grid-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-        }
-
-        .info-popup {
-            display: none;
-            position: absolute;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-            transform: translate(-50%, -100%);
-        }
+/* Explore Section Css Starts here  */
 
         body {
             background-color: #0d1b2a;
@@ -693,39 +658,140 @@ i.fa.fa-arrows-alt {
         .explore-button:hover {
             background-color: #00a149;
         }
+        
 
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            position: relative;
+      /* Tooltip Section CSS Starts */
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tooltip-class {
+        padding: 2rem;
+      }
+
+      .card__article {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        width: 150px; /* Increased width for card container */
+      }
+
+      .card__profile {
+        width: 100px;
+        height: 100px;
+        background-color: #e1e4ea;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border: 4px solid white;
+        transition: transform 0.4s, opacity 0.4s;
+      }
+
+      .card__profile img {
+        width: 95px;
+      }
+
+      /* tooltip card css starts */
+      .card__tooltip {
+        position: absolute;
+        bottom: 100%; /* Move tooltip above the profile picture */
+        left: 50%; /* Center the tooltip horizontally */
+        transform: translateX(-50%); /* Center the tooltip horizontally */
+        transition: opacity 0.4s, bottom 0.4s;
+        pointer-events: none;
+        opacity: 0;
+        background-color: white;
+        color: #000000;
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        width: 250px; /* Default width */
+      }
+
+      /* Show tooltip card with animation on hover */
+      .card__article:hover .card__tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        bottom: calc(
+          100% + 1rem
+        ); /* Adjust the position above the profile picture */
+      }
+
+      /* Scale profile image */
+      .card__article:hover .card__profile {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+
+      /* Adjust tooltip width for smaller screens */
+      @media (max-width: 500px) {
+        .card__tooltip {
+          width: 200px; /* Smaller width for screens below 500px */
+          padding: 0.5rem; /* Reduce padding */
+          left: 10%; /* Add left margin for better spacing */
+          right: 20%; /* Add right margin for better spacing */
+          transform: translateX(0); /* Adjust position */
         }
+      }
 
-        .grid-item {
-            width: 100px;
-            height: 100px;
-            background-color: #1b263b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            position: relative;
+      /* Adjust tooltip width for smaller screens */
+      @media (max-width: 700px) {
+        .card__tooltip {
+          width: 225px; /* Smaller width for screens below 500px */
+          padding: 0.5rem; /* Reduce padding */
+          left: 10%; /* Add left margin for better spacing */
+          right: 20%; /* Add right margin for better spacing */
+          transform: translateX(0); /* Adjust position */
         }
+      }
 
-        .grid-item:hover {
-            transform: scale(1.1);
+      /* tooltip card css ends */
+
+      /* Keyframes for fadeInUp animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
         }
-
-        .grid-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        .info-popup {
+      /* Grid layout adjustments */
+      .profile-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 1rem; /* Space between cards */
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 991px) {
+        .profile-cards {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .profile-cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 380px) {
+        .profile-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+      /* Become the Top 1% Section CSS ends */
+
+        /* .info-popup {
             display: none;
             position: absolute;
             background-color: #ffffff;
@@ -735,44 +801,52 @@ i.fa.fa-arrows-alt {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             z-index: 10;
             transform: translate(-50%, -100%);
+        } */
+
+
+        /* New Section Styles */
+        .company-section {
+            text-align: center;
+            background-color: #0b0f2f;
+            color: #fff;
+            padding: 50px 0;
         }
 
-       /* New Section Styles */
-       .company-section {
-      text-align: center;
-      background-color: #0b0f2f;
-      color: #fff;
-      padding: 50px 0;
-    }
-    .company-logos {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
-      height: 100px;
-    }
-    .company-logos-inner {
-      display: flex;
-      white-space: nowrap;
-      animation: slide 20s linear infinite;
-    }
-    .company-logos-inner:nth-child(2) {
-      animation-direction: reverse;
-    }
-    .company-logos-inner img {
-      margin: 0 10px;
-      height: 50px;
-    }
-    @keyframes slide {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
-     /* New Section Styles */
-     .company-section {
+        .company-logos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            height: 100px;
+        }
+
+        .company-logos-inner {
+            display: flex;
+            white-space: nowrap;
+            animation: slide 20s linear infinite;
+        }
+
+        .company-logos-inner:nth-child(2) {
+            animation-direction: reverse;
+        }
+
+        .company-logos-inner img {
+            margin: 0 10px;
+            height: 50px;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* New Section Styles */
+        .company-section {
             padding: 50px 20px;
             background-color: #1b263b;
             text-align: center;
@@ -808,12 +882,14 @@ i.fa.fa-arrows-alt {
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-100%);
             }
         }
 
-        .stats {
+        /* Stats Section Start*/
+        /* .stats {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -834,7 +910,8 @@ i.fa.fa-arrows-alt {
 
         .stat-card:hover {
             transform: scale(1.05);
-        }
+        } */
+        /* Stats Section End*/
         /* video */
         .video-section {
             position: relative;
@@ -901,222 +978,582 @@ i.fa.fa-arrows-alt {
             }
         }
 
-        /* navbar */
+        /* Navbar CSS starts */
         .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #091327;
-      color: #fff;
-      position: relative;
-    }
-    .navbar-brand img {
-      width: 180px;
-      height: 100px;
-    }
-    .navbar {
-      display: flex;
-      align-items: center;
-    }
-    .navbar a {
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      display: block;
-    }
-    .navbar a:hover,
-    .navbar a.active {
-      background-color: #FFC700;
-      border-radius: 5px;
-      color: #091327;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropbtn {
-      background: none;
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #FFC700;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 5px;
-    }
-    .dropdown-content a {
-      color: #091327;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #FFC700;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .toggle-Button {
-      display: none;
-    }
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #091327;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    .sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #fff;
-      display: block;
-      transition: 0.3s;
-    }
-    .sidebar a:hover {
-      background-color: #FFC700;
-      color: #091327;
-    }
-    .sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #091327;
+            color: #fff;
+            position: relative;
+        }
 
-    @media screen and (max-width: 768px) {
-      .navbar {
-        display: none;
-      }
-      .toggle-Button {
-        display: block;
-        cursor: pointer;
-      }
-      .dropdown-content {
-        position: relative;
-      }
-    }
+        .navbar-brand img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+        }
 
-    @media screen and (max-width: 768px) {
-      .sidebar {
-        padding-top: 15px;
-      }
-      .sidebar a {
-        font-size: 18px;
-      }
-    }
-  </style>
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            background-color: #ffc700;
+            border-radius: 5px;
+            color: #091327;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            background: none;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        /* For dropdown items */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #091327;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffc700;
+            color: #091327;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .toggle-Button {
+            display: none;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #091327;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #ffc700;
+            color: #091327;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Sidebar structure */
+        .sidebar .dropdown-content {
+            display: block;
+            /* Ensure dropdown content is always visible */
+            position: relative;
+            background-color: #091327;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar .dropdown-content li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 32px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar .dropdown-content a:hover {
+            background-color: #ffc700;
+            color: #091327;
+        }
+
+        /* Media query for mobile view */
+        @media screen and (max-width: 768px) {
+            .sidebar .dropdown-content {
+                display: block;
+            }
+
+            .sidebar .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .sidebar .dropdown-content a {
+                padding: 12px 32px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            .toggle-Button {
+                display: block;
+                cursor: pointer;
+            }
+
+            .dropdown-content {
+                position: relative;
+            }
+
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        /* Navbar CSS ends */
+
+        /* Footer section start */
+        #footer {
+            background: #000000;
+            padding: 3rem 1.5rem;
+            color: #e3e3e3;
+        }
+
+        .useful-link,
+        .social-links,
+        .address {
+            margin: 1rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        #footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #footer .row {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Ensure sections stack vertically and are centered on small screens */
+        .useful-link,
+        .social-links,
+        .address,
+        .logo-container {
+            text-align: center;
+        }
+
+        .useful-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Consistent font size for all headings in the footer */
+        #footer h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fefefe;
+            margin-bottom: 1rem;
+        }
+
+        .useful-link ul {
+            font-size: 0.875rem;
+            color: #b3b2b2;
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .useful-link li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Styling for useful links */
+        .use-links a {
+            color: #b3b2b2;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .use-links a:hover {
+            color: #fdd700;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .social-icons a {
+            color: #b3b2b2;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .social-icons a:hover {
+            color: #fdd700;
+        }
+
+        .social-icons i {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .copy-right-sec {
+            padding: 1rem;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .copy-right-sec a {
+            color: #fdd700;
+            font-weight: 500;
+        }
+
+        /* Responsive design for footer */
+        @media screen and (max-width: 768px) {
+            #footer .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo-container {
+                margin-bottom: 2rem;
+                /* Space between logo and other sections */
+            }
+
+            .useful-link,
+            .social-links,
+            .address {
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .use-links,
+            .social-icons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .use-links li,
+            .social-icons a {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        /* Logo styling */
+        .logo-footer {
+            max-width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .logo-footer:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Ensure container around the logo is properly spaced */
+        .logo-container {
+            margin-right: 2rem;
+        }
+
+        .address-links a:hover {
+            color: #ffc700;
+            /* Text color turns yellow */
+        }
+
+        /* Add space between the box icons and text in the 'Contact Us' list items */
+        .address-links li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .address-links i {
+            margin-right: 10px;
+            /* Adjust this value to add space between the icon and the text */
+            font-size: 1.2rem;
+            /* Adjust icon size if needed */
+        }
+
+        /* Target all icons in the footer */
+        #footer .social-icons i {
+            color: #ff69b4;
+            /* Pink color */
+        }
+
+        /* Ensure icon color changes on hover */
+        #footer .social-icons a:hover i {
+            color: #ff1493;
+            /* Darker pink color on hover for better visibility */
+        }
+
+        /* Target icons in the Contact Us section */
+        #footer .address-links i {
+            color: #ff69b4;
+            /* Pink color for icons */
+        }
+
+        /* Ensure icon color changes on hover */
+        #footer .address-links a:hover i {
+            color: #ff1493;
+            /* Darker pink color on hover */
+        }
+
+        /* Ensure phone numbers stay on the same line */
+        #footer .address-links li a {
+            white-space: nowrap;
+            /* Prevent phone numbers and email from wrapping */
+        }
+
+
+        #footer .address-links a {
+            align-items: center;
+            /* Align items vertically */
+            gap: 0.5rem;
+            /* Space between icon and text */
+        }
+
+        /* Footer section end */
+
+    
+
+    </style>
 </head>
+
 <body>
+
+    <!-- Header Section Start -->
     <header class="header">
-        <a class="navbar-brand" href="about-alternative.html">
-          <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+        <a class="navbar-brand" href="about-us.html">
+            <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2"
+                class="logo" />
         </a>
-      
+
         <nav class="navbar">
-          <a href="index.html">HOME</a>
-          <div class="dropdown">
-            <a href="training copy.html" button class="dropbtn">TRAINING
-               <i class="bx bx-chevron-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="college-training.html">college-training</a>
-                        <a href="corporate.html">corporate-training</a>
-                        <a href="faculty.html">faculty</a>
+            <a href="index.html">HOME</a>
+            <div class="dropdown">
+                <a href="training copy.html" class="dropbtn">TRAINING
+                    <i class="bx bx-chevron-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="college-training.html">College Training</a>
+                    <a href="corporate.html">Corporate Training</a>
+                    <a href="faculty.html">Faculty</a>
+                </div>
             </div>
-          </div>
-          <a href="placement-final-copy.html">PLACEMENT</a>
-          <a href="digitalcopy.html">DIGITAL MARKETING</a>
-          <a href="gax-copy.html">GAX</a>
-          <a href="BLOG.html">BLOG</a>
+            <a href="placement-final-copy.html">PLACEMENT</a>
+            <a href="digitalcopy.html">DIGITAL MARKETING</a>
+            <a href="gax-copy.html">GAX</a>
+            <a href="BLOG.html">BLOG</a>
         </nav>
-      
+
         <div class="toggle-Button">
-          <span class="openbtn" onclick="openNav()">☰</span>
+            <span class="openbtn" onclick="toggleNav()">☰</span>
         </div>
-      
+
+        <!-- Sidebar structure in the mobile view -->
         <div id="mySidebar" class="sidebar">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-          <a href="index.html">HOME</a>
-          <a href="training copy.html">TRAINING</a>
-          <a href="placement-final-copy.html">PLACEMENT</a>
-          <a href="digitalcopy.html">DIGITAL MARKETING</a>
-          <a href="gax-copy.html">GAX</a>
-          <a href="BLOG.html">BLOG</a>
-        </div>
-      </header>
-
-      
-  <div class="container">
-    <div class="content">
-      <h1>Find a skilled <span class="highlight">individual</span> to do the job.</h1>
-      <p>Creative Peoples lets you find the right job for any challenge from development to marketing.</p>
-      <div class="buttons">
-        <button class="btn-primary">Get Started</button>
-        <button class="btn-secondary">Watch a Demo</button>
-      </div>
-    </div>
-    <div class="image">
-      <img src="colorful-pen-tool.png" alt="Colorful Pen Tool">
-    </div>
-  </div>
-
-  <section class="wrapper">
-	<div class="flex-wrapper">
-        <h1 style="font-size:40px">Collections</h1>
-
-
-<div class="card-container">
-        <div class="cutout-card">
-            <div class="cutout-card__background --time"></div>
-            <div class="cutout-card__text">Time</div>
-              <div class="cutout-card__secondary"><p>Time is the indefinite continued progress of existence and events that occur in apparently irreversible succession from the past through the present to the future. Time is a component quantity of various measurements used to sequence events, to compare the duration of events or the intervals between them, and to quantify rates of change of quantities in material reality or in the conscious experience. Time is often referred to as a fourth dimension, along with three spatial dimensions. Time has long been an important subject of study in religion, philosophy, and science, but defining it in a manner applicable to all fields without circularity has consistently eluded scholars.Nevertheless, diverse fields such as business, industry, sports, the sciences, and the performing arts all incorporate some notion of time into their respective measuring systems. Time in physics is unambiguously operationally defined as "what a clock reads".See Units of Time. Time is one of the seven fundamental physical quantities in both the International System of Units and International System of Quantities. Time is used to define other quantities – such as velocity – so defining time in terms of such quantities would result in circularity of definition. An operational definition of time, wherein one says that observing a certain number of repetitions of one or another standard cyclical event (such as the passage of a free-swinging pendulum) constitutes one standard unit such as the second, is highly useful in the conduct of both advanced experiments and everyday affairs of life. The operational definition leaves aside the question whether there is something called time, apart from the counting activity just mentioned, that flows and that can be measured. Investigations of a single continuum called spacetime bring questions about space into questions about time, questions that have their roots in the works of early students of natural philosophy.</p></div>
-          </div>
-          
-          <div class="cutout-card">
-            <div class="cutout-card__background --space"></div>
-            <div class="cutout-card__text">Space</div>
-             <div class="cutout-card__secondary"><p>Space is the boundless three-dimensional extent in which objects and events have relative position and direction. Physical space is often conceived in three linear dimensions, although modern physicists usually consider it, with time, to be part of a boundless four-dimensional continuum known as spacetime. The concept of space is considered to be of fundamental importance to an understanding of the physical universe.</p></div>
-          </div>
-          
-          
-          <div class="cutout-card">
-            <div class="cutout-card__background --energy"></div>
-            <div class="cutout-card__text">Energy</div>
-             <div class="cutout-card__secondary">
-               <p>In physics, energy is the quantitative property that must be transferred to an object in order to perform work on, or to heat, the object. Energy is a conserved quantity; the law of conservation of energy states that energy can be converted in form, but not created or destroyed. The SI unit of energy is the joule, which is the energy transferred to an object by the work of moving it a distance of 1 metre against a force of 1 newton. Common forms of energy include the kinetic energy of a moving object, the potential energy stored by an object's position in a force field (gravitational, electric or magnetic), the elastic energy stored by stretching solid objects, the chemical energy released when a fuel burns, the radiant energy carried by light, and the thermal energy due to an object's temperature. Mass and energy are closely related. Due to mass–energy equivalence, any object that has mass when stationary (called rest mass) also has an equivalent amount of energy whose form is called rest energy, and any additional energy (of any form) acquired by the object above that rest energy will increase the object's total mass just as it increases its total energy. For example, after heating an object, its increase in energy could be measured as a small increase in mass, with a sensitive enough scale.</p>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="index.html">HOME</a>
+            <div class="dropdown">
+                <a href="training copy.html" class="dropbtn">TRAINING</a>
+                <!-- Sub-menu items are always visible on mobile -->
+                <ul class="dropdown-content">
+                    <li><a href="college-training.html">College Training</a></li>
+                    <li><a href="corporate.html">Corporate Training</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                </ul>
             </div>
-          </div> 
-            
-            <div class="cutout-card">
-            <div class="cutout-card__background --matter"></div>
-            <div class="cutout-card__text">Matter</div>
-             <div class="cutout-card__secondary">
-               <p>Matter is any substance that has mass and takes up space by having volume.All everyday objects that we can touch are ultimately composed of atoms, which are made up of interacting subatomic particles, and in everyday as well as scientific usage, "matter" generally includes atoms and anything made up of them, and any particles (or combination of particles) that act as if they have both rest mass and volume. However it does not include massless particles such as photons, or other energy phenomena or waves such as light or sound.Matter exists in various states (also known as phases). These include classical everyday phases such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous steam – but other states are possible, including plasma, Bose–Einstein condensates, fermionic condensates, and quark–gluon plasma.</p></div>
-          </div> 
-          </div>
-          
-         
-          
-          <!-- video sectionn -->
-          <!-- <section class="main-wrapper container">
+            <a href="placement-final-copy.html">PLACEMENT</a>
+            <a href="digitalcopy.html">DIGITAL MARKETING</a>
+            <a href="gax-copy.html">GAX</a>
+            <a href="BLOG.html">BLOG</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Find a skilled <span class="highlight">individual</span> to do the job.</h1>
+            <p>Creative Peoples lets you find the right job for any challenge from development to marketing.</p>
+            <div class="buttons">
+                <button class="btn-primary">Get Started</button>
+                <button class="btn-secondary">Watch a Demo</button>
+            </div>
+        </div>
+        <div class="image">
+            <img src="colorful-pen-tool.png" alt="Colorful Pen Tool">
+        </div>
+    </div>
+
+    <section class="wrapper">
+        <div class="flex-wrapper">
+            <h1 style="font-size:40px">Collections</h1>
+
+
+            <div class="card-container">
+                <div class="cutout-card">
+                    <div class="cutout-card__background --time"></div>
+                    <div class="cutout-card__text">Time</div>
+                    <div class="cutout-card__secondary">
+                        <p>Time is the indefinite continued progress of existence and events that occur in apparently
+                            irreversible succession from the past through the present to the future. Time is a component
+                            quantity of various measurements used to sequence events, to compare the duration of events
+                            or the intervals between them, and to quantify rates of change of quantities in material
+                            reality or in the conscious experience. Time is often referred to as a fourth dimension,
+                            along with three spatial dimensions. Time has long been an important subject of study in
+                            religion, philosophy, and science, but defining it in a manner applicable to all fields
+                            without circularity has consistently eluded scholars.Nevertheless, diverse fields such as
+                            business, industry, sports, the sciences, and the performing arts all incorporate some
+                            notion of time into their respective measuring systems. Time in physics is unambiguously
+                            operationally defined as "what a clock reads".See Units of Time. Time is one of the seven
+                            fundamental physical quantities in both the International System of Units and International
+                            System of Quantities. Time is used to define other quantities – such as velocity – so
+                            defining time in terms of such quantities would result in circularity of definition. An
+                            operational definition of time, wherein one says that observing a certain number of
+                            repetitions of one or another standard cyclical event (such as the passage of a
+                            free-swinging pendulum) constitutes one standard unit such as the second, is highly useful
+                            in the conduct of both advanced experiments and everyday affairs of life. The operational
+                            definition leaves aside the question whether there is something called time, apart from the
+                            counting activity just mentioned, that flows and that can be measured. Investigations of a
+                            single continuum called spacetime bring questions about space into questions about time,
+                            questions that have their roots in the works of early students of natural philosophy.</p>
+                    </div>
+                </div>
+
+                <div class="cutout-card">
+                    <div class="cutout-card__background --space"></div>
+                    <div class="cutout-card__text">Space</div>
+                    <div class="cutout-card__secondary">
+                        <p>Space is the boundless three-dimensional extent in which objects and events have relative
+                            position and direction. Physical space is often conceived in three linear dimensions,
+                            although modern physicists usually consider it, with time, to be part of a boundless
+                            four-dimensional continuum known as spacetime. The concept of space is considered to be of
+                            fundamental importance to an understanding of the physical universe.</p>
+                    </div>
+                </div>
+
+
+                <div class="cutout-card">
+                    <div class="cutout-card__background --energy"></div>
+                    <div class="cutout-card__text">Energy</div>
+                    <div class="cutout-card__secondary">
+                        <p>In physics, energy is the quantitative property that must be transferred to an object in
+                            order to perform work on, or to heat, the object. Energy is a conserved quantity; the law of
+                            conservation of energy states that energy can be converted in form, but not created or
+                            destroyed. The SI unit of energy is the joule, which is the energy transferred to an object
+                            by the work of moving it a distance of 1 metre against a force of 1 newton. Common forms of
+                            energy include the kinetic energy of a moving object, the potential energy stored by an
+                            object's position in a force field (gravitational, electric or magnetic), the elastic energy
+                            stored by stretching solid objects, the chemical energy released when a fuel burns, the
+                            radiant energy carried by light, and the thermal energy due to an object's temperature. Mass
+                            and energy are closely related. Due to mass–energy equivalence, any object that has mass
+                            when stationary (called rest mass) also has an equivalent amount of energy whose form is
+                            called rest energy, and any additional energy (of any form) acquired by the object above
+                            that rest energy will increase the object's total mass just as it increases its total
+                            energy. For example, after heating an object, its increase in energy could be measured as a
+                            small increase in mass, with a sensitive enough scale.</p>
+                    </div>
+                </div>
+
+                <div class="cutout-card">
+                    <div class="cutout-card__background --matter"></div>
+                    <div class="cutout-card__text">Matter</div>
+                    <div class="cutout-card__secondary">
+                        <p>Matter is any substance that has mass and takes up space by having volume.All everyday
+                            objects that we can touch are ultimately composed of atoms, which are made up of interacting
+                            subatomic particles, and in everyday as well as scientific usage, "matter" generally
+                            includes atoms and anything made up of them, and any particles (or combination of particles)
+                            that act as if they have both rest mass and volume. However it does not include massless
+                            particles such as photons, or other energy phenomena or waves such as light or sound.Matter
+                            exists in various states (also known as phases). These include classical everyday phases
+                            such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous
+                            steam – but other states are possible, including plasma, Bose–Einstein condensates,
+                            fermionic condensates, and quark–gluon plasma.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- video sectionn -->
+            <!-- <section class="main-wrapper container">
              <h1 class="play-video text-center">Play the Video and Scroll Down !!!</h1> -->
-<!--     
+            <!--     
             <div class="row">
                 <div class="col-md-6">
                     <section class="videowrapper videoTag">
@@ -1143,105 +1580,516 @@ i.fa.fa-arrows-alt {
                     </section>
                 </div>
             </div>
-        </section> --> 
+        </section> -->
 
-	
-</section>
-<!-- video section -->
-<section class="container-fluid p-0">
-    <div class="row no-gutters">
-        <div class="col-12">
-            <div class="heading">Welcome to Our Video Section</div>
-            <div class="video-wrapper">
-                <div class="video-section">
-                    <video class="initial_video" loop controls autoplay muted>
-                        <source src="IMG_5815.MOV" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+
+    </section>
+    <!-- video section -->
+    <section class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <div class="heading">Welcome to Our Video Section</div>
+                <div class="video-wrapper">
+                    <div class="video-section">
+                        <video class="initial_video" loop controls autoplay muted>
+                            <source src="IMG_5815.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-  <main>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-section">
-                <h1>Become the Top 1%</h1>
-                <p>Whether it is Product, Growth, Design, Management, Business, Tech & Data, GrowthSchool is the place to learn from top experts in the field.</p>
-                <button class="explore-button">Explore Programs</button>
-            </div>
-            <div class="col-md-6">
-                <div class="grid">
-                    <div class="grid-item" data-info="PhonePe"><img src="phonepe.png" alt="PhonePe"></div>
-                    <div class="grid-item" data-info="Flipkart"><img src="flipkart.png" alt="Flipkart"></div>
-                    <div class="grid-item" data-info="Google"><img src="google.png" alt="Google"></div>
-                    <div class="grid-item" data-info="Teachmint"><img src="teachmint.png" alt="Teachmint"></div>
-                    <div class="grid-item" data-info="Capgemini"><img src="capgemini.png" alt="Capgemini"></div>
-                    <div class="grid-item" data-info="Simplilearn"><img src="simplilearn.png" alt="Simplilearn"></div>
-                    <div class="grid-item" data-info="Juspay"><img src="juspay.png" alt="Juspay"></div>
-                    <div class="grid-item" data-info="DeHaat"><img src="dehaat.png" alt="DeHaat"></div>
-                    <div class="grid-item" data-info="Nykaa"><img src="nykaa.png" alt="Nykaa"></div>
-                    <div class="grid-item" data-info="Livspace"><img src="livspace.png" alt="Livspace"></div>
-                    <div class="grid-item" data-info="Porter"><img src="porter.png" alt="Porter"></div>
-                    <div class="grid-item" data-info="ShareChat"><img src="sharechat.png" alt="ShareChat"></div>
-                    <div class="grid-item" data-info="Walmart"><img src="walmart.png" alt="Walmart"></div>
-                    <div class="grid-item" data-info="MoneyView"><img src="moneyview.png" alt="MoneyView"></div>
-                    <div class="grid-item" data-info="Darwinbox"><img src="darwinbox.png" alt="Darwinbox"></div>
-                    <div class="grid-item" data-info="Vivo"><img src="vivo.png" alt="Vivo"></div>
-                    <div class="grid-item" data-info="Apna"><img src="apna.png" alt="Apna"></div>
-                    <div class="grid-item" data-info="Cognizant"><img src="cognizant.png" alt="Cognizant"></div>
-                    <div class="grid-item" data-info="Purelengo"><img src="purelengo.png" alt="Purelengo"></div>
-                    <div class="grid-item" data-info="PhonePe"><img src="phonepe.png" alt="PhonePe"></div>
-                    <div class="grid-item" data-info="Google"><img src="google.png" alt="Google"></div>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-section">
+                    <h1>Become the Top 1%</h1>
+                    <p>Whether it is Product, Growth, Design, Management, Business, Tech & Data, GrowthSchool is the
+                        place to learn from top experts in the field.</p>
+                    <button class="explore-button">Explore Programs</button>
                 </div>
+                <!-- Wrapper div for profile cards -->
+          <div class="col-md-6 profile-cards">
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+            <!-- Profile card block starts -->
+            <div class="card__article animate__animated animate__fadeInUp">
+              <div class="card__profile">
+                <img
+                  src="https://via.placeholder.com/100"
+                  alt="Profile Image"
+                  class="card__profile-img"
+                />
+              </div>
+              <div class="card__tooltip">
+                <header class="card__header">
+                  I was able to switch my career from being an architect to a
+                  product designer.
+                </header>
+                <h2 class="card__name">Ankita Agrawal</h2>
+                <h3 class="card__profession">Design Associate at PhonePe</h3>
+                <div>
+                  <img
+                    src="phonepe.png"
+                    alt="PhonePe Logo"
+                    style="width: 50px"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Repeat above block for additional profile cards -->
+          </div>
             </div>
         </div>
-    </div>
 
 
-<!-- New Company Section -->
-<section class="company-section">
-<h2>and many more who are working at some of the top companies</h2>
-<div class="company-logos">
-  <div class="company-logos-inner">
-    <img src="ogilvy.png" alt="Ogilvy">
-    <img src="canva.png" alt="Canva">
-    <img src="paytm.png" alt="Paytm">
-    <img src="mpl.png" alt="MPL">
-    <img src="nvidia.png" alt="NVIDIA">
-    <img src="walmart.png" alt="Walmart">
-    <img src="expedia.png" alt="Expedia">
-    <img src="licious.png" alt="Licious">
-    <img src="disney-hotstar.png" alt="Disney Hotstar">
-    <img src="cocacola.png" alt="Coca Cola">
-    <img src="adobe.png" alt="Adobe">
-    <img src="meta.png" alt="Meta">
-  </div>
-  <div class="company-logos-inner">
-    <img src="razorpay.png" alt="Razorpay">
-    <img src="microsoft.png" alt="Microsoft">
-    <img src="oyo.png" alt="Oyo">
-    <img src="swiggy.png" alt="Swiggy">
-    <img src="amazon.png" alt="Amazon">
-    <img src="google.png" alt="Google">
-    <img src="uber.png" alt="Uber">
-    <img src="linkedin.png" alt="LinkedIn">
-    <img src="ogilvy.png" alt="Ogilvy">
-    <img src="canva.png" alt="Canva">
-    <img src="paytm.png" alt="Paytm">
-    <img src="mpl.png" alt="MPL">
-  </div>
-</div>
-</section>
-</main>
-<div class="info-popup" id="infoPopup"></div>
+        <!-- New Company Section -->
+        <section class="company-section">
+            <h2>and many more who are working at some of the top companies</h2>
+            <div class="company-logos">
+                <div class="company-logos-inner">
+                    <img src="ogilvy.png" alt="Ogilvy">
+                    <img src="canva.png" alt="Canva">
+                    <img src="paytm.png" alt="Paytm">
+                    <img src="mpl.png" alt="MPL">
+                    <img src="nvidia.png" alt="NVIDIA">
+                    <img src="walmart.png" alt="Walmart">
+                    <img src="expedia.png" alt="Expedia">
+                    <img src="licious.png" alt="Licious">
+                    <img src="disney-hotstar.png" alt="Disney Hotstar">
+                    <img src="cocacola.png" alt="Coca Cola">
+                    <img src="adobe.png" alt="Adobe">
+                    <img src="meta.png" alt="Meta">
+                </div>
+                <div class="company-logos-inner">
+                    <img src="razorpay.png" alt="Razorpay">
+                    <img src="microsoft.png" alt="Microsoft">
+                    <img src="oyo.png" alt="Oyo">
+                    <img src="swiggy.png" alt="Swiggy">
+                    <img src="amazon.png" alt="Amazon">
+                    <img src="google.png" alt="Google">
+                    <img src="uber.png" alt="Uber">
+                    <img src="linkedin.png" alt="LinkedIn">
+                    <img src="ogilvy.png" alt="Ogilvy">
+                    <img src="canva.png" alt="Canva">
+                    <img src="paytm.png" alt="Paytm">
+                    <img src="mpl.png" alt="MPL">
+                </div>
+            </div>
+        </section>
+    </main>
 
 
-<!-- new section -->
-<!-- <div class="stats">
+    <!-- <div class="info-popup" id="infoPopup"></div> -->
+    <!-- Stats Section-->
+    <!-- <div class="stats">
     <div class="stat-card">
         <h3>LinkedIn</h3>
         <p>Top Startup India 2023</p>
@@ -1268,166 +2116,360 @@ i.fa.fa-arrows-alt {
     </div>
 </div> -->
 
-<!-- -->
-  
+    <!-- -->
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <footer>
+            <section id="footer">
+                <div class="footer-container">
+                    <div class="row">
+                        <div class="logo-container">
+                            <a href="about-us.html">
+                                <img src="image/GAXLOGO.png" alt=""
+                                    class="img-fluid logo-footer animate__animated animate__fadeIn" />
+                            </a>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="useful-link animate__animated animate__fadeIn animate__delay-1s">
+                                <h2>Useful Links</h2>
+                                <ul class="use-links animate__animated animate__fadeIn animate__delay-2s">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="training copy.html">Training</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="social-links animate__animated animate__fadeIn animate__delay-3s">
+                                <h2>Follow Us</h2>
+                                <div class="social-icons animate__animated animate__fadeIn animate__delay-4s">
+                                    <a href="https://www.facebook.com/gryphonnacademy/"><i
+                                            class="bx bxl-facebook"></i>Facebook</a>
+                                    <a href="https://www.linkedin.com/company/gryphonacademy/"><i
+                                            class="bx bxl-linkedin"></i>LinkedIn</a>
+                                    <a href="https://www.instagram.com/gryphon_academy/"><i
+                                            class="bx bxl-instagram"></i>Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="address animate__animated animate__fadeIn animate__delay-5s">
+                                <h2>Contact Us</h2>
+                                <ul class="address-links animate__animated animate__fadeIn animate__delay-6s">
+                                    <li>
+                                        <a href="https://maps.app.goo.gl/ftpdk38mzttVv9Kv8" target="_blank">
+                                            <i class="bx bx-map"></i>Seasons Business Square<br /> by
+                                            Naiknavare Office no 301,<br />3rd floor, Seasons Rd, Sanewadi,<br />Aundh,
+                                            Pune, Maharashtra 411007
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+918983614509"
+                                            class="address-link animate__animated animate__bounce">
+                                            <i id="footer-tele" class="bx bx-phone"></i>+91 89836 14509 / 8983339099
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:gryphonx@gryphonacademy.co.in" class="address-link">
+                                            <i class="bx bx-envelope"></i>gryphonx@gryphonacademy.co.in
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="copy-right-sec">
+                <p>&copy; 2024 Gryphon Academy.Pvt.Ltd. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- footer section end -->
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
 
 
 
-var ytIframeList, videoList, currentPlayer, closeButton, gradientOverlay, fullScreenIcon;
+    var ytIframeList, videoList, currentPlayer, closeButton, gradientOverlay, fullScreenIcon;
 
-var inViewPortBol = true;
+    var inViewPortBol = true;
 
-var ytIframeIdList = [];
+    var ytIframeIdList = [];
 
-var ytVideoId = [];
+    var ytVideoId = [];
 
-var ytPlayerId = [];
+    var ytPlayerId = [];
 
-var videoTagId = [];
+    var videoTagId = [];
 
-var events = new Array("ended", "pause", "playing");
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
+    var events = new Array("ended", "pause", "playing");
 
 
 
-    /*Adding Youtube Iframe API to body*/
+    document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    var youTubeVideoTag = document.createElement('script');
-
-    youTubeVideoTag.src = "//www.youtube.com/iframe_api";
-
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-
-    document.body.appendChild(youTubeVideoTag, firstScriptTag);
+        /*Adding Youtube Iframe API to body*/
 
 
 
-    /*Getting all the iframe from the Page and finding out valid URL and ID. Then creating instance of players*/
+        var youTubeVideoTag = document.createElement('script');
+
+        youTubeVideoTag.src = "//www.youtube.com/iframe_api";
+
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+
+        document.body.appendChild(youTubeVideoTag, firstScriptTag);
 
 
 
-    ytIframeList = document.getElementsByTagName("iframe");
+        /*Getting all the iframe from the Page and finding out valid URL and ID. Then creating instance of players*/
 
-    for (i = 0; i < ytIframeList.length; i++) {
 
-        if (new RegExp("\\b" + "enablejsapi" + "\\b").test(ytIframeList[i].src)) {
 
-            var url = ytIframeList[i].src.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+        ytIframeList = document.getElementsByTagName("iframe");
 
-            if (url[2] !== undefined) {
+        for (i = 0; i < ytIframeList.length; i++) {
 
-                ID = url[2].split(/[^0-9a-z_\-]/i);
+            if (new RegExp("\\b" + "enablejsapi" + "\\b").test(ytIframeList[i].src)) {
 
-                ID = ID[0];
+                var url = ytIframeList[i].src.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
 
-                ytIframeIdList.push(ID);
+                if (url[2] !== undefined) {
 
-                ytIframeList[i].id = "featured-video" + i;
+                    ID = url[2].split(/[^0-9a-z_\-]/i);
 
-                ytVideoId.push("ytVideoId" + i);
+                    ID = ID[0];
 
-                ytVideoId[i] = document.getElementById(ytIframeList[i].id);
+                    ytIframeIdList.push(ID);
 
-                ytPlayerId.push("player" + i);
+                    ytIframeList[i].id = "featured-video" + i;
+
+                    ytVideoId.push("ytVideoId" + i);
+
+                    ytVideoId[i] = document.getElementById(ytIframeList[i].id);
+
+                    ytPlayerId.push("player" + i);
+
+                }
 
             }
 
         }
 
-    }
+
+
+        /*Getting Video Tag List and Creating instances*/
 
 
 
-    /*Getting Video Tag List and Creating instances*/
+        videoList = document.getElementsByTagName("video");
+
+        for (i = 0; i < videoList.length; i++) {
+
+            videoList[i].id = "video-featured" + i;
+
+            videoTagId.push("videoPlayerId" + i);
+
+            videoTagId[i] = document.getElementById(videoList[i].id);
 
 
-
-    videoList = document.getElementsByTagName("video");
-
-    for (i = 0; i < videoList.length; i++) {
-
-        videoList[i].id = "video-featured" + i;
-
-        videoTagId.push("videoPlayerId" + i);
-
-        videoTagId[i] = document.getElementById(videoList[i].id);
-
-
-
-    }
-
-    for (i = 0; i < videoTagId.length; i++) {
-
-        for (var j in events) {
-
-            videoTagId[i].addEventListener(events[j], videoTagPlayerhandler, false);
 
         }
 
-    }
+        for (i = 0; i < videoTagId.length; i++) {
 
+            for (var j in events) {
 
-
-    closeButton = document.querySelector("a.close-button");
-
-    gradientOverlay = document.querySelector(".gradient-overlay");
-
-    fullScreenIcon = document.querySelector("i.fa.fa-arrows-alt");
-
-    fullScreenPlay();
-
-
-
-});
-
-
-
-window.onYouTubeIframeAPIReady = function () {
-
-    for (i = 0; i < ytIframeIdList.length; i++) {
-
-        ytPlayerId[i] = new YT.Player(ytIframeList[i].id, {
-
-            events: {
-
-                "onStateChange": onPlayerStateChange
+                videoTagId[i].addEventListener(events[j], videoTagPlayerhandler, false);
 
             }
 
-        });
-
-    }
-
-};
+        }
 
 
 
-function videoTagPlayerhandler(e) {
+        closeButton = document.querySelector("a.close-button");
 
-    /*Play Rules*/
+        gradientOverlay = document.querySelector(".gradient-overlay");
 
-    for (i = 0; i < videoTagId.length; i++) {
+        fullScreenIcon = document.querySelector("i.fa.fa-arrows-alt");
 
-        if (e.target == videoTagId[i]) {
+        fullScreenPlay();
 
-            if (e.type == "playing") {
 
-                currentPlayer = videoTagId[i];
 
-                videoTagId[i].classList.remove("is-paused");
+    });
 
-                videoTagId[i].classList.add("is-playing");
+
+
+    window.onYouTubeIframeAPIReady = function () {
+
+        for (i = 0; i < ytIframeIdList.length; i++) {
+
+            ytPlayerId[i] = new YT.Player(ytIframeList[i].id, {
+
+                events: {
+
+                    "onStateChange": onPlayerStateChange
+
+                }
+
+            });
+
+        }
+
+    };
+
+
+
+    function videoTagPlayerhandler(e) {
+
+        /*Play Rules*/
+
+        for (i = 0; i < videoTagId.length; i++) {
+
+            if (e.target == videoTagId[i]) {
+
+                if (e.type == "playing") {
+
+                    currentPlayer = videoTagId[i];
+
+                    videoTagId[i].classList.remove("is-paused");
+
+                    videoTagId[i].classList.add("is-playing");
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+        for (i = 0; i < videoTagId.length; i++) {
+
+            if (currentPlayer == videoTagId[i]) {
+
+                continue;
+
+            }
+
+            videoTagId[i].classList.remove("is-playing");
+
+            videoTagId[i].classList.add("is-paused");
+
+        }
+
+
+
+        /*Pause Rules*/
+
+        for (i = 0; i < videoTagId.length; i++) {
+
+            if (e.target == videoTagId[i]) {
+
+                if (e.type == "pause") {
+
+                    videoTagId[i].classList.add("is-paused");
+
+                    videoTagId[i].classList.remove("is-playing");
+
+                    videoTagId[i].pause();
+
+                }
+
+            }
+
+        }
+
+
+
+        /*Sticky Rules*/
+
+        for (i = 0; i < videoTagId.length; i++) {
+
+            if (videoTagId[i].classList.contains("is-sticky")) {
+
+                videoTagId[i].pause();
+
+                fullScreenIcon.style.display = "none";
+
+
+
+            }
+
+        }
+
+
+
+        for (i = 0; i < ytPlayerId.length; i++) {
+
+            if (ytVideoId[i].classList.contains("is-sticky")) {
+
+                ytPlayerId[i].pauseVideo();
+
+                fullScreenIcon.style.display = "none";
+
+
+
+            }
+
+        }
+
+
+        /*End Rules*/
+
+        for (i = 0; i < videoTagId.length; i++) {
+
+            if (e.target == videoTagId[i]) {
+
+                if (e.type == "ended") {
+
+                    videoTagId[i].classList.remove("is-playing");
+
+                    videoTagId[i].classList.remove("is-paused");
+
+                }
+
+            }
+
+        }
+
+        videohandler();
+
+    };
+
+
+
+    function onPlayerStateChange(event) {
+
+
+
+        /*Play Rules*/
+
+
+
+        for (i = 0; i < ytPlayerId.length; i++) {
+
+            if (ytPlayerId[i].getPlayerState() === 1) {
+
+                currentPlayer = ytVideoId[i];
+
+                ytVideoId[i].classList.remove("is-paused");
+
+                ytVideoId[i].classList.add("is-playing");
 
                 break;
 
@@ -1435,156 +2477,173 @@ function videoTagPlayerhandler(e) {
 
         }
 
-    }
+        for (i = 0; i < ytVideoId.length; i++) {
 
-    for (i = 0; i < videoTagId.length; i++) {
+            if (currentPlayer == ytVideoId[i]) {
 
-        if (currentPlayer == videoTagId[i]) {
-
-            continue;
-
-        }
-
-        videoTagId[i].classList.remove("is-playing");
-
-        videoTagId[i].classList.add("is-paused");
-
-    }
-
-
-
-    /*Pause Rules*/
-
-    for (i = 0; i < videoTagId.length; i++) {
-
-        if (e.target == videoTagId[i]) {
-
-            if (e.type == "pause") {
-
-                videoTagId[i].classList.add("is-paused");
-
-                videoTagId[i].classList.remove("is-playing");
-
-                videoTagId[i].pause();
+                continue;
 
             }
 
-        }
-
-    }
-
-
-
-    /*Sticky Rules*/
-
-    for (i = 0; i < videoTagId.length; i++) {
-
-        if (videoTagId[i].classList.contains("is-sticky")) {
-
-            videoTagId[i].pause();
-
-            fullScreenIcon.style.display = "none";
-
-
-
-        }
-
-    }
-
-
-
-    for (i = 0; i < ytPlayerId.length; i++) {
-
-        if (ytVideoId[i].classList.contains("is-sticky")) {
-
-            ytPlayerId[i].pauseVideo();
-
-            fullScreenIcon.style.display = "none";
-
-
-
-        }
-
-    }
-
-
-    /*End Rules*/
-
-    for (i = 0; i < videoTagId.length; i++) {
-
-        if (e.target == videoTagId[i]) {
-
-            if (e.type == "ended") {
-
-                videoTagId[i].classList.remove("is-playing");
-
-                videoTagId[i].classList.remove("is-paused");
-
-            }
-
-        }
-
-    }
-
-    videohandler();
-
-};
-
-
-
-function onPlayerStateChange(event) {
-
-
-
-    /*Play Rules*/
-
-
-
-    for (i = 0; i < ytPlayerId.length; i++) {
-
-        if (ytPlayerId[i].getPlayerState() === 1) {
-
-            currentPlayer = ytVideoId[i];
-
-            ytVideoId[i].classList.remove("is-paused");
-
-            ytVideoId[i].classList.add("is-playing");
-
-            break;
-
-        }
-
-    }
-
-    for (i = 0; i < ytVideoId.length; i++) {
-
-        if (currentPlayer == ytVideoId[i]) {
-
-            continue;
-
-        }
-
-        ytVideoId[i].classList.remove("is-playing");
-
-        ytVideoId[i].classList.add("is-paused");
-
-    }
-
-
-
-    /*Pause Rules*/
-
-
-
-    for (i = 0; i < ytPlayerId.length; i++) {
-
-        if (ytPlayerId[i].getPlayerState() === 2) {
+            ytVideoId[i].classList.remove("is-playing");
 
             ytVideoId[i].classList.add("is-paused");
 
-            ytVideoId[i].classList.remove("is-playing");
+        }
 
-            ytPlayerId[i].pauseVideo();
+
+
+        /*Pause Rules*/
+
+
+
+        for (i = 0; i < ytPlayerId.length; i++) {
+
+            if (ytPlayerId[i].getPlayerState() === 2) {
+
+                ytVideoId[i].classList.add("is-paused");
+
+                ytVideoId[i].classList.remove("is-playing");
+
+                ytPlayerId[i].pauseVideo();
+
+            }
+
+        }
+
+
+
+
+
+        /*Sticky Rules*/
+
+
+
+        for (i = 0; i < ytPlayerId.length; i++) {
+
+            if (ytVideoId[i].classList.contains("is-sticky")) {
+
+                ytPlayerId[i].pauseVideo();
+
+                fullScreenIcon.style.display = "none";
+
+
+
+            }
+
+        }
+
+
+
+        for (i = 0; i < videoTagId.length; i++) {
+
+            if (videoTagId[i].classList.contains("is-sticky")) {
+
+                videoTagId[i].pause();
+
+                fullScreenIcon.style.display = "none";
+
+
+
+            }
+
+        }
+
+
+
+        /*End Rule*/
+
+
+
+        for (i = 0; i < ytPlayerId.length; i++) {
+
+            if (ytPlayerId[i].getPlayerState() === 0) {
+
+                ytVideoId[i].classList.remove("is-playing");
+
+                ytVideoId[i].classList.remove("is-paused");
+
+            }
+
+        }
+
+        videohandler();
+
+    }
+
+
+
+    function videohandler() {
+
+
+
+        if (currentPlayer) {
+
+            if (closeButton) {
+
+                closeButton.addEventListener("click", function (e) {
+
+                    if (currentPlayer.classList.contains("is-sticky")) {
+
+                        currentPlayer.classList.remove("is-sticky");
+
+                        closeFloatVideo();
+
+                        for (i = 0; i < ytVideoId.length; i++) {
+
+                            if (currentPlayer == ytVideoId[i]) {
+
+                                ytPlayerId[i].pauseVideo();
+
+                            }
+
+                        }
+
+                        for (i = 0; i < videoTagId.length; i++) {
+
+                            if (currentPlayer == videoTagId[i]) {
+
+                                videoTagId[i].pause();
+
+                            }
+
+                        }
+
+
+
+                    } else {
+
+                        for (i = 0; i < ytVideoId.length; i++) {
+
+                            if (currentPlayer != ytVideoId[i]) {
+
+                                ytVideoId[i].classList.remove("is-sticky");
+
+                                closeFloatVideo();
+
+                            }
+
+                        }
+
+                        for (i = 0; i < videoTagId.length; i++) {
+
+                            if (currentPlayer != videoTagId[i]) {
+
+                                videoTagId[i].classList.remove("is-sticky");
+
+                                closeFloatVideo();
+
+                            }
+
+                        }
+
+                    }
+
+
+
+                });
+
+            }
 
         }
 
@@ -1592,75 +2651,41 @@ function onPlayerStateChange(event) {
 
 
 
-
-
-    /*Sticky Rules*/
-
-
-
-    for (i = 0; i < ytPlayerId.length; i++) {
-
-        if (ytVideoId[i].classList.contains("is-sticky")) {
-
-            ytPlayerId[i].pauseVideo();
-
-            fullScreenIcon.style.display = "none";
+    window.addEventListener('scroll', function () {
 
 
 
-        }
+        inViewPortBol = inViewPort();
 
-    }
+        if (currentPlayer) {
 
+            if (!inViewPortBol && currentPlayer.classList.contains("is-playing")) {
 
+                for (i = 0; i < ytVideoId.length; i++) {
 
-    for (i = 0; i < videoTagId.length; i++) {
+                    if (currentPlayer != ytVideoId[i]) {
 
-        if (videoTagId[i].classList.contains("is-sticky")) {
+                        ytVideoId[i].classList.remove("is-sticky");
 
-            videoTagId[i].pause();
+                    }
 
-            fullScreenIcon.style.display = "none";
+                }
 
+                for (i = 0; i < videoTagId.length; i++) {
 
+                    if (currentPlayer != videoTagId[i]) {
 
-        }
+                        videoTagId[i].classList.remove("is-sticky");
 
-    }
+                    }
 
+                }
 
+                currentPlayer.classList.add("is-sticky");
 
-    /*End Rule*/
+                openFloatVideo();
 
-
-
-    for (i = 0; i < ytPlayerId.length; i++) {
-
-        if (ytPlayerId[i].getPlayerState() === 0) {
-
-            ytVideoId[i].classList.remove("is-playing");
-
-            ytVideoId[i].classList.remove("is-paused");
-
-        }
-
-    }
-
-    videohandler();
-
-}
-
-
-
-function videohandler() {
-
-
-
-    if (currentPlayer) {
-
-        if (closeButton) {
-
-            closeButton.addEventListener("click", function (e) {
+            } else {
 
                 if (currentPlayer.classList.contains("is-sticky")) {
 
@@ -1668,57 +2693,43 @@ function videohandler() {
 
                     closeFloatVideo();
 
-                    for (i = 0; i < ytVideoId.length; i++) {
-
-                        if (currentPlayer == ytVideoId[i]) {
-
-                            ytPlayerId[i].pauseVideo();
-
-                        }
-
-                    }
-
-                    for (i = 0; i < videoTagId.length; i++) {
-
-                        if (currentPlayer == videoTagId[i]) {
-
-                            videoTagId[i].pause();
-
-                        }
-
-                    }
-
-
-
-                } else {
-
-                    for (i = 0; i < ytVideoId.length; i++) {
-
-                        if (currentPlayer != ytVideoId[i]) {
-
-                            ytVideoId[i].classList.remove("is-sticky");
-
-                            closeFloatVideo();
-
-                        }
-
-                    }
-
-                    for (i = 0; i < videoTagId.length; i++) {
-
-                        if (currentPlayer != videoTagId[i]) {
-
-                            videoTagId[i].classList.remove("is-sticky");
-
-                            closeFloatVideo();
-
-                        }
-
-                    }
-
                 }
 
+            }
 
+        }
+
+    });
+
+
+
+
+
+    function fullScreenPlay() {
+
+
+
+        if (fullScreenIcon) {
+
+            fullScreenIcon.addEventListener("click", function () {
+
+                if (currentPlayer.requestFullscreen) {
+
+                    currentPlayer.requestFullscreen();
+
+                } else if (currentPlayer.msRequestFullscreen) {
+
+                    currentPlayer.msRequestFullscreen();
+
+                } else if (currentPlayer.mozRequestFullScreen) {
+
+                    currentPlayer.mozRequestFullScreen();
+
+                } else if (currentPlayer.webkitRequestFullscreen) {
+
+                    currentPlayer.webkitRequestFullscreen();
+
+                }
 
             });
 
@@ -1726,295 +2737,211 @@ function videohandler() {
 
     }
 
-}
+
+
+    function inViewPort() {
 
 
 
-window.addEventListener('scroll', function () {
+        if (currentPlayer) {
 
+            var videoParentLocal = currentPlayer.parentElement.getBoundingClientRect();
 
+            return videoParentLocal.bottom > 0 &&
 
-    inViewPortBol = inViewPort();
+                videoParentLocal.right > 0 &&
 
-    if (currentPlayer) {
+                videoParentLocal.left < (window.innerWidth || document.documentElement.clientWidth) &&
 
-        if (!inViewPortBol && currentPlayer.classList.contains("is-playing")) {
-
-            for (i = 0; i < ytVideoId.length; i++) {
-
-                if (currentPlayer != ytVideoId[i]) {
-
-                    ytVideoId[i].classList.remove("is-sticky");
-
-                }
-
-            }
-
-            for (i = 0; i < videoTagId.length; i++) {
-
-                if (currentPlayer != videoTagId[i]) {
-
-                    videoTagId[i].classList.remove("is-sticky");
-
-                }
-
-            }
-
-            currentPlayer.classList.add("is-sticky");
-
-            openFloatVideo();
-
-        } else {
-
-            if (currentPlayer.classList.contains("is-sticky")) {
-
-                currentPlayer.classList.remove("is-sticky");
-
-                closeFloatVideo();
-
-            }
+                videoParentLocal.top < (window.innerHeight || document.documentElement.clientHeight);
 
         }
 
     }
 
-});
 
 
+    function openFloatVideo() {
 
+        closeButton.style.display = "block";
 
+        gradientOverlay.style.display = "block";
 
-function fullScreenPlay() {
-
-
-
-    if (fullScreenIcon) {
-
-        fullScreenIcon.addEventListener("click", function () {
-
-            if (currentPlayer.requestFullscreen) {
-
-                currentPlayer.requestFullscreen();
-
-            } else if (currentPlayer.msRequestFullscreen) {
-
-                currentPlayer.msRequestFullscreen();
-
-            } else if (currentPlayer.mozRequestFullScreen) {
-
-                currentPlayer.mozRequestFullScreen();
-
-            } else if (currentPlayer.webkitRequestFullscreen) {
-
-                currentPlayer.webkitRequestFullscreen();
-
-            }
-
-        });
+        fullScreenIcon.style.display = "block";
 
     }
 
-}
 
 
+    function closeFloatVideo() {
 
-function inViewPort() {
+        closeButton.style.display = "none";
+
+        gradientOverlay.style.display = "none";
+
+        fullScreenIcon.style.display = "none";
 
 
+        // team
+        // for animation 
 
-    if (currentPlayer) {
+        $(document).ready(function () {
+            $('.pp-quote').click(function () {
+                $('.pp-quote').removeClass("active");
+                $(this).addClass("active");
+            });
+        });
 
-        var videoParentLocal = currentPlayer.parentElement.getBoundingClientRect();
+        $(document).ready(function () {
 
-        return videoParentLocal.bottom > 0 &&
+            // hide-top
 
-            videoParentLocal.right > 0 &&
+            $('.li-quote-1').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-1').addClass('show');
+                $('.quote-text-1').removeClass('hide-bottom');
+            });
 
-            videoParentLocal.left < (window.innerWidth || document.documentElement.clientWidth) &&
+            $('.li-quote-2').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-2').addClass('show');
+                $('.quote-text-2').removeClass('hide-bottom');
+            });
 
-            videoParentLocal.top < (window.innerHeight || document.documentElement.clientHeight);
+            $('.li-quote-3').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-3').addClass('show');
+                $('.quote-text-3').removeClass('hide-bottom');
+            });
+            $('.li-quote-4').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-4').addClass('show');
+                $('.quote-text-4').removeClass('hide-bottom');
+            });
+            $('.li-quote-5').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-5').addClass('show');
+                $('.quote-text-5').removeClass('hide-bottom');
+            });
+            $('.li-quote-6').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-6').addClass('show');
+                $('.quote-text-6').removeClass('hide-bottom');
+            });
+            $('.li-quote-7').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-7').addClass('show');
+                $('.quote-text-7').removeClass('hide-bottom');
+            });
+            $('.li-quote-8').click(function (e) {
+                e.stopPropagation();
+                $(".show").addClass('hide-top');
+                $(".hide-top").removeClass('show');
+                $('.quote-text-8').addClass('show');
+                $('.quote-text-8').removeClass('hide-bottom');
+            });
 
+
+        });
+
+
+        $(document).ready(function () {
+
+            // hide-top
+
+            $('.li-quote-1').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-1').addClass('look');
+                $('.dp-name-1').removeClass('hide-dp-bottom');
+            });
+
+            $('.li-quote-2').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-2').addClass('look');
+                $('.dp-name-2').removeClass('hide-dp-bottom');
+            });
+
+            $('.li-quote-3').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-3').addClass('look');
+                $('.dp-name-3').removeClass('hide-dp-bottom');
+            });
+            $('.li-quote-4').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-4').addClass('look');
+                $('.dp-name-4').removeClass('hide-dp-bottom');
+            });
+
+            $('.li-quote-5').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-5').addClass('look');
+                $('.dp-name-5').removeClass('hide-dp-bottom');
+            });
+
+            $('.li-quote-6').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-6').addClass('look');
+                $('.dp-name-6').removeClass('hide-dp-bottom');
+            });
+            $('.li-quote-7').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-7').addClass('look');
+                $('.dp-name-7').removeClass('hide-dp-bottom');
+            });
+            $('.li-quote-8').click(function (e) {
+                e.stopPropagation();
+                $(".look").addClass('hide-dp-top');
+                $(".hide-dp-top").removeClass('look');
+                $('.dp-name-8').addClass('look');
+                $('.dp-name-8').removeClass('hide-dp-bottom');
+            });
+
+
+        });
     }
 
-}
+    // Function to toggle sidebar
+    function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
 
-
-
-function openFloatVideo() {
-
-    closeButton.style.display = "block";
-
-    gradientOverlay.style.display = "block";
-
-    fullScreenIcon.style.display = "block";
-
-}
-
-
-
-function closeFloatVideo() {
-
-    closeButton.style.display = "none";
-
-    gradientOverlay.style.display = "none";
-
-    fullScreenIcon.style.display = "none";
-
-
-    // team
-      // for animation 
-
-$(document).ready(function(){
-  $('.pp-quote').click(function(){
-    $('.pp-quote').removeClass("active");
-    $(this).addClass("active");
-});
-});
-
-$(document).ready(function(){
-    
-       // hide-top
-
-        $('.li-quote-1').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');
-            $('.quote-text-1').addClass('show');
-            $('.quote-text-1').removeClass('hide-bottom');             
-        });
-
-        $('.li-quote-2').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');
-            $('.quote-text-2').addClass('show');             
-            $('.quote-text-2').removeClass('hide-bottom');
-        });
-
-        $('.li-quote-3').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');         
-            $('.quote-text-3').addClass('show');             
-            $('.quote-text-3').removeClass('hide-bottom');
-        });
-        $('.li-quote-4').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');      
-            $('.quote-text-4').addClass('show');             
-            $('.quote-text-4').removeClass('hide-bottom');
-        });
-        $('.li-quote-5').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');      
-            $('.quote-text-5').addClass('show');             
-            $('.quote-text-5').removeClass('hide-bottom');
-        });
-        $('.li-quote-6').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');      
-            $('.quote-text-6').addClass('show');             
-            $('.quote-text-6').removeClass('hide-bottom');
-        });
-        $('.li-quote-7').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');      
-            $('.quote-text-7').addClass('show');             
-            $('.quote-text-7').removeClass('hide-bottom');
-        });
-        $('.li-quote-8').click(function(e){ 
-            e.stopPropagation();
-            $(".show").addClass('hide-top');
-            $(".hide-top").removeClass('show');      
-            $('.quote-text-8').addClass('show');             
-            $('.quote-text-8').removeClass('hide-bottom');
-        });
-           
-    
-});
-
-
-$(document).ready(function(){
-    
-       // hide-top
-
-        $('.li-quote-1').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-1').addClass('look');
-            $('.dp-name-1').removeClass('hide-dp-bottom');             
-        });
-
-        $('.li-quote-2').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-2').addClass('look');
-            $('.dp-name-2').removeClass('hide-dp-bottom');             
-        });
-
-        $('.li-quote-3').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-3').addClass('look');
-            $('.dp-name-3').removeClass('hide-dp-bottom');             
-        });
-		$('.li-quote-4').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-4').addClass('look');
-            $('.dp-name-4').removeClass('hide-dp-bottom');             
-        });
-		
-        $('.li-quote-5').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-5').addClass('look');
-            $('.dp-name-5').removeClass('hide-dp-bottom');             
-        });
-		
-        $('.li-quote-6').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-6').addClass('look');
-            $('.dp-name-6').removeClass('hide-dp-bottom');             
-        });
-        $('.li-quote-7').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-7').addClass('look');
-            $('.dp-name-7').removeClass('hide-dp-bottom');             
-        });
-        $('.li-quote-8').click(function(e){ 
-            e.stopPropagation();
-            $(".look").addClass('hide-dp-top');
-            $(".hide-dp-top").removeClass('look');
-            $('.dp-name-8').addClass('look');
-            $('.dp-name-8').removeClass('hide-dp-bottom');             
-        });
-           
-    
-});
-}
-
-// navbar
-function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-  }
-
+    // Function to close sidebar with the close button
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
 </script>
+
 </html>
