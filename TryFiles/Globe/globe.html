@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Social Media Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            background-color: #091327; /* Dark blue background */
+        }
+        #container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        #dashboard {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%; /* Adjust the width to fit all icons */
+            height: 70%; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="dashboard"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Setup the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('container').appendChild(renderer.domElement);
+
+        // Create a group to hold the dashboard elements
+        const dashboardGroup = new THREE.Group();
+        scene.add(dashboardGroup);
+
+        // Load textures for icons
+        const textureLoader = new THREE.TextureLoader();
+        const textures = {
+            instagram: textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'),
+            facebook: textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg'),
+            linkedin: textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/9/91/LinkedIn_logo_initials.png'),
+            twitter: textureLoader.load('https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg')
+        };
+
+        // Create materials for icons
+        const createIconMaterial = (texture) => {
+            return new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide
+            });
+        };
+
+        // Create and position 3D planes for each icon
+        const iconSize = 4; // Adjusted size
+        const iconPlanes = [
+            { texture: textures.instagram, position: [-8, 0, 0] },
+            { texture: textures.facebook, position: [-4, 0, 0] },
+            { texture: textures.linkedin, position: [4, 0, 0] },
+            { texture: textures.twitter, position: [8, 0, 0] }
+        ];
+
+        iconPlanes.forEach(icon => {
+            const planeGeometry = new THREE.PlaneGeometry(iconSize, iconSize);
+            const material = createIconMaterial(icon.texture);
+            const plane = new THREE.Mesh(planeGeometry, material);
+            plane.position.set(icon.position[0], icon.position[1], icon.position[2]);
+            dashboardGroup.add(plane);
+        });
+
+        // Add a light source
+        const ambientLight = new THREE.AmbientLight(0x404040, 1); // soft white light
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        // Position the camera
+        camera.position.z = 20;
+
+        // Mouse move effect
+        let mouseX = 0;
+        let mouseY = 0;
+        window.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Apply mouse tilt effect
+            dashboardGroup.children.forEach((plane) => {
+                plane.rotation.y = mouseX * 0.2;
+                plane.rotation.x = mouseY * 0.2;
+            });
+
+            // Render the scene
+            renderer.render(scene, camera);
+        }
+
+        // Handle window resizing
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+
+        // Start the animation loop
+        animate();
+    </script>
+</body>
+</html>
