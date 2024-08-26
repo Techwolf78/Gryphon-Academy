@@ -15,6 +15,12 @@
     integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Neon Button  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+    rel="stylesheet"
+  />
   <title>Gryphon Academy</title>
 </head>
 <style>
@@ -262,7 +268,7 @@
     flex-shrink: 0;
     gap: 2rem;
     padding-right: var(--gap-space);
-    animation: infinityScroll 17s linear 0s infinite forwards;
+    animation: infinityScroll 30s linear 0s infinite forwards;
     display: flex;
     align-items: center;
     width: max-content;
@@ -805,47 +811,102 @@
       /* Navbar CSS ends */
 
 /* Contact Us Button CSS starts */
+:root {
+    --color-text: #ffeeff;
+    --color-neon: #1331db;
+}
+
 .contact-button-container {
-    margin-bottom: 30px; /* Adjust the value as needed */
+  margin-top: -150px;
+    margin-bottom: 100px; /* Adjust the value as needed */
     text-align: center; /* Center the button horizontally */
 }
 
+/* Neon Button Styling */
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block; /* Ensure button behaves as an inline-block element */
+    background-color: transparent; /* Neon button background is transparent */
+    border: 0.1em solid var(--color-text);
+    color: var(--color-text);
+    font-size: 2rem; /* Increase font size for neon effect */
+    padding: 0.2em 1em;
+    border-radius: 0.25em;
     text-decoration: none; /* Remove underline from the link */
-    color: #fff; /* Text color */
+    display: inline-block; /* Ensure button behaves as an inline-block element */
+    cursor: pointer;
+    position: relative; /* For pseudo-elements positioning */
+    box-shadow: 0 0 0.75em 0 var(--color-neon),
+        inset 0 0 0.75em 0 var(--color-neon), 0 0 0.1em 0.05em var(--color-text),
+        inset 0 0 0.1em 0.05em var(--color-text);
+    text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
     transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth color transition */
 }
 
 /* Hover effect */
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+    background-color: #0056b3; /* Optional: Keep the hover color */
+    border-color: #004085; /* Optional: Keep the hover border color */
+}
+
+/* Neon Button Glow Effect */
+.btn-primary::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: opacity 50ms linear;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-neon);
+    transform: perspective(1em) rotateX(45deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    transition: opacity 50ms linear;
+    top: -0.1em;
+    right: -0.1em;
+    bottom: -0.1em;
+    left: -0.1em;
+    border-radius: 0.25em;
+    border: 0.1em solid var(--color-text);
+    box-shadow: 0 0 2em 0.5em var(--color-neon), inset 0 0 1em 0 var(--color-neon);
+    opacity: 0;
+}
+
+.btn-primary:hover::before,
+.btn-primary:focus::before,
+.btn-primary:hover::after,
+.btn-primary:focus::after {
+    opacity: 1;
+}
+
+/* Keyframes for blinking effect */
+@keyframes blink {
+    0%, 10%, 55%, 90% { color: inherit; }
+    11%, 15%, 56%, 58%, 91%, 99% { color: black; }
+    16%, 59%, 100% { color: inherit; }
+}
+
+.btn-primary span {
+    animation: blink 2s linear infinite;
 }
 
 /* Keyframes for bouncing animation */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }
 
 /* Add bouncing animation */
 .btn-primary.bouncing {
     animation: bounce 2s infinite;
 }
-
 /* Contact Us Button CSS ends */
 
 </style>
@@ -1135,13 +1196,14 @@
 <!-- Testimonial Section ends here -->
 
   <!-- registration form was here , now removed -->
- <!-- Contact Us Button -->
+<!-- Contact Us Button -->
 <div class="text-center contact-button-container">
-  <a href="contact.html" class="btn btn-primary wow bounceIn" data-wow-duration="1s" data-wow-delay="0.5s">
-      Contact Us
+  <a href="contact.html" class="btn btn-primary wow bounceIn bouncing" data-wow-duration="1s" data-wow-delay="0.5s">
+      Cont<span>a</span>ct Us
   </a>
 </div>
 <!-- Contact Us Button ends -->
+
 
 
  <!-- Footer Section Start -->
@@ -1249,21 +1311,6 @@
     crossorigin="anonymous"></script>
   <script>
     src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js";
-
-    window.onscroll = function () {
-      changeHeader();
-    };
-
-    var header = document.getElementById("myHeader");
-    var sticky = header.offsetTop;
-
-    function changeHeader() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky");
-      }
-    }
 
     // Function to toggle sidebar
     function toggleNav() {

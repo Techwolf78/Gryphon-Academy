@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Card</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+   <style>
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+/* Collection Section CSS Starts */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+/* Remove horizontal scroll styles */
+.card-container::-webkit-scrollbar {
+    display: none; /* For WebKit browsers */
+}
+
+.card-container {
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    scrollbar-width: none;  /* For Firefox */
+}
+
+.cutout-card {
+    width: 100%;
+    height: 350px;
+    background-color: #666;
+    box-shadow: 0 0 10px black;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cutout-card:hover {
+    transform: scale(1.05);
+}
+
+.cutout-card:hover .cutout-card__text {
+    margin-top: -100%;
+}
+
+.cutout-card:hover .cutout-card__secondary {
+    top: 0%;
+}
+
+.cutout-card__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.cutout-card__text {
+    position: absolute;
+    padding: 5px;
+    z-index: 1;
+    text-align: center;
+    min-width: 60%;
+    height: 60px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-family: 'Bungee shade', cursive;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 30px;
+    mix-blend-mode: screen;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.cutout-card__text:before, .cutout-card__text:after {
+    position: absolute;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 5px;
+    height: 60%;
+    left: 50%;
+}
+
+.cutout-card__text:before {
+    top: -100%;
+}
+
+.cutout-card__text:after {
+    top: 130%;
+}
+
+.cutout-card__secondary {
+    overflow-y: scroll;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    z-index: 3;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+.cutout-card__secondary::-webkit-scrollbar-thumb {
+    background-color: #fda800;
+}
+
+.cutout-card__secondary p {
+    background: url($bgnotepad);
+    background-repeat: repeat;
+    background-position: -30px;
+}
+
+/* Backgrounds */
+.cutout-card.--space { background: url('image/deep-space-background.jpg'); }
+.cutout-card.--time { background: url('image/time.jpg'); }
+.cutout-card.--energy { background: url('images/energy.jpg'); }
+.cutout-card.--matter { background: url('images/matter.jpg'); }
+.cutout-card.--art1 { background: url('images/art1.jpg'); }
+.cutout-card.--art2 { background: url('images/art2.jpg'); }
+.cutout-card.--art3 { background: url('images/art3.jpg'); }
+.cutout-card.--art4 { background: url('images/art4.jpg'); }
+
+
+/* Collection Section CSS Ends */
+
+
+   </style>
+</head>
+<body>
+    
+    <!-- Collection Section Start -->
+<section class="wrapper">
+    <div class="flex-wrapper">
+        <h1 class="section-heading">Collections</h1>
+  
+        <div class="card-container">
+            <div class="cutout-card --time">
+                <div class="cutout-card__background"></div>
+                <div class="cutout-card__text">Time</div>
+                <div class="cutout-card__secondary">
+                  <p>Time is the indefinite continued progress of existence and events that occur in apparently
+                    irreversible succession from the past through the present to the future. Time is a component
+                    quantity of various measurements used to sequence events, to compare the duration of events
+                    or the intervals between them, and to quantify rates of change of quantities in material
+                    reality or in the conscious experience. Time is often referred to as a fourth dimension,
+                    along with three spatial dimensions. Time has long been an important subject of study in
+                    religion, philosophy, and science, but defining it in a manner applicable to all fields
+                    without circularity has consistently eluded scholars.Nevertheless, diverse fields such as
+                    business, industry, sports, the sciences, and the performing arts all incorporate some
+                    notion of time into their respective measuring systems. Time in physics is unambiguously
+                    operationally defined as "what a clock reads".See Units of Time. Time is one of the seven
+                    fundamental physical quantities in both the International System of Units and International
+                    System of Quantities. Time is used to define other quantities – such as velocity – so
+                    defining time in terms of such quantities would result in circularity of definition. An
+                    operational definition of time, wherein one says that observing a certain number of
+                    repetitions of one or another standard cyclical event (such as the passage of a
+                    free-swinging pendulum) constitutes one standard unit such as the second, is highly useful
+                    in the conduct of both advanced experiments and everyday affairs of life. The operational
+                    definition leaves aside the question whether there is something called time, apart from the
+                    counting activity just mentioned, that flows and that can be measured. Investigations of a
+                    single continuum called spacetime bring questions about space into questions about time,
+                    questions that have their roots in the works of early students of natural philosophy.</p>
+                </div>
+            </div>
+  
+            <div class="cutout-card --space">
+                <div class="cutout-card__background"></div>
+                <div class="cutout-card__text">Space</div>
+                <div class="cutout-card__secondary">
+                  <p>Space is the boundless three-dimensional extent in which objects and events have relative
+                    position and direction. Physical space is often conceived in three linear dimensions,
+                    although modern physicists usually consider it, with time, to be part of a boundless
+                    four-dimensional continuum known as spacetime. The concept of space is considered to be of
+                    fundamental importance to an understanding of the physical universe.</p>
+                </div>
+            </div>
+  
+            <div class="cutout-card --energy">
+                <div class="cutout-card__background"></div>
+                <div class="cutout-card__text">Energy</div>
+                <div class="cutout-card__secondary">
+                  <p>In physics, energy is the quantitative property that must be transferred to an object in
+                    order to perform work on, or to heat, the object. Energy is a conserved quantity; the law of
+                    conservation of energy states that energy can be converted in form, but not created or
+                    destroyed. The SI unit of energy is the joule, which is the energy transferred to an object
+                    by the work of moving it a distance of 1 metre against a force of 1 newton. Common forms of
+                    energy include the kinetic energy of a moving object, the potential energy stored by an
+                    object's position in a force field (gravitational, electric or magnetic), the elastic energy
+                    stored by stretching solid objects, the chemical energy released when a fuel burns, the
+                    radiant energy carried by light, and the thermal energy due to an object's temperature. Mass
+                    and energy are closely related. Due to mass–energy equivalence, any object that has mass
+                    when stationary (called rest mass) also has an equivalent amount of energy whose form is
+                    called rest energy, and any additional energy (of any form) acquired by the object above
+                    that rest energy will increase the object's total mass just as it increases its total
+                    energy. For example, after heating an object, its increase in energy could be measured as a
+                    small increase in mass, with a sensitive enough scale.</p>
+                </div>
+            </div>
+  
+            <div class="cutout-card --matter">
+                <div class="cutout-card__background"></div>
+                <div class="cutout-card__text">Matter</div>
+                <div class="cutout-card__secondary">
+                  <p>Matter is any substance that has mass and takes up space by having volume.All everyday
+                    objects that we can touch are ultimately composed of atoms, which are made up of interacting
+                    subatomic particles, and in everyday as well as scientific usage, "matter" generally
+                    includes atoms and anything made up of them, and any particles (or combination of particles)
+                    that act as if they have both rest mass and volume. However it does not include massless
+                    particles such as photons, or other energy phenomena or waves such as light or sound.Matter
+                    exists in various states (also known as phases). These include classical everyday phases
+                    such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous
+                    steam – but other states are possible, including plasma, Bose–Einstein condensates,
+                    fermionic condensates, and quark–gluon plasma.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- Collection Section Ends -->
+</body>
+</html>

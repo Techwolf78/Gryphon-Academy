@@ -500,58 +500,113 @@
         }
       }
 
-      /* Registration Form */
-      .signup-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
+      /* Contact Us Button CSS starts */
+:root {
+    --color-text: #ffeeff;
+    --color-neon: #1331db;
+}
 
-      .signup-card {
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-        width: 100%;
-      }
+.contact-section {
+    background-color: #091327; /* Background color for the section */
+    padding: 50px 25px; /* Padding around the section */
+    width: 100%; /* Ensure the section spans full width */
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+}
 
-      .signup-image {
-        background: #fbc02d;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 30px;
-      }
+.contact-button-container {
+  margin-bottom: 25px; /* Remove bottom margin as it's handled by the section */
+    text-align: center; /* Center the button horizontally */
+}
 
-      .signup-form {
-        padding: 30px;
-      }
+/* Neon Button Styling */
+.btn-primary {
+    background-color: transparent; /* Neon button background is transparent */
+    border: 0.1em solid var(--color-text);
+    color: var(--color-text);
+    font-size: 2rem; /* Increase font size for neon effect */
+    padding: 0.2em 1em;
+    border-radius: 0.25em;
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Ensure button behaves as an inline-block element */
+    cursor: pointer;
+    position: relative; /* For pseudo-elements positioning */
+    box-shadow: 0 0 0.75em 0 var(--color-neon),
+        inset 0 0 0.75em 0 var(--color-neon), 0 0 0.1em 0.05em var(--color-text),
+        inset 0 0 0.1em 0.05em var(--color-text);
+    text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth color transition */
+}
 
-      .signup-form h2 {
-        margin-bottom: 30px;
-      }
+/* Hover effect */
+.btn-primary:hover {
+    background-color: #0056b3; /* Optional: Keep the hover color */
+    border-color: #004085; /* Optional: Keep the hover border color */
+}
 
-      .btn-group-toggle .btn {
-        border: 1px solid #ddd;
-        border-radius: 30px;
-      }
+/* Neon Button Glow Effect */
+.btn-primary::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: opacity 50ms linear;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-neon);
+    transform: perspective(1em) rotateX(45deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.5;
+    pointer-events: none;
+}
 
-      .btn-group-toggle .btn.active {
-        background-color: #007bff;
-        color: #fff;
-      }
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    transition: opacity 50ms linear;
+    top: -0.1em;
+    right: -0.1em;
+    bottom: -0.1em;
+    left: -0.1em;
+    border-radius: 0.25em;
+    border: 0.1em solid var(--color-text);
+    box-shadow: 0 0 2em 0.5em var(--color-neon), inset 0 0 1em 0 var(--color-neon);
+    opacity: 0;
+}
 
-      .form-group {
-        margin-bottom: 15px;
-      }
+.btn-primary:hover::before,
+.btn-primary:focus::before,
+.btn-primary:hover::after,
+.btn-primary:focus::after {
+    opacity: 1;
+}
 
-      .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-      }
+/* Keyframes for blinking effect */
+@keyframes blink {
+    0%, 10%, 55%, 90% { color: inherit; }
+    11%, 15%, 56%, 58%, 91%, 99% { color: black; }
+    16%, 59%, 100% { color: inherit; }
+}
+
+.btn-primary span {
+    animation: blink 2s linear infinite;
+}
+
+/* Keyframes for bouncing animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Add bouncing animation */
+.btn-primary.bouncing {
+    animation: bounce 2s infinite;
+}
+/* Contact Us Button CSS ends */
+
 
       /* Footer section start */
       #footer {
@@ -1727,67 +1782,16 @@ body {
       </div>
     </section>
 
-    <section>
-      <div class="container signup-container">
-        <div class="signup-card row no-gutters">
-          <div class="col-md-6 signup-image">
-            <div>
-              <h1>Gryphon Academy</h1>
-              <!-- <p>Learn from 200+ courses</p> -->
-            </div>
-          </div>
-          <div class="col-md-6 signup-form">
-            <h2>Create an account</h2>
-            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-              <label class="btn btn-outline-secondary active">
-                <input type="radio" name="options" id="candidate" autocomplete="off" checked> Candidate
-              </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" id="company" autocomplete="off"> Company
-              </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" id="college" autocomplete="off"> College
-              </label>
-            </div>
-            <form>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="firstName" placeholder="First Name">
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-                </div>
-              </div>
-              <!-- <div class="form-group">
-                <input type="text" class="form-control" id="username" placeholder="User Name">
-              </div> -->
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="phone" placeholder="Phone">
-              </div>
-              <!-- <div class="form-row"> -->
-                <!-- <div class="form-group col-md-6">
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-                </div>
-              </div> -->
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="termsCheck">
-                <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Next</button>
-              <div class="text-center mt-3">
-                <p>Already have an account? <a href="#">Login</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Contact Us Section -->
+<section class="contact-section">
+  <div class="text-center contact-button-container">
+      <a href="contact.html" class="btn btn-primary wow bounceIn bouncing" data-wow-duration="1s" data-wow-delay="0.5s">
+          Cont<span>a</span>ct Us
+      </a>
+  </div>
+</section>
+<!-- Contact Us Section ends -->
+
 
     <!-- Footer Section Start -->
     <section class="footer">

@@ -66,181 +66,192 @@
           transform: translateX(0);
         }
       }
-     /* navbar */
-     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #091327;
-      color: #fff;
-      position: relative;
-    }
-    .navbar-brand img {
-      width: 180px;
-      height: 100px;
-    }
-    .navbar {
-      display: flex;
-      align-items: center;
-    }
-    .navbar a {
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      display: block;
-    }
-    .navbar a:hover,
-    .navbar a.active {
-      background-color: #FFC700;
-      border-radius: 5px;
-      color: #091327;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropbtn {
-      background: none;
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #FFC700;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 5px;
-    }
-    .dropdown-content a {
-      color: #091327;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #FFC700;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .toggle-Button {
-      display: none;
-    }
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #091327;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    .sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #fff;
-      display: block;
-      transition: 0.3s;
-    }
-    .sidebar a:hover {
-      background-color: #FFC700;
-      color: #091327;
-    }
-    .sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
 
-    @media screen and (max-width: 768px) {
-      .navbar {
-        display: none;
-      }
-      .toggle-Button {
-        display: block;
-        cursor: pointer;
-      }
-      .dropdown-content {
+ /* Navbar CSS starts */
+ .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #091327;
+        color: #fff;
         position: relative;
       }
-    }
-
-    @media screen and (max-width: 768px) {
-      .sidebar {
-        padding-top: 15px;
-      }
-      .sidebar a {
-        font-size: 18px;
-      }
-    }
-
     
-    /*  */
+      .navbar-brand img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+      }
+    
+      .navbar {
+        display: flex;
+        align-items: center;
+      }
+    
+      .navbar a {
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+      }
+    
+      .navbar a:hover,
+      .navbar a.active {
+        background-color: #ffc700;
+        border-radius: 5px;
+        color: #091327;
+      }
+    
+      .dropdown {
+        position: relative;
+      }
+    
+      .dropbtn {
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    
+      /* For dropdown items */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #091327;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+    
+      .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    
+      .toggle-Button {
+        display: none;
+      }
+    
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #091327;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+    
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+    
+      .sidebar a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    
+      /* Sidebar structure */
+      .sidebar .dropdown-content {
+        display: block; /* Ensure dropdown content is always visible */
+        position: relative;
+        background-color: #091327;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .sidebar .dropdown-content li {
+        margin: 0;
+        padding: 0;
+      }
+    
+      .sidebar .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 32px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .sidebar .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      /* Media query for mobile view */
+      @media screen and (max-width: 768px) {
+        .sidebar .dropdown-content {
+          display: block;
+        }
+    
+        .sidebar .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    
+        .sidebar .dropdown-content a {
+          padding: 12px 32px;
+        }
+      }
+    
+      @media screen and (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+    
+        .toggle-Button {
+          display: block;
+          cursor: pointer;
+        }
+    
+        .dropdown-content {
+          position: relative;
+        }
+    
         .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            right: 0;
-            background-color: #091327;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
+          padding-top: 15px;
         }
-
+    
         .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 22px;
-            color: white;
-            display: block;
-            transition: 0.3s;
+          font-size: 18px;
         }
+      }
+      /* Navbar CSS ends */
 
-        .sidebar a:hover {
-            background-color: #FFC700;
-            color: #091327;
-        }
-
-        .sidebar .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-        }
-
-        .openbtn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #091327;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-        }
-
-        .openbtn:hover {
-            background-color: #FFC700;
-            color: #091327;
-        }
-
-        .content {
-            transition: margin-right .5s;
-            padding: 16px;
-        }
-
+      
       /* Why choose us card start */
 .why-choose-us .card {
   background-color: #072f55;
@@ -695,43 +706,60 @@
   </head>
   <body>
 
-    <header class="header">
-      <a class="navbar-brand" href="about-alternative.html">
-        <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2" class="logo">
+<!-- Header Section Start -->
+<header class="header">
+  <a class="navbar-brand" href="about-us.html">
+    <img
+      src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+      alt="logo2"
+      class="logo"
+    />
+  </a>
+
+  <nav class="navbar">
+    <a href="index.html">HOME</a>
+    <div class="dropdown">
+      <a href="training copy.html" class="dropbtn"
+        >TRAINING
+        <i class="bx bx-chevron-down"></i>
       </a>
-    
-      <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <div class="dropdown">
-          <a href="training copy.html" button class="dropbtn">TRAINING
-             <i class="bx bx-chevron-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="college-training.html">college-training</a>
-            <a href="corporate.html">corporate-training</a>
-            <a href="faculty.html">faculty</a>
-          </div>
-        </div>
-        <a href="placement-final-copy.html">PLACEMENT</a>
-        <a href="digitalcopy.html">DIGITAL MARKETING</a>
-        <a href="gax-copy.html">GAX</a>
-        <a href="BLOG.html">BLOG</a>
-      </nav>
-    
-      <div class="toggle-Button">
-        <span class="openbtn" onclick="openNav()">☰</span>
+      <div class="dropdown-content">
+        <a href="college-training.html">College Training</a>
+        <a href="corporate.html">Corporate Training</a>
+        <a href="faculty.html">Faculty</a>
       </div>
-    
-      <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="index.html">HOME</a>
-        <a href="training copy.html">TRAINING</a>
-        <a href="placement-final-copy.html">PLACEMENT</a>
-        <a href="digitalcopy.html">DIGITAL MARKETING</a>
-        <a href="gax-copy.html">GAX</a>
-        <a href="BLOG.html">BLOG</a>
-      </div>
-    </header>
+    </div>
+    <a href="placement-final-copy.html">PLACEMENT</a>
+    <a href="digitalcopy.html">DIGITAL MARKETING</a>
+    <a href="gax-copy.html">GAX</a>
+    <a href="BLOG.html">BLOG</a>
+  </nav>
+
+  <div class="toggle-Button">
+    <span class="openbtn" onclick="toggleNav()">☰</span>
+  </div>
+
+  <!-- Sidebar structure in the mobile view -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">HOME</a>
+    <div class="dropdown">
+      <a href="training copy.html" class="dropbtn">TRAINING</a>
+      <!-- Sub-menu items are always visible on mobile -->
+      <ul class="dropdown-content">
+        <li><a href="college-training.html">College Training</a></li>
+        <li><a href="corporate.html">Corporate Training</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+      </ul>
+    </div>
+    <a href="placement-final-copy.html">PLACEMENT</a>
+    <a href="digitalcopy.html">DIGITAL MARKETING</a>
+    <a href="gax-copy.html">GAX</a>
+    <a href="BLOG.html">BLOG</a>
+  </div>
+</header>
+
+<!-- Header Section End -->
 
     <div class="container">
       <div class="row">
@@ -1036,182 +1064,182 @@
         <div class="row">
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Adwani Wilmar" />
+              <img src="NewLogos/1.jpg" alt="Thyssenkrupp " />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Bajaj Auto" />
+              <img src="NewLogos/2.jpg" alt="Ford Motor " />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Blue Star" />
+              <img src="NewLogos/3.jpg" alt="Tata Motors" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Bridgestone" />
+              <img src="NewLogos/4.jpg" alt="GSlab" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Dassault System" />
+              <img src="NewLogos/5.jpg" alt="Hettich" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Flextronics" />
+              <img src="NewLogos/6.jpg" alt="KPIT" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Geetanjali Homestate" />
+              <img src="NewLogos/7.jpg" alt="Tata Technologies" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Go Comet" />
+              <img src="NewLogos/8.jpg" alt="Vascon" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Hettich" />
+              <img src="NewLogos/9.jpg" alt="Axis Bank" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Philips" />
+              <img src="NewLogos/10.jpg" alt="Tata Elxsi" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Wippro Pari" />
+              <img src="NewLogos/11.jpg" alt="Gestamp" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="TCS" />
+              <img src="NewLogos/12.jpg" alt="JUSPAY" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Tata Motors" />
+              <img src="NewLogos/13.jpg" alt="Ryan" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Tata Motors" />
+              <img src="NewLogos/15.jpg" alt="Vanderlande" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Kotak" />
+              <img src="NewLogos/16.jpg" alt="Piramal Realty" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Bridgestone" />
+              <img src="NewLogos/17.jpg" alt="Dassault Systems" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Thyssenkrupp" />
+              <img src="NewLogos/18.jpg" alt="Dabur" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Hettich" />
+              <img src="NewLogos/19.jpg" alt="Blue Star" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Tata Motors" />
+              <img src="NewLogos/20.jpg" alt="FIS Company" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Philips" />
+              <img src="NewLogos/21.jpg" alt="TCS" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Bridgestone" />
+              <img src="NewLogos/22.jpg" alt="Bridgestone" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Thyssenkrupp" />
+              <img src="NewLogos/23.jpg" alt="Philips" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Hettich" />
+              <img src="NewLogos/24.jpg" alt="Wipro Pari" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Tata Motors" />
+              <img src="NewLogos/25.jpg" alt="MAN Trucks & Bus" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Philips" />
+              <img src="NewLogos/26.jpg" alt="SOBHA" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Bridgestone" />
+              <img src="NewLogos/27.jpg" alt="CYIENT" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Thyssenkrupp" />
+              <img src="NewLogos/28.jpg" alt="Alpha Sense" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Hettich" />
+              <img src="NewLogos/29.jpg" alt="TVS" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Tata Motors" />
+              <img src="NewLogos/31.jpg" alt="Tata Motors" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Philips" />
+              <img src="NewLogos/32.jpg" alt="Firstcry" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Bridgestone" />
+              <img src="NewLogos/33.jpg" alt="Stanley" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Thyssenkrupp" />
+              <img src="NewLogos/34.jpg" alt="Druva" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Hettich" />
+              <img src="NewLogos/35.jpg" alt="Grasim Industries" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Tata Motors" />
+              <img src="NewLogos/36.jpg" alt="HCL Tech" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Philips" />
+              <img src="NewLogos/37.jpg" alt="Quess Corp" />
             </div>
           </div>
           <div class="col-md-2 col-4">
             <div class="partner-logo">
-              <img src="https://via.placeholder.com/50" alt="Poly Rubber" />
+              <img src="NewLogos/38.jpg" alt="L & T Technology" />
             </div>
           </div>
           <!-- Add more logos as needed, following the same structure -->
@@ -1630,15 +1658,20 @@
           });
       });
     });
+// Function to toggle sidebar
+function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+          sidebar.style.width = "0";
+        } else {
+          sidebar.style.width = "250px";
+        }
+      }
 
-    // navbar
-    function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-  }
-
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-  }
+      // Function to close sidebar with the close button
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
 </script>
 </script>
 

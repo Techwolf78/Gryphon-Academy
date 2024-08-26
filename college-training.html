@@ -57,15 +57,17 @@
     margin-top: 20px;
     position: relative;
     overflow: hidden;
+    border-radius: 50px; /* Rounded corners */
     animation: fadeInLeft 2s;
-    transition: color 0.4s, background-color 0.4s;
+    transition: color 0.4s, background-color 0.4s, transform 0.4s;
 }
- 
+
 .cta-button:hover {
-    background-color: #e6b800;
+    background: linear-gradient(45deg, #FFC700, #e6b800);
     color: #ffffff;
+    transform: scale(1.1); /* Slightly enlarged on hover */
 }
- 
+
 .cta-button:before, .cta-button:after {
     content: '';
     position: absolute;
@@ -76,23 +78,42 @@
     transform: translate(-50%, -50%);
     border: 2px solid #FFC700;
     transition: transform 0.5s;
+    border-radius: 50px; /* Match rounded corners */
 }
- 
+
 .cta-button:before {
     border-top: 0;
     border-bottom: 0;
     transform: translate(-50%, -50%) scaleX(0);
 }
- 
+
 .cta-button:after {
     border-left: 0;
     border-right: 0;
     transform: translate(-50%, -50%) scaleY(0);
 }
- 
+
 .cta-button:hover:before, .cta-button:hover:after {
     transform: translate(-50%, -50%) scale(1);
 }
+
+/* Add a bounce animation using Animate.css */
+.cta-button {
+    animation: fadeInLeft 2s, bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
  
 .carousel-inner img {
     width: 100%;
@@ -217,6 +238,56 @@
    
           /* train-5 */
 /* /----  Main Style  ----/ */
+/* Container surrounding all courses */
+.course-section-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course-sidebar {
+  flex: 1 1 250px; /* Allow the sidebar to grow and shrink, with a minimum width of 250px */
+  max-width: 300px; /* Adjust as needed */
+  padding: 10px;
+}
+
+.course-sidebar button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #091327;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-sidebar button:hover {
+  background-color: #ffc700;
+  color: #091327;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Border glow effect */
+}
+
+/* Course content container */
+.content {
+  flex: 3 1 0; /* Allow content area to grow and shrink, with flexible width */
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .course-section-container {
+    flex-direction: column; /* Stack sidebar and content vertically on smaller screens */
+  }
+
+  .course-sidebar {
+    max-width: none; /* Remove the max-width constraint */
+    margin-bottom: 20px; /* Add spacing between sidebar and content */
+  }
+}
+
     .content {
       width: 100%;
       padding: 20px;
@@ -807,36 +878,27 @@
 
     <section class="py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <!-- course section -->
-
-            
-<div class="sidebar">
-  <button onclick="changeCourse('MECH')">MECHANICAL ENGINEERING</button>
-  <button onclick="changeCourse('CIVIL')">CIVIL ENGINEERING</button>
-  <button onclick="changeCourse('COMP')">COMPUTER ENGINEERING</button>
-  <button onclick="changeCourse('ELECT')">ELECTRICAL ENGINEERING</button>
-  <button onclick="changeCourse('MCA')">MCA</button>
-  <button onclick="changeCourse('MBA')">MBA</button>
-  <button onclick="changeCourse('PHARMA')">PHARMA</button>
-  <button onclick="changeCourse('AI')">ARTIFICIAL INTELLIGENCE</button>
-</div>
-
+        <div class="row course-section-container">
+          <div class="col-lg-3 course-sidebar">
+            <!-- Course buttons here -->
+            <button onclick="changeCourse('MECH')">MECHANICAL ENGINEERING</button>
+            <button onclick="changeCourse('CIVIL')">CIVIL ENGINEERING</button>
+            <button onclick="changeCourse('COMP')">COMPUTER ENGINEERING</button>
+            <button onclick="changeCourse('ELECT')">ELECTRICAL ENGINEERING</button>
+            <button onclick="changeCourse('MCA')">MCA</button>
+            <button onclick="changeCourse('MBA')">MBA</button>
+            <button onclick="changeCourse('PHARMA')">PHARMA</button>
+            <button onclick="changeCourse('AI')">ARTIFICIAL INTELLIGENCE</button>
           </div>
-
-          <div class="col-lg-9">
-            <div class="row">
-              <div class="col-lg-4 content">
-              <div class="course-card" id="course-cards">
-                <!-- Course cards will be dynamically inserted here -->
-              </div>
-              </div>
+          <div class="col-lg-9 content">
+            <div class="course-card" id="course-cards">
+              <!-- Course cards will be dynamically inserted here -->
             </div>
           </div>
         </div>
       </div>
     </section>
+    
  
 
  

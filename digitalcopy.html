@@ -30,89 +30,102 @@
             min-height: 100vh;
         }
 
-        .content {
-            max-width: 50%;
-            animation: fadeIn 2s ease-in-out;
-        }
+        /* Hero section DM css start*/
 
-        .content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            animation: slideInFromLeft 1s ease-in-out;
-        }
+        /* Isolated Section Styling */
+.isolated-section {
+    padding: 20px;
+    background-color: #091327; /* Optional background color for better separation */
+}
 
-        .highlight {
-            color: #FFC700;
-        }
+.container-isolated {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .content p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            animation: slideInFromRight 1s ease-in-out;
-        }
+.content {
+    max-width: 50%;
+    animation: fadeIn 2s ease-in-out;
+}
 
-        .buttons {
-            margin-bottom: 30px;
-            animation: fadeIn 2s ease-in-out;
-        }
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1s ease-in-out;
+}
 
-        .btn-primary,
-        .btn-secondary {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+.highlight {
+    color: #FFC700;
+}
 
-        .btn-primary {
-            background-color: #091327;
+.content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    animation: slideInFromRight 1s ease-in-out;
+}
 
-            color: white;
-        }
+.buttons {
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
 
-        .btn-secondary {
-            background: none;
-            color: #ffffff;
-            border: 2px solid #fac208;
-        }
+.btn-primary,
+.btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
 
-        .image {
-            max-width: 50%;
-            text-align: center;
-        }
+.btn-primary {
+    background-color: #2861ca;
+    color: white;
+}
 
-        .image img {
-            width: 100%;
-            max-width: 400px;
-        }
+.btn-secondary {
+    background: none;
+    color: #ffffff;
+    border: 2px solid #fac208;
+}
 
-        .jobs {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-        }
+.image-dm {
+    max-width: 50%;
+}
 
-        .job-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-        }
+.image-dm img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+}
 
-        .job-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-        .job-card p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
+    .content,
+    .image-dm {
+        max-width: 100%;
+    }
+
+    .content {
+        margin-bottom: 20px;
+    }
+
+    .image-dm img {
+        max-width: 100%;
+    }
+}
+
+        /* Hero section DM css ends */
 
         .video-section {
             text-align: center;
@@ -138,15 +151,6 @@
                 max-width: 100%;
             }
 
-            .jobs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .job-card {
-                width: 80%;
-                margin-bottom: 20px;
-            }
         }
 
         @keyframes fadeIn {
@@ -179,161 +183,136 @@
             }
         }
 
-        /*  */
+/* Collection Section CSS Starts */
 
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(100, 1fr);
-            overflow-x: scroll;
-        }
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+}
 
-        .cutout-card {
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            margin: 10px;
-            box-shadow: 0 0 10px black;
-            flex: 0 0 auto;
-            width: 300px;
-            height: 350px;
-            background-color: #666;
+/* Remove horizontal scroll styles */
+.card-container::-webkit-scrollbar {
+    display: none; /* For WebKit browsers */
+}
 
-            &:hover>.cutout-card__text {
-                margin-top: -100%;
-            }
+.card-container {
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    scrollbar-width: none;  /* For Firefox */
+}
 
-            &:hover>.cutout-card__secondary {
-                top: 0%;
-            }
+.cutout-card {
+    width: 100%;
+    height: 350px;
+    background-color: #666;
+    box-shadow: 0 0 10px black;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
 
-            .cutout-card__background {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 0;
-                background-size: cover !important;
-                background-position: center !important;
-            }
+.cutout-card:hover {
+    transform: scale(1.05);
+}
 
-            .cutout-card__text {
-                position: absolute;
-                padding: 5px;
-                z-index: 1;
-                text-align: center;
-                min-width: 60%;
-                height: 60px;
-                border-radius: 10px 10px;
-                text-align: center;
-                vertical-align: middle;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: rgba(255, 255, 255, 0.8);
-                color: black;
-                font-family: 'Bungee shade', cursive;
-                font-weight: bold;
-                line-height: 60px;
-                font-size: 30px;
-                mix-blend-mode: screen;
-                transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+.cutout-card:hover .cutout-card__text {
+    margin-top: -100%;
+}
 
-                &:before {
-                    position: absolute;
-                    content: '';
-                    background-color: rgba(255, 255, 255, 0.8);
-                    top: -100%;
-                    width: 5px;
-                    height: 60%;
-                    left: 50%;
-                }
+.cutout-card:hover .cutout-card__secondary {
+    top: 0%;
+}
 
-                &:after {
-                    position: absolute;
-                    content: '';
-                    background-color: rgba(255, 255, 255, 0.8);
-                    top: 130%;
-                    width: 5px;
-                    height: 60%;
-                    left: 50%;
-                }
-            }
+.cutout-card__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover !important;
+    background-position: center !important;
+}
 
-            .--space {
-                background: url($space);
-            }
+.cutout-card__text {
+    position: absolute;
+    padding: 5px;
+    z-index: 1;
+    text-align: center;
+    min-width: 60%;
+    height: 60px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-family: 'Bungee shade', cursive;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 30px;
+    mix-blend-mode: screen;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
 
-            .--time {
-                background: url($time);
-            }
+.cutout-card__text:before, .cutout-card__text:after {
+    position: absolute;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 5px;
+    height: 60%;
+    left: 50%;
+}
 
-            .--energy {
-                background: url($energy);
-            }
+.cutout-card__text:before {
+    top: -100%;
+}
 
-            .--matter {
-                background: url($matter);
-            }
+.cutout-card__text:after {
+    top: 130%;
+}
 
-            .--art1 {
-                background: url($art1);
-            }
+.cutout-card__secondary {
+    overflow-y: scroll;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    z-index: 3;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 15px;
+    transition: all 0.5s;
+}
 
-            .--art2 {
-                background: url($art2);
-            }
+.cutout-card__secondary::-webkit-scrollbar-thumb {
+    background-color: #fda800;
+}
 
-            .--art3 {
-                background: url($art3);
-            }
+.cutout-card__secondary p {
+    background: url($bgnotepad);
+    background-repeat: repeat;
+    background-position: -30px;
+}
 
-            .--art4 {
-                background: url($art4);
-            }
-
-            .cutout-card__secondary {
-                overflow-y: scroll;
-                cursor: pointer;
-                padding: 5px;
-                position: absolute;
-                z-index: 3;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgb(0, 0, 0);
-                font-family: 'Permanent Marker', cursive;
-                font-size: 15px;
-                transition: all 0.5s;
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: #fda800;
-                }
-
-                p {
-                    background: url($bgnotepad);
-                    background-repeat: repeat;
-                    background-position: -30px;
-
-                }
-            }
-        }
+/* Backgrounds */
+.cutout-card.--space { background: url('image/deep-space-background.jpg'); }
+.cutout-card.--time { background: url('image/time.jpg'); }
+.cutout-card.--energy { background: url('image/energy.jpg'); }
+.cutout-card.--matter { background: url('image/matter.jpg'); }
+.cutout-card.--art1 { background: url('images/art1.jpg'); }
+.cutout-card.--art2 { background: url('images/art2.jpg'); }
+.cutout-card.--art3 { background: url('images/art3.jpg'); }
+.cutout-card.--art4 { background: url('images/art4.jpg'); }
 
 
-        @media screen and (max-width:768px) {
-            .cutout-card {
-                width: 250px;
-            }
-        }
+/* Collection Section CSS Ends */
 
-        .card-container {
-            position: relative;
-            left: 5rem;
-            display: grid;
-            grid-template-columns: repeat(100, 1fr);
-            overflow-x: scroll;
-        }
 
         /* video section */
         .main-wrapper {
@@ -813,37 +792,39 @@
         }
 
         .company-logos {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow: hidden;
-            height: 100px;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    height: 100px;
+    position: relative;
+    width: 100%;
+}
 
-        .company-logos-inner {
-            display: flex;
-            white-space: nowrap;
-            animation: slide 20s linear infinite;
-        }
+.company-logos-inner {
+    display: flex;
+    white-space: nowrap;
+    animation: slide 20s linear infinite;
+}
 
-        .company-logos-inner:nth-child(2) {
-            animation-direction: reverse;
-        }
+.company-logos-inner:nth-child(2) {
+    animation-direction: reverse;
+}
 
-        .company-logos-inner img {
-            margin: 0 10px;
-            height: 50px;
-        }
+.company-logos-inner img {
+    margin: 0 10px;
+    height: 50px;
+}
 
-        @keyframes slide {
-            from {
-                transform: translateX(0);
-            }
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
-            to {
-                transform: translateX(-100%);
-            }
-        }
 
         /* New Section Styles */
         .company-section {
@@ -979,190 +960,189 @@
         }
 
         /* Navbar CSS starts */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #091327;
-            color: #fff;
-            position: relative;
-        }
-
-        .navbar-brand img {
-            width: 100%;
-            max-width: 180px;
-            height: auto;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar a {
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            background-color: #ffc700;
-            border-radius: 5px;
-            color: #091327;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropbtn {
-            background: none;
-            border: none;
-            color: #fff;
-            padding: 10px 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        /* For dropdown items */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #091327;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            color: #ffffff;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ffc700;
-            color: #091327;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .toggle-Button {
-            display: none;
-        }
-
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #091327;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidebar a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #fff;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: #ffc700;
-            color: #091327;
-        }
-
-        .sidebar .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        /* Sidebar structure */
+  .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #091327;
+        color: #fff;
+        position: relative;
+      }
+    
+      .navbar-brand img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+      }
+    
+      .navbar {
+        display: flex;
+        align-items: center;
+      }
+    
+      .navbar a {
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+      }
+    
+      .navbar a:hover,
+      .navbar a.active {
+        background-color: #ffc700;
+        border-radius: 5px;
+        color: #091327;
+      }
+    
+      .dropdown {
+        position: relative;
+      }
+    
+      .dropbtn {
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    
+      /* For dropdown items */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #091327;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+    
+      .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    
+      .toggle-Button {
+        display: none;
+      }
+    
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #091327;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+    
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+    
+      .sidebar a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    
+      /* Sidebar structure */
+      .sidebar .dropdown-content {
+        display: block; /* Ensure dropdown content is always visible */
+        position: relative;
+        background-color: #091327;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .sidebar .dropdown-content li {
+        margin: 0;
+        padding: 0;
+      }
+    
+      .sidebar .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 32px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .sidebar .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      /* Media query for mobile view */
+      @media screen and (max-width: 768px) {
         .sidebar .dropdown-content {
-            display: block;
-            /* Ensure dropdown content is always visible */
-            position: relative;
-            background-color: #091327;
-            list-style: none;
-            padding: 0;
-            margin: 0;
+          display: block;
         }
-
-        .sidebar .dropdown-content li {
-            margin: 0;
-            padding: 0;
+    
+        .sidebar .dropdown:hover .dropdown-content {
+          display: block;
         }
-
+    
         .sidebar .dropdown-content a {
-            color: #ffffff;
-            padding: 12px 32px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s ease, color 0.3s ease;
+          padding: 12px 32px;
         }
-
-        .sidebar .dropdown-content a:hover {
-            background-color: #ffc700;
-            color: #091327;
+      }
+    
+      @media screen and (max-width: 768px) {
+        .navbar {
+          display: none;
         }
-
-        /* Media query for mobile view */
-        @media screen and (max-width: 768px) {
-            .sidebar .dropdown-content {
-                display: block;
-            }
-
-            .sidebar .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .sidebar .dropdown-content a {
-                padding: 12px 32px;
-            }
+    
+        .toggle-Button {
+          display: block;
+          cursor: pointer;
         }
-
-        @media screen and (max-width: 768px) {
-            .navbar {
-                display: none;
-            }
-
-            .toggle-Button {
-                display: block;
-                cursor: pointer;
-            }
-
-            .dropdown-content {
-                position: relative;
-            }
-
-            .sidebar {
-                padding-top: 15px;
-            }
-
-            .sidebar a {
-                font-size: 18px;
-            }
+    
+        .dropdown-content {
+          position: relative;
         }
+    
+        .sidebar {
+          padding-top: 15px;
+        }
+    
+        .sidebar a {
+          font-size: 18px;
+        }
+      }
+      /* Navbar CSS ends */
 
-        /* Navbar CSS ends */
 
         /* Footer section start */
         #footer {
@@ -1397,56 +1377,64 @@
 
 <body>
 
-    <!-- Header Section Start -->
-    <header class="header">
-        <a class="navbar-brand" href="about-us.html">
-            <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="logo2"
-                class="logo" />
+     <!-- Header Section Start -->
+  <header class="header">
+    <a class="navbar-brand" href="about-us.html">
+      <img
+        src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+        alt="logo2"
+        class="logo"
+      />
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn"
+          >TRAINING
+          <i class="bx bx-chevron-down"></i>
         </a>
-
-        <nav class="navbar">
-            <a href="index.html">HOME</a>
-            <div class="dropdown">
-                <a href="training copy.html" class="dropbtn">TRAINING
-                    <i class="bx bx-chevron-down"></i>
-                </a>
-                <div class="dropdown-content">
-                    <a href="college-training.html">College Training</a>
-                    <a href="corporate.html">Corporate Training</a>
-                    <a href="faculty.html">Faculty</a>
-                </div>
-            </div>
-            <a href="placement-final-copy.html">PLACEMENT</a>
-            <a href="digitalcopy.html">DIGITAL MARKETING</a>
-            <a href="gax-copy.html">GAX</a>
-            <a href="BLOG.html">BLOG</a>
-        </nav>
-
-        <div class="toggle-Button">
-            <span class="openbtn" onclick="toggleNav()">☰</span>
+        <div class="dropdown-content">
+          <a href="college-training.html">College Training</a>
+          <a href="corporate.html">Corporate Training</a>
+          <a href="faculty.html">Faculty</a>
         </div>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </nav>
 
-        <!-- Sidebar structure in the mobile view -->
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="index.html">HOME</a>
-            <div class="dropdown">
-                <a href="training copy.html" class="dropbtn">TRAINING</a>
-                <!-- Sub-menu items are always visible on mobile -->
-                <ul class="dropdown-content">
-                    <li><a href="college-training.html">College Training</a></li>
-                    <li><a href="corporate.html">Corporate Training</a></li>
-                    <li><a href="faculty.html">Faculty</a></li>
-                </ul>
-            </div>
-            <a href="placement-final-copy.html">PLACEMENT</a>
-            <a href="digitalcopy.html">DIGITAL MARKETING</a>
-            <a href="gax-copy.html">GAX</a>
-            <a href="BLOG.html">BLOG</a>
-        </div>
-    </header>
+    <div class="toggle-Button">
+      <span class="openbtn" onclick="toggleNav()">☰</span>
+    </div>
 
-    <div class="container">
+    <!-- Sidebar structure in the mobile view -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn">TRAINING</a>
+        <!-- Sub-menu items are always visible on mobile -->
+        <ul class="dropdown-content">
+          <li><a href="college-training.html">College Training</a></li>
+          <li><a href="corporate.html">Corporate Training</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+        </ul>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </div>
+  </header>
+
+  <!-- Header Section End -->
+
+  <!-- Dm Hero Section Start -->
+  <section class="isolated-section">
+    <div class="container-isolated">
         <div class="content">
             <h1>Find a skilled <span class="highlight">individual</span> to do the job.</h1>
             <p>Creative Peoples lets you find the right job for any challenge from development to marketing.</p>
@@ -1455,105 +1443,103 @@
                 <button class="btn-secondary">Watch a Demo</button>
             </div>
         </div>
-        <div class="image">
-            <img src="colorful-pen-tool.png" alt="Colorful Pen Tool">
+        <div class="image-dm">
+            <img src="./image/digital-marketing-final.png" alt="Colorful Pen Tool">
         </div>
     </div>
+</section>
+<!-- DM Hero Section Ends -->
 
-    <section class="wrapper">
-        <div class="flex-wrapper">
-            <h1 style="font-size:40px">Collections</h1>
+<!-- Collection Section Start -->
+<section class="wrapper">
+  <div class="flex-wrapper">
+      <h1 class="section-heading">Collections</h1>
 
+      <div class="card-container">
+          <div class="cutout-card --time">
+              <div class="cutout-card__background"></div>
+              <div class="cutout-card__text">Time</div>
+              <div class="cutout-card__secondary">
+                <p>Time is the indefinite continued progress of existence and events that occur in apparently
+                  irreversible succession from the past through the present to the future. Time is a component
+                  quantity of various measurements used to sequence events, to compare the duration of events
+                  or the intervals between them, and to quantify rates of change of quantities in material
+                  reality or in the conscious experience. Time is often referred to as a fourth dimension,
+                  along with three spatial dimensions. Time has long been an important subject of study in
+                  religion, philosophy, and science, but defining it in a manner applicable to all fields
+                  without circularity has consistently eluded scholars.Nevertheless, diverse fields such as
+                  business, industry, sports, the sciences, and the performing arts all incorporate some
+                  notion of time into their respective measuring systems. Time in physics is unambiguously
+                  operationally defined as "what a clock reads".See Units of Time. Time is one of the seven
+                  fundamental physical quantities in both the International System of Units and International
+                  System of Quantities. Time is used to define other quantities – such as velocity – so
+                  defining time in terms of such quantities would result in circularity of definition. An
+                  operational definition of time, wherein one says that observing a certain number of
+                  repetitions of one or another standard cyclical event (such as the passage of a
+                  free-swinging pendulum) constitutes one standard unit such as the second, is highly useful
+                  in the conduct of both advanced experiments and everyday affairs of life. The operational
+                  definition leaves aside the question whether there is something called time, apart from the
+                  counting activity just mentioned, that flows and that can be measured. Investigations of a
+                  single continuum called spacetime bring questions about space into questions about time,
+                  questions that have their roots in the works of early students of natural philosophy.</p>
+              </div>
+          </div>
 
-            <div class="card-container">
-                <div class="cutout-card">
-                    <div class="cutout-card__background --time"></div>
-                    <div class="cutout-card__text">Time</div>
-                    <div class="cutout-card__secondary">
-                        <p>Time is the indefinite continued progress of existence and events that occur in apparently
-                            irreversible succession from the past through the present to the future. Time is a component
-                            quantity of various measurements used to sequence events, to compare the duration of events
-                            or the intervals between them, and to quantify rates of change of quantities in material
-                            reality or in the conscious experience. Time is often referred to as a fourth dimension,
-                            along with three spatial dimensions. Time has long been an important subject of study in
-                            religion, philosophy, and science, but defining it in a manner applicable to all fields
-                            without circularity has consistently eluded scholars.Nevertheless, diverse fields such as
-                            business, industry, sports, the sciences, and the performing arts all incorporate some
-                            notion of time into their respective measuring systems. Time in physics is unambiguously
-                            operationally defined as "what a clock reads".See Units of Time. Time is one of the seven
-                            fundamental physical quantities in both the International System of Units and International
-                            System of Quantities. Time is used to define other quantities – such as velocity – so
-                            defining time in terms of such quantities would result in circularity of definition. An
-                            operational definition of time, wherein one says that observing a certain number of
-                            repetitions of one or another standard cyclical event (such as the passage of a
-                            free-swinging pendulum) constitutes one standard unit such as the second, is highly useful
-                            in the conduct of both advanced experiments and everyday affairs of life. The operational
-                            definition leaves aside the question whether there is something called time, apart from the
-                            counting activity just mentioned, that flows and that can be measured. Investigations of a
-                            single continuum called spacetime bring questions about space into questions about time,
-                            questions that have their roots in the works of early students of natural philosophy.</p>
-                    </div>
-                </div>
+          <div class="cutout-card --space">
+              <div class="cutout-card__background"></div>
+              <div class="cutout-card__text">Space</div>
+              <div class="cutout-card__secondary">
+                <p>Space is the boundless three-dimensional extent in which objects and events have relative
+                  position and direction. Physical space is often conceived in three linear dimensions,
+                  although modern physicists usually consider it, with time, to be part of a boundless
+                  four-dimensional continuum known as spacetime. The concept of space is considered to be of
+                  fundamental importance to an understanding of the physical universe.</p>
+              </div>
+          </div>
 
-                <div class="cutout-card">
-                    <div class="cutout-card__background --space"></div>
-                    <div class="cutout-card__text">Space</div>
-                    <div class="cutout-card__secondary">
-                        <p>Space is the boundless three-dimensional extent in which objects and events have relative
-                            position and direction. Physical space is often conceived in three linear dimensions,
-                            although modern physicists usually consider it, with time, to be part of a boundless
-                            four-dimensional continuum known as spacetime. The concept of space is considered to be of
-                            fundamental importance to an understanding of the physical universe.</p>
-                    </div>
-                </div>
+          <div class="cutout-card --energy">
+              <div class="cutout-card__background"></div>
+              <div class="cutout-card__text">Energy</div>
+              <div class="cutout-card__secondary">
+                <p>In physics, energy is the quantitative property that must be transferred to an object in
+                  order to perform work on, or to heat, the object. Energy is a conserved quantity; the law of
+                  conservation of energy states that energy can be converted in form, but not created or
+                  destroyed. The SI unit of energy is the joule, which is the energy transferred to an object
+                  by the work of moving it a distance of 1 metre against a force of 1 newton. Common forms of
+                  energy include the kinetic energy of a moving object, the potential energy stored by an
+                  object's position in a force field (gravitational, electric or magnetic), the elastic energy
+                  stored by stretching solid objects, the chemical energy released when a fuel burns, the
+                  radiant energy carried by light, and the thermal energy due to an object's temperature. Mass
+                  and energy are closely related. Due to mass–energy equivalence, any object that has mass
+                  when stationary (called rest mass) also has an equivalent amount of energy whose form is
+                  called rest energy, and any additional energy (of any form) acquired by the object above
+                  that rest energy will increase the object's total mass just as it increases its total
+                  energy. For example, after heating an object, its increase in energy could be measured as a
+                  small increase in mass, with a sensitive enough scale.</p>
+              </div>
+          </div>
 
+          <div class="cutout-card --matter">
+              <div class="cutout-card__background"></div>
+              <div class="cutout-card__text">Matter</div>
+              <div class="cutout-card__secondary">
+                <p>Matter is any substance that has mass and takes up space by having volume.All everyday
+                  objects that we can touch are ultimately composed of atoms, which are made up of interacting
+                  subatomic particles, and in everyday as well as scientific usage, "matter" generally
+                  includes atoms and anything made up of them, and any particles (or combination of particles)
+                  that act as if they have both rest mass and volume. However it does not include massless
+                  particles such as photons, or other energy phenomena or waves such as light or sound.Matter
+                  exists in various states (also known as phases). These include classical everyday phases
+                  such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous
+                  steam – but other states are possible, including plasma, Bose–Einstein condensates,
+                  fermionic condensates, and quark–gluon plasma.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Collection Section Ends -->
 
-                <div class="cutout-card">
-                    <div class="cutout-card__background --energy"></div>
-                    <div class="cutout-card__text">Energy</div>
-                    <div class="cutout-card__secondary">
-                        <p>In physics, energy is the quantitative property that must be transferred to an object in
-                            order to perform work on, or to heat, the object. Energy is a conserved quantity; the law of
-                            conservation of energy states that energy can be converted in form, but not created or
-                            destroyed. The SI unit of energy is the joule, which is the energy transferred to an object
-                            by the work of moving it a distance of 1 metre against a force of 1 newton. Common forms of
-                            energy include the kinetic energy of a moving object, the potential energy stored by an
-                            object's position in a force field (gravitational, electric or magnetic), the elastic energy
-                            stored by stretching solid objects, the chemical energy released when a fuel burns, the
-                            radiant energy carried by light, and the thermal energy due to an object's temperature. Mass
-                            and energy are closely related. Due to mass–energy equivalence, any object that has mass
-                            when stationary (called rest mass) also has an equivalent amount of energy whose form is
-                            called rest energy, and any additional energy (of any form) acquired by the object above
-                            that rest energy will increase the object's total mass just as it increases its total
-                            energy. For example, after heating an object, its increase in energy could be measured as a
-                            small increase in mass, with a sensitive enough scale.</p>
-                    </div>
-                </div>
-
-                <div class="cutout-card">
-                    <div class="cutout-card__background --matter"></div>
-                    <div class="cutout-card__text">Matter</div>
-                    <div class="cutout-card__secondary">
-                        <p>Matter is any substance that has mass and takes up space by having volume.All everyday
-                            objects that we can touch are ultimately composed of atoms, which are made up of interacting
-                            subatomic particles, and in everyday as well as scientific usage, "matter" generally
-                            includes atoms and anything made up of them, and any particles (or combination of particles)
-                            that act as if they have both rest mass and volume. However it does not include massless
-                            particles such as photons, or other energy phenomena or waves such as light or sound.Matter
-                            exists in various states (also known as phases). These include classical everyday phases
-                            such as solid, liquid, and gas – for example water exists as ice, liquid water, and gaseous
-                            steam – but other states are possible, including plasma, Bose–Einstein condensates,
-                            fermionic condensates, and quark–gluon plasma.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- video section -->
-
-
-    </section>
     <!-- video section  -->
     <section class="container-fluid p-0">
         <div class="row no-gutters">
@@ -1562,7 +1548,7 @@
                 <div class="video-wrapper">
                     <div class="video-section">
                         <video class="initial_video" loop controls autoplay muted>
-                            <source src="IMG_5815.mp4" type="video/mp4">
+                            <source src="IMG_5815.MOV" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -1570,8 +1556,8 @@
             </div>
         </div>
     </section>
-
-
+  <!-- video section -->
+  
     <main>
         <div class="container">
             <div class="row">
@@ -2024,35 +2010,49 @@
         <section class="company-section">
             <h2>and many more who are working at some of the top companies</h2>
             <div class="company-logos">
-                <div class="company-logos-inner">
-                    <img src="ogilvy.png" alt="Ogilvy">
-                    <img src="canva.png" alt="Canva">
-                    <img src="paytm.png" alt="Paytm">
-                    <img src="mpl.png" alt="MPL">
-                    <img src="nvidia.png" alt="NVIDIA">
-                    <img src="walmart.png" alt="Walmart">
-                    <img src="expedia.png" alt="Expedia">
-                    <img src="licious.png" alt="Licious">
-                    <img src="disney-hotstar.png" alt="Disney Hotstar">
-                    <img src="cocacola.png" alt="Coca Cola">
-                    <img src="adobe.png" alt="Adobe">
-                    <img src="meta.png" alt="Meta">
-                </div>
-                <div class="company-logos-inner">
-                    <img src="razorpay.png" alt="Razorpay">
-                    <img src="microsoft.png" alt="Microsoft">
-                    <img src="oyo.png" alt="Oyo">
-                    <img src="swiggy.png" alt="Swiggy">
-                    <img src="amazon.png" alt="Amazon">
-                    <img src="google.png" alt="Google">
-                    <img src="uber.png" alt="Uber">
-                    <img src="linkedin.png" alt="LinkedIn">
-                    <img src="ogilvy.png" alt="Ogilvy">
-                    <img src="canva.png" alt="Canva">
-                    <img src="paytm.png" alt="Paytm">
-                    <img src="mpl.png" alt="MPL">
-                </div>
-            </div>
+              <div class="company-logos-inner">
+                  <img src="NewLogos/1.jpg" alt="Ogilvy">
+                  <img src="NewLogos/2.jpg" alt="Canva">
+                  <img src="NewLogos/3.jpg" alt="Paytm">
+                  <img src="NewLogos/4.jpg" alt="MPL">
+                  <img src="NewLogos/5.jpg" alt="NVIDIA">
+                  <img src="NewLogos/6.jpg" alt="Walmart">
+                  <img src="NewLogos/7.jpg" alt="Expedia">
+                  <img src="NewLogos/8.jpg" alt="Licious">
+                  <img src="NewLogos/9.jpg" alt="Disney Hotstar">
+                  <img src="NewLogos/10.jpg" alt="Coca Cola">
+                  <img src="NewLogos/11.jpg" alt="Adobe">
+                  <img src="NewLogos/12.jpg" alt="Meta">
+                  <!-- Duplicate logos for infinite scrolling -->
+                  <img src="NewLogos/1.jpg" alt="Ogilvy">
+                  <img src="NewLogos/2.jpg" alt="Canva">
+                  <img src="NewLogos/3.jpg" alt="Paytm">
+                  <img src="NewLogos/4.jpg" alt="MPL">
+                  <img src="NewLogos/5.jpg" alt="NVIDIA">
+                  <img src="NewLogos/6.jpg" alt="Walmart">
+              </div>
+              <div class="company-logos-inner">
+                  <img src="NewLogos/13.jpg" alt="Razorpay">
+                  <img src="NewLogos/15.jpg" alt="Microsoft">
+                  <img src="NewLogos/16.jpg" alt="Oyo">
+                  <img src="NewLogos/17.jpg" alt="Swiggy">
+                  <img src="NewLogos/18.jpg" alt="Amazon">
+                  <img src="NewLogos/19.jpg" alt="Google">
+                  <img src="NewLogos/20.jpg" alt="Uber">
+                  <img src="NewLogos/21.jpg" alt="LinkedIn">
+                  <img src="NewLogos/22.jpg" alt="Ogilvy">
+                  <img src="NewLogos/23.jpg" alt="Canva">
+                  <img src="NewLogos/24.jpg" alt="Paytm">
+                  <img src="NewLogos/25.jpg" alt="MPL">
+                  <!-- Duplicate logos for infinite scrolling -->
+                  <img src="NewLogos/13.jpg" alt="Razorpay">
+                  <img src="NewLogos/15.jpg" alt="Microsoft">
+                  <img src="NewLogos/16.jpg" alt="Oyo">
+                  <img src="NewLogos/17.jpg" alt="Swiggy">
+                  <img src="NewLogos/18.jpg" alt="Amazon">
+              </div>
+          </div>
+          
         </section>
     </main>
 

@@ -211,39 +211,51 @@
     /* home */
 
     .faculty {
-      background-image: url("image/MicrosoftTeams.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      height: 100vh;
-    }
+    background-image: url("image/MicrosoftTeams.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
 
-    /* FDP text  and its para text start*/
-    .faculty-head {
-      align-items: center;
-      gap: 2rem;
-      /* Space between heading and paragraph */
-      padding-left: 20px;
-    }
+.faculty-head {
+    align-items: center;
+    gap: 2rem;
+    padding-left: 20px;
+}
 
-    .fdp-heading {
-      font-size: 2rem;
-      /* Adjust size as needed */
-      color: #FFFFFF;
-      padding-left: 10px;
-      padding-top: 10px;
-    }
+.fdp-heading {
+    font-size: 2rem;
+    color: #FFFFFF;
+    padding-left: 10px;
+    padding-top: 10px;
+}
 
-    #fdp-text {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #FFFFFF;
-      max-width: 50%;
-      /* Limit width for readability */
-      padding-left: 30px;
-    }
+/* Typewriter CSS Start */
+#typedtext {
+  white-space: pre-wrap; /* Preserve spaces and line breaks, wrap text */
+  color: #FFFFFF; /* Adjust text color as needed */
+  max-width: 100%; /* Ensure it does not overflow */
+  overflow-wrap: break-word; /* Break long words to avoid overflow */
+  word-wrap: break-word; /* Ensure words break properly */
+}
 
-    /* FDP text  and its para text end*/
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.6rem; /* Further reduction for very small screens */
+  }
+}
+/* Typewriter CSS End */
+
+
+
+
     /* FDPS */
     .section {
       padding: 60px 0;
@@ -747,12 +759,12 @@
         FDP <br>
         (Faculty Development Programme)
       </h1>
-      <p id="fdp-text">
-        - We specialize in empowering college professors, and faculty members to excel
-        in their roles and drive academic success. Our tailored approach ensures that
-        your institution's unique needs are met through a comprehensive training program
-        designed to elevate teaching standards and foster professional growth.
-      </p>
+<!-- Typewriter Text Start -->
+<div id="typedtext"></div>
+<!-- Typewriter Text End -->
+</div>
+    
+    
     </div>
 
   </section>
@@ -1109,6 +1121,48 @@
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
         }
+
+        // Typewriter effect
+        // set up text to print, each item in array is a new line
+var aText = new Array(
+  "- We specialize in empowering college professors", 
+  "and faculty members to excel in their roles and", 
+  "drive academic success. Our tailored approach ensures", 
+  "that your institution's unique needs are met through a ",
+  "comprehensive training program designed to elevate ", 
+  "teaching standards and foster professional growth.", 
+);
+var iSpeed = 30; // time delay of print out
+var iIndex = 0; // start printing array at this position
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+
+var iTextPos = 0; // initialize text position
+var sContents = ''; // initialize contents variable
+var iRow; // initialize current row
+
+function typewriter() {
+  sContents = ' ';
+  iRow = Math.max(0, iIndex - iScrollAt);
+  var destination = document.getElementById("typedtext");
+
+  while (iRow < iIndex) {
+    sContents += aText[iRow++] + '<br />';
+  }
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+  if (iTextPos++ == iArrLength) {
+    iTextPos = 0;
+    iIndex++;
+    if (iIndex != aText.length) {
+      iArrLength = aText[iIndex].length;
+      setTimeout(typewriter, 500); // Delay between lines
+    }
+  } else {
+    setTimeout(typewriter, iSpeed);
+  }
+}
+
+typewriter();
       </script>
 
 </body>
