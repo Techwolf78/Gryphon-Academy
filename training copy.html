@@ -136,7 +136,7 @@
       0%, 100% { opacity: 0; }
       50% { opacity: 1; }
     }
-/* progtress */
+/* progress section css starts */
 .progress-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -168,11 +168,16 @@
             transition: background 0.3s, color 0.3s;
             cursor: pointer;
         }
-        .steps-list li.active .step-label,
-        .steps-list li .step-label:hover {
-            background: #272209;
-            color: #fff;
-        }
+        .steps-list li .step-label {
+    background: #eceff1; /* Default background color */
+    color: inherit; /* Default text color */
+}
+
+.steps-list li .step-label:hover {
+    background: #272209; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+}
+
         #progress-line {
             width: 100%;
             height: 5px;
@@ -233,7 +238,7 @@
             }
         }
 
-
+/* Progress section css ends */
 
 
       /* Why Choose Us */
@@ -1214,7 +1219,21 @@
     margin: 0 10px;
   }
 }
+/* Bridge Image CSS starts */
+.bridge-image-container {
+  width: 100%; /* Ensures the container takes up the full width of the viewport */
+  max-width: 100%; /* Prevents the container from exceeding the viewport width */
+  padding: 0 10px; /* Optional: Adds a bit of padding on the sides */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
 
+.bridge-image-container img {
+  width: 100%; /* Makes the image fill the container's width */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block; /* Removes the gap below the image caused by inline-block elements */
+}
+
+/* Bridge Image CSS ends */
 
 
     </style>
@@ -1293,10 +1312,11 @@
       </p>
     </div>
     
-
-    <section>
-      <img src="image/gax-bridge.svg" alt="">
+<!-- Image of Gryphon Academy Bridge starts -->
+    <section class="bridge-image-container">
+      <img src="image/gax-bridge.svg" alt="Gax Bridge">
     </section>
+    <!-- Image of Gryphon Academy Bridge ends -->
 
    
 <div class="progress-container mt-5">
@@ -1317,17 +1337,17 @@
   <div id="content-section-wrapper">
       <div class="content-section discovery active">
           <h2>Discovery</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+          <p>ctetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
       </div>
 
       <div class="content-section strategy">
           <h2>Strategy Development</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+          <p> ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
       </div>
 
       <div class="content-section creative">
           <h2>Creative Concepting</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
+          <p> dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
       </div>
 
       <div class="content-section production">
