@@ -187,8 +187,52 @@
  
 /* logo */
 /* Logo Slider Styles */
+.section-heading {
+    color: rgba(2, 0, 0, 0.795);
+    padding-top: 10px;
+    margin-top: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #f8c291, #e77f7f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-clip: text; /* Add the standard property */
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .section-heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+
+  .section-heading:hover {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-heading:hover::before {
+    width: 100%;
+  }
+
+  .section-heading {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
 .logo-slider-section {
-      background-color: #f0f2f5;
+      background-color:#091327;
+      margin-bottom: -40px;
     }
  
     .logo-slider {
@@ -199,6 +243,7 @@
       align-items: center;
       justify-content: center;
       margin: 40px 0;
+      background-color: #091327;
     }
  
     .logo-slider-track {
@@ -309,6 +354,7 @@
       margin-bottom: 20px;
       text-align: center;
       box-sizing: border-box;
+      
     }
  
     .card img {
@@ -326,6 +372,7 @@
     .card p {
       font-size: 1rem;
       margin-bottom: 15px;
+      color: #000000;
     }
  
     .card button {
@@ -571,190 +618,189 @@
 
       /* Footer section end */
 
-/* Navbar CSS starts */
-.header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #091327;
-        color: #fff;
-        position: relative;
-      }
-    
-      .navbar-brand img {
-        width: 100%;
-        max-width: 180px;
-        height: auto;
-      }
-    
-      .navbar {
-        display: flex;
-        align-items: center;
-      }
-    
-      .navbar a {
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        display: block;
-      }
-    
-      .navbar a:hover,
-      .navbar a.active {
-        background-color: #ffc700;
-        border-radius: 5px;
-        color: #091327;
-      }
-    
-      .dropdown {
-        position: relative;
-      }
-    
-      .dropbtn {
-        background: none;
-        border: none;
-        color: #fff;
-        padding: 10px 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-      }
-    
-      /* For dropdown items */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #091327;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px;
-      }
-    
-      .dropdown-content a {
-        color: #ffffff;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-    
-      .dropdown-content a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
-    
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-    
-      .toggle-Button {
-        display: none;
-      }
-    
-      .sidebar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #091327;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-      }
-    
-      .sidebar a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #fff;
-        display: block;
-        transition: 0.3s;
-      }
-    
-      .sidebar a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
-    
-      .sidebar .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
-    
-      /* Sidebar structure */
-      .sidebar .dropdown-content {
-        display: block; /* Ensure dropdown content is always visible */
-        position: relative;
-        background-color: #091327;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-    
-      .sidebar .dropdown-content li {
-        margin: 0;
-        padding: 0;
-      }
-    
-      .sidebar .dropdown-content a {
-        color: #ffffff;
-        padding: 12px 32px;
-        text-decoration: none;
-        display: block;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-    
-      .sidebar .dropdown-content a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
-    
-      /* Media query for mobile view */
-      @media screen and (max-width: 768px) {
-        .sidebar .dropdown-content {
-          display: block;
-        }
-    
-        .sidebar .dropdown:hover .dropdown-content {
-          display: block;
-        }
-    
-        .sidebar .dropdown-content a {
-          padding: 12px 32px;
-        }
-      }
-    
-      @media screen and (max-width: 768px) {
-        .navbar {
-          display: none;
-        }
-    
-        .toggle-Button {
-          display: block;
-          cursor: pointer;
-        }
-    
-        .dropdown-content {
-          position: relative;
-        }
-    
-        .sidebar {
-          padding-top: 15px;
-        }
-    
-        .sidebar a {
-          font-size: 18px;
-        }
-      }
-      /* Navbar CSS ends */
 
+ /* Navbar CSS starts */
+ .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #091327;
+  color: #fff;
+  position: relative;
+  z-index: 1000; /* Higher z-index to ensure it is above the carousel */
+}
+
+.navbar-brand img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background-color: #ffc700;
+  border-radius: 5px;
+  color: #091327;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* For dropdown items */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #091327;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Higher z-index to ensure it is above other elements */
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.toggle-Button {
+  display: none;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000; /* Higher z-index to ensure it is above the carousel */
+  top: 0;
+  left: 0;
+  background-color: #091327;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Sidebar structure */
+.sidebar .dropdown-content {
+  display: block; /* Ensure dropdown content is always visible */
+  position: relative;
+  background-color: #091327;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .dropdown-content li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .dropdown-content a {
+  color: #ffffff;
+  padding: 12px 32px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .dropdown-content a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .sidebar .dropdown-content {
+    display: block;
+  }
+
+  .sidebar .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .sidebar .dropdown-content a {
+    padding: 12px 32px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .toggle-Button {
+    display: block;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    position: relative;
+  }
+
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+/* Navbar CSS ends */
     
  
     </style>
@@ -911,26 +957,27 @@
      <!-- Infinite Logo Slider Section -->
   <div class="logo-slider-section mt-5">
     <div class="container">
-      <h2 class="section-heading">Our Partners</h2>
+      <h2 class="section-heading" style="color: rgba(2, 0, 0, 0.795); padding-top: 10px; margin-top: 15px;">Our College Partners</h2>
       <div class="logo-slider">
         <div class="logo-slider-track">
-          <div class="logo-slider-item"><img src="LOGOS/ADANI-WILMAR- copy.png" alt="Logo 1"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 2"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 3"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 4"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 5"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 6"></div>
-          <!-- Repeat the logos to create the infinite effect -->
-          <div class="logo-slider-item"><img src="LOGOS/ADANI-WILMAR-.png" alt="Logo 1"></div>
-          <div class="logo-slider-item"><img src="LOGOS/ATLAS-.png" alt="Logo 2"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 3"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 4"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 5"></div>
-          <div class="logo-slider-item"><img src="https://via.placeholder.com/150x100" alt="Logo 6"></div>
+          <div class="logo-slider-item"><img src="Clgimage/1-1.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/5-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/10-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/12-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/14-1.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/2-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/11-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/15-1.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/3-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/9-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/6-2.png" alt="College Logo"></div>
+          <div class="logo-slider-item"><img src="Clgimage/16-1.png" alt="College Logo"></div>
+          
         </div>
       </div>
     </div>
   </div>
+  <!-- Infinite Logo Slider Section -->
 
  <!-- Footer Section Start -->
  <section class="footer">
@@ -1071,69 +1118,67 @@
        
     const courses = {
       MECH: [
-        { title: 'ME Course 1', description: 'Description of ME Course 1.', image: 'MECH/1.jpg' },
-        { title: 'ME Course 2', description: 'Description of ME Course 2.', image: 'MECH/2.jpg' },
-        { title: 'ME Course 3', description: 'Description of ME Course 3.', image: 'MECH/3.jpg' },
-        { title: 'ME Course 4', description: 'Description of ME Course 4.', image: 'MECH/4.jpg' },
-        // { title: 'ME Course 5', description: 'Description of ME Course 5.', image: 'MECH/5.jpg' },
-        // { title: 'ME Course 6', description: 'Description of ME Course 6.', image: 'MECH/5.jpg' }
-      ],
-      CIVIL: [
-        { title: 'Civil Course 1', description: 'Description of Civil Course 1.', image: 'Civil Engineering/1.jpg' },
-        { title: 'Civil Course 2', description: 'Description of Civil Course 2.', image: 'Civil Engineering/2.jpg' },
-        { title: 'Civil Course 3', description: 'Description of Civil Course 3.', image: 'Civil Engineering/3.jpg' },
-        { title: 'Civil Course 4', description: 'Description of Civil Course 4.', image: 'Civil Engineering/4.jpg' },
-        { title: 'Civil Course 5', description: 'Description of Civil Course 5.', image: 'Civil Engineering/5.jpg' },
-        { title: 'Civil Course 6', description: 'Description of Civil Course 6.', image: 'https://via.placeholder.com/150' }
-      ],
-      COMP: [
-        { title: 'Comp Course 1', description: 'Description of Comp Course 1.', image: 'computr-science/Full Stack Development.jpg' },
-        { title: 'Comp Course 2', description: 'Description of Comp Course 2.', image: 'computr-science/IOT.jpg' },
-        { title: 'Comp Course 3', description: 'Description of Comp Course 3.', image: 'computr-science/JAVA.jpg' },
-        { title: 'Comp Course 4', description: 'Description of Comp Course 4.', image: 'computr-science/Linux.jpg' },
-        { title: 'Comp Course 5', description: 'Description of Comp Course 5.', image: 'computr-science/MERN.jpg' },
-        { title: 'Comp Course 6', description: 'Description of Comp Course 6.', image: 'computr-science/Python.jpg' }
-      ],
-      ELECT: [
-        { title: 'Elect Course 1', description: 'Description of Elect Course 1.', image: 'Electrical Eng/1.jpg' },
-        { title: 'Elect Course 2', description: 'Description of Elect Course 2.', image: 'Electrical Eng/2.jpg' },
-        { title: 'Elect Course 3', description: 'Description of Elect Course 3.', image: 'Electrical Eng/3.jpg' },
-        { title: 'Elect Course 4', description: 'Description of Elect Course 4.', image: 'Electrical Eng/4.jpg' },
-        { title: 'Elect Course 5', description: 'Description of Elect Course 5.', image: 'Electrical Eng/5.jpg' },
-        { title: 'Elect Course 6', description: 'Description of Elect Course 6.', image: 'Electrical Eng/6.jpg' }
-      ],
-      MCA: [
-        { title: 'MCA Course 1', description: 'Description of MCA Course 1.', image: 'MCA/1.jpg' },
-        { title: 'MCA Course 2', description: 'Description of MCA Course 2.', image: 'MCA/2.jpg' },
-        { title: 'MCA Course 3', description: 'Description of MCA Course 3.', image: 'MCA/3.jpg' },
-        { title: 'MCA Course 4', description: 'Description of MCA Course 4.', image: 'MCA/4.jpg' },
-        // { title: 'MCA Course 5', description: 'Description of MCA Course 5.', image: 'https://via.placeholder.com/150' },
-        // { title: 'MCA Course 6', description: 'Description of MCA Course 6.', image: 'https://via.placeholder.com/150' }
-      ],
+    { title: 'AutoCAD', description: 'Learn the fundamentals of AutoCAD for 2D and 3D drafting and design in mechanical engineering.', image: 'MECH/1.jpg' },
+    { title: 'CATIA', description: 'Explore CATIA’s advanced 3D modeling capabilities for designing complex mechanical systems.', image: 'MECH/2.jpg' },
+    { title: 'CREO CAD', description: 'Master CREO CAD software for parametric and direct modeling, essential for mechanical design.', image: 'MECH/3.jpg' },
+    { title: 'SolidWorks', description: 'Gain skills in SolidWorks for 3D CAD design, including simulation and product data management.', image: 'MECH/4.jpg' }
+  ],
+CIVIL: [
+    { title: '3D Printing', description: 'Understand the principles and applications of 3D printing in civil engineering for creating prototypes and structures.', image: 'Civil Engineering/1.jpg' },
+    { title: 'RVT', description: 'Learn how to use Revit for Building Information Modeling (BIM) in civil engineering projects.', image: 'Civil Engineering/2.jpg' },
+    { title: 'Structural Analysis', description: 'Study the methods and techniques for analyzing the structural integrity of buildings and infrastructure.', image: 'Civil Engineering/3.jpg' },
+    { title: 'Foundation Engineering', description: 'Explore the design and analysis of foundations, including shallow and deep foundations, for various soil conditions.', image: 'Civil Engineering/4.jpg' },
+    { title: 'BIM', description: 'Delve into Building Information Modeling (BIM) for effective planning, design, and management of construction projects.', image: 'Civil Engineering/5.jpg' },
+    { title: 'Sustainable Design', description: 'Learn about sustainable design practices in civil engineering to minimize environmental impact and enhance resource efficiency.', image: 'https://via.placeholder.com/150' }
+  ],
+COMP: [
+    { title: 'Full Stack Development', description: 'Get comprehensive training in full stack development, including both front-end and back-end technologies.', image: 'computr-science/Full Stack Development.jpg' },
+    { title: 'IoT', description: 'Explore the Internet of Things (IoT) and how to develop smart devices and systems connected through the internet.', image: 'computr-science/IOT.jpg' },
+    { title: 'JAVA', description: 'Learn Java programming language for developing robust, scalable applications and software solutions.', image: 'computr-science/JAVA.jpg' },
+    { title: 'Linux', description: 'Gain proficiency in Linux operating system for system administration, scripting, and development.', image: 'computr-science/Linux.jpg' },
+    { title: 'MERN', description: 'Master the MERN stack (MongoDB, Express, React, Node.js) for full-stack JavaScript development.', image: 'computr-science/MERN.jpg' },
+    { title: 'Python', description: 'Learn Python programming for various applications, including web development, data analysis, and machine learning.', image: 'computr-science/Python.jpg' }
+  ],
+ELECT: [
+    { title: 'Automation', description: 'Understand automation systems and techniques used in various industrial applications.', image: 'Electrical Eng/1.jpg' },
+    { title: 'Electric Vehicles', description: 'Explore the design and technology behind electric vehicles, including power systems and battery management.', image: 'Electrical Eng/2.jpg' },
+    { title: 'Wiring Harness', description: 'Learn about the design and manufacturing of wiring harnesses used in electrical systems.', image: 'Electrical Eng/3.jpg' },
+    { title: 'IoT', description: 'Study the Internet of Things (IoT) and its applications in electrical engineering, including smart grids and sensors.', image: 'Electrical Eng/4.jpg' },
+    { title: 'BMS', description: 'Explore Building Management Systems (BMS) for controlling and monitoring building systems like HVAC and lighting.', image: 'Electrical Eng/5.jpg' },
+    { title: 'PIC & SCADA', description: 'Learn about Programmable Interface Controllers (PIC) and Supervisory Control and Data Acquisition (SCADA) systems for automation and control.', image: 'Electrical Eng/6.jpg' }
+  ],
+MCA: [
+    { title: 'Java', description: 'Gain expertise in Java programming language, focusing on object-oriented programming and software development.', image: 'MCA/1.jpg' },
+    { title: 'OOPs', description: 'Study Object-Oriented Programming (OOP) principles and their application in software development.', image: 'MCA/2.jpg' },
+    { title: 'Python', description: 'Learn Python for data analysis, web development, and automation.', image: 'MCA/3.jpg' },
+    { title: 'DSA', description: 'Master Data Structures and Algorithms (DSA) to solve complex computational problems efficiently.', image: 'MCA/4.jpg' }
+  ]
+,
       MBA: [
-        { title: 'MBA Course 1', description: 'Description of MBA Course 1.', image: 'https://via.placeholder.com/150' },
-        { title: 'MBA Course 2', description: 'Description of MBA Course 2.', image: 'https://via.placeholder.com/150' },
-        { title: 'MBA Course 3', description: 'Description of MBA Course 3.', image: 'https://via.placeholder.com/150' },
-        { title: 'MBA Course 4', description: 'Description of MBA Course 4.', image: 'https://via.placeholder.com/150' },
-        { title: 'MBA Course 5', description: 'Description of MBA Course 5.', image: 'https://via.placeholder.com/150' },
-        { title: 'MBA Course 6', description: 'Description of MBA Course 6.', image: 'https://via.placeholder.com/150' }
-      ],
-      PHARMA: [
-        { title: 'Pharma Course 1', description: 'Description of Pharma Course 1.', image: 'https://via.placeholder.com/150' },
-        { title: 'Pharma Course 2', description: 'Description of Pharma Course 2.', image: 'https://via.placeholder.com/150' },
-        { title: 'Pharma Course 3', description: 'Description of Pharma Course 3.', image: 'https://via.placeholder.com/150' },
-        { title: 'Pharma Course 4', description: 'Description of Pharma Course 4.', image: 'https://via.placeholder.com/150' },
-        { title: 'Pharma Course 5', description: 'Description of Pharma Course 5.', image: 'https://via.placeholder.com/150' },
-        { title: 'Pharma Course 6', description: 'Description of Pharma Course 6.', image: 'https://via.placeholder.com/150' }
-      ],
-      AI: [
-        { title: 'AI Course 1', description: 'Description of AI Course 1.', image: 'https://via.placeholder.com/150' },
-        { title: 'AI Course 2', description: 'Description of AI Course 2.', image: 'https://via.placeholder.com/150' },
-        { title: 'AI Course 3', description: 'Description of AI Course 3.', image: 'https://via.placeholder.com/150' },
-        { title: 'AI Course 4', description: 'Description of AI Course 4.', image: 'https://via.placeholder.com/150' },
-        { title: 'AI Course 5', description: 'Description of AI Course 5.', image: 'https://via.placeholder.com/150' },
-        { title: 'AI Course 6', description: 'Description of AI Course 6.', image: 'https://via.placeholder.com/150' }
-      ],
+    { title: 'Strategic Management', description: 'Learn how to develop business strategies that create competitive advantages.', image: 'https://via.placeholder.com/150' },
+    { title: 'Financial Accounting', description: 'Understand financial statements and how to analyze them for better decision-making.', image: 'https://via.placeholder.com/150' },
+    { title: 'Marketing Management', description: 'Explore key marketing concepts and strategies to drive customer engagement.', image: 'https://via.placeholder.com/150' },
+    { title: 'Operations Management', description: 'Gain insights into optimizing operations to enhance productivity and efficiency.', image: 'https://via.placeholder.com/150' },
+    { title: 'Business Ethics', description: 'Delve into ethical issues in business and learn how to navigate them responsibly.', image: 'https://via.placeholder.com/150' },
+    { title: 'Leadership and Organizational Behavior', description: 'Develop leadership skills and understand the dynamics of organizational behavior.', image: 'https://via.placeholder.com/150' }
+  ],
+PHARMA: [
+    { title: 'Pharmacology Basics', description: 'Learn the fundamentals of pharmacology, including drug interactions and side effects.', image: 'https://via.placeholder.com/150' },
+    { title: 'Clinical Trials Management', description: 'Understand the process of managing clinical trials from start to finish.', image: 'https://via.placeholder.com/150' },
+    { title: 'Pharmaceutical Regulatory Affairs', description: 'Explore the regulatory landscape and compliance requirements in the pharmaceutical industry.', image: 'https://via.placeholder.com/150' },
+    { title: 'Drug Development and Approval', description: 'Learn about the drug development process and how new drugs are approved for market.', image: 'https://via.placeholder.com/150' },
+    { title: 'Quality Control in Pharmaceuticals', description: 'Understand the principles of quality control and assurance in pharmaceutical manufacturing.', image: 'https://via.placeholder.com/150' },
+    { title: 'Pharmaceutical Marketing', description: 'Explore strategies for marketing pharmaceutical products effectively in a competitive market.', image: 'https://via.placeholder.com/150' }
+  ],
+AI: [
+    { title: 'Introduction to Artificial Intelligence', description: 'Get started with the basics of AI, including machine learning and neural networks.', image: 'https://via.placeholder.com/150' },
+    { title: 'Deep Learning Specialization', description: 'Dive deep into deep learning techniques and their applications in various fields.', image: 'https://via.placeholder.com/150' },
+    { title: 'Natural Language Processing', description: 'Learn how to build systems that understand and generate human language.', image: 'https://via.placeholder.com/150' },
+    { title: 'AI for Business', description: 'Explore how AI can be leveraged to solve business problems and drive innovation.', image: 'https://via.placeholder.com/150' },
+    { title: 'Computer Vision', description: 'Understand the principles of computer vision and how to build applications that see and interpret the world.', image: 'https://via.placeholder.com/150' },
+    { title: 'Reinforcement Learning', description: 'Learn about reinforcement learning and how to train AI agents to make decisions.', image: 'https://via.placeholder.com/150' }
+  ]
+
     };
  
     function changeCourse(courseKey) {
@@ -1147,7 +1192,6 @@
           <img src="${course.image}" alt="${course.title}">
           <h3>${course.title}</h3>
           <p>${course.description}</p>
-          <button>Learn More</button>
         `;
         courseCardsContainer.appendChild(card);
       });

@@ -215,183 +215,212 @@
       }
       /* Navbar CSS ends */
 
-      /* carousel */
-      .carousel-item img {
-        opacity: 0.7;
-      }
+/* Carousel Styles */
+.carousel {
+  margin: 0 auto; /* Center the carousel horizontally */
+  max-width: 100%; /* Ensure carousel does not overflow the container */
+}
 
-      .carousel-caption h5 {
-        font-size: 2.5rem;
-        animation: fadeInDown 1s;
-      }
+.carousel-inner {
+  width: 100%; /* Make sure carousel-inner takes full width */
+}
 
-      .carousel-caption p {
-        font-size: 1.2rem;
-        animation: fadeInUp 1s;
-      }
+.carousel-item img {
+  opacity: 0.7;
+  width: 100%; /* Make sure images fill the carousel item */
+  height: auto; /* Maintain aspect ratio */
+}
 
-      @keyframes fadeInDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+.carousel-caption h5 {
+  font-size: 2.5rem;
+  animation: fadeInDown 1s;
+}
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+.carousel-caption p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1s;
+}
 
-      .btn-primary {
-        background-color: #ffd500;
-        border-color: #000000;
-        color: white;
-      }
+/* Adjust carousel control buttons to align centrally */
+.carousel-control-prev, .carousel-control-next {
+  width: 5%; /* Adjust the size as needed */
+}
 
-      .btn-primary:hover {
-        background-color: #091327;
-        border-color: #e70092;
-        color: white;
-      }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      .container {
-        margin-top: 3rem;
-      }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      .container h2 {
-        margin-top: 2rem;
-      }
 
-      .container p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-      }
+/* Button Styles */
+.btn-primary {
+  background-color: #ffd500;
+  border-color: #000000;
+  color: white;
+}
 
-      .content-section {
-        padding: 3rem 0;
-      }
+.btn-primary:hover {
+  background-color: #091327;
+  border-color: #e70092;
+  color: white;
+}
 
-      .content-section .text-section {
-        padding-right: 2rem;
-      }
+/* Container Styles */
+.container {
+  margin-top: 3rem;
+}
 
-      .challenges-section,
-      .solutions-section {
-        margin: 3rem 0;
-        padding: 2rem;
-        border: 2px solid #ffc700;
-        border-radius: 10px;
-        animation: fadeIn 1.5s;
-      }
+.container h2 {
+  margin-top: 2rem;
+}
 
-      .challenges-section h3,
-      .solutions-section h3 {
-        margin-bottom: 1.5rem;
-        color: #ffc700;
-      }
+.container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
 
-      .challenges-section p,
-      .solutions-section p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-      }
+/* Content Section Styles */
+.content-section {
+  padding: 3rem 0;
+}
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+.content-section .text-section {
+  padding-right: 2rem;
+}
 
-      .cta-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 3rem 0;
-      }
+/* Container for the Challenges and Solutions Sections */
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the sections horizontally */
+  padding: 3rem 0; /* Add vertical padding */
+}
 
-      .cta-button {
-        position: relative;
-        display: inline-block;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        color: #091327;
-        background-color: #ffb000;
-        border: 2px solid #000000;
-        border-radius: 50px;
-        overflow: hidden;
-        text-decoration: none;
-        transition: color 0.4s, background-color 0.4s;
-        margin: 0.5rem;
-        animation: bounceIn 1s;
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-        position: relative;
-        z-index: 1;
-      }
+.challenges-section,
+.solutions-section {
+  max-width: 800px; /* Limit the width of the sections */
+  width: 100%; /* Allow the sections to take full width within the container */
+  margin: 3rem 0;
+  padding: 2rem;
+  border: 2px solid #ffc700;
+  border-radius: 10px;
+  animation: fadeIn 1.5s;
+  text-align: left; /* Keep the text aligned to the left */
+}
 
-      .cta-button::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.3) 0%,
-          rgba(255, 255, 255, 0.6) 50%,
-          rgba(255, 255, 255, 0.3) 100%
-        );
-        border-radius: 50px;
-        animation: shimmer 1.5s infinite;
-        z-index: -1;
-      }
+.challenges-section h3,
+.solutions-section h3 {
+  margin-bottom: 1.5rem;
+  color: #ffc700;
+}
 
-      .cta-button:hover::before {
-        left: 100%;
-      }
+.challenges-section p,
+.solutions-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
 
-      .cta-button:hover {
-        color: white;
-        background-color: #091327;
-        border-color: #b800ef;
-      }
 
-      @keyframes bounceIn {
-        0% {
-          transform: scale(0.5);
-          opacity: 0;
-        }
-        60% {
-          transform: scale(1.1);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
+/* CTA Section Styles */
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto; /* Center container horizontally with auto margins */
+  text-align: center; /* Center-align text for better appearance */
+  width: 100%; /* Ensure container takes full width */
+}
 
-      @keyframes shimmer {
-        0% {
-          left: -100%;
-        }
-        100% {
-          left: 100%;
-        }
-      }
+.cta-button {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: #091327;
+  background-color: #ffb000;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: color 0.4s, background-color 0.4s;
+  margin: 0.5rem auto; /* Center buttons with auto margins */
+  animation: bounceIn 1s;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  text-align: center; /* Ensure text inside the button is centered */
+}
+
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  border-radius: 50px;
+  animation: shimmer 1.5s infinite;
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  color: white;
+  background-color: #091327;
+  border-color: #b800ef;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
 
       /* Footer section start */
       #footer {
@@ -670,6 +699,7 @@
       id="carouselExampleIndicators"
       class="carousel slide"
       data-bs-ride="carousel"
+      data-bs-interval="2000"  
     >
       <div class="carousel-indicators">
         <button
@@ -757,7 +787,7 @@
         We empower professionals to thrive in the ever-evolving corporate
         landscape.
       </p>
-      <a href="#" class="btn btn-primary btn-lg mt-3">Get Started</a>
+      <a href="contact.html" class="btn btn-primary btn-lg mt-3">Get Started</a>
     </div>
 
     <!-- Two-Column Section -->
@@ -787,89 +817,42 @@
       </div>
     </div>
 
-    <!-- Challenges Section -->
-    <div class="container challenges-section">
-      <h3>The Challenges</h3>
-      <p>
-        1. Elevated Attrition Rates: High turnover negatively impacts stability
-        and continuity within the organization.
-      </p>
-      <p>
-        2. Dwindling Employee Morale: Low morale affects engagement,
-        productivity, and overall workplace satisfaction.
-      </p>
-      <p>
-        3. Unfavorable Workplace Culture: A negative culture can lead to poor
-        collaboration, low motivation, and high stress levels.
-      </p>
-      <p>
-        4. Communication Gaps: Ineffective communication can cause
-        misunderstandings, delays, and conflicts.
-      </p>
-      <p>
-        5. Decreasing Productivity and Outcomes: Reduced efficiency and poor
-        performance outcomes hinder organizational goals.
-      </p>
-      <p>
-        6. Suboptimal Project Management: Inefficient project management leads
-        to missed deadlines, budget overruns, and poor-quality deliverables.
-      </p>
-      <p>
-        7. Reluctance to Embrace Change: Resistance to change hampers innovation
-        and adaptability in a dynamic business environment.
-      </p>
-      <p>
-        8. Challenges in Remote Team Management: Managing remote teams
-        effectively requires addressing communication, collaboration, and
-        productivity issues.
-      </p>
-    </div>
+    <!-- Container for the Challenges and Solutions Sections -->
+<div class="sections-container">
+  <!-- Challenges Section -->
+  <div class="challenges-section">
+    <h3>The Challenges</h3>
+    <p>1. Elevated Attrition Rates: High turnover negatively impacts stability and continuity within the organization.</p>
+    <p>2. Dwindling Employee Morale: Low morale affects engagement, productivity, and overall workplace satisfaction.</p>
+    <p>3. Unfavorable Workplace Culture: A negative culture can lead to poor collaboration, low motivation, and high stress levels.</p>
+    <p>4. Communication Gaps: Ineffective communication can cause misunderstandings, delays, and conflicts.</p>
+    <p>5. Decreasing Productivity and Outcomes: Reduced efficiency and poor performance outcomes hinder organizational goals.</p>
+    <p>6. Suboptimal Project Management: Inefficient project management leads to missed deadlines, budget overruns, and poor-quality deliverables.</p>
+    <p>7. Reluctance to Embrace Change: Resistance to change hampers innovation and adaptability in a dynamic business environment.</p>
+    <p>8. Challenges in Remote Team Management: Managing remote teams effectively requires addressing communication, collaboration, and productivity issues.</p>
+  </div>
 
-    <!-- Solutions Section -->
-    <div class="container solutions-section">
-      <h3>The Solutions</h3>
-      <p>
-        - Identifying and analyzing key factors that are driving employee
-        engagement.
-      </p>
-      <p>
-        - Measuring areas of success and hurdles for organizational
-        effectiveness.
-      </p>
-      <p>
-        - Step-by-step analysis for identifying pain points and converting them
-        into strengths.
-      </p>
-      <p>
-        - Curating Customized Technical Trainings according to your
-        organizational needs, Goals, Skills, Vision & Mission.
-      </p>
-      <p>
-        - Understanding your Efficiency, dissatisfaction, loyalty, attitude,
-        leader, managing, upscaling, prioritizing.
-      </p>
-      <p>
-        Addressing the skill gaps in the core training, Gryphon Academy provides
-        unique solutions through a pool of expert coaches, enhancing employee
-        skills at the workplace.
-      </p>
-      <p>
-        Bridging the gap between fresh talent and industry needs, Gryphon
-        Academy connects colleges (55+) with top companies (200+ including KPIT,
-        Force Motors) for free recruitment support. We equip students with
-        essential skills through free training programs, ensuring a smooth
-        transition into the workforce. No placement fees, just successful
-        partnerships.
-      </p>
-    </div>
+  <!-- Solutions Section -->
+  <div class="solutions-section">
+    <h3>The Solutions</h3>
+    <p>- Identifying and analyzing key factors that are driving employee engagement.</p>
+    <p>- Measuring areas of success and hurdles for organizational effectiveness.</p>
+    <p>- Step-by-step analysis for identifying pain points and converting them into strengths.</p>
+    <p>- Curating Customized Technical Trainings according to your organizational needs, Goals, Skills, Vision & Mission.</p>
+    <p>- Understanding your Efficiency, dissatisfaction, loyalty, attitude, leader, managing, upscaling, prioritizing.</p>
+    <p>- Addressing the skill gaps in the core training, Gryphon Academy provides unique solutions through a pool of expert coaches, enhancing employee skills at the workplace.</p>
+    <p style="font-size: 1.3rem;"><u><b>Bridging the gap between fresh talent and industry needs, Gryphon Academy connects colleges (55+) with top companies (200+ including KPIT, Force Motors) for free recruitment support. We equip students with essential skills through free training programs, ensuring a smooth transition into the workforce. No placement fees, just successful partnerships.</b></u></p>
+  </div>
+</div>
+
 
     <!-- CTA Section -->
     <div class="container cta-section">
-      <a href="#" class="cta-button"
+      <a href="contact.html" class="cta-button"
         >Build Your Dream Team: Learn More About Gryphon's Corporate Training
         Programs Now!</a
       >
-      <a href="#" class="cta-button mt-3"
+      <a href="contact.html" class="cta-button mt-3"
         >Empower Your Employees, Drive Growth: Request a Customized Training
         Quote!</a
       >

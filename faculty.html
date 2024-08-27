@@ -254,162 +254,225 @@
 /* Typewriter CSS End */
 
 
-
-
     /* FDPS */
-    .section {
-      padding: 60px 0;
-    }
-
     .section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      color: #007bff;
-    }
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #007bff;
+  position: relative;
+  padding: 0 10px;
+  display: inline-block;
+}
 
-    .section p {
-      margin-bottom: 20px;
-    }
+.section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position the line slightly below the text */
+  width: 100%;
+  height: 5px; /* Thickness of the underline */
+  background: linear-gradient(90deg, #007bff, #00d4ff); /* Gradient color for underline */
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
 
-    .icon-box {
-      text-align: center;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+.section h2:hover::before {
+  transform: scaleX(1.1); /* Slightly expand the underline on hover */
+}
 
-    .icon-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.section h2 {
+  font-weight: bold; /* Bold text for emphasis */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for text depth */
+  padding-bottom: 10px; /* Extra space below text for visual balance */
+  margin-top: 20px; /* Space above the heading */
+}
 
-    }
+    .section .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Adjust spacing between items */
+}
 
-    .icon-box i {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #007bff;
-    }
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #091327;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s; /* Include border in transitions */
+}
 
-    .icon-box h4 {
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-    }
+.icon-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid #00bfff; /* Glowing border color */
+  box-shadow: 0 0 15px #00bfff; /* Glowing effect */
+}
 
-    /* 6 FDPS */
+.icon-box i {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #007bff;
+}
 
-    .qualities {
-      text-align: center;
-      padding: 50px 0;
-    }
+.icon-box h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #fff;
+}
 
-    .qualities h2 {
-      margin-bottom: 50px;
-    }
+.icon-box p {
+  color: #fff;
+}
 
-    .qualities .card {
-      border: none;
-      background: none;
-    }
+@media (max-width: 768px) {
+  .section .row {
+    grid-template-columns: repeat(1, 1fr); /* Stack vertically on small screens */
+  }
+}
 
-    .qualities .card-body1 {
-      padding: 0;
-    }
 
-    .qualities .card-icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
+/* 6 FDPS */
+.qualities h2 {
+  margin-bottom: 50px;
+  font-size: 2.5rem; /* Adjust as needed */
+  color: #007bff; /* Primary color */
+  text-transform: uppercase; /* Transform text to uppercase */
+  background: linear-gradient(45deg, #007bff, #00c6ff); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  background-clip: text; /* Clip background to text for compatibility */
+  -webkit-text-fill-color: transparent; /* Make text fill color transparent */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  padding: 10px; /* Add padding for spacing */
+  border-radius: 5px; /* Rounded corners for background */
+  animation: fadeInUp 1s ease-in-out; /* Apply animation */
+}
 
-    .qualities .card-title {
-      font-weight: bold;
-    }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    /* registration */
-    .signup-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
 
-    .signup-card {
-      background: #ffffff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-      width: 100%;
-    }
+.qualities {
+  text-align: center;
+  padding: 50px 0;
+}
 
-    .signup-image {
-      background: #fbc02d;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-    }
+.qualities h2 {
+  margin-bottom: 50px;
+  font-size: 2.5rem; /* Adjust as needed */
+  color: #007bff;
+}
 
-    .signup-form {
-      padding: 30px;
-    }
+.qualities .card {
+  border: none;
+  background: #091327; /* Background color for the card */
+  color: #fff; /* Text color */
+  height: 200px; /* Adjust to your desired height */
+  width: 100%; /* Ensure cards are responsive */
+  max-width: 350px; /* Optional: Control max width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+}
 
-    .signup-form h2 {
-      margin-bottom: 30px;
-    }
+.qualities .card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
 
-    .btn-group-toggle .btn {
-      border: 1px solid #ddd;
-      border-radius: 30px;
-    }
+.qualities .card-body1 {
+  text-align: center;
+  padding: 20px; /* Add padding inside the card */
+}
 
-    .btn-group-toggle .btn.active {
-      background-color: #007bff;
-      color: #fff;
-    }
+.qualities .card-icon {
+  font-size: 3rem; /* Adjust font size */
+  margin-bottom: 20px;
+}
 
-    .form-group {
-      margin-bottom: 15px;
-    }
+.qualities .card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 10px 0; /* Adjust margin */
+}
 
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
-    }
+.qualities .card-text {
+  font-size: 1rem;
+  line-height: 1.5; /* Improve readability */
+}
 
-    /* problem solving */
-    .problems-section {
-      padding: 50px 0;
-      text-align: center;
-    }
+ /* Problem Solving */
+.problems-section {
+  max-width: 1400px;
+  background-color: #091327;
+  padding: 50px 0 40px; /* Adjust bottom padding to crop container */
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Hide any content that overflows the container */
+}
 
-    .problems-section h2 {
-      margin-bottom: 40px;
-    }
+.problems-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #007bff;
+  position: relative;
+}
 
-    .card {
-      border: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border-radius: 15px;
-    }
+.problems-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #007bff;
+  margin: 10px auto;
+}
 
-    .card img {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-    }
+.card {
+  border: none;
+  background: #007bff; /* Blue background for the card */
+  color: #fff;
+  border-radius: 15px;
+  overflow: hidden; /* Ensures the image fits without overflow */
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  height: 100%; /* Full height */
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+.card img {
+  width: 100%; /* Make the image take full width */
+  height: 100%; /* Make the image take full height */
+  object-fit: cover; /* Crop the image to cover the container */
+  display: block; /* Remove any gaps caused by inline-block behavior */
+}
 
-    .card-body {
-      text-align: left;
-      padding: 20px;
-    }
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid #e6b30b; /* Glowing border color */
+  box-shadow: 0 0 10px #dba206; /* Glow effect */
+}
+
+.card-body {
+  text-align: left;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3); /* Optional: Add a slight dark background */
+  border-top: 2px solid #fff; /* Optional: Add a border at the top */
+}
+
+
 
     /* CTA BUTTON */
     .cta-section {
@@ -771,196 +834,151 @@
 
   <!-- FDPS -->
   <section>
-
-    <body>
-      <div class="container section  ">
-        <h2>Why Choose Gryphon Academy’s FDP?</h2>
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="icon-box wow animate__animated animate__slideInLeft">
-              <i class="fas fa-cogs "></i>
-              <h4>Tailored Training</h4>
-              <p>We begin with a comprehensive pre-assessment test to understand your institution's specific
-                requirements. This allows us to customize the training program to address your faculty's areas of
-                improvement effectively.</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4">
-            <div class="icon-box wow animate__animated animate__slideInRight">
-              <i class="fas fa-user-tie"></i>
-              <h4>Expert Instructors</h4>
-              <p>Our team comprises the industry's best subject matter experts, with a wealth of experience exceeding
-                10+ years. Many of our instructors hold esteemed positions as directors and CEOs in successful
-                organizations, bringing real-world insights and strategies to the training sessions.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="icon-box wow animate__animated animate__slideInLeft">
-              <i class="fas fa-book"></i>
-              <h4>Proven Methodology</h4>
-              <p>Gryphon Academy's FDP is built on a proven methodology that combines theoretical knowledge with
-                practical applications. Our hands-on approach ensures that faculty members not only understand concepts
-                but also gain the skills needed to implement them effectively in their teaching practices.</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4">
-            <div class="icon-box wow animate__animated animate__slideInRight">
-              <i class="fas fa-life-ring"></i>
-              <h4>Continuous Support</h4>
-              <p>Our commitment to your institution doesn't end with the training sessions. Gryphon Academy provides
-                ongoing support and resources to ensure that the knowledge and skills gained during the program are
-                sustained and applied for long-term success.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </section>
-
-  <!-- 6 FDPS -->
-
-  <section>
-    <div class="container qualities ">
-      <h2>Our FDP Modules Include</h2>
+    <div class="container section">
+      <h2>Why Choose Gryphon Academy’s FDP?</h2>
       <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body1">
-              <div class="card-icon">📜</div>
-              <h5 class="card-title">Pedagogy Enhancement</h5>
-              <p class="card-text">Build real products while learning</p>
-            </div>
-          </div>
+        <div class="icon-box wow animate__animated animate__slideInLeft">
+          <i class="fas fa-cogs"></i>
+          <h4>Tailored Training</h4>
+          <p>We begin with a comprehensive pre-assessment test to understand your institution's specific requirements. This allows us to customize the training program to address your faculty's areas of improvement effectively.</p>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body1">
-              <div class="card-icon">📜</div>
-              <h5 class="card-title">Curriculum Development</h5>
-              <p class="card-text">Learn industry-relevant skills</p>
-            </div>
-          </div>
+        <div class="icon-box wow animate__animated animate__slideInRight">
+          <i class="fas fa-user-tie"></i>
+          <h4>Expert Instructors</h4>
+          <p>Our team comprises the industry's best subject matter experts, with a wealth of experience exceeding 10+ years. Many of our instructors hold esteemed positions as directors and CEOs in successful organizations, bringing real-world insights and strategies to the training sessions.</p>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body1">
-              <div class="card-icon">📜</div>
-              <h5 class="card-title">Technology Integration in Teaching</h5>
-              <p class="card-text">Get help & support from your peers</p>
-            </div>
-          </div>
+        <div class="icon-box wow animate__animated animate__slideInLeft">
+          <i class="fas fa-book"></i>
+          <h4>Proven Methodology</h4>
+          <p>Gryphon Academy's FDP is built on a proven methodology that combines theoretical knowledge with practical applications. Our hands-on approach ensures that faculty members not only understand concepts but also gain the skills needed to implement them effectively in their teaching practices.</p>
         </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body1">
-              <div class="card-icon">🎨</div>
-              <h5 class="card-title">Assessment and Evaluation Strategies </h5>
-              <p class="card-text">Learn at your own pace</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body1">
-              <div class="card-icon">📜</div>
-              <h5 class="card-title">Research and Publication Guidance</h5>
-              <p class="card-text">Finish the path to get certificate</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body1">
-              <div class="card-icon">📜</div>
-              <h5 class="card-title"> Leadership and Management Skills for Educators</h5>
-              <p class="card-text">1% of the price of a bootcamp</p>
-            </div>
-          </div>
+        <div class="icon-box wow animate__animated animate__slideInRight">
+          <i class="fas fa-life-ring"></i>
+          <h4>Continuous Support</h4>
+          <p>Our commitment to your institution doesn't end with the training sessions. Gryphon Academy provides ongoing support and resources to ensure that the knowledge and skills gained during the program are sustained and applied for long-term success.</p>
         </div>
       </div>
     </div>
   </section>
+  
 
 
+ <!-- 6 FDPS -->
 
-  <section>
-    <!-- problem solving -->
-    <div class="container problems-section ">
-      <h2>What problem we are solving</h2>
-      <div class="row">
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/1 4.jpg" class="card-img-top" alt="Difficult Finding Qualified Candidates">
-            <div class="card-body">
-              <!-- <p class="card-text">Difficult Finding Qualified Candidates</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/2 4.jpg" class="card-img-top" alt="Interviewer Burnout">
-            <div class="card-body">
-              <!-- <p class="card-text">Interviewer Burnout</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/3 4.jpg" class="card-img-top" alt="High Turn Around Time">
-            <div class="card-body">
-              <!-- <p class="card-text">High Turn Around Time</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/4 4.jpg" class="card-img-top" alt="Conflicting Priorities">
-            <div class="card-body">
-              <!-- <p class="card-text">Conflicting Priorities</p> -->
-            </div>
+<section>
+  <div class="container qualities">
+    <h2 class="wow animate__animated animate__fadeInUp">Our FDP Modules Include</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+          <div class="card-body1">
+            <div class="card-icon">📚</div>
+            <h5 class="card-title">Pedagogy Enhancement</h5>
+            <p class="card-text">Build real products while learning</p>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/5 4.jpg" class="card-img-top" alt="Lack of Skills">
-            <div class="card-body">
-              <!-- <p class="card-text">Lack of Skills</p> -->
-            </div>
+      <div class="col-md-4">
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+          <div class="card-body1">
+            <div class="card-icon">📖</div>
+            <h5 class="card-title">Curriculum Development</h5>
+            <p class="card-text">Learn industry-relevant skills</p>
           </div>
         </div>
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/6 4.jpg" class="card-img-top" alt="BIAS">
-            <div class="card-body">
-              <!-- <p class="card-text">BIAS</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/7 4.jpg" class="card-img-top" alt="Delayed Feedbacks">
-            <div class="card-body">
-              <!-- <p class="card-text">Delayed Feedbacks</p> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card h-100">
-            <img src="faculty-img/8 4.jpg" class="card-img-top" alt="Interview Scheduling Challenges">
-            <div class="card-body">
-              <!-- <p class="card-text">Interview Scheduling Challenges</p> -->
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+          <div class="card-body1">
+            <div class="card-icon">💻</div>
+            <h5 class="card-title">Technology Integration in Teaching</h5>
+            <p class="card-text">Get help & support from your peers</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+          <div class="card-body1">
+            <div class="card-icon">🧩</div>
+            <h5 class="card-title">Assessment and Evaluation Strategies</h5>
+            <p class="card-text">Learn at your own pace</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+          <div class="card-body1">
+            <div class="card-icon">📊</div>
+            <h5 class="card-title">Research and Publication Guidance</h5>
+            <p class="card-text">Finish the path to get certificate</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
+          <div class="card-body1">
+            <div class="card-icon">🏆</div>
+            <h5 class="card-title">Leadership and Management Skills for Educators</h5>
+            <p class="card-text">1% of the price of a bootcamp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Problem Solving -->
+<section>
+  <div class="container problems-section">
+    <h2>What problem we are solving</h2>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/1 4.jpg" class="card-img-top" alt="Difficult Finding Qualified Candidates">
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/2 4.jpg" class="card-img-top" alt="Interviewer Burnout">
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/3 4.jpg" class="card-img-top" alt="High Turn Around Time">
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/4 4.jpg" class="card-img-top" alt="Conflicting Priorities">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/5 4.jpg" class="card-img-top" alt="Lack of Skills">
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/6 4.jpg" class="card-img-top" alt="BIAS">
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/7 4.jpg" class="card-img-top" alt="Delayed Feedbacks">
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="faculty-img/8 4.jpg" class="card-img-top" alt="Interview Scheduling Challenges">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   <!-- contact us -->
@@ -970,63 +988,10 @@
         <h2>Contact Us</h2>
         <p>Contact us to schedule a consultation and learn more about elevating your institution's teaching standards
           and faculty performance. </p>
-        <a href="#contactForm" class="cta-btn">Schedule a Consultation</a>
+        <a href="contact.html" class="cta-btn">Schedule a Consultation</a>
       </div>
     </div>
-
-    <!-- registration -->
-    <section>
-      <div class="container signup-container ">
-        <div class="signup-card row no-gutters wow animate__animated animate__zoomIn">
-          <div class="col-md-6 signup-image">
-            <div>
-              <h1>Gryphon Academy</h1>
-
-            </div>
-          </div>
-          <div class="col-md-6 signup-form ">
-            <h2>Register Yourself</h2>
-            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-              <label class="btn btn-outline-secondary active">
-                <input type="radio" name="options" id="candidate" autocomplete="off" checked> Candidate
-              </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" id="company" autocomplete="off"> Company
-              </label>
-              <label class="btn btn-outline-secondary">
-                <input type="radio" name="options" id="college" autocomplete="off"> College
-              </label>
-            </div>
-            <form>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="firstName" placeholder="First Name">
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="phone" placeholder="Phone">
-              </div>
-
-              <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="termsCheck">
-                <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">Next</button>
-              <div class="text-center mt-3">
-                <p>Already have an account? <a href="#">Login</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+  </section>
 
     <!-- Footer Section Start -->
     <section class="footer">
@@ -1100,11 +1065,10 @@
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
         integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-      <script>new WOW().init();</script>
+<!-- Include WOW.js -->
+<script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.2/dist/wow.min.js"></script>
 
       <script>
         // Function to toggle sidebar
@@ -1163,6 +1127,9 @@ function typewriter() {
 }
 
 typewriter();
+
+//wow js
+new WOW().init();
       </script>
 
 </body>

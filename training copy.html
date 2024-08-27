@@ -878,194 +878,187 @@
 }
 
 /* Navbar CSS starts */
-body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-    
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #091327;
-        color: #fff;
-        position: relative;
-      }
-    
-      .navbar-brand img {
-        width: 100%;
-        max-width: 180px;
-        height: auto;
-      }
-    
-      .navbar {
-        display: flex;
-        align-items: center;
-      }
-    
-      .navbar a {
-        color: #fff;
-        padding: 10px 20px;
-        text-decoration: none;
-        display: block;
-      }
-    
-      .navbar a:hover,
-      .navbar a.active {
-        background-color: #ffc700;
-        border-radius: 5px;
-        color: #091327;
-      }
-    
-      .dropdown {
-        position: relative;
-      }
-    
-      .dropbtn {
-        background: none;
-        border: none;
-        color: #fff;
-        padding: 10px 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-      }
-    
-      /* For dropdown items */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #091327;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px;
-      }
-    
-      .dropdown-content a {
-        color: #ffffff;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-    
-      .dropdown-content a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
-    
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-    
-      .toggle-Button {
-        display: none;
-      }
-    
-      .sidebar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #091327;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-      }
-    
-      .sidebar a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #fff;
-        display: block;
-        transition: 0.3s;
-      }
-    
-      .sidebar a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
-    
-      .sidebar .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
-    
-      /* Sidebar structure */
-      .sidebar .dropdown-content {
-        display: block; /* Ensure dropdown content is always visible */
-        position: relative;
-        background-color: #091327;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-    
-      .sidebar .dropdown-content li {
-        margin: 0;
-        padding: 0;
-      }
-    
-      .sidebar .dropdown-content a {
-        color: #ffffff;
-        padding: 12px 32px;
-        text-decoration: none;
-        display: block;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-    
-      .sidebar .dropdown-content a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
-    
-      /* Media query for mobile view */
-      @media screen and (max-width: 768px) {
-        .sidebar .dropdown-content {
-          display: block;
-        }
-    
-        .sidebar .dropdown:hover .dropdown-content {
-          display: block;
-        }
-    
-        .sidebar .dropdown-content a {
-          padding: 12px 32px;
-        }
-      }
-    
-      @media screen and (max-width: 768px) {
-        .navbar {
-          display: none;
-        }
-    
-        .toggle-Button {
-          display: block;
-          cursor: pointer;
-        }
-    
-        .dropdown-content {
-          position: relative;
-        }
-    
-        .sidebar {
-          padding-top: 15px;
-        }
-    
-        .sidebar a {
-          font-size: 18px;
-        }
-      }
-      /* Navbar CSS ends */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #091327;
+  color: #fff;
+  position: relative;
+  z-index: 1000; /* Higher z-index to ensure it is above the carousel */
+}
+
+.navbar-brand img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background-color: #ffc700;
+  border-radius: 5px;
+  color: #091327;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* For dropdown items */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #091327;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Higher z-index to ensure it is above other elements */
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.toggle-Button {
+  display: none;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000; /* Higher z-index to ensure it is above the carousel */
+  top: 0;
+  left: 0;
+  background-color: #091327;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Sidebar structure */
+.sidebar .dropdown-content {
+  display: block; /* Ensure dropdown content is always visible */
+  position: relative;
+  background-color: #091327;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .dropdown-content li {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .dropdown-content a {
+  color: #ffffff;
+  padding: 12px 32px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .dropdown-content a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .sidebar .dropdown-content {
+    display: block;
+  }
+
+  .sidebar .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .sidebar .dropdown-content a {
+    padding: 12px 32px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .toggle-Button {
+    display: block;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    position: relative;
+  }
+
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+/* Navbar CSS ends */
 
     /* last container */
     .section-title {
@@ -1163,59 +1156,66 @@ body {
       color: #FFC700;
     }
 
-    /* logo section */
+    .logo-slider-section {
+  background-color: #091327;
+  margin-bottom: -40px;
+}
 
-    .logo-section {
-      padding: 80px 0; /* Increased top and bottom padding */
-      text-align: center;
-      background-color: #1c2331;
-    }
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  background-color: #091327;
+}
 
-    .logo-section h4 {
-      margin-bottom: 40px;
-      font-size: 32px;
-      color: rgb(223, 182, 0);
-    }
+.logo-slider-track {
+  display: flex;
+  width: calc(150px * 12); /* Adjust based on the number of logos */
+  animation: scroll 20s linear infinite;
+}
 
-    .logo-container {
-      overflow: hidden;
-      position: relative;
-    }
+.logo-slider-track:hover {
+  animation-play-state: paused;
+}
 
-    .logo-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      animation: scroll 20s linear infinite;
-    }
+.logo-slider-item {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  opacity: 0.7;
+  transition: transform 0.3s, opacity 0.3s;
+}
 
-    .logo-row.reverse {
-      animation-direction: reverse;
-    }
+.logo-slider-item img {
+  height: 100px;
+  max-width: 150px;
+  object-fit: contain;
+}
 
-    .logo-row img {
-      height: 120px; /* Increased size of the logos */
-      margin: 0 15px; /* Adjusted spacing between logos */
-      filter: brightness(0) invert(1);
-      transition: transform 0.3s ease-in-out;
-    }
+.logo-slider-item:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
 
-    .logo-row img:hover {
-      transform: scale(1.1);
-    }
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
+}
 
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+@media (max-width: 768px) {
+  .logo-slider-item img {
+    height: 80px;
+    max-width: 120px;
+  }
+  .logo-slider-item {
+    margin: 0 10px;
+  }
+}
 
-    @media (max-width: 768px) {
-      .logo-row img {
-        height: 80px; /* Adjust size for smaller screens */
-        margin: 0 10px; /* Adjust spacing for smaller screens */
-      }
-    }
+
 
     </style>
   </head>
@@ -1648,28 +1648,31 @@ body {
       </div>
     </div>
 
-    <!-- logos -->
-    <section class="logo-section">
-      <div class="container">
-        <h4><span>Our</span> College Partners</h4>
-        <div class="logo-container">
-          <div class="logo-row">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-          </div>
-          <div class="logo-row reverse">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-            <img src="https://via.placeholder.com/150" alt="College Logo">
-          </div>
-        </div>
+<!-- Infinite Logo Slider Section -->
+<div class="logo-slider-section mt-5">
+  <div class="container">
+    <h2 class="section-heading" style="color: #FFC700; padding-top: 10px; margin-top: 15px;">Our Partners</h2>
+    <div class="logo-slider">
+      <div class="logo-slider-track">
+        <div class="logo-slider-item"><img src="Clgimage/1-1.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/5-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/10-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/12-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/14-1.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/2-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/11-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/15-1.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/3-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/9-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/6-2.png" alt="College Logo"></div>
+        <div class="logo-slider-item"><img src="Clgimage/16-1.png" alt="College Logo"></div>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
+<!-- Infinite Logo Slider Section -->
+
+
 
     <section class="review">
       <div id="Testimonials">
