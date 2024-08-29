@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+    integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Neon Button  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+    rel="stylesheet"
+  />
+  <title>Gryphon Academy</title>
+</head>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: #091327;
+    color: #fff;
+  }
+
+  .navbar-brand img {
+    width: 12rem;
+  }
+
+  .banner {
+    background-image: url("image/Landing-Pages-1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-text {
+    color: #fff;
+    animation: fadeInUp 2s;
+  }
+
+  .heading {
+    color: #ffc700;
+    font-size: 3rem;
+    animation: fadeInDown 2s;
+  }
+
+  .enroll_btn {
+    background-color: #ffc700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: bounceIn 2s;
+  }
+
+  .banner_2 {
+    background-image: url("image/Landing-Pages-2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-text2 {
+    color: #fff;
+    animation: fadeInRight 2s;
+  }
+
+  .btn2-enroll-btn {
+    background-color: #ffc700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: bounceIn 2s;
+  }
+
+  .banner3 {
+    background-image: url("image/Landing-Pages-3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-text3 {
+    color: #fff;
+    animation: fadeInLeft 2s;
+  }
+
+  .btn3-enroll-btn {
+    background-color: #ffc700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: bounceIn 2s;
+  }
+
+  .banner4 {
+    background-image: url("image/Landing-Pages-4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-text4 {
+    color: #fff;
+    animation: fadeInRight 2s;
+  }
+
+  .btn4-enroll-btn {
+    background-color: #ffc700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: bounceIn 2s;
+  }
+
+  .banner5 {
+    background-image: url("image/Landing-Pages-5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-text5 {
+    color: #fff;
+    animation: fadeInLeft 2s;
+  }
+
+  .btn5-enroll-btn {
+    background-color: #ffc700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+    animation: bounceIn 2s;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    from {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    70% {
+      transform: scale(0.9);
+    }
+
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* testimonal */
+  /*testmonal  */
+
+  .review {
+    min-height: 100vh;
+    background-color: #091327;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 3rem 0;
+    position: relative;
+  }
+
+  .review__marquee {
+    background-color: transparent;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .review__marquee__container {
+    flex-shrink: 0;
+    gap: 2rem;
+    padding-right: var(--gap-space);
+    animation: infinityScroll 30s linear 0s infinite forwards;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    max-width: unset;
+    overflow: hidden;
+  }
+
+  .review__marquee__container:hover {
+    animation-play-state: paused;
+  }
+
+  .review__marquee__container__two {
+    flex-shrink: 0;
+    gap: 2rem;
+    padding-right: var(--gap-space);
+    animation: infinityScroll 22s linear 0s infinite reverse;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    max-width: unset;
+    overflow: hidden;
+  }
+
+  .review__marquee__container__two:hover {
+    animation-play-state: paused;
+  }
+
+  .scroll {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: unset;
+  }
+
+  .itemOdd {
+    background-color: #030303;
+    border-radius: 1.25rem;
+    border-style: double;
+    padding: 30px 40px;
+    width: 573px;
+    height: auto;
+  }
+
+  .itemEven {
+    background-color: #e2e7ff;
+    /* background-color: black; */
+    border-radius: 1.25rem;
+    border-style: solid;
+    padding: 30px 40px;
+    width: 573px;
+    height: auto;
+  }
+
+  .top {
+    margin-bottom: 0.6rem;
+  }
+
+  .itemOdd h6 {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    color: #ffffff;
+    margin-bottom: 0.15rem;
+  }
+
+  .itemEven h6 {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    color: #000000;
+    margin-bottom: 0.15rem;
+  }
+
+  .itemEven p,
+  .itemOdd p {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    color: #f50f95;
+  }
+
+  .itemEven h5 {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    color: rgb(0, 0, 0);
+  }
+
+  .itemOdd h5 {
+    font-family: "Neurial Grotesk", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 125%;
+    color: rgb(255, 255, 255);
+  }
+
+  .testimonials h3 {
+    padding: 2em 5em;
+    position: relative;
+    text-align: left;
+    background: #ffffff;
+    display: -ms-grid;
+    display: grid;
+    height: auto;
+  }
+
+  .titles {
+    color: #fdfdfd;
+    position: relative;
+    text-align: center;
+  }
+
+  @keyframes infinityScroll {
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes infinityScroll2 {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* testimonal ends here */
+
+  
+  /* footer */
+      /* Footer section start */
+      #footer {
+        background: #000000;
+        padding: 3rem 1.5rem;
+        color: #e3e3e3;
+      }
+    
+      .useful-link,
+      .social-links,
+      .address {
+        margin: 1rem;
+        flex: 1;
+        text-align: center;
+      }
+    
+      #footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    
+      #footer .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      /* Ensure sections stack vertically and are centered on small screens */
+      .useful-link,
+      .social-links,
+      .address,
+      .logo-container {
+        text-align: center;
+      }
+    
+      .useful-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      /* Consistent font size for all headings in the footer */
+      #footer h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fefefe;
+        margin-bottom: 1rem;
+      }
+    
+      .useful-link ul {
+        font-size: 0.875rem;
+        color: #b3b2b2;
+        line-height: 1.5;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+    
+      .useful-link li {
+        margin-bottom: 0.5rem;
+      }
+    
+      /* Styling for useful links */
+      .use-links a {
+        color: #b3b2b2;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+      }
+    
+      .use-links a:hover {
+        color: #fdd700;
+      }
+    
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    
+      .social-icons a {
+        color: #b3b2b2;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+      }
+    
+      .social-icons a:hover {
+        color: #fdd700;
+      }
+    
+      .social-icons i {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    
+      .copy-right-sec {
+        padding: 1rem;
+        background: #000000;
+        color: #fff;
+        text-align: center;
+      }
+    
+      .copy-right-sec a {
+        color: #fdd700;
+        font-weight: 500;
+      }
+    
+      /* Responsive design for footer */
+      @media screen and (max-width: 768px) {
+        #footer .container {
+          flex-direction: column;
+          align-items: center;
+        }
+    
+        .logo-container {
+          margin-bottom: 2rem; /* Space between logo and other sections */
+        }
+    
+        .useful-link,
+        .social-links,
+        .address {
+          margin: 1rem 0;
+          text-align: center;
+        }
+    
+        .use-links,
+        .social-icons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+    
+        .use-links li,
+        .social-icons a {
+          margin-bottom: 0.5rem;
+        }
+      }
+    
+      /* Logo styling */
+      .logo-footer {
+        max-width: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 15px;
+      }
+    
+      .logo-footer:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+      }
+    
+      /* Ensure container around the logo is properly spaced */
+      .logo-container {
+        margin-right: 2rem;
+      }
+    
+      .address-links a:hover {
+        color: #ffc700; /* Text color turns yellow */
+      }
+    
+      /* Add space between the box icons and text in the 'Contact Us' list items */
+      .address-links li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+    
+      .address-links i {
+        margin-right: 10px; /* Adjust this value to add space between the icon and the text */
+        font-size: 1.2rem; /* Adjust icon size if needed */
+      }
+      
+/* Target all icons in the footer */
+#footer .social-icons i {
+  color: #ff69b4; /* Pink color */
+}
+
+/* Ensure icon color changes on hover */
+#footer .social-icons a:hover i {
+  color: #ff1493; /* Darker pink color on hover for better visibility */
+}
+
+/* Target icons in the Contact Us section */
+#footer .address-links i {
+  color: #ff69b4; /* Pink color for icons */
+}
+
+/* Ensure icon color changes on hover */
+#footer .address-links a:hover i {
+  color: #ff1493; /* Darker pink color on hover */
+}
+/* Ensure phone numbers stay on the same line */
+#footer .address-links li a
+ {
+  white-space: nowrap; /* Prevent phone numbers and email from wrapping */
+}
+
+
+#footer .address-links a {
+  align-items: center; /* Align items vertically */
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+      /* Footer section end */
+
+
+  /* Navbar CSS starts */
+  .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #091327;
+        color: #fff;
+        position: relative;
+      }
+    
+      .navbar-brand img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+      }
+    
+      .navbar {
+        display: flex;
+        align-items: center;
+      }
+    
+      .navbar a {
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+      }
+    
+      .navbar a:hover,
+      .navbar a.active {
+        background-color: #ffc700;
+        border-radius: 5px;
+        color: #091327;
+      }
+    
+      .dropdown {
+        position: relative;
+      }
+    
+      .dropbtn {
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    
+      /* For dropdown items */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #091327;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+    
+      .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    
+      .toggle-Button {
+        display: none;
+      }
+    
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #091327;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+    
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+    
+      .sidebar a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    
+      /* Sidebar structure */
+      .sidebar .dropdown-content {
+        display: block; /* Ensure dropdown content is always visible */
+        position: relative;
+        background-color: #091327;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    
+      .sidebar .dropdown-content li {
+        margin: 0;
+        padding: 0;
+      }
+    
+      .sidebar .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 32px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    
+      .sidebar .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+    
+      /* Media query for mobile view */
+      @media screen and (max-width: 768px) {
+        .sidebar .dropdown-content {
+          display: block;
+        }
+    
+        .sidebar .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    
+        .sidebar .dropdown-content a {
+          padding: 12px 32px;
+        }
+      }
+    
+      @media screen and (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+    
+        .toggle-Button {
+          display: block;
+          cursor: pointer;
+        }
+    
+        .dropdown-content {
+          position: relative;
+        }
+    
+        .sidebar {
+          padding-top: 15px;
+        }
+    
+        .sidebar a {
+          font-size: 18px;
+        }
+      }
+      /* Navbar CSS ends */
+
+/* Contact Us Button CSS starts */
+:root {
+    --color-text: #ffeeff;
+    --color-neon: #1331db;
+}
+
+.contact-button-container {
+  margin-top: -150px;
+    margin-bottom: 100px; /* Adjust the value as needed */
+    text-align: center; /* Center the button horizontally */
+}
+
+/* Neon Button Styling */
+.btn-primary {
+    background-color: transparent; /* Neon button background is transparent */
+    border: 0.1em solid var(--color-text);
+    color: var(--color-text);
+    font-size: 2rem; /* Increase font size for neon effect */
+    padding: 0.2em 1em;
+    border-radius: 0.25em;
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block; /* Ensure button behaves as an inline-block element */
+    cursor: pointer;
+    position: relative; /* For pseudo-elements positioning */
+    box-shadow: 0 0 0.75em 0 var(--color-neon),
+        inset 0 0 0.75em 0 var(--color-neon), 0 0 0.1em 0.05em var(--color-text),
+        inset 0 0 0.1em 0.05em var(--color-text);
+    text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect */
+.btn-primary:hover {
+    background-color: #0056b3; /* Optional: Keep the hover color */
+    border-color: #004085; /* Optional: Keep the hover border color */
+}
+
+/* Neon Button Glow Effect */
+.btn-primary::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: opacity 50ms linear;
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-neon);
+    transform: perspective(1em) rotateX(45deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    transition: opacity 50ms linear;
+    top: -0.1em;
+    right: -0.1em;
+    bottom: -0.1em;
+    left: -0.1em;
+    border-radius: 0.25em;
+    border: 0.1em solid var(--color-text);
+    box-shadow: 0 0 2em 0.5em var(--color-neon), inset 0 0 1em 0 var(--color-neon);
+    opacity: 0;
+}
+
+.btn-primary:hover::before,
+.btn-primary:focus::before,
+.btn-primary:hover::after,
+.btn-primary:focus::after {
+    opacity: 1;
+}
+
+/* Keyframes for blinking effect */
+@keyframes blink {
+    0%, 10%, 55%, 90% { color: inherit; }
+    11%, 15%, 56%, 58%, 91%, 99% { color: black; }
+    16%, 59%, 100% { color: inherit; }
+}
+
+.btn-primary span {
+    animation: blink 2s linear infinite;
+}
+
+/* Keyframes for bouncing animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Add bouncing animation */
+.btn-primary.bouncing {
+    animation: bounce 2s infinite;
+}
+/* Contact Us Button CSS ends */
+
+</style>
+
+<body>
+  <!-- Header Section Start -->
+  <header class="header">
+    <a class="navbar-brand" href="about-us.html">
+      <img
+        src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+        alt="logo2"
+        class="logo"
+      />
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn"
+          >TRAINING
+          <i class="bx bx-chevron-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="college-training.html">College Training</a>
+          <a href="corporate.html">Corporate Training</a>
+          <a href="faculty.html">Faculty</a>
+        </div>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </nav>
+
+    <div class="toggle-Button">
+      <span class="openbtn" onclick="toggleNav()">☰</span>
+    </div>
+
+    <!-- Sidebar structure in the mobile view -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn">TRAINING</a>
+        <!-- Sub-menu items are always visible on mobile -->
+        <ul class="dropdown-content">
+          <li><a href="college-training.html">College Training</a></li>
+          <li><a href="corporate.html">Corporate Training</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+        </ul>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </div>
+  </header>
+
+  <!-- Header Section End -->
+
+  <section class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="banner-text">
+            <h1 class="heading mb-4 wow animate__animated animate__flipInX">Gryphon Academy</h1>
+            <h4 class="mb-4 wow animate__animated animate__fadeInLeft">Bridging the Gap to Career Success</h4>
+            <button class="btn enroll_btn wow animate__animated animate__fadeInRight" onclick="window.location.href='contact.html';">
+              Enroll now
+            </button>
+            <div class="row mt-3">
+              <div class="col-lg-12">
+                <a class="know-more text-white wow animate__animated animate__fadeInRight" href="about-us.html">know more > > ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner_2">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+          <div class="banner-text2">
+            <h2 class="heading_text wow animate__animated animate__fadeInRight">About Us</h2>
+            <p class="section-description wow animate__animated animate__fadeInRight">
+              As India's premier non-ed-tech organization, we are committed to bridging the gap between industry and
+              academia. We provide customized and tailored industry-centric training programmes which help your
+              organization facilitate the transition into the industry with ease and enabling you to excel.
+            </p>
+            <button class="btn2-enroll-btn wow animate__animated animate__fadeInLeft"
+              onclick="window.location.href='about-us.html';">Know More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="banner3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h3 class="heading_text3 wow animate__animated animate__fadeInLeft">Training</h3>
+          <p class="section-description3 wow animate__animated animate__fadeInLeft">
+            Gryphon Academy empowers students, professionals, and educators through customized training programs. Our
+            trainings being traditional, ensures that our participants are industry ready for dynamic roles and
+            responsibilities and are backed by substantive hands-on experience that the current industry requires.
+          </p>
+          <button class="btn3-enroll-btn wow animate__animated animate__fadeInLeft" onclick="window.location.href='training copy.html';">Know More</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="banner4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+          <div class="banner-text4">
+            <h2 class="heading_text wow animate__animated animate__fadeInRight">Placement</h2>
+            <p class="section-description4 wow animate__animated animate__fadeInRight">
+              Your dream job awaits! We go beyond training; we launch careers. Our guaranteed placement assistance
+              connects you with your ideal path, all at zero cost to partnered colleges.
+            </p>
+            <button class="btn4-enroll-btn wow animate__animated animate__fadeInRight" onclick="window.location.href='placement-final-copy.html';">Know More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="banner-text5">
+            <h3 class="heading_text5 wow animate__animated animate__fadeInLeft">Brand Positioning</h3>
+            <p class="section-description5 wow animate__animated animate__fadeInLeft">
+              Gryphon Academy empowers students, professionals, and educators through customized training programs. Our
+              trainings being traditional, ensure that our participants are industry ready for dynamic roles and
+              responsibilities and are backed by substantive hands-on experience that the current industry requires.
+            </p>
+            <button class="btn5-enroll-btn" onclick="window.location.href='digitalcopy.html';">Know More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonial Section -->
+
+<section>
+  <div class="review">
+      <div id="Testimonials">
+          <div class="titles">
+              <h3>Testimonials</h3>
+              <h2>This is why we do it!</h2>
+          </div>
+          <div class="review__marquee">
+              <div class="review__marquee__container">
+                  <div class="scroll">
+                      <div class="itemOdd">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Student Review</h6>
+                                  <p>Transformative</p>
+                              </div>
+                              <h5>
+                                  "Gryphon Academy has completely transformed my approach to learning. The mentorship and support I received here are unparalleled."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemEven">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Parent Review</h6>
+                                  <p>Highly Recommend</p>
+                              </div>
+                              <h5>
+                                  "My child has thrived at Gryphon Academy. The individualized attention and innovative teaching methods have made a world of difference."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemOdd">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Student Review</h6>
+                                  <p>Life-Changing</p>
+                              </div>
+                              <h5>
+                                  "Attending Gryphon Academy was the best decision I ever made. The skills and confidence I’ve gained are invaluable."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemEven">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Alumni Review</h6>
+                                  <p>Exceptional</p>
+                              </div>
+                              <h5>
+                                  "Gryphon Academy prepared me for success beyond the classroom. The lessons learned here continue to guide me in my professional life."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemOdd">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Parent Review</h6>
+                                  <p>Outstanding</p>
+                              </div>
+                              <h5>
+                                  "The dedication and passion of the teachers at Gryphon Academy are second to none. My child has grown academically and personally."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemEven">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Student Review</h6>
+                                  <p>Empowered</p>
+                              </div>
+                              <h5>
+                                  "Gryphon Academy has empowered me to pursue my dreams with confidence. The supportive environment is truly inspiring."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemOdd">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Alumni Review</h6>
+                                  <p>Grateful</p>
+                              </div>
+                              <h5>
+                                  "I am so grateful for my time at Gryphon Academy. The education and experience I received have had a lasting impact on my life."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemEven">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Student Review</h6>
+                                  <p>Supportive</p>
+                              </div>
+                              <h5>
+                                  "The community at Gryphon Academy is incredibly supportive. I’ve never felt more encouraged to reach my full potential."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemOdd">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Parent Review</h6>
+                                  <p>Thriving</p>
+                              </div>
+                              <h5>
+                                  "My child is thriving at Gryphon Academy. The blend of academic rigor and personal development is exactly what we were looking for."
+                              </h5>
+                          </div>
+                      </div>
+                      <div class="itemEven">
+                          <div class="item__text">
+                              <div class="item__text__top">
+                                  <h6>Student Review</h6>
+                                  <p>Inspiring</p>
+                              </div>
+                              <h5>
+                                  "Gryphon Academy’s innovative approach to education has inspired me to aim higher and dream bigger. I feel ready to tackle any challenge."
+                              </h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Testimonial Section ends here -->
+
+  <!-- registration form was here , now removed -->
+<!-- Contact Us Button -->
+<div class="text-center contact-button-container">
+  <a href="contact.html" class="btn btn-primary wow bounceIn bouncing" data-wow-duration="1s" data-wow-delay="0.5s">
+      Cont<span>a</span>ct Us
+  </a>
+</div>
+<!-- Contact Us Button ends -->
+
+
+
+ <!-- Footer Section Start -->
+ <section class="footer">
+  <footer>
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="logo-container">
+            <a href="about-us.html">
+              <img
+                src="image/GAXLOGO.png"
+                alt=""
+                class="img-fluid logo-footer animate__animated animate__fadeIn"
+              />
+            </a>
+          </div>
+
+          <div class="col-md-3">
+            <div
+              class="useful-link animate__animated animate__fadeIn animate__delay-1s"
+            >
+              <h2>Useful Links</h2>
+              <ul
+                class="use-links animate__animated animate__fadeIn animate__delay-2s"
+              >
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="training copy.html">Training</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div
+              class="social-links animate__animated animate__fadeIn animate__delay-3s"
+            >
+              <h2>Follow Us</h2>
+              <div
+                class="social-icons animate__animated animate__fadeIn animate__delay-4s"
+              >
+                <a href="https://www.facebook.com/gryphonnacademy/"
+                  ><i class="bx bxl-facebook"></i>Facebook</a
+                >
+                <a href="https://www.linkedin.com/company/gryphonacademy/"
+                  ><i class="bx bxl-linkedin"></i>LinkedIn</a
+                >
+                <a href="https://www.instagram.com/gryphon_academy/"
+                  ><i class="bx bxl-instagram"></i>Instagram</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div
+              class="address animate__animated animate__fadeIn animate__delay-5s"
+            >
+              <h2>Contact Us</h2>
+              <ul
+                class="address-links animate__animated animate__fadeIn animate__delay-6s"
+              >
+                <li>
+                  <a
+                    href="https://maps.app.goo.gl/ftpdk38mzttVv9Kv8"
+                    target="_blank"
+                  >
+                    <i class="bx bx-map"></i>Seasons Business Square<br/>  by
+                      Naiknavare Office no 301,<br/>3rd floor, Seasons Rd, Sanewadi,<br/>Aundh, Pune, Maharashtra 411007
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+918983614509"
+                    class="address-link animate__animated animate__bounce"
+                  >
+                    <i id="footer-tele" class="bx bx-phone"></i>+91 89836 14509 / 8983339099
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:gryphonx@gryphonacademy.co.in"
+                    class="address-link"
+                  >
+                    <i  class="bx bx-envelope"></i
+                    >gryphonx@gryphonacademy.co.in
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div  class="copy-right-sec">
+      <p>&copy; 2024 Gryphon Academy.Pvt.Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- footer section end -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js";
+
+    // Function to toggle sidebar
+    function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+          sidebar.style.width = "0";
+        } else {
+          sidebar.style.width = "250px";
+        }
+      }
+
+      // Function to close sidebar with the close button
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    // contact us button logic starts
+    document.addEventListener("DOMContentLoaded", function() {
+        var contactButton = document.querySelector('.btn-primary');
+        contactButton.classList.add('bouncing');
+    });
+    // contact us button logic ends
+
+    // animation code for cdn js library
+    new WOW().init();
+  </script>
+</body>
+
+</html>
