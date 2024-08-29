@@ -21,19 +21,57 @@
         overflow-x: hidden; /* Prevent horizontal scrolling */
       }
 
-      /* Sticky Navbar */
-      .top-navigation {
+      /* Company Logo */
+      .company-logo-link {
         position: fixed;
-        top: 15px;
-        left: 0;
-        width: 100%;
-        background: transparent;
-        height: 60px;
-        z-index: 10;
+        top: -35px;
+        left: 25px;
+        width: 150px;
+        height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 11;
+        text-decoration: none; /* Remove underline from link */
       }
+
+      .company-logo {
+        width: 100%;
+        height: 100%;
+        background: url("https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png")
+          no-repeat center center;
+        background-size: contain;
+      }
+
+/* Sticky Navbar */
+.top-navigation {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  display: flex;
+  justify-content: center; /* Center the contents horizontally */
+  align-items: center;
+}
+
+/* Container for List Items */
+.nav-items-container {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items-container ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items-container li {
+  margin: 0 15px;
+}
 
       .stick-top-nav-ul {
         list-style-type: none;
@@ -54,7 +92,7 @@
 
       .stick-top-nav-ul li a {
         text-decoration: none;
-        color: #fff;
+        color: #d8d53f;
         display: block;
         padding: 10px 15px;
         font-size: 16px;
@@ -100,7 +138,7 @@
         display: flex;
         flex-direction: column;
         padding-top: 60px;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
         transform: translateX(100%);
       }
 
@@ -237,8 +275,9 @@
       }
 
       .btn-know-more:hover {
-        background-color: #0056b3;
+        background-color: #d19c0a;
         transform: translateY(-3px);
+        color: #fefefe;
       }
 
       #hero_slider {
@@ -277,27 +316,7 @@
       }
 
       /* Company Logo */
-      /* Company Logo */
-      .company-logo-link {
-        position: fixed;
-        top: -35px;
-        left: 25px;
-        width: 150px;
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 11;
-        text-decoration: none; /* Remove underline from link */
-      }
 
-      .company-logo {
-        width: 100%;
-        height: 100%;
-        background: url("https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png")
-          no-repeat center center;
-        background-size: contain;
-      }
 
       /* Disable scrolling */
       .no-scroll {
@@ -539,33 +558,33 @@
     </style>
   </head>
   <body>
-    <!-- Top Navbar -->
-    <div class="top-navigation">
-      <nav class="sticky-top-nav top-menu">
-        <ul class="stick-top-nav-ul">
-          <li class="nav-active">
-            <a href="#hero_slider"> <span>Home</span></a>
-            <div class="line"></div>
-          </li>
-          <li>
-            <a href="#core_capabilities"> <span>About Us</span></a>
-            <div class="line"></div>
-          </li>
-          <li>
-            <a href="#operating_models"> <span>Training</span></a>
-            <div class="line"></div>
-          </li>
-          <li>
-            <a href="#talent_transformations"> <span>Placement</span></a>
-            <div class="line"></div>
-          </li>
-          <li>
-            <a href="#do_more"> <span>Brand Positioning</span></a>
-            <div class="line"></div>
-          </li>
-        </ul>
-      </nav>
+   <!-- Top Navbar -->
+  <div class="top-navigation">
+    <div class="nav-items-container">
+      <ul class="stick-top-nav-ul">
+        <li class="nav-active">
+          <a href="#hero_slider"><span>Home</span></a>
+          <div class="line"></div>
+        </li>
+        <li>
+          <a href="#core_capabilities"><span>About Us</span></a>
+          <div class="line"></div>
+        </li>
+        <li>
+          <a href="#operating_models"><span>Training</span></a>
+          <div class="line"></div>
+        </li>
+        <li>
+          <a href="#talent_transformations"><span>Placement</span></a>
+          <div class="line"></div>
+        </li>
+        <li>
+          <a href="#do_more"><span>Brand Positioning</span></a>
+          <div class="line"></div>
+        </li>
+      </ul>
     </div>
+  </div>
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -609,19 +628,18 @@
     <div id="hero_slider" class="section hero-slider-section">
       <div class="section-content left">
         <h2 style="font-size: 2.7rem; color: #ffc700">Gryphon Academy</h2>
-        <p>Bridging the Gap to Career Success</p>
+        <p>Where our approach is to make students industry ready with our curated Industry Specific Training programmes which make them competitive in the job market. </p>
+        <p>Your pathway to the top companies starts from here>>>></p>
         <a href="contact.html" class="btn-know-more">Know More</a>
       </div>
     </div>
     <div id="core_capabilities" class="section core-capabilities-section">
       <div class="section-content right">
         <h2>About Us</h2>
+<h4>Bring Industry Expertise Directly to your Campus </h4>
         <p>
-          As India's premier non-ed-tech organization, we are committed to
-          bridging the gap between industry and academia. We provide customized
-          and tailored industry-centric training programmes which help your
-          organization facilitate the transition into the industry with ease and
-          enabling you to excel.
+          As India's premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. We provide customized training solutions as per the Industry-centric needs which helps your academic institution facilitate smooth transition into the industry with ease. 
+          
         </p>
         <a href="about-us.html" class="btn-know-more">Know More</a>
       </div>
