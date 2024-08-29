@@ -753,32 +753,46 @@
       src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js";
 
       document.addEventListener("DOMContentLoaded", () => {
-        const sections = document.querySelectorAll(".section");
-        const navLinks = document.querySelectorAll(".stick-top-nav-ul li");
+    const sections = document.querySelectorAll(".section");
+    const navLinks = document.querySelectorAll(".stick-top-nav-ul li");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarToggle = document.getElementById("sidebar-toggle");
 
-        function activateNavLink() {
-          let index = sections.length;
+    function activateNavLink() {
+      let index = sections.length;
+      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+      navLinks.forEach((link) => link.classList.remove("nav-active"));
+      navLinks[index].classList.add("nav-active");
+    }
 
-          while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+    activateNavLink();
+    window.addEventListener("scroll", activateNavLink);
 
-          navLinks.forEach((link) => link.classList.remove("nav-active"));
-          navLinks[index].classList.add("nav-active");
-        }
+    // Toggle sidebar
+    sidebarToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      document.body.classList.toggle("no-scroll");
+    });
 
-        activateNavLink();
-        window.addEventListener("scroll", activateNavLink);
-
-        // Toggle sidebar
-        const sidebar = document.getElementById("sidebar");
-        const sidebarToggle = document.getElementById("sidebar-toggle");
-
-        sidebarToggle.addEventListener("click", () => {
-          sidebar.classList.toggle("open");
-          document.body.classList.toggle("no-scroll");
-        });
+    // Close sidebar when clicking on a link
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+        document.body.classList.remove("no-scroll");
       });
+    });
 
-      new WOW().init();
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (event) => {
+      if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+        sidebar.classList.remove("open");
+        document.body.classList.remove("no-scroll");
+      }
+    });
+  });
+
+  new WOW().init();
     </script>
   </body>
 </html>
