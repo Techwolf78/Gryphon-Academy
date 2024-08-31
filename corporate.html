@@ -21,6 +21,7 @@
     rel="stylesheet"
   />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
       body {
         background-color: #091327;
@@ -315,37 +316,6 @@
   color:#fdd700;
 }
 
-/* CTA Section Styles */
-/* CTA Section Styling */
-#cta-hook-lines-section {
-    background-color: #1e293b; /* Tailwind Slate-900 */
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #4f46e5; /* Tailwind Indigo-600 */
-    color: #ffffff;
-    font-size: 1.25rem; /* Tailwind text-lg */
-    font-weight: 700; /* Tailwind font-semibold */
-    padding: 1rem 2rem;
-    border-radius: 0.6rem; /* Tailwind rounded-md */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: all 0.3s ease;
-    text-decoration: none;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(20px); /* Start below the visible area */
-}
-
-.cta-button.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cta-button:hover {
-    background-color: #4338ca; /* Darker indigo for hover */
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
 
       /* Footer section start */
       #footer {
@@ -561,6 +531,17 @@
 }
 
       /* Footer section end */
+
+      .hero-section {
+            background-image: url('/path/to/your/hero-image.jpg'); /* Replace with your hero image path */
+            background-size: cover;
+            background-position: center;
+            height: 60vh; /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
     </style>
   </head>
   <body>
@@ -759,20 +740,53 @@
   </div>
 </section>
 
- <!-- CTA Hook Lines Section -->
- <section id="cta-hook-lines-section" class="bg-slate-900 py-16 px-4 flex flex-col justify-center items-center text-white">
-  <div class="w-full max-w-screen-md mx-auto text-center">
-      <!-- First Hook Line as CTA Button -->
-      <a href="contact.html" class="cta-button mb-6">
-          <p class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-1xl font-black">Build Your Dream Team: Learn More About Gryphon's Corporate Training Programs Now!</p>
-      </a>
-      <!-- Second Hook Line as CTA Button -->
-      <a href="contact.html" class="cta-button">
-        <p class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-1xl font-black">Empower Your Employees, Drive Growth: Request a Customized Training Quote!</p>
-      </a>
-      
+
+<main class="flex-1 py-8">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row bg-blue-400 p-4 sm:p-6 lg:p-8 rounded-[20px] shadow-md">
+          <!-- Left Content -->
+          <div class="flex-1 text-white pr-0 lg:pr-8 mb-6 lg:mb-0">
+              <div class="flex items-center mb-4 sm:mb-6">
+                  <img src="./image/whyGA.png" alt="Illustration" class="h-32 sm:h-40 lg:h-48 mr-4">
+              </div>
+              <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4">Why Choose Us?</h2>
+              <p class="text-sm sm:text-base lg:text-lg mb-6 leading-relaxed">We believe in a personalized approach. Through collaboration with HR professionals, stakeholders, experienced trainers and your team. We meticulously tailor training programmes to enhance efficiency, cultivate a culture of continuous learning that align with your organizational goals and mission. </p>
+              <a href="contact.html" class="inline-flex items-center border border-white text-white px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-blue-600 hover:text-blue-400 transition">
+                  Learn More
+                  <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+          </div>
+          <!-- Right Content -->
+          <div class="flex-1 flex items-center justify-center">
+              <div class="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg w-full md:w-[380px]">
+                  <ul class="space-y-2 sm:space-y-4">
+                      <li class="flex items-center text-[#1F2937] font-medium">
+                          <span class="text-[#2563EB] text-base mr-3">●</span>
+                          Industry Specific Expertise
+                      </li>
+                      <li class="flex items-center text-[#1F2937] font-medium">
+                          <span class="text-[#2563EB] text-base mr-3">●</span>
+                          Customized Training Solutions
+                      </li>
+                      <li class="flex items-center text-[#1F2937] font-medium">
+                          <span class="text-[#2563EB] text-base mr-3">●</span>
+                          Focus on Emotional Intelligence
+                      </li>
+                      <li class="flex items-center text-[#1F2937] font-medium">
+                        <span class="text-[#2563EB] text-base mr-3">●</span>
+                        Enhanced Employee Engagement
+                    </li>
+                    <li class="flex items-center text-[#1F2937] font-medium">
+                      <span class="text-[#2563EB] text-base mr-3">●</span>
+                      Alignment with Organizational Goals
+                  </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
   </div>
-</section>
+</main>
+
 
     <!-- Footer Section Start -->
     <section class="footer">

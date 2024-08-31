@@ -572,14 +572,18 @@
   color: #007bff;
   position: relative;
   margin-bottom: 40px; /* Adjusted margin-bottom to reduce space */
+  display: inline-block; /* Make sure the title only takes up as much space as needed */
 }
 
-.title-underline {
+.section-title::after {
+  content: "";
   display: block;
-  width: 80px;
+  width: 100%; /* Full width of the title */
   height: 2px;
   background: #007bff;
-  margin: 10px auto;
+  position: absolute;
+  bottom: -10px; /* Adjust this value to position the line correctly */
+  left: 0;
 }
 
 .problem-cards-row {
@@ -622,6 +626,7 @@
     padding-right: 15px;
   }
 }
+
 
 
 
