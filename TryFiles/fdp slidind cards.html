@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        /* Arrow Button Styles */
+        .arrow-button {
+            @apply absolute top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full focus:outline-none;
+            z-index: 10;
+        }
+        /* Optional: Adjust card width as needed */
+        .card {
+            @apply flex-none w-80; /* Adjust width if needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- FDP Benefits Section Start -->
+    <section class="bg-gray-100 py-12 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">How Our FDPs Help Your Institution</h2>
+            <div class="relative">
+                <!-- Scroll Container -->
+                <div class="overflow-x-auto whitespace-nowrap">
+                    <div class="flex space-x-6 py-4">
+                        <!-- Cards -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg card">
+                            <img src="icons/industry-aligned.png" alt="Industry-Aligned Curriculum" class="w-12 h-12 mb-4 mx-auto">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2 text-center">Industry-Aligned Curriculum</h3>
+                            <p class="text-gray-600 text-center">Equip faculty with the latest industry trends and practices, ensuring students receive industry knowledge education.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg card">
+                            <img src="icons/enhanced-teaching.png" alt="Enhanced Teaching Methods" class="w-12 h-12 mb-4 mx-auto">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2 text-center">Enhanced Teaching Methods</h3>
+                            <p class="text-gray-600 text-center">Introduce innovative pedagogical techniques that boost student engagement and learning outcomes.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg card">
+                            <img src="icons/research-capabilities.png" alt="Research Capabilities" class="w-12 h-12 mb-4 mx-auto">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2 text-center">Research Capabilities</h3>
+                            <p class="text-gray-600 text-center">Strengthen faculty's research skills, leading to increased publications and institutional prestige.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg card">
+                            <img src="icons/networking-opportunities.png" alt="Networking Opportunities" class="w-12 h-12 mb-4 mx-auto">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2 text-center">Networking Opportunities</h3>
+                            <p class="text-gray-600 text-center">Connect your faculty with industry experts, opening doors for collaborations and guest lectures.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg card">
+                            <img src="icons/interdisciplinary.png" alt="Interdisciplinary Approach" class="w-12 h-12 mb-4 mx-auto">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2 text-center">Interdisciplinary Approach</h3>
+                            <p class="text-gray-600 text-center">Foster cross-departmental collaboration and holistic learning experiences.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-lg card">
+                            <img src="icons/continuous-learning.png" alt="Continuous Learning Culture" class="w-12 h-12 mb-4 mx-auto">
+                            <h3 class="text-xl font-semibold text-blue-600 mb-2 text-center">Continuous Learning Culture</h3>
+                            <p class="text-gray-600 text-center">Instill a growth mindset across your institution, driving ongoing improvement and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left Arrow -->
+                <button class="arrow-button left-4" id="left-arrow">
+                    ←
+                </button>
+                <!-- Right Arrow -->
+                <button class="arrow-button right-4" id="right-arrow">
+                    →
+                </button>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#contact" class="inline-block bg-blue-600 text-white text-lg font-semibold py-2 px-6 rounded-lg hover:bg-blue-700">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <!-- FDP Benefits Section End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollContainer = document.querySelector('.overflow-x-auto');
+            const scrollAmount = 300; // Amount to scroll with each click
+
+            document.getElementById('left-arrow').addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+
+            document.getElementById('right-arrow').addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

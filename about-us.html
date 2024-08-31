@@ -680,7 +680,6 @@
     }
 
    /* Section 5: Our Values */
-/* logo */
 /* Logo Slider Styles */
 .section-heading {
   color: rgba(2, 0, 0, 0.795);
@@ -709,16 +708,6 @@
   transition: all 0.3s ease-in-out;
   z-index: -1;
   transform: translate(-50%, -50%);
-}
-
-.section-heading:hover {
-  background: linear-gradient(to right, #ffffff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-heading:hover::before {
-  width: 100%;
 }
 
 .section-heading {
@@ -754,8 +743,8 @@
 .logo-slider-item {
   flex: 0 0 auto;
   margin: 0 20px;
-  opacity: 0.7;
-  transition: transform 0.3s, opacity 0.3s;
+  opacity: 1; /* Change opacity to 1 to ensure clarity */
+  transition: transform 0.3s; /* Remove opacity transition */
 }
 
 .logo-slider-item img {
@@ -765,14 +754,14 @@
 }
 
 .logo-slider-item:hover {
-  transform: scale(1.1);
-  opacity: 1;
+  transform: scale(1); /* Remove scaling effect */
 }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
 }
+
 
   
 /* Section 6: What Do We Do */
