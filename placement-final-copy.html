@@ -337,6 +337,36 @@
 
 
     
+/* Logo Slider Styles */
+/* Enhanced Section Heading Styles */
+.section-heading-partners {
+  font-size: 2.5em; /* Elegant font size */
+  font-weight: 700; /* Slightly bolder text */
+  color: #fff; /* White text color for contrast */
+  text-align: center; /* Center-align the heading */
+  margin-bottom: 30px; /* Space below the heading */
+  position: relative; /* For positioning pseudo-elements */
+  padding-bottom: 10px; /* Space for underline effect */
+  letter-spacing: 1px; /* Slight spacing between letters */
+}
+
+/* Decorative Underline Effect */
+.section-heading-partners::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 50%;
+  height: 4px;
+  background-color: #ffcc00; /* Golden underline */
+  transform: translateX(-50%); /* Center the underline */
+  transition: width 0.3s ease; /* Smooth transition effect */
+}
+
+.section-heading-partners:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
 /* Adjust Logo Slider Section Position */
 .logo-slider-section {
   background-color: #002147;
@@ -350,51 +380,44 @@
   margin: 0 auto; /* Center the container */
 }
 
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
 
-    .logo-slider {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 40px 0;
-    }
+.logo-slider-track {
+  display: flex;
+  width: calc(150px * 12); /* Adjust based on the number of logos */
+  animation: scroll 20s linear infinite;
+}
 
-    .logo-slider-track {
-      display: flex;
-      width: calc(150px * 12); /* Adjust based on the number of logos */
-      animation: scroll 20s linear infinite;
-    }
+.logo-slider-track:hover {
+  animation-play-state: paused;
+}
 
-    .logo-slider-track:hover {
-      animation-play-state: paused;
-    }
+.logo-slider-item {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  opacity: 1; /* Ensure full visibility */
+  transition: transform 0.3s, opacity 0.3s;
+}
 
-    .logo-slider-item {
-      flex: 0 0 auto;
-      margin: 0 20px;
-      opacity: 0.7;
-      transition: transform 0.3s, opacity 0.3s;
-    }
+.logo-slider-item img {
+  height: 100px;
+  max-width: 150px;
+  object-fit: contain;
+}
 
-    .logo-slider-item img {
-      height: 100px;
-      max-width: 150px;
-      object-fit: contain;
-    }
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
+}
 
-    .logo-slider-item:hover {
-      transform: scale(1.1);
-      opacity: 1;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
-    }
-
-    /* Logo Slider Section css ends */
 
 /* Footer section start */
 #footer {
@@ -960,11 +983,7 @@
       animation: borderBeam 2s infinite;
     }
 
-    @keyframes borderBeam {
-      0% { left: -100%; }
-      50% { left: 0; }
-      100% { left: 100%; }
-    }
+ 
 
     .usp-item {
       background: #091327; /* Primary color for background */
@@ -1164,13 +1183,13 @@
         <div class="grid-item">
           <div class="grid-item-content">
             <div class="counter-number" id="students-trained">0</div>
-            <div class="counter-label">Students Trained</div>
+            <div class="counter-label">Students Impacted</div>
           </div>
         </div>
         <div class="grid-item">
           <div class="grid-item-content">
             <div class="counter-number" id="years-of-experience">0</div>
-            <div class="counter-label">Years of Experience</div>
+            <div class="counter-label">Toatal Drives Conducted</div>
           </div>
         </div>
       </div>
@@ -1408,9 +1427,9 @@
       }
 
       updateCounter("placement-ratio", "95%");
-      updateCounter("business-partners", "150");
-      updateCounter("students-trained", "10,000+");
-      updateCounter("years-of-experience", "20");
+      updateCounter("business-partners", "300+");
+      updateCounter("students-trained", "40,000+");
+      updateCounter("years-of-experience", "100+");
     });
 
 

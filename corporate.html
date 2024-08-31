@@ -20,6 +20,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     rel="stylesheet"
   />
+  <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
         background-color: #091327;
@@ -81,33 +82,34 @@
         align-items: center;
       }
 
-      /* For dropdown items */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #091327;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        border-radius: 5px;
-      }
+/* For dropdown items */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #091327;
+  width: 100%; /* Set width to 100% of the parent */
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Higher z-index to ensure it is above other elements */
+  border-radius: 5px;
+}
 
-      .dropdown-content a {
-        color: #ffffff;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-      .dropdown-content a:hover {
-        background-color: #ffc700;
-        color: #091327;
-      }
+.dropdown-content a:hover {
+  background-color: #ffc700;
+  color: #091327;
+}
 
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
       .toggle-Button {
         display: none;
@@ -303,124 +305,47 @@
 
 .content-section .text-section {
   padding-right: 2rem;
+  padding-left: 2rem;
+  
 }
 
-/* Container for the Challenges and Solutions Sections */
-.sections-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center the sections horizontally */
-  padding: 3rem 0; /* Add vertical padding */
-}
-
-.challenges-section,
-.solutions-section {
-  max-width: 800px; /* Limit the width of the sections */
-  width: 100%; /* Allow the sections to take full width within the container */
-  margin: 3rem 0;
-  padding: 2rem;
-  border: 2px solid #ffc700;
-  border-radius: 10px;
-  animation: fadeIn 1.5s;
-  text-align: left; /* Keep the text aligned to the left */
-}
-
-.challenges-section h3,
-.solutions-section h3 {
+.text-section h3 {
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #ffc700;
+  color:#fdd700;
 }
-
-.challenges-section p,
-.solutions-section p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
 
 /* CTA Section Styles */
-.cta-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 3rem auto; /* Center container horizontally with auto margins */
-  text-align: center; /* Center-align text for better appearance */
-  width: 100%; /* Ensure container takes full width */
+/* CTA Section Styling */
+#cta-hook-lines-section {
+    background-color: #1e293b; /* Tailwind Slate-900 */
 }
 
 .cta-button {
-  position: relative;
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  color: #091327;
-  background-color: #ffb000;
-  border: 2px solid #000000;
-  border-radius: 50px;
-  overflow: hidden;
-  text-decoration: none;
-  transition: color 0.4s, background-color 0.4s;
-  margin: 0.5rem auto; /* Center buttons with auto margins */
-  animation: bounceIn 1s;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  text-align: center; /* Ensure text inside the button is centered */
+    display: inline-block;
+    background-color: #4f46e5; /* Tailwind Indigo-600 */
+    color: #ffffff;
+    font-size: 1.25rem; /* Tailwind text-lg */
+    font-weight: 700; /* Tailwind font-semibold */
+    padding: 1rem 2rem;
+    border-radius: 0.6rem; /* Tailwind rounded-md */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start below the visible area */
 }
 
-
-.cta-button::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
-  border-radius: 50px;
-  animation: shimmer 1.5s infinite;
-  z-index: -1;
-}
-
-.cta-button:hover::before {
-  left: 100%;
+.cta-button.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .cta-button:hover {
-  color: white;
-  background-color: #091327;
-  border-color: #b800ef;
+    background-color: #4338ca; /* Darker indigo for hover */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-
 
       /* Footer section start */
       #footer {
@@ -653,17 +578,17 @@
         <a href="index.html">HOME</a>
         <div class="dropdown">
           <a href="training copy.html" class="dropbtn"
-            >TRAINING
+            >LEARNING AND DEVELOPMENT
             <i class="bx bx-chevron-down"></i>
           </a>
           <div class="dropdown-content">
             <a href="college-training.html">College Training</a>
             <a href="corporate.html">Corporate Training</a>
-            <a href="faculty.html">Faculty</a>
+            <a href="faculty.html">Faculty Development Programme</a>
           </div>
         </div>
         <a href="placement-final-copy.html">PLACEMENT</a>
-        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="digitalcopy.html">BRAND POSITIONING</a>
         <a href="gax-copy.html">GAX</a>
         <a href="BLOG.html">BLOG</a>
       </nav>
@@ -677,16 +602,16 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="index.html">HOME</a>
         <div class="dropdown">
-          <a href="training copy.html" class="dropbtn">TRAINING</a>
+          <a href="training copy.html" class="dropbtn">LEARNING AND DEVELOPMENT</a>
           <!-- Sub-menu items are always visible on mobile -->
           <ul class="dropdown-content">
             <li><a href="college-training.html">College Training</a></li>
             <li><a href="corporate.html">Corporate Training</a></li>
-            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="faculty.html">Faculty Development Programme</a></li>
           </ul>
         </div>
         <a href="placement-final-copy.html">PLACEMENT</a>
-        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="digitalcopy.html">BRAND POSITIONING</a>
         <a href="gax-copy.html">GAX</a>
         <a href="BLOG.html">BLOG</a>
       </div>
@@ -818,45 +743,36 @@
     </div>
 
     <!-- Container for the Challenges and Solutions Sections -->
-<div class="sections-container">
-  <!-- Challenges Section -->
-  <div class="challenges-section">
-    <h3>The Challenges</h3>
-    <p>1. Elevated Attrition Rates: High turnover negatively impacts stability and continuity within the organization.</p>
-    <p>2. Dwindling Employee Morale: Low morale affects engagement, productivity, and overall workplace satisfaction.</p>
-    <p>3. Unfavorable Workplace Culture: A negative culture can lead to poor collaboration, low motivation, and high stress levels.</p>
-    <p>4. Communication Gaps: Ineffective communication can cause misunderstandings, delays, and conflicts.</p>
-    <p>5. Decreasing Productivity and Outcomes: Reduced efficiency and poor performance outcomes hinder organizational goals.</p>
-    <p>6. Suboptimal Project Management: Inefficient project management leads to missed deadlines, budget overruns, and poor-quality deliverables.</p>
-    <p>7. Reluctance to Embrace Change: Resistance to change hampers innovation and adaptability in a dynamic business environment.</p>
-    <p>8. Challenges in Remote Team Management: Managing remote teams effectively requires addressing communication, collaboration, and productivity issues.</p>
+ <!-- The Challenges Section -->
+ <section id="challenges-section" class="py-4 px-4 lg:px-10 flex flex-col justify-center items-center">
+  <div class="w-full max-w-screen-lg mx-auto text-center">
+      <!-- Heading -->
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-yellow-500">Challenges and Solutions</h2>
+      <!-- Infographic Container -->
+      <div class="challenges-infographic-container w-full mx-auto">
+          <img 
+              src="https://via.placeholder.com/1600x900.png?text=Infographic+Placeholder" 
+              alt="Infographic Placeholder" 
+              class="challenges-infographic w-full h-auto"
+          >
+      </div>
   </div>
+</section>
 
-  <!-- Solutions Section -->
-  <div class="solutions-section">
-    <h3>The Solutions</h3>
-    <p>- Identifying and analyzing key factors that are driving employee engagement.</p>
-    <p>- Measuring areas of success and hurdles for organizational effectiveness.</p>
-    <p>- Step-by-step analysis for identifying pain points and converting them into strengths.</p>
-    <p>- Curating Customized Technical Trainings according to your organizational needs, Goals, Skills, Vision & Mission.</p>
-    <p>- Understanding your Efficiency, dissatisfaction, loyalty, attitude, leader, managing, upscaling, prioritizing.</p>
-    <p>- Addressing the skill gaps in the core training, Gryphon Academy provides unique solutions through a pool of expert coaches, enhancing employee skills at the workplace.</p>
-    <p style="font-size: 1.3rem;"><u><b>Bridging the gap between fresh talent and industry needs, Gryphon Academy connects colleges (55+) with top companies (200+ including KPIT, Force Motors) for free recruitment support. We equip students with essential skills through free training programs, ensuring a smooth transition into the workforce. No placement fees, just successful partnerships.</b></u></p>
+ <!-- CTA Hook Lines Section -->
+ <section id="cta-hook-lines-section" class="bg-slate-900 py-16 px-4 flex flex-col justify-center items-center text-white">
+  <div class="w-full max-w-screen-md mx-auto text-center">
+      <!-- First Hook Line as CTA Button -->
+      <a href="contact.html" class="cta-button mb-6">
+          <p class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-1xl font-black">Build Your Dream Team: Learn More About Gryphon's Corporate Training Programs Now!</p>
+      </a>
+      <!-- Second Hook Line as CTA Button -->
+      <a href="contact.html" class="cta-button">
+        <p class="animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-1xl font-black">Empower Your Employees, Drive Growth: Request a Customized Training Quote!</p>
+      </a>
+      
   </div>
-</div>
-
-
-    <!-- CTA Section -->
-    <div class="container cta-section">
-      <a href="contact.html" class="cta-button"
-        >Build Your Dream Team: Learn More About Gryphon's Corporate Training
-        Programs Now!</a
-      >
-      <a href="contact.html" class="cta-button mt-3"
-        >Empower Your Employees, Drive Growth: Request a Customized Training
-        Quote!</a
-      >
-    </div>
+</section>
 
     <!-- Footer Section Start -->
     <section class="footer">
@@ -884,7 +800,7 @@
                     >
                       <li><a href="index.html">Home</a></li>
                       <li><a href="about-us.html">About Us</a></li>
-                      <li><a href="training copy.html">Training</a></li>
+                      <li><a href="training copy.html">Learning and Development</a></li>
                       <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                   </div>
@@ -977,6 +893,30 @@
       function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
       }
+
+      // JS for cta hook effect
+      document.addEventListener("DOMContentLoaded", function() {
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: "0px",
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once the element is visible
+            }
+        });
+    }, options);
+
+    // Target the CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
+        observer.observe(button);
+    });
+});
     </script>
   </body>
 </html>

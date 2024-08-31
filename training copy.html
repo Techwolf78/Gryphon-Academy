@@ -30,6 +30,35 @@
        
       }
 
+      .hero-section {
+  background-image: url('image/3119.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Ensures full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Ensures overlay is above the background but below the text */
+}
+
+.text-container {
+  position: relative;
+  z-index: 2;
+}
+
       
       /* homepage */
       .Training-home {
@@ -98,171 +127,26 @@
       color: #e2e7ff;
     }
 
-    .hero-section {
-      background-image: url('image/3119.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      text-align: center;
-      color: white;
-    }
 
-    .hero-section .text-container {
-      position: relative;
-      z-index: 2;
-    }
 
-    .hero-section::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .animate-text {
-      display: inline-block;
-      animation: fadeText 3s infinite;
-    }
-
-    @keyframes fadeText {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
-    }
-
-/* Progress section css starts */
-.progress-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.animate-text {
+  display: inline-block;
+  animation: fadeInOut 6s infinite;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.animate-text:nth-child(2) {
+  animation-delay: 3s; /* Delay for the second text */
 }
 
-#progress-bar-wrapper {
-    position: relative;
-    margin-bottom: 30px;
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
 }
 
-.steps-list {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-}
 
-.steps-list li {
-    text-align: center;
-    width: 18%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.step-label {
-    padding: 15px; /* Adjust padding as needed */
-    background: #eceff1;
-    border-radius: 50px;
-    transition: background 0.3s, color 0.3s;
-    cursor: pointer;
-    color: inherit;
-    max-width: 100%; /* Ensures the label stays within its container */
-    box-sizing: border-box; /* Ensures padding is included in the element's width */
-    text-align: center; /* Ensures text stays centered even if it wraps */
-    height: auto; /* Allows height to adjust based on content */
-    min-height: 60px; /* Ensures a minimum height for consistency */
-    display: flex;
-    align-items: center; /* Centers text vertically */
-    justify-content: center; /* Centers text horizontally */
-    overflow: hidden; /* Ensures text doesn't overflow */
-    word-wrap: break-word; /* Ensures long words wrap to the next line */
-    white-space: normal; /* Allows text to wrap to the next line */
-}
-
-.step-label:hover {
-    background: #272209; /* Background color on hover */
-    color: #fff; /* Text color on hover */
-}
-
-#progress-line {
-    width: 100%;
-    height: 5px;
-    background: #eceff1;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: -1;
-    border-radius: 2.5px;
-}
-
-#progress-line-fill {
-    height: 5px;
-    background: #091327;
-    width: 0;
-    transition: width 0.3s;
-    border-radius: 2.5px;
-    position: relative;
-    overflow: hidden;
-}
-
-#progress-line-fill::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 5px;
-    width: 100%;
-    background: #FFC700;
-    animation: borderBeam 2s infinite;
-}
-
-.content-section {
-    display: none;
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f1f3f4;
-}
-
-.content-section.active {
-    display: block;
-}
-
-.content-section h2 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #091327;
-    word-wrap: break-word; /* Ensure text wraps within the container */
-}
-
-.content-section p {
-    line-height: 1.6;
-}
-
-@keyframes borderBeam {
-    0% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -361,93 +245,6 @@
       color: #b0bec5;
     }
 
-
-/* course cards */
-.train-5 {
-  padding: 50px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #FFC700;
-}
-
-.card-flyer {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden; /* Ensure content doesn't overflow */
-}
-
-.card-flyer:hover {
-  transform: scale(1.05);
-}
-
-.text-box {
-  padding: 15px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image-box {
-  width: 100%;
-  overflow: hidden; /* Hide overflow */
-}
-
-.image-box img {
-  width: 100%;
-  aspect-ratio: 4 / 3; /* Maintain aspect ratio */
-  object-fit: cover;
-  border-radius: 10px 10px 0 0;
-}
-
-.text-container {
-  text-align: center;
-  padding: 10px 0;
-  height: auto; /* Adjust height automatically */
-}
-
-.text-container h6 {
-  font-size: 16px;
-  color: #091327;
-  margin: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .col-lg-2 {
-    flex: 1 1 20%; /* Adjust column width for large screens */
-  }
-}
-
-@media (max-width: 992px) {
-  .col-md-4 {
-    flex: 1 1 33.333%; /* Adjust column width for medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .col-sm-6 {
-    flex: 1 1 50%; /* Adjust column width for small screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .col-xs-12 {
-    flex: 1 1 100%; /* Adjust column width for extra small screens */
-  }
-}
 
       
       /* Testimonials */
@@ -570,11 +367,12 @@
         color: #000;
       }
 
-      .titles {
-        color: #fdfdfd;
+      .titles h3{
+        color: #eae12e;
         position: relative;
         text-align: center;
         margin: 20px;
+        font-size: 1.5rem;
       }
 
       @keyframes infinityScroll {
@@ -969,7 +767,7 @@
     color: #fff;
 }
 
-/* Navbar CSS starts */
+/* Header CSS */
 .header {
   display: flex;
   justify-content: space-between;
@@ -1008,6 +806,7 @@
 
 .dropdown {
   position: relative;
+  display: inline-block; /* Ensure the dropdown aligns with the parent container */
 }
 
 .dropbtn {
@@ -1025,10 +824,11 @@
   display: none;
   position: absolute;
   background-color: #091327;
-  min-width: 160px;
+  min-width: 100%; /* Ensure dropdown content width matches parent width */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000; /* Higher z-index to ensure it is above other elements */
   border-radius: 5px;
+  left: 0; /* Align dropdown content with left edge of parent */
 }
 
 .dropdown-content a {
@@ -1091,6 +891,7 @@
 .sidebar .dropdown-content {
   display: block; /* Ensure dropdown content is always visible */
   position: relative;
+  min-width: 100%; /* Ensure sidebar dropdown content width matches parent width */
   background-color: #091327;
   list-style: none;
   padding: 0;
@@ -1150,7 +951,7 @@
     font-size: 18px;
   }
 }
-/* Navbar CSS ends */
+/* Header CSS ends */
 
     /* last container */
     .section-title {
@@ -1248,7 +1049,8 @@
       color: #FFC700;
     }
 
-    .logo-slider-section {
+    /* Logo Slider Styles */
+.logo-slider-section {
   background-color: #091327;
   margin-bottom: -40px;
 }
@@ -1277,8 +1079,9 @@
 .logo-slider-item {
   flex: 0 0 auto;
   margin: 0 20px;
-  opacity: 0.7;
-  transition: transform 0.3s, opacity 0.3s;
+  opacity: 1; /* Ensure full visibility */
+  transition: none; /* Remove transition effects */
+
 }
 
 .logo-slider-item img {
@@ -1287,9 +1090,18 @@
   object-fit: contain;
 }
 
+/* Removed hover effect */
 .logo-slider-item:hover {
-  transform: scale(1.1);
-  opacity: 1;
+  transform: none; /* No scaling on hover */
+  opacity: 1; /* No change in opacity on hover */
+}
+
+.section-heading {
+  color: #FFC700;
+  text-align: center; /* Center the heading */
+  font-size: 2rem; /* Increase the size */
+  margin-bottom: 20px; /* Space below the heading */
+  text-decoration: underline; /* Add underline */
 }
 
 @keyframes scroll {
@@ -1306,6 +1118,7 @@
     margin: 0 10px;
   }
 }
+
 /* Bridge Image CSS starts */
 .bridge-image-container {
   width: 100%; /* Ensures the container takes up the full width of the viewport */
@@ -1341,17 +1154,17 @@
         <a href="index.html">HOME</a>
         <div class="dropdown">
           <a href="training copy.html" class="dropbtn"
-            >TRAINING
+            >LEARNING AND DEVELOPMENT
             <i class="bx bx-chevron-down"></i>
           </a>
           <div class="dropdown-content">
             <a href="college-training.html">College Training</a>
             <a href="corporate.html">Corporate Training</a>
-            <a href="faculty.html">Faculty</a>
+            <a href="faculty.html">Faculty Development Programme</a>
           </div>
         </div>
         <a href="placement-final-copy.html">PLACEMENT</a>
-        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="digitalcopy.html">BRAND POSITIONING</a>
         <a href="gax-copy.html">GAX</a>
         <a href="BLOG.html">BLOG</a>
       </nav>
@@ -1365,16 +1178,16 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="index.html">HOME</a>
         <div class="dropdown">
-          <a href="training copy.html" class="dropbtn">TRAINING</a>
+          <a href="training copy.html" class="dropbtn">Learning and Development</a>
           <!-- Sub-menu items are always visible on mobile -->
           <ul class="dropdown-content">
             <li><a href="college-training.html">College Training</a></li>
             <li><a href="corporate.html">Corporate Training</a></li>
-            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="faculty.html">Faculty Development Programme</a></li>
           </ul>
         </div>
         <a href="placement-final-copy.html">PLACEMENT</a>
-        <a href="digitalcopy.html">DIGITAL MARKETING</a>
+        <a href="digitalcopy.html">BRAND POSITIONING</a>
         <a href="gax-copy.html">GAX</a>
         <a href="BLOG.html">BLOG</a>
       </div>
@@ -1382,13 +1195,32 @@
 
     <!-- Header Section End -->
 
-    <section class="hero-section">
-      <div class="text-container">
-        <h1 class="animate__animated animate__fadeInUp">Get <span class="animate-text">Trained</span> with Gryphon!</h1>
-        <h1 class="animate__animated animate__fadeInUp">Get <span class="animate-text">Placed</span> with Gryphon!</h1>
-        <h1 class="animate__animated animate__fadeInUp">Get Industry-Ready with Gryphon!</h1>
+<!-- Hero Section Starts -->
+<main class="relative min-h-screen flex flex-col justify-center bg-slate-900 overflow-hidden">
+  <div class="hero-section">
+    <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24 text-center relative z-10">
+      <!-- Sliding Text animation -->
+      <div class="font-extrabold text-3xl md:text-4xl [text-wrap:balance] bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">
+        Get <span class="text-yellow-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+          <ul class="block animate-text-slide-5 text-left leading-tight [&_li]:block">
+            <li>Trained</li>
+            <li>Placed</li>
+            <li>Trained</li>
+            <li>Placed</li>
+            <li>Trained</li>
+            <li aria-hidden="true">Placed</li>
+          </ul>
+        </span> with Gryphon!
       </div>
-    </section>
+      <!-- End: Sliding Text animation -->
+    </br>
+       <h2 class="text-3xl">Get Industry-Ready with Gryphon!</h2>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+</main>
+
+ <!-- Hero Section ends -->
     
     <div class="container-content">
       <p>
@@ -1405,262 +1237,28 @@
     </section>
     <!-- Image of Gryphon Academy Bridge ends -->
 
-   
-<div class="progress-container mt-5">
-  <div id="progress-bar-wrapper">
-      <ul class="steps-list">
-          <li class="step step01 active"><div class="step-label" data-step="discovery">Discovery</div></li>
-          <li class="step step02"><div class="step-label" data-step="strategy">Strategy Development</div></li>
-          <li class="step step03"><div class="step-label" data-step="creative">Creative Concepting</div></li>
-          <li class="step step04"><div class="step-label" data-step="production">Production & Execution</div></li>
-          <li class="step step05"><div class="step-label" data-step="analysis">Ongoing Analysis & Results</div></li>
-      </ul>
+    
 
-      <div id="progress-line">
-          <div id="progress-line-fill"></div>
-      </div>
-  </div>
-
-  <div id="content-section-wrapper">
-      <div class="content-section discovery active">
-          <h2>Discovery</h2>
-          <p>ctetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
-      </div>
-
-      <div class="content-section strategy">
-          <h2>Strategy Development</h2>
-          <p> ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
-      </div>
-
-      <div class="content-section creative">
-          <h2>Creative Concepting</h2>
-          <p> dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
-      </div>
-
-      <div class="content-section production">
-          <h2>Production & Execution</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
-      </div>
-
-      <div class="content-section analysis">
-          <h2>Ongoing Analysis & Results</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
-      </div>
-  </div>
-</div>
-
-<section class="Train-4">
-  <div class="container">
-    <div class="row">
-      <div class="section-head col-sm-12">
-        <h4><span>Why Choose</span> US</h4>
-        <p>Here's what sets our trainings apart from others</p>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="item">
-          <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
-          <h6>Modern Design</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="item">
-          <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
-          <h6>Creative Design</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="item">
-          <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
-          <h6>Your Photoshoping</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="item">
-          <span class="icon feature_box_col_four"><i class="fa fa-database"></i></span>
-          <h6>Business Growth</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="item">
-          <span class="icon feature_box_col_five"><i class="fa fa-upload"></i></span>
-          <h6>Market Strategy</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="item">
-          <span class="icon feature_box_col_six"><i class="fa fa-camera"></i></span>
-          <h6>Retina Ready</h6>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-        </div>
+<!-- Training Hours Breakdown Section -->
+<div class="bg-gray-100 py-10 border-b border-gray-300">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-900 text-center mb-6 relative">
+      Training Hours Breakdown
+      <span class="block w-20 h-1 bg-yellow-500 mx-auto mt-2"></span>
+    </h2>
+    <div class="flex justify-center">
+      <div class="w-full max-w-4xl h-72 bg-gray-200 border border-dashed border-gray-400 flex items-center justify-center text-gray-600 text-lg font-semibold">
+        Chart Placeholder
       </div>
     </div>
   </div>
-</section>
+</div>
+<!-- Training Hours Breakdown Section ends -->
 
-<section class="train-5">
-  <div id="cards_landscape_wrap-2">
-    <div class="container">
-      <!-- First Row: Soft Skills -->
-      <h2 class="section-heading">Soft Skills</h2>
-      <div class="row justify-content-center">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Corporate etiquettes and Mannerism.jpg" alt="Corporate etiquettes" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Corporate etiquettes and Mannerism</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Effective Communication Skills.jpg" alt="Effective Communication Skills" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Effective Communication Skills</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Interview Skills and GD-PI Techniques.jpg" alt="Interview Skills" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Interview Skills and GD-PI Techniques</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Presentation Skills.jpg" alt="Presentation Skills" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Presentation Skills</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Time Management.jpg" alt="Time Management" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Time Management</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- Second Row: Aptitude -->
-          <h2 class="section-heading">Aptitude</h2>
-          <div class="row justify-content-center">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Quantitative Ability [Basic Mathematics].jpg" alt="Quantitative Ability" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Quantitative Ability [Basic Mathematics]</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Quantitative Aptitude.jpg" alt="Quantitative Aptitude" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Quantitative Aptitude</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Data Interpretation.jpg" alt="Data Interpretation" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Data Interpretation</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Logical Reasoning.jpg" alt="Logical Reasoning" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Logical Reasoning</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-              <a href="">
-                <div class="card-flyer">
-                  <div class="text-box">
-                    <div class="image-box">
-                      <img src="Training Page/Critical Thinking.jpg" alt="Critical Thinking" />
-                    </div>
-                    <div class="text-container">
-                      <h6>Critical Thinking</h6>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
      <!-- Programme Section -->
      <section class="programme-section">
       <div class="container">
-          <h2 class="text-center mb-5">Our Programmes</h2>
+          <h2 class="text-center mb-5 text-yellow-300 text-3xl">Our Programmes</h2>
           <div class="row">
               <div class="col-md-4">
                   <div class="programme-card">
@@ -1686,7 +1284,7 @@
                   <div class="programme-card">
                       <img src="Training Page/Training Pge.svg3_Images/Training Pge.svg3_ImgID1.png" alt="Programme Image 3">
                       <div class="programme-card-body">
-                          <h5 class="programme-card-title">FACULTY DEVELOPMENT</h5>
+                          <h5 class="programme-card-title">FACULTY PROGRAMME</h5>
                           <p class="programme-card-text">Brief description of Programme 3.</p>
                           <button class="programme-card-button" onclick="window.location.href='faculty.html'">Learn More</button>
                       </div>
@@ -1758,7 +1356,7 @@
 <!-- Infinite Logo Slider Section -->
 <div class="logo-slider-section mt-5">
   <div class="container">
-    <h2 class="section-heading" style="color: #FFC700; padding-top: 10px; margin-top: 15px;">Our Partners</h2>
+    <h2 class="section-heading">Our Partners</h2>
     <div class="logo-slider">
       <div class="logo-slider-track">
         <div class="logo-slider-item"><img src="Clgimage/1-1.png" alt="College Logo"></div>
@@ -1781,10 +1379,11 @@
 
 
 
+
     <section class="review">
       <div id="Testimonials">
         <div class="titles">
-          <h3>Testimonials</h3>
+          <h3 >Testimonials</h3>
           <h3>This is why we do it!</h3>
         </div>
         <div class="review__marquee">
@@ -1929,7 +1528,7 @@
                   >
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="training copy.html">Training</a></li>
+                    <li><a href="training copy.html">Learning and Development</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                   </ul>
                 </div>
@@ -2007,7 +1606,170 @@
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'text-slide-2': 'text-slide-2 5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                        'text-slide-3': 'text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                        'text-slide-4': 'text-slide-4 10s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                        'text-slide-5': 'text-slide-5 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                        'text-slide-6': 'text-slide-6 15s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                        'text-slide-7': 'text-slide-7 17.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                        'text-slide-8': 'text-slide-8 20s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+                    },
+                    keyframes: {
+                        'text-slide-2': {
+                            '0%, 40%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '50%, 90%': {
+                                transform: 'translateY(-33.33%)',
+                            },
+                            '100%': {
+                                transform: 'translateY(-66.66%)',
+                            },
+                        },
+                        'text-slide-3': {
+                            '0%, 26.66%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '33.33%, 60%': {
+                                transform: 'translateY(-25%)',
+                            },
+                            '66.66%, 93.33%': {
+                                transform: 'translateY(-50%)',
+                            },
+                            '100%': {
+                                transform: 'translateY(-75%)',
+                            },
+                        },
+                        'text-slide-4': {
+                            '0%, 20%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '25%, 45%': {
+                                transform: 'translateY(-20%)',
+                            },
+                            '50%, 70%': {
+                                transform: 'translateY(-40%)',
+                            },
+                            '75%, 95%': {
+                                transform: 'translateY(-60%)',
+                            },                            
+                            '100%': {
+                                transform: 'translateY(-80%)',
+                            },
+                        },
+                        'text-slide-5': {
+                            '0%, 16%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '20%, 36%': {
+                                transform: 'translateY(-16.66%)',
+                            },
+                            '40%, 56%': {
+                                transform: 'translateY(-33.33%)',
+                            },
+                            '60%, 76%': {
+                                transform: 'translateY(-50%)',
+                            },
+                            '80%, 96%': {
+                                transform: 'translateY(-66.66%)',
+                            },
+                            '100%': {
+                                transform: 'translateY(-83.33%)',
+                            },
+                        },
+                        'text-slide-6': {
+                            '0%, 13.33%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '16.66%, 30%': {
+                                transform: 'translateY(-14.28%)',
+                            },
+                            '33.33%, 46.66%': {
+                                transform: 'translateY(-28.57%)',
+                            },
+                            '50%, 63.33%': {
+                                transform: 'translateY(-42.85%)',
+                            },
+                            '66.66%, 80%': {
+                                transform: 'translateY(-57.14%)',
+                            },
+                            '83.33%, 96.66%': {
+                                transform: 'translateY(-71.42%)',
+                            },
+                            '100%': {
+                                transform: 'translateY(-85.71%)',
+                            },
+                        },
+                        'text-slide-7': {
+                            '0%, 11.43%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '14.28%, 25.71%': {
+                                transform: 'translateY(-12.5%)',
+                            },
+                            '28.57%, 40%': {
+                                transform: 'translateY(-25%)',
+                            },
+                            '42.85%, 54.28%': {
+                                transform: 'translateY(-37.5%)',
+                            },
+                            '57.14%, 68.57%': {
+                                transform: 'translateY(-50%)',
+                            },
+                            '71.42%, 82.85%': {
+                                transform: 'translateY(-62.5%)',
+                            },
+                            '85.71%, 97.14%': {
+                                transform: 'translateY(-75%)',
+                            },
+                            '100%': {
+                                transform: 'translateY(-87.5%)',
+                            },
+                        },
+                        'text-slide-8': {
+                            '0%, 10%': {
+                                transform: 'translateY(0%)',
+                            },
+                            '12.5%, 22.5%': {
+                                transform: 'translateY(-11.11%)',
+                            },
+                            '25%, 35%': {
+                                transform: 'translateY(-22.22%)',
+                            },
+                            '37.5%, 47.5%': {
+                                transform: 'translateY(-33.33%)',
+                            },
+                            '50%, 60%': {
+                                transform: 'translateY(-44.44%)',
+                            },
+                            '62.5%, 72.5%': {
+                                transform: 'translateY(-55.55%)',
+                            },
+                            '75%, 85%': {
+                                transform: 'translateY(-66.66%)',
+                            },
+                            '87.5%, 97.5%': {
+                                transform: 'translateY(-77.77%)',
+                            },
+                            '100%': {
+                                transform: 'translateY(-88.88%)',
+                            },
+                        }
+                    },
+                },
+            },
+        };
+    </script>
     <script>
       document.querySelectorAll(".step").forEach((step, index) => {
         step.addEventListener("click", function () {

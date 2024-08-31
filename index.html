@@ -11,188 +11,192 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
     <style>
-      /* General reset */
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #091327;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-      }
-
-      /* Company Logo */
-      .company-logo-link {
-        position: fixed;
-        top: -35px;
-        left: 25px;
-        width: 150px;
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 11;
-        text-decoration: none; /* Remove underline from link */
-      }
-
-      .company-logo {
-        width: 100%;
-        height: 100%;
-        background: url("https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png")
-          no-repeat center center;
-        background-size: contain;
-      }
-
-/* Sticky Navbar */
-.top-navigation {
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  z-index: 10;
-  display: flex;
-  justify-content: center; /* Center the contents horizontally */
-  align-items: center;
+/* General reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #091327;
+  overflow-x: hidden;
 }
 
-/* Container for List Items */
+/* Top Navbar Container */
+.top-navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  padding: 0 15px;
+}
+
+/* Company Logo */
+.company-logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 100px;
+  height: 60px;
+}
+
+.company-logo {
+  width: 100%;
+  height: 100%;
+  background: url("https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png") no-repeat center center;
+  background-size: contain;
+}
+
+/* Navigation Items */
 .nav-items-container {
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
-.nav-items-container ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
+.stick-top-nav-ul {
+  list-style-type: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
-.nav-items-container li {
+.stick-top-nav-ul li {
   margin: 0 15px;
 }
 
-      .stick-top-nav-ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        position: relative;
-      }
+.stick-top-nav-ul li a {
+  text-decoration: none;
+  color: #d8d53f;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
 
-      .stick-top-nav-ul li {
-        position: relative;
-        margin-right: 20px;
-        flex: 1;
-        text-align: center;
-      }
+.stick-top-nav-ul li a:hover,
+.stick-top-nav-ul li.nav-active a {
+  opacity: 1;
+}
 
-      .stick-top-nav-ul li a {
-        text-decoration: none;
-        color: #d8d53f;
-        display: block;
-        padding: 10px 15px;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        opacity: 0.5; /* Slightly transparent initially */
-      }
+.stick-top-nav-ul li .line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
 
-      .stick-top-nav-ul li a:hover {
-        opacity: 1; /* Fully visible on hover */
-      }
+.stick-top-nav-ul li.nav-active .line {
+  width: 0;
+}
 
-      .stick-top-nav-ul li.nav-active a {
-        font-weight: bold;
-        opacity: 1; /* Fully visible for active section */
-      }
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-      .stick-top-nav-ul li .line {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: #fff;
-        transition: width 0.3s ease;
-        z-index: -1;
-      }
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 1px solid #ddd;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
 
-      .stick-top-nav-ul li.nav-active .line {
-        width: 0;
-      }
+/* Sidebar Close Button */
+.close-sidebar {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 20; /* Ensure it is above other content */
+}
 
-      /* Sidebar */
-      .sidebar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 300px;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        border-left: 1px solid #ddd;
-        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        padding-top: 60px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        transform: translateX(100%);
-      }
 
-      .sidebar.open {
-        transform: translateX(0);
-      }
+.sidebar.open {
+  transform: translateX(0);
+}
 
-      .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-      }
+/* Sidebar links */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-      .sidebar ul li {
-        margin: 20px 0;
-        position: relative; /* Necessary for positioning the sub-menu */
-      }
+.sidebar ul li {
+  margin: 20px 0;
+}
 
-      .sidebar ul li a {
-        text-decoration: none;
-        color: #000;
-        display: block;
-        padding: 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
 
-      .sidebar ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
+.sidebar ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-      /* Sub-Menu Styling */
-      .sidebar ul li ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 10px 0 0 20px;
-        display: none; /* Hidden by default */
-        flex-direction: column;
-      }
+/* Responsive design */
+@media (max-width: 767.98px) {
+  .top-navigation {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
 
-      .sidebar ul li:hover ul {
-        display: flex; /* Show sub-menu on hover */
-      }
+  .nav-items-container {
+    display: none; /* Hide the nav items on smaller screens */
+  }
+}
 
-      .sidebar ul li ul li {
-        margin: 10px 0; /* Space between sub-menu items */
-      }
-
-      .sidebar ul li ul li a {
-        font-size: 14px; /* Smaller font for sub-menu items */
-        padding-left: 15px; /* Indentation for sub-menu items */
-      }
 
       /* Section Styling */
       .section {
@@ -296,40 +300,7 @@
         background-image: url("./image/Landing-Pages-5.png");
       }
 
-      /* Sidebar Toggle Button */
-      .sidebar-toggle {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 11;
-      }
-
-      /* Company Logo */
-
-
-      /* Disable scrolling */
-      .no-scroll {
-        overflow: hidden;
-      }
-      /* Hide the top sticky navbar on devices smaller than medium size */
-@media (max-width: 767.98px) {
-  .top-navigation {
-    display: none;
-  }
-}
-
-
+  
                     /* Footer section start */
                     #footer {
             background: #000000;
@@ -558,85 +529,71 @@
     </style>
   </head>
   <body>
-   <!-- Top Navbar -->
-  <div class="top-navigation">
-    <div class="nav-items-container">
-      <ul class="stick-top-nav-ul">
-        <li class="nav-active">
-          <a href="#hero_slider"><span>Home</span></a>
-          <div class="line"></div>
-        </li>
-        <li>
-          <a href="#core_capabilities"><span>About Us</span></a>
-          <div class="line"></div>
-        </li>
-        <li>
-          <a href="#operating_models"><span>Training</span></a>
-          <div class="line"></div>
-        </li>
-        <li>
-          <a href="#talent_transformations"><span>Placement</span></a>
-          <div class="line"></div>
-        </li>
-        <li>
-          <a href="#do_more"><span>Brand Positioning</span></a>
-          <div class="line"></div>
-        </li>
-      </ul>
-    </div>
+ <!-- Top Navbar with Logo, Nav Links, and Sidebar Toggle -->
+ <div class="top-navigation">
+  <a href="about-us.html" class="company-logo-link">
+    <div class="company-logo"></div>
+  </a>
+
+  <div class="nav-items-container">
+    <ul class="stick-top-nav-ul">
+      <li class="nav-active">
+        <a href="#hero_slider"><span>Home</span></a>
+        <div class="line"></div>
+      </li>
+      <li>
+        <a href="#core_capabilities"><span>About Us</span></a>
+        <div class="line"></div>
+      </li>
+      <li>
+        <a href="#operating_models"><span>Learning and Development</span></a>
+        <div class="line"></div>
+      </li>
+      <li>
+        <a href="#talent_transformations"><span>Placement</span></a>
+        <div class="line"></div>
+      </li>
+      <li>
+        <a href="#do_more"><span>Brand Positioning</span></a>
+        <div class="line"></div>
+      </li>
+    </ul>
   </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
+  <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <button class="close-sidebar" id="close-sidebar">×</button>
+  <ul>
+    <li><a href="gax-copy.html"><span>GAX</span></a></li>
+    <li><a href="training copy.html"><span>Learning and Development</span></a>
       <ul>
-        <li>
-          <a href="gax-copy.html"><span>GAX</span></a>
-        </li>
-        <li>
-          <a href="training copy.html"><span>Training</span></a>
-          <!-- Sub-menu for Training -->
-          <ul>
-            <li>
-              <a href="college-training.html"><span>College Training</span></a>
-            </li>
-            <li>
-              <a href="corporate.html"><span>Corporate Training</span></a>
-            </li>
-            <li>
-              <a href="faculty.html"><span>Faculty</span></a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="BLOG.html"><span>Blogs</span></a>
-        </li>
-        <li>
-          <a href="contact.html"><span>Contact us</span></a>
-        </li>
+        <li><a href="college-training.html"><span>College Training</span></a></li>
+        <li><a href="corporate.html"><span>Corporate Training</span></a></li>
+        <li><a href="faculty.html"><span>Faculty Development Programme</span></a></li>
       </ul>
-    </div>
-
-    <!-- Sidebar Toggle Button -->
-    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
-
-    <!-- Company Logo -->
-    <a href="about-us.html" class="company-logo-link">
-      <div class="company-logo"></div>
-    </a>
+    </li>
+    <li><a href="BLOG.html"><span>Blogs</span></a></li>
+    <li><a href="contact.html"><span>Contact us</span></a></li>
+  </ul>
+</div>
 
     <!-- Sections -->
     <div id="hero_slider" class="section hero-slider-section">
       <div class="section-content left">
-        <h2 style="font-size: 2.7rem; color: #ffc700">Gryphon Academy</h2>
+        <h2 style="font-size: 2.2rem; color: #ffc700">Welcome to Gryphon Academy!  </h2>
         <p>Where our approach is to make students industry ready with our curated Industry Specific Training programmes which make them competitive in the job market. </p>
-        <p>Your pathway to the top companies starts from here>>>></p>
-        <a href="contact.html" class="btn-know-more">Know More</a>
+    
+        <a href="contact.html" class="btn-know-more">Connect Now</a>
+          
+        
       </div>
     </div>
     <div id="core_capabilities" class="section core-capabilities-section">
       <div class="section-content right">
         <h2>About Us</h2>
-<h4>Bring Industry Expertise Directly to your Campus </h4>
         <p>
           As India's premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. We provide customized training solutions as per the Industry-centric needs which helps your academic institution facilitate smooth transition into the industry with ease. 
           
@@ -646,7 +603,7 @@
     </div>
     <div id="operating_models" class="section operating-models-section">
       <div class="section-content left">
-        <h2>Training</h2>
+        <h2>Learning and Development</h2>
         <p>
           Gryphon Academy empowers students, professionals, and educators
           through customized training programs. Our trainings being traditional,
@@ -673,7 +630,7 @@
     </div>
     <div id="do_more" class="section do-more-section">
       <div class="section-content left">
-        <h2>Cross Brand Positioning</h2>
+        <h2>Brand Positioning</h2>
         <p>
           Gryphon Academy empowers students, professionals, and educators
           through customized training programs. Our trainings being traditional,
@@ -704,7 +661,7 @@
                                   <ul class="use-links animate__animated animate__fadeIn animate__delay-2s">
                                       <li><a href="index.html">Home</a></li>
                                       <li><a href="about-us.html">About Us</a></li>
-                                      <li><a href="training copy.html">Training</a></li>
+                                      <li><a href="training copy.html">Learning and Development</a></li>
                                       <li><a href="contact.html">Contact Us</a></li>
                                   </ul>
                               </div>
@@ -771,44 +728,31 @@
       src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js";
 
       document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".section");
-    const navLinks = document.querySelectorAll(".stick-top-nav-ul li");
-    const sidebar = document.getElementById("sidebar");
-    const sidebarToggle = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const closeSidebar = document.getElementById("close-sidebar");
 
-    function activateNavLink() {
-      let index = sections.length;
-      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-      navLinks.forEach((link) => link.classList.remove("nav-active"));
-      navLinks[index].classList.add("nav-active");
-    }
-
-    activateNavLink();
-    window.addEventListener("scroll", activateNavLink);
-
-    // Toggle sidebar
-    sidebarToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
-      document.body.classList.toggle("no-scroll");
-    });
-
-    // Close sidebar when clicking on a link
-    const sidebarLinks = sidebar.querySelectorAll("a");
-    sidebarLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-        document.body.classList.remove("no-scroll");
-      });
-    });
-
-    // Close sidebar when clicking outside
-    document.addEventListener("click", (event) => {
-      if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-        sidebar.classList.remove("open");
-        document.body.classList.remove("no-scroll");
-      }
-    });
+  // Toggle sidebar
+  sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    document.body.classList.toggle("no-scroll");
   });
+
+  // Close sidebar when clicking on the close button
+  closeSidebar.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  });
+
+  // Close sidebar when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+      sidebar.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+    }
+  });
+});
+
 
   new WOW().init();
     </script>
