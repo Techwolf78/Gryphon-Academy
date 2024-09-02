@@ -214,23 +214,23 @@ html {
       }
 
       /* Unique Section Styles */
-      .hero-slider-section {
+      .home-section {
         background-image: url("./image/Landing-Pages-1.png");
       }
 
-      .core-capabilities-section {
+      .about-us-section {
         background-image: url("./image/Landing-Pages-2.png");
       }
 
-      .operating-models-section {
+      .learning-section {
         background-image: url("./image/Landing-Pages-3.png");
       }
 
-      .talent-transformations-section {
+      .placement-section {
         background-image: url("./image/Landing-Pages-4.png");
       }
 
-      .do-more-section {
+      .brand-positioning-section {
         background-image: url("./image/Landing-Pages-5.png");
       }
 
@@ -284,21 +284,58 @@ html {
         color: #fefefe;
       }
 
-      #hero_slider {
+      #home {
         background-image: url("./image/Landing-Pages-1.png");
       }
-      #core_capabilities {
+      #about_us {
         background-image: url("./image/Landing-Pages-2.png");
       }
-      #operating_models {
+      #learning_development {
         background-image: url("./image/Landing-Pages-3.png");
       }
-      #talent_transformations {
+      #placement {
         background-image: url("./image/Landing-Pages-4.png");
       }
-      #do_more {
+      #brand_positioning {
         background-image: url("./image/Landing-Pages-5.png");
       }
+
+      /* Adjust styles for hover effect and active state */
+.stick-top-nav-ul li a {
+  text-decoration: none;
+  color: #d8d53f;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+  position: relative;
+}
+
+/* Active and hover state */
+.stick-top-nav-ul li a:hover,
+.stick-top-nav-ul li.nav-active a {
+  opacity: 1;
+}
+
+/* Animated underline */
+.stick-top-nav-ul li .line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #d8d53f;
+  transform: scaleX(0); /* Start with line hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* On hover or active, line expands */
+.stick-top-nav-ul li a:hover .line,
+.stick-top-nav-ul li.nav-active .line {
+  transform: scaleX(1); /* Expand line */
+}
 
   
                     /* Footer section start */
@@ -538,23 +575,23 @@ html {
   <div class="nav-items-container">
     <ul class="stick-top-nav-ul">
       <li class="nav-active">
-        <a href="#hero_slider"><span>Home</span></a>
+        <a href="#home"><span>Home</span></a>
         <div class="line"></div>
       </li>
       <li>
-        <a href="#core_capabilities"><span>About Us</span></a>
+        <a href="#about_us"><span>About Us</span></a>
         <div class="line"></div>
       </li>
       <li>
-        <a href="#operating_models"><span>Learning and Development</span></a>
+        <a href="#learning_development"><span>Learning and Development</span></a>
         <div class="line"></div>
       </li>
       <li>
-        <a href="#talent_transformations"><span>Placement</span></a>
+        <a href="#placement"><span>Placement</span></a>
         <div class="line"></div>
       </li>
       <li>
-        <a href="#do_more"><span>Brand Positioning</span></a>
+        <a href="#brand_positioning"><span>Brand Positioning</span></a>
         <div class="line"></div>
       </li>
     </ul>
@@ -581,7 +618,7 @@ html {
 </div>
 
     <!-- Sections -->
-    <div id="hero_slider" class="section hero-slider-section">
+    <div id="home" class="section home-section">
       <div class="section-content left">
         <h2 style="font-size: 2.2rem; color: #ffc700">Welcome to Gryphon Academy!  </h2>
         <p>Where our approach is to make students industry ready with our curated Industry Specific Training programmes which make them competitive in the job market. </p>
@@ -591,7 +628,7 @@ html {
         
       </div>
     </div>
-    <div id="core_capabilities" class="section core-capabilities-section">
+    <div id="about_us" class="section about-us-section">
       <div class="section-content right">
         <h2>About Us</h2>
         <p>
@@ -601,7 +638,7 @@ html {
         <a href="about-us.html" class="btn-know-more">Know More</a>
       </div>
     </div>
-    <div id="operating_models" class="section operating-models-section">
+    <div id="learning_development" class="section learning-section">
       <div class="section-content left">
         <h2>Learning and Development</h2>
         <p>
@@ -615,8 +652,8 @@ html {
       </div>
     </div>
     <div
-      id="talent_transformations"
-      class="section talent-transformations-section"
+      id="placement"
+      class="section placement-section"
     >
       <div class="section-content right">
         <h2>Placement</h2>
@@ -628,7 +665,7 @@ html {
         <a href="placement-final-copy.html" class="btn-know-more">Know More</a>
       </div>
     </div>
-    <div id="do_more" class="section do-more-section">
+    <div id="brand_positioning" class="section brand-positioning-section">
       <div class="section-content left">
         <h2>Brand Positioning</h2>
         <p>
@@ -726,35 +763,62 @@ html {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       src = "https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js";
-
+    
       document.addEventListener("DOMContentLoaded", () => {
-  const sidebar = document.getElementById("sidebar");
-  const sidebarToggle = document.getElementById("sidebar-toggle");
-  const closeSidebar = document.getElementById("close-sidebar");
-
-  // Toggle sidebar
-  sidebarToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    document.body.classList.toggle("no-scroll");
-  });
-
-  // Close sidebar when clicking on the close button
-  closeSidebar.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-    document.body.classList.remove("no-scroll");
-  });
-
-  // Close sidebar when clicking outside
-  document.addEventListener("click", (event) => {
-    if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
-      sidebar.classList.remove("open");
-      document.body.classList.remove("no-scroll");
-    }
-  });
-});
-
-
-  new WOW().init();
+        const sidebar = document.getElementById("sidebar");
+        const sidebarToggle = document.getElementById("sidebar-toggle");
+        const closeSidebar = document.getElementById("close-sidebar");
+    
+        // Toggle sidebar
+        sidebarToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          document.body.classList.toggle("no-scroll");
+        });
+    
+        // Close sidebar when clicking on the close button
+        closeSidebar.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          document.body.classList.remove("no-scroll");
+        });
+    
+        // Close sidebar when clicking outside
+        document.addEventListener("click", (event) => {
+          if (
+            !sidebar.contains(event.target) &&
+            !sidebarToggle.contains(event.target)
+          ) {
+            sidebar.classList.remove("open");
+            document.body.classList.remove("no-scroll");
+          }
+        });
+    
+        // Scroll highlight logic for navbar
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll(".stick-top-nav-ul li");
+    
+        window.addEventListener("scroll", () => {
+          let current = "";
+    
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+              current = section.getAttribute("id");
+            }
+          });
+    
+          navLi.forEach((li) => {
+            li.classList.remove("nav-active");
+            if (li.querySelector("a").getAttribute("href").includes(current)) {
+              li.classList.add("nav-active");
+            }
+          });
+        });
+    
+        // Initialize WOW.js for animations
+        new WOW().init();
+      });
     </script>
+    
   </body>
 </html>

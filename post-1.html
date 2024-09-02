@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post 1</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+        
+        /* Navbar CSS starts */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #091327;
+        color: #fff;
+        position: relative;
+      }
+
+      .navbar-brand img {
+        width: 100%;
+        max-width: 180px;
+        height: auto;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar a {
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .navbar a:hover,
+      .navbar a.active {
+        background-color: #ffc700;
+        border-radius: 5px;
+        color: #091327;
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropbtn {
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      /* For dropdown items */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #091327;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .toggle-Button {
+        display: none;
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #091327;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      /* Sidebar structure */
+      .sidebar .dropdown-content {
+        display: block; /* Ensure dropdown content is always visible */
+        position: relative;
+        background-color: #091327;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar .dropdown-content li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 32px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .sidebar .dropdown-content a:hover {
+        background-color: #ffc700;
+        color: #091327;
+      }
+
+      /* Media query for mobile view */
+      @media screen and (max-width: 768px) {
+        .sidebar .dropdown-content {
+          display: block;
+        }
+
+        .sidebar .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .sidebar .dropdown-content a {
+          padding: 12px 32px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .navbar {
+          display: none;
+        }
+
+        .toggle-Button {
+          display: block;
+          cursor: pointer;
+        }
+
+        .dropdown-content {
+          position: relative;
+        }
+
+        .sidebar {
+          padding-top: 15px;
+        }
+
+        .sidebar a {
+          font-size: 18px;
+        }
+      }
+      /* Navbar CSS ends */
+
+      /* footer */
+      /* Footer section start */
+      #footer {
+        background: #000000;
+        padding: 3rem 1.5rem;
+        color: #e3e3e3;
+      }
+    
+      .useful-link,
+      .social-links,
+      .address {
+        margin: 1rem;
+        flex: 1;
+        text-align: center;
+      }
+    
+      #footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    
+      #footer .row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      /* Ensure sections stack vertically and are centered on small screens */
+      .useful-link,
+      .social-links,
+      .address,
+      .logo-container {
+        text-align: center;
+      }
+    
+      .useful-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      /* Consistent font size for all headings in the footer */
+      #footer h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fefefe;
+        margin-bottom: 1rem;
+      }
+    
+      .useful-link ul {
+        font-size: 0.875rem;
+        color: #b3b2b2;
+        line-height: 1.5;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+    
+      .useful-link li {
+        margin-bottom: 0.5rem;
+      }
+    
+      /* Styling for useful links */
+      .use-links a {
+        color: #b3b2b2;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+      }
+    
+      .use-links a:hover {
+        color: #fdd700;
+      }
+    
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    
+      .social-icons a {
+        color: #b3b2b2;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+      }
+    
+      .social-icons a:hover {
+        color: #fdd700;
+      }
+    
+      .social-icons i {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    
+      .copy-right-sec {
+        padding: 1rem;
+        background: #000000;
+        color: #fff;
+        text-align: center;
+      }
+    
+      .copy-right-sec a {
+        color: #fdd700;
+        font-weight: 500;
+      }
+    
+      /* Responsive design for footer */
+      @media screen and (max-width: 768px) {
+        #footer .container {
+          flex-direction: column;
+          align-items: center;
+        }
+    
+        .logo-container {
+          margin-bottom: 2rem; /* Space between logo and other sections */
+        }
+    
+        .useful-link,
+        .social-links,
+        .address {
+          margin: 1rem 0;
+          text-align: center;
+        }
+    
+        .use-links,
+        .social-icons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+    
+        .use-links li,
+        .social-icons a {
+          margin-bottom: 0.5rem;
+        }
+      }
+    
+      /* Logo styling */
+      .logo-footer {
+        max-width: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 15px;
+      }
+    
+      .logo-footer:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+      }
+    
+      /* Ensure container around the logo is properly spaced */
+      .logo-container {
+        margin-right: 2rem;
+      }
+    
+      .address-links a:hover {
+        color: #ffc700; /* Text color turns yellow */
+      }
+    
+      /* Add space between the box icons and text in the 'Contact Us' list items */
+      .address-links li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+    
+      .address-links i {
+        margin-right: 10px; /* Adjust this value to add space between the icon and the text */
+        font-size: 1.2rem; /* Adjust icon size if needed */
+      }
+      
+/* Target all icons in the footer */
+#footer .social-icons i {
+  color: #ff69b4; /* Pink color */
+}
+
+/* Ensure icon color changes on hover */
+#footer .social-icons a:hover i {
+  color: #ff1493; /* Darker pink color on hover for better visibility */
+}
+
+/* Target icons in the Contact Us section */
+#footer .address-links i {
+  color: #ff69b4; /* Pink color for icons */
+}
+
+/* Ensure icon color changes on hover */
+#footer .address-links a:hover i {
+  color: #ff1493; /* Darker pink color on hover */
+}
+/* Ensure phone numbers stay on the same line */
+#footer .address-links li a
+ {
+  white-space: nowrap; /* Prevent phone numbers and email from wrapping */
+}
+
+
+#footer .address-links a {
+  align-items: center; /* Align items vertically */
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+      /* Footer section end */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed tracking-wide flex flex-col">
+
+<!-- Header Section Start -->
+<header class="header">
+    <a class="navbar-brand" href="about-us.html">
+      <img
+        src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+        alt="logo2"
+        class="logo"
+      />
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn"
+          >TRAINING
+          <i class="bx bx-chevron-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="college-training.html">College Training</a>
+          <a href="corporate.html">Corporate Training</a>
+          <a href="faculty.html">Faculty</a>
+        </div>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </nav>
+
+    <div class="toggle-Button">
+      <span class="openbtn" onclick="toggleNav()">☰</span>
+    </div>
+
+    <!-- Sidebar structure in the mobile view -->
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="training copy.html" class="dropbtn">TRAINING</a>
+        <!-- Sub-menu items are always visible on mobile -->
+        <ul class="dropdown-content">
+          <li><a href="college-training.html">College Training</a></li>
+          <li><a href="corporate.html">Corporate Training</a></li>
+          <li><a href="faculty.html">Faculty</a></li>
+        </ul>
+      </div>
+      <a href="placement-final-copy.html">PLACEMENT</a>
+      <a href="digitalcopy.html">DIGITAL MARKETING</a>
+      <a href="gax-copy.html">GAX</a>
+      <a href="BLOG.html">BLOG</a>
+    </div>
+  </header>
+
+  <!-- Header Section End -->
+
+   <!-- Blog Content -->
+<main class="container mx-auto px-4 py-8" style="background-image: url('./image/nature-1.jpg'); background-size: cover;">
+    <article class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg backdrop-filter backdrop-brightness-90">
+      <!-- Blog Image -->
+      <img src="./image/nature-1.jpg" alt="Blog Image" class="w-full h-auto rounded-lg mb-6 animate__animated animate__fadeIn" />
+  
+      <!-- Blog Title -->
+      <h1 class="text-3xl font-bold mb-4 text-gray-800 animate__animated animate__fadeInUp">Your Blog Title Here</h1>
+  
+      <!-- Blog Meta Info -->
+      <div class="flex items-center space-x-4 mb-6 text-gray-500 text-sm animate__animated animate__fadeInUp">
+        <span>By <a href="https://in.linkedin.com/" class="text-blue-600 hover:underline">Author Name</a></span>
+        <span>|</span>
+        <span>Published on <time datetime="2024-09-02">September 2, 2024</time></span>
+      </div>
+  
+      <!-- Blog Content Paragraphs -->
+      <div class="space-y-6 text-gray-700 leading-relaxed animate__animated animate__fadeInUp">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis orci et libero gravida, ut interdum nisl tincidunt. Phasellus nec turpis nec lacus dictum euismod. Cras vitae velit sit amet velit dictum malesuada.</p>
+        <p>Vivamus blandit libero vitae libero hendrerit, at egestas dui aliquet. Duis interdum erat et justo venenatis, nec aliquet nulla interdum. Ut sit amet est sapien. Suspendisse potenti. In hac habitasse platea dictumst.</p>
+        <p>Mauris eu urna nec felis ullamcorper volutpat vel ac libero. Phasellus pharetra, ipsum ac ultricies auctor, libero libero suscipit orci, nec consequat nulla erat in arcu. Aliquam erat volutpat.</p>
+      </div>
+    </article>
+  </main>
+  
+
+ <!-- Footer Section Start -->
+ <section class="footer">
+    <footer>
+      <section id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="logo-container">
+              <a href="about-us.html">
+                <img
+                  src="image/GAXLOGO.png"
+                  alt=""
+                  class="img-fluid logo-footer animate__animated animate__fadeIn"
+                />
+              </a>
+            </div>
+  
+            <div class="col-md-3">
+              <div
+                class="useful-link animate__animated animate__fadeIn animate__delay-1s"
+              >
+                <h2>Useful Links</h2>
+                <ul
+                  class="use-links animate__animated animate__fadeIn animate__delay-2s"
+                >
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a href="training copy.html">Training</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="social-links animate__animated animate__fadeIn animate__delay-3s"
+              >
+                <h2>Follow Us</h2>
+                <div
+                  class="social-icons animate__animated animate__fadeIn animate__delay-4s"
+                >
+                  <a href="https://www.facebook.com/gryphonnacademy/"
+                    ><i class="bx bxl-facebook"></i>Facebook</a
+                  >
+                  <a href="https://www.linkedin.com/company/gryphonacademy/"
+                    ><i class="bx bxl-linkedin"></i>LinkedIn</a
+                  >
+                  <a href="https://www.instagram.com/gryphon_academy/"
+                    ><i class="bx bxl-instagram"></i>Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div
+                class="address animate__animated animate__fadeIn animate__delay-5s"
+              >
+                <h2>Contact Us</h2>
+                <ul
+                  class="address-links animate__animated animate__fadeIn animate__delay-6s"
+                >
+                  <li>
+                    <a
+                      href="https://maps.app.goo.gl/ftpdk38mzttVv9Kv8"
+                      target="_blank"
+                    >
+                      <i class="bx bx-map"></i>Seasons Business Square<br/>  by
+                        Naiknavare Office no 301,<br/>3rd floor, Seasons Rd, Sanewadi,<br/>Aundh, Pune, Maharashtra 411007
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="tel:+918983614509"
+                      class="address-link animate__animated animate__bounce"
+                    >
+                      <i id="footer-tele" class="bx bx-phone"></i>+91 89836 14509 / 8983339099
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:gryphonx@gryphonacademy.co.in"
+                      class="address-link"
+                    >
+                      <i  class="bx bx-envelope"></i
+                      >gryphonx@gryphonacademy.co.in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <div  class="copy-right-sec">
+        <p>&copy; 2024 Gryphon Academy.Pvt.Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+  
+    <!-- footer section end -->
+
+    <!-- WOW.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+
+// Function to toggle sidebar
+function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+          sidebar.style.width = "0";
+        } else {
+          sidebar.style.width = "250px";
+        }
+      }
+
+      // Function to close sidebar with the close button
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+
+        new WOW().init();
+    </script>
+</body>
+</html>

@@ -203,80 +203,15 @@
       /* Navbar CSS ends */
 
 
-    .content {
-      transition: margin-right .5s;
-      padding: 16px;
-    }
+   /* Blog page content css start */
+   .transition-transform {
+            transition: transform 0.3s;
+        }
+        .transition-shadow {
+            transition: box-shadow 0.3s;
+        }
 
-    .dropbtn {
-      background: #091327;
-      color: #fff;
-      border: none;
-    }
-
-    .blog-section {
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .blog-section h2 {
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-
-    .main-blog-card,
-    .blog-card {
-      background-color: #2c2c2c;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .main-blog-card:hover,
-    .blog-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .main-blog-card img,
-    .blog-card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .main-blog-card-content,
-    .blog-card-content {
-      padding: 20px;
-    }
-
-    .main-blog-card-content h3,
-    .blog-card-content h3 {
-      font-size: 1.2em;
-      margin: 0;
-    }
-
-    .main-blog-card-content p,
-    .blog-card-content p {
-      font-size: 1em;
-      color: #b0b0b0;
-    }
-
-    .main-blog-card-content a,
-    .blog-card-content a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #ff4081;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .main-blog-card-content a:hover,
-    .blog-card-content a:hover {
-      background-color: #e3396f;
-    }
+   /* Blog page content css end */
 
   /* footer */
       /* Footer section start */
@@ -554,86 +489,98 @@
 
   <!-- Header Section End -->
 
-  <!-- Blog Section -->
-  <section class="blog-section">
-    <div class="container">
-      <h2>Latest Blog Posts</h2>
-      <div class="row g-4">
-        <div class="col-12">
-          <div class="main-blog-card" onclick="location.href='';">
-            <img src="./image/forest-2.png" alt="Main Blog" height="100px" width="100%">
-            <div class="main-blog-card-content">
-              <h3>It takes a planet to explore the universe.</h3>
-              <p>80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.</p>
-              <a href="">Continue Reading →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="blog-card" onclick="location.href='';">
-            <img src="./image/forest.png" alt="Blog 1" height="100px" width="100%">
-            <div class="blog-card-content">
-              <h3>I would like to die on Mars. Just not on impact.</h3>
-              <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
-              <a href="">Continue Reading →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="blog-card" onclick="location.href='';">
-            <img src="./image/forest.png" alt="Blog 1">
-            <div class="blog-card-content">
-              <h3>I would like to die on Mars. Just not on impact.</h3>
-              <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
-              <a href="">Continue Reading →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="blog-card" onclick="location.href='';">
-            <img src="./image/forest.png" alt="Blog 1">
-            <div class="blog-card-content">
-              <h3>I would like to die on Mars. Just not on impact.</h3>
-              <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
-              <a href="">Continue Reading →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="blog-card" onclick="location.href='';">
-            <img src="./image/forest.png" alt="Blog 1">
-            <div class="blog-card-content">
-              <h3>I would like to die on Mars. Just not on impact.</h3>
-              <p>Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
-              <a href="">Continue Reading →</a>
-            </div>
-          </div>
-        </div>
+ <!-- Blog Section -->
+ <section class="py-20 text-center bg-gray-900">
+  <div class="container mx-auto px-4">
+      <h2 class="text-white mb-10 text-3xl">Latest Blog Posts</h2>
+      <div class="flex flex-wrap gap-4">
+          <!-- Main Blog Card -->
+          <div class="w-full mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest-2.png" alt="Main Blog" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">It takes a planet to explore the universe.</h3>
+                      <p class="text-gray-400 mb-3">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.</p>
+                      <a href="post-1.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
 
-        <div class="col-md-4">
-          <div class="blog-card" onclick="location.href='';">
-            <img src="./image/forest.png" alt="Blog 2">
-            <div class="blog-card-content">
-              <h3>Life is too short for long-term grudges.</h3>
-              <p>Discover how to let go and move forward, because life is too precious to be wasted on negativity.</p>
-              <a href="">Continue Reading →</a>
-            </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="blog-card" onclick="location.href='';">
-            <img src="./image/forest.png" alt="Blog 3">
-            <div class="blog-card-content">
-              <h3>Don't go through life, grow through life.</h3>
-              <p>Explore ways to grow and evolve through every experience life throws at you.</p>
-              <a href="">Continue Reading →</a>
-            </div>
+          <!-- Blog Cards -->
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 1" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">I would like to die on Mars. Just not on impact.</h3>
+                      <p class="text-gray-400 mb-3">Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
           </div>
-        </div>
+          <!-- Repeat for other blog cards -->
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 1" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">I would like to die on Mars. Just not on impact.</h3>
+                      <p class="text-gray-400 mb-3">Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 1" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">I would like to die on Mars. Just not on impact.</h3>
+                      <p class="text-gray-400 mb-3">Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 1" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">I would like to die on Mars. Just not on impact.</h3>
+                      <p class="text-gray-400 mb-3">Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 1" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">I would like to die on Mars. Just not on impact.</h3>
+                      <p class="text-gray-400 mb-3">Join us on a journey to the red planet, where the possibilities are endless and the risks are high.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 2" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">Life is too short for long-term grudges.</h3>
+                      <p class="text-gray-400 mb-3">Discover how to let go and move forward, because life is too precious to be wasted on negativity.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
+          </div>
+          <div class="w-full md:w-1/3 mb-4">
+              <div class="bg-gray-800 rounded-lg overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-lg cursor-pointer" onclick="location.href='';">
+                  <img src="./image/forest.png" alt="Blog 3" class="w-full h-64 object-cover">
+                  <div class="p-5">
+                      <h3 class="text-white text-xl mb-2">Don't go through life, grow through life.</h3>
+                      <p class="text-gray-400 mb-3">Explore ways to grow and evolve through every experience life throws at you.</p>
+                      <a href="post-2.html" class="inline-block px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600">Continue Reading →</a>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-
-  </section>
+  </div>
+</section>
 
    <!-- Footer Section Start -->
  <section class="footer">
