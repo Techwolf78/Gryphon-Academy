@@ -1,67 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        .video-container {
-            width: calc(100% - 20px); /* Full width minus padding */
-            height: calc(100vh - 20px); /* Full height minus padding */
-            overflow: hidden;
-            position: relative;
-            background-color: #000;
-            margin: 10px; /* Add margin around the container */
-            box-sizing: border-box; /* Ensure padding is included in width/height calculations */
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-container::after {
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 1em;
-            text-align: center;
-            font-size: 1em;
-        }
-
-        #video-heading {
-            text-align: center;
-            margin: 2em 0; /* Adjust margin as needed */
-            font-size: 2em;
-            color: #333; /* Adjust color as needed */
-        }
-
-        #video-section {
-            padding: 0; /* Remove any padding if necessary */
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <section id="video-section">
-        <h1 id="video-heading">Welcome to Our Video Section</h1>
-    </section>
-    <section>
-        <div class="video-container">
-            <video loop autoplay muted>
-                <source src="IMG_5815.MOV" type="video/quicktime"> <!-- Ensure the path is correct -->
-                <source src="IMG_5815.mp4" type="video/mp4"> <!-- Fallback option -->
-            </video>
+    <!-- About Training Section Start -->
+    <section class="about-training-section py-5 bg-[#091327]">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Container -->
+                <div class="md:w-1/2 text-left p-4">
+                    <h2 class="text-[#ffc700] text-2xl md:text-3xl font-semibold mb-4">About Our College Training Program</h2>
+                    <p class="text-white text-lg">
+                        Our college training program is meticulously designed to bridge the gap between academic learning
+                        and industry requirements. We provide comprehensive mentorship and hands-on experience to ensure
+                        that students are not only prepared for their job interviews but also excel in their careers. Our
+                        expert trainers, innovative training methods, and industry connections make us a leading choice
+                        for students looking to achieve corporate readiness.
+                    </p>
+                </div>
+                <!-- Image Container -->
+                <div class="md:w-1/2 flex justify-center p-4 mt-6 md:mt-0">
+                    <img src="/image/clg-crop.png" alt="Placeholder" class="max-w-full h-auto">
+                </div>
+            </div>
         </div>
     </section>
+    <!-- About Training Section Ends -->
 </body>
+
 </html>

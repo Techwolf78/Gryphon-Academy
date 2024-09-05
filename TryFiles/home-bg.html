@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+        body {
+            font-family: 'Exo', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .area {
+            position: fixed;
+            background: #c9befd;
+            background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(43, 122, 241, 0.846);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+
+        .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+        .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+        .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+        .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+        .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+        .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+        .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+        .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+        .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+        .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+        @keyframes animate {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <!-- Navbar -->
+        <nav class="absolute top-0 left-0 right-0 bg-transparent text-black py-4">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <!-- Image logo -->
+                <a href="#">
+                    <img src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png" alt="Gryphon Academy Logo" class="h-16 w-auto">
+                </a>
+                <ul class="flex space-x-4 md:space-x-8">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">About</a></li>
+                    <li><a href="#" class="hover:text-gray-300">GAX</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Blogs</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container mx-auto px-4 py-24">
+            <!-- Header Section -->
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-black">Welcome to Gryphon Academy</h1>
+                <p class="mt-4 text-lg text-gray-700">Let's make your dreams come true. We're here to help you achieve your goals.</p>
+            </div>
+
+            <!-- Icons and CTA Section -->
+            <div class="flex flex-wrap justify-center mt-12 space-x-4 space-y-4">
+                <!-- Megaphone Icon -->
+                <div class="bg-purple-200 rounded-lg p-6 flex flex-col items-center h-[260px] w-[260px]">
+                    <img src="./GettyImages-1387685447-shadow.webp" alt="Megaphone Icon" class="w-20 h-20 mb-2">
+                    <p class="text-lg font-semibold text-black text-center">Learning And Development</p>
+                    <a href="#" class="mt-2 text-purple-600 font-bold flex items-center space-x-2 hover:text-purple-800">
+                        <span>Know More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Center Shape and CTA stacked vertically in the middle -->
+                <div class="flex flex-col items-center space-y-4">
+                    <!-- Center Shape -->
+                    <div class="bg-blue-200 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative">
+                        <img src="./GettyImages-1341057712.webp" alt="Center Shape" class="w-full h-full object-cover rounded-lg">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                            <h3 class="text-xl font-bold text-black mb-2">Placement</h3>
+                            <a href="#" class="text-purple-200 font-bold flex items-center space-x-2 hover:text-purple-800">
+                                <span>Know More</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- CTA Section -->
+                    <div class="flex flex-col items-center bg-yellow-300 p-4 rounded-lg shadow-lg">
+                        <h2 class="text-xl font-bold text-black mb-2">Get Your Dream Job Now</h2>
+                        <a href="#" class="bg-black text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-gradient-to-b from-purple-500 to-purple-600 transition-all duration-300">
+                            <span>Let's Talk</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Award Icon -->
+                <div class="bg-purple-200 rounded-lg p-6 flex flex-col items-center h-[260px] w-[260px]">
+                    <img src="./GettyImages-1404633864-Converted.webp" alt="Award Icon" class="w-20 h-20 mb-2">
+                    <p class="text-lg font-semibold text-black">Brand Positioning</p>
+                    <a href="#" class="mt-2 text-purple-600 font-bold flex items-center space-x-2 hover:text-purple-800">
+                        <span>Know More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="flex flex-wrap justify-center mt-12 space-x-4 md:space-x-16 space-y-8">
+                <!-- First Statistic -->
+                <div class="text-center">
+                    <div class="text-green-500 mb-2">
+                        <i class="fas fa-graduation-cap fa-3x"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-black mt-7">60,000+</h2>
+                    <p class="mt-2 text-gray-700">Students Trained</p>
+                </div>
+                
+                <!-- Second Statistic -->
+                <div class="text-center">
+                    <div class="text-blue-500 mb-2">
+                        <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-black mt-7">200+</h2>
+                    <p class="mt-2 text-gray-700">Certified Instructors</p>
+                </div>
+
+                <!-- Third Statistic -->
+                <div class="text-center">
+                    <div class="text-orange-500 mb-2">
+                        <i class="fas fa-clock fa-3x"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-black mt-7">40,000+</h2>
+                    <p class="mt-2 text-gray-700">Hours Trained</p>
+                </div>
+
+                <!-- Fourth Statistic -->
+                <div class="text-center">
+                    <div class="text-yellow-500 mb-2">
+                        <i class="fas fa-star fa-3x"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-black mt-7">5000+</h2>
+                    <p class="mt-2 text-gray-700">Client Reviews</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

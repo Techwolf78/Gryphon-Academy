@@ -122,22 +122,61 @@
     background-color: #091327;
     color: #fff;
     padding: 50px 0;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    text-align: center;
 }
- 
+
 .stats-section .stat {
     text-align: center;
 }
- 
+
 .stats-section .stat h2 {
     font-size: 3rem;
     color: #FFC700;
     margin: 10px 0;
     animation: count 2s;
 }
- 
+
 .stats-section .stat p {
     font-size: 1.2rem;
 }
+
+/* Adjust for tablets and small desktops */
+@media (max-width: 1024px) {
+    .stats-section {
+        justify-content: space-between;
+    }
+    .stats-section .stat {
+        flex: 1 1 45%; /* Two stats per row */
+        margin-bottom: 20px; /* Space between rows */
+    }
+    .stats-section .stat h2 {
+        font-size: 2.5rem; /* Adjusted font size for h2 */
+    }
+    .stats-section .stat p {
+        font-size: 1rem; /* Adjusted font size for p */
+    }
+}
+
+/* Adjust for mobile devices */
+@media (max-width: 768px) {
+    .stats-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .stats-section .stat {
+        flex: 1 1 100%; /* One stat per row */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .stats-section .stat h2 {
+        font-size: 2rem; /* Smaller font size for h2 */
+    }
+    .stats-section .stat p {
+        font-size: 0.9rem; /* Smaller font size for p */
+    }
+}
+
  
 .logo-slider {
     background-color: #f8f9fa;
@@ -953,7 +992,7 @@
             <div class="hero-text">
               <h1>Making You Corporate Ready</h1>
               
-              <button class="cta-button" onclick="window.location.href='contact.html'">Connect With Us</button>
+              <button class="cta-button mb-2" onclick="window.location.href='contact.html'">Connect With Us</button>
           </div>
   
           </div>
@@ -1010,8 +1049,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 style="color: #ffc700">About Our College Training Program</h2>
-          <p style="color: #fff;">
+          <h1 class="text-3xl text-yellow-400">About Our College Training Program</h1>
+
+          <p class="text-lg text-white">
             Our college training program is meticulously designed to bridge the gap between academic learning and industry requirements. We provide comprehensive mentorship and hands-on experience to ensure that students are not only prepared for their job interviews but also excel in their careers. Our expert trainers, innovative training methods, and industry connections make us a leading choice for students looking to achieve corporate readiness.
           </p>
         </div>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Ready Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  rel="stylesheet"
+/>
+<style>
+
+  /* train-5 */
+/* /----  Main Style  ----/ */
+
+/* Container surrounding all courses */
+.course-section-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course-sidebar {
+  flex: 1 1 250px; /* Allow the sidebar to grow and shrink, with a minimum width of 250px */
+  max-width: 300px; /* Adjust as needed */
+  padding: 10px;
+}
+
+.course-sidebar button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #1a3264;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-sidebar button:hover {
+  background-color: #ffc700;
+  color: #091327;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7); /* Border glow effect */
+}
+
+/* Course content container */
+.content {
+  flex: 3 1 0; /* Allow content area to grow and shrink, with flexible width */
+  padding: 10px;
+}
+
+.content {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.course-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .course-section-container {
+    flex-direction: column; /* Stack sidebar and content vertically on smaller screens */
+  }
+
+  .course-sidebar {
+    max-width: none; /* Remove the max-width constraint */
+    margin-bottom: 20px; /* Add spacing between sidebar and content */
+  }
+
+  .content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .course-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+
+    body {
+ font-family: Arial, sans-serif;
+ color: #ffffff;
+ background-color: #dfdfdf;
+}
+</style>
+<body>
+    
+    <section class="py-5 bg-slate-900">
+        <div class="mb-8"> <!-- Add margin below the div -->
+          <h2 class="text-yellow-300 text-3xl text-center mt-8">Technical Training</h2>
+        </div>
+        <div class="container mx-auto course-section-container">
+          <div class="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
+            <!-- Course buttons here -->
+            <button onclick="changeCourse('MECH')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">MECHANICAL ENGINEERING</button>
+            <button onclick="changeCourse('CIVIL')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">CIVIL ENGINEERING</button>
+            <button onclick="changeCourse('COMP')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">COMPUTER SCIENCE ENGINEERING</button>
+            <button onclick="changeCourse('ELECT')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">ELECTRICAL ENGINEERING</button>
+            <button onclick="changeCourse('AIDS')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">ARTIFICIAL INTELLIGENCE AND DATA SCIENCE</button>
+            <button onclick="changeCourse('AIML')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING</button>
+            <button onclick="changeCourse('PHARMA')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">PHARMACY</button>
+            <button onclick="changeCourse('MBA')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">MASTER OF BUSINESS ADMINISTRATION</button>
+            <button onclick="changeCourse('MCA')" class="block w-full py-2 px-4 mb-2 text-white bg-blue-500 rounded hover:bg-blue-600">MASTER OF COMPUTER APPLICATIONS</button>
+            <button onclick="changeCourse('BBA')" class="block w-full py-2 px-4 text-white bg-blue-500 rounded hover:bg-blue-600">BACHELOR OF BUSINESS ADMINISTRATION</button>
+          </div>
+          <div class="content w-full lg:w-3/4 px-4">
+            <div class="course-card" id="course-cards">
+              <!-- Course cards will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function animateValue(id, start, end, duration) {
+                var obj = document.getElementById(id);
+                var range = end - start;
+                var minTimer = 50;
+                var stepTime = Math.abs(Math.floor(duration / range));
+                
+                stepTime = Math.max(stepTime, minTimer);
+                
+                var startTime = new Date().getTime();
+                var endTime = startTime + duration;
+                var timer;
+                
+                function run() {
+                    var now = new Date().getTime();
+                    var remaining = Math.max((endTime - now) / duration, 0);
+                    var value = Math.round(end - (remaining * range));
+                    obj.innerHTML = value + (id === "stat2" ? "/5" : "+");
+                    if (value == end) {
+                        clearInterval(timer);
+                    }
+                }
+                
+                timer = setInterval(run, stepTime);
+                run();
+            }
+ 
+            animateValue("stat1", 0, 300, 2000);
+            animateValue("stat2", 0, 4.8, 2000);
+            animateValue("stat3", 0, 5000, 2000);
+            animateValue("stat4", 0, 15000, 2000);
+        });
+ 
+ 
+       
+        const courses = {
+    MECH: [
+      { title: 'AutoCAD', description: 'Learn the fundamentals of AutoCAD for 2D and 3D drafting and design in mechanical engineering.', image: 'MECH/1.jpg' },
+      { title: 'CATIA', description: 'Explore CATIA’s advanced 3D modeling capabilities for designing complex mechanical systems.', image: 'MECH/2.jpg' },
+      { title: 'CREO CAD', description: 'Master CREO CAD software for parametric and direct modeling, essential for mechanical design.', image: 'MECH/3.jpg' },
+      { title: 'SolidWorks', description: 'Gain skills in SolidWorks for 3D CAD design, including simulation and product data management.', image: 'MECH/4.jpg' }
+    ],
+    CIVIL: [
+      { title: '3D Printing', description: 'Understand the principles and applications of 3D printing in civil engineering for creating prototypes and structures.', image: 'Civil Engineering/1.jpg' },
+      { title: 'RVT', description: 'Learn how to use Revit for Building Information Modeling (BIM) in civil engineering projects.', image: 'Civil Engineering/2.jpg' },
+      { title: 'Structural Analysis', description: 'Study the methods and techniques for analyzing the structural integrity of buildings and infrastructure.', image: 'Civil Engineering/3.jpg' },
+      { title: 'Foundation Engineering', description: 'Explore the design and analysis of foundations, including shallow and deep foundations, for various soil conditions.', image: 'Civil Engineering/4.jpg' },
+      { title: 'BIM', description: 'Delve into Building Information Modeling (BIM) for effective planning, design, and management of construction projects.', image: 'Civil Engineering/5.jpg' },
+      { title: 'Sustainable Design', description: 'Learn about sustainable design practices in civil engineering to minimize environmental impact and enhance resource efficiency.', image: 'https://via.placeholder.com/150' }
+    ],
+    COMP: [
+      { title: 'Full Stack Development', description: 'Get comprehensive training in full stack development, including both front-end and back-end technologies.', image: 'computr-science/Full Stack Development.jpg' },
+      { title: 'IoT', description: 'Explore the Internet of Things (IoT) and how to develop smart devices and systems connected through the internet.', image: 'computr-science/IOT.jpg' },
+      { title: 'JAVA', description: 'Learn Java programming language for developing robust, scalable applications and software solutions.', image: 'computr-science/JAVA.jpg' },
+      { title: 'Linux', description: 'Gain proficiency in Linux operating system for system administration, scripting, and development.', image: 'computr-science/Linux.jpg' },
+      { title: 'MERN', description: 'Master the MERN stack (MongoDB, Express, React, Node.js) for full-stack JavaScript development.', image: 'computr-science/MERN.jpg' },
+      { title: 'Python', description: 'Learn Python programming for various applications, including web development, data analysis, and machine learning.', image: 'computr-science/Python.jpg' }
+    ],
+    ELECT: [
+      { title: 'Automation', description: 'Understand automation systems and techniques used in various industrial applications.', image: 'Electrical Eng/1.jpg' },
+      { title: 'Electric Vehicles', description: 'Explore the design and technology behind electric vehicles, including power systems and battery management.', image: 'Electrical Eng/2.jpg' },
+      { title: 'Wiring Harness', description: 'Learn about the design and manufacturing of wiring harnesses used in electrical systems.', image: 'Electrical Eng/3.jpg' },
+      { title: 'IoT', description: 'Study the Internet of Things (IoT) and its applications in electrical engineering, including smart grids and sensors.', image: 'Electrical Eng/4.jpg' },
+      { title: 'BMS', description: 'Explore Building Management Systems (BMS) for controlling and monitoring building systems like HVAC and lighting.', image: 'Electrical Eng/5.jpg' },
+      { title: 'PIC & SCADA', description: 'Learn about Programmable Interface Controllers (PIC) and Supervisory Control and Data Acquisition (SCADA) systems for automation and control.', image: 'Electrical Eng/6.jpg' }
+    ],
+    AIDS: [
+      { title: 'Introduction to Data Science', description: 'Learn the basics of data science and how it applies to artificial intelligence.', image: 'AIDS/1.jpg' },
+      { title: 'Machine Learning with Python', description: 'Explore machine learning techniques using Python, including regression and classification.', image: 'AIDS/2.jpg' },
+      { title: 'Data Visualization', description: 'Understand how to visualize data effectively to gain insights and make decisions.', image: 'AIDS/3.jpg' },
+      { title: 'Big Data Analytics', description: 'Learn about big data technologies and how to process and analyze large datasets.', image: 'AIDS/4.jpg' },
+      { title: 'Deep Learning', description: 'Dive into deep learning techniques and their applications in various fields.', image: 'AIDS/5.jpg' },
+      { title: 'AI Ethics', description: 'Study the ethical implications of artificial intelligence and data science.', image: 'AIDS/6.jpg' }
+    ],
+    AIML: [
+      { title: 'Introduction to Artificial Intelligence', description: 'Get started with the basics of AI, including machine learning and neural networks.', image: 'AIML/1.jpg' },
+      { title: 'Deep Learning Specialization', description: 'Dive deep into deep learning techniques and their applications in various fields.', image: 'AIML/2.jpg' },
+      { title: 'Natural Language Processing', description: 'Learn how to build systems that understand and generate human language.', image: 'AIML/3.jpg' },
+      { title: 'AI for Business', description: 'Explore how AI can be leveraged to solve business problems and drive innovation.', image: 'AIML/4.jpg' },
+      { title: 'Computer Vision', description: 'Understand the principles of computer vision and how to build applications that see and interpret the world.', image: 'AIML/5.jpg' },
+      { title: 'Reinforcement Learning', description: 'Learn about reinforcement learning and how to train AI agents to make decisions.', image: 'AIML/6.jpg' }
+    ],
+    PHARMA: [
+      { title: 'Pharmacology Basics', description: 'Learn the fundamentals of pharmacology, including drug interactions and side effects.', image: 'PHARMA/1.jpg' },
+      { title: 'Clinical Trials Management', description: 'Understand the process of managing clinical trials from start to finish.', image: 'PHARMA/2.jpg' },
+      { title: 'Pharmaceutical Regulatory Affairs', description: 'Explore the regulatory landscape and compliance requirements in the pharmaceutical industry.', image: 'PHARMA/3.jpg' },
+      { title: 'Drug Development and Approval', description: 'Learn about the drug development process and how new drugs are approved for market.', image: 'PHARMA/4.jpg' },
+      { title: 'Quality Control in Pharmaceuticals', description: 'Understand the principles of quality control and assurance in pharmaceutical manufacturing.', image: 'PHARMA/5.jpg' },
+      { title: 'Pharmaceutical Marketing', description: 'Explore strategies for marketing pharmaceutical products effectively in a competitive market.', image: 'PHARMA/6.jpg' }
+    ],
+    MBA: [
+      { title: 'Strategic Management', description: 'Learn how to develop business strategies that create competitive advantages.', image: 'MBA/1.jpg' },
+      { title: 'Financial Accounting', description: 'Understand financial statements and how to analyze them for better decision-making.', image: 'MBA/2.jpg' },
+      { title: 'Marketing Management', description: 'Explore key marketing concepts and strategies to drive customer engagement.', image: 'MBA/3.jpg' },
+      { title: 'Operations Management', description: 'Gain insights into optimizing operations to enhance productivity and efficiency.', image: 'MBA/4.jpg' },
+      { title: 'Business Ethics', description: 'Delve into ethical issues in business and learn how to navigate them responsibly.', image: 'MBA/5.jpg' },
+      { title: 'Leadership and Organizational Behavior', description: 'Develop leadership skills and understand the dynamics of organizational behavior.', image: 'MBA/6.jpg' }
+    ],
+    MCA: [
+      { title: 'Java', description: 'Gain expertise in Java programming language, focusing on object-oriented programming and software development.', image: 'MCA/1.jpg' },
+      { title: 'OOPs', description: 'Study Object-Oriented Programming (OOP) principles and their application in software development.', image: 'MCA/2.jpg' },
+      { title: 'Python', description: 'Learn Python for data analysis, web development, and automation.', image: 'MCA/3.jpg' },
+      { title: 'DSA', description: 'Master Data Structures and Algorithms (DSA) to solve complex computational problems efficiently.', image: 'MCA/4.jpg' }
+    ],
+    BBA: [
+      { title: 'Business Communication', description: 'Learn effective communication skills essential for business environments.', image: 'BBA/1.jpg' },
+      { title: 'Financial Management', description: 'Understand the principles of financial management and how to make sound financial decisions.', image: 'BBA/2.jpg' },
+      { title: 'Human Resource Management', description: 'Explore the fundamentals of managing human resources in an organization.', image: 'BBA/3.jpg' },
+      { title: 'Marketing Management', description: 'Study marketing strategies and practices used to engage customers and drive business growth.', image: 'BBA/4.jpg' },
+      { title: 'Organizational Behavior', description: 'Understand the dynamics of behavior within organizations and how to manage it effectively.', image: 'BBA/5.jpg' },
+      { title: 'Business Law', description: 'Learn the legal aspects of running a business, including contracts, liability, and compliance.', image: 'BBA/6.jpg' }
+    ]
+  };
+
+  function changeCourse(courseKey) {
+    const courseCardsContainer = document.getElementById('course-cards');
+    courseCardsContainer.innerHTML = '';
+    const selectedCourses = courses[courseKey];
+    selectedCourses.forEach(course => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${course.image}" alt="${course.title}">
+        <h3>${course.title}</h3>
+        <p>${course.description}</p>
+      `;
+      courseCardsContainer.appendChild(card);
+    });
+  }
+
+  // Initialize with the first set of courses
+  changeCourse('MECH');
+
+
+
+
+    function openNav() {
+    document.getElementById("mySidebar").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+  </script>
+
+<script>
+ // Function to toggle sidebar
+ function toggleNav() {
+        const sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+          sidebar.style.width = "0";
+        } else {
+          sidebar.style.width = "250px";
+        }
+      }
+
+      // Function to close sidebar with the close button
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+  </script>
+    
+</body>
+</html>

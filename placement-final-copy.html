@@ -1207,6 +1207,79 @@
 
 <!-- Placement Image Ends -->
 
+<!-- Successful Placement drives starts -->
+
+<!-- Container -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50">
+
+  <!-- Left Side - Interactive Content -->
+  <div class="space-y-6">
+
+    <!-- Placement Overview with Vibrant Background -->
+    <div class="p-6 bg-gradient-to-r from-yellow-300 to-yellow-500 rounded-lg shadow-2xl transform transition hover:scale-105">
+      <h2 class="text-3xl font-bold text-yellow-900">Placement Overview</h2>
+      <p class="text-gray-800 mt-2 leading-relaxed">
+        Our placement program connects students with top companies, ensuring a successful career launch. Over 90% of our graduates secure positions within three months of graduation.
+      </p>
+    </div>
+
+    <!-- Company List Section -->
+    <div class="p-6 bg-white rounded-lg shadow-lg border-l-4 border-teal-500 transition hover:shadow-2xl">
+      <h2 class="text-2xl font-semibold text-teal-700">Company List</h2>
+      <p class="text-gray-700 mt-2">
+        Our placement partners include leaders in tech, finance, and healthcare. Companies like Google, JPMorgan Chase, and Pfizer regularly recruit from our campus.
+      </p>
+    </div>
+
+    <!-- Placement Statistics Section -->
+    <div class="p-6 bg-white rounded-lg shadow-lg border-l-4 border-green-500 transition hover:shadow-2xl">
+      <h2 class="text-2xl font-semibold text-green-700">Placement Statistics</h2>
+      <ul class="list-inside mt-2 text-gray-700">
+        <li><span class="font-bold text-green-600">Highest Package:</span> $150,000 - Software Engineer at Google</li>
+        <li><span class="font-bold text-green-600">Average Package:</span> $85,000 - Data Analyst at JPMorgan Chase</li>
+        <li><span class="font-bold text-green-600">Median Package:</span> $75,000 - Research Scientist at Pfizer</li>
+      </ul>
+    </div>
+
+    <!-- Student Testimonials -->
+    <div class="p-6 bg-white rounded-lg shadow-lg border-l-4 border-yellow-500 transition hover:shadow-2xl">
+      <h2 class="text-2xl font-semibold text-yellow-700">Student Testimonials</h2>
+      <blockquote class="text-gray-600 italic mt-2">
+        "The placement team provided exceptional guidance and support. I secured my dream job at a top tech company, and I couldn't have done it without their help."
+        <span class="block text-right text-gray-800 font-bold">- John Doe, Software Engineer at Google</span>
+      </blockquote>
+    </div>
+
+    <!-- Placement Process -->
+    <div class="p-6 bg-white rounded-lg shadow-lg border-l-4 border-red-500 transition hover:shadow-2xl">
+      <h2 class="text-2xl font-semibold text-red-700">Placement Process</h2>
+      <p class="text-gray-700 mt-2">
+        Our placement process includes resume building workshops, mock interviews, and campus recruitment drives. We ensure students are fully prepared for the competitive job market.
+      </p>
+    </div>
+  </div>
+
+  <!-- Right Side - Creatives with Effects -->
+  <div class="space-y-6">
+
+    <!-- Image Carousel Placeholder -->
+    <div class="h-48 bg-gray-400 rounded-lg shadow-lg overflow-hidden animate__animated animate__fadeInUp">
+      <img src="https://via.placeholder.com/400x200?text=Company+Logos" alt="Company Logos" class="w-full h-full object-cover"/>
+    </div>
+
+    <!-- Infographics Placeholder -->
+    <div class="h-48 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg shadow-lg flex items-center justify-center animate__animated animate__fadeInUp" data-aos="fade-up">
+      <img src="https://via.placeholder.com/400x200?text=Placement+Statistics" alt="Placement Statistics" class="w-full h-full object-cover"/>
+    </div>
+
+    <!-- Video Player Placeholder -->
+    <div class="h-48 bg-gray-500 rounded-lg shadow-lg transform transition hover:scale-105 flex items-center justify-center">
+      <img src="https://via.placeholder.com/400x200?text=Video+Placeholder" alt="Video Placeholder" class="w-full h-full object-cover"/>
+    </div>
+  </div>
+</div>
+ <!-- Successful Placement drives ends -->
+
 
   <!-- Placement Section -->
 <section class="placement-section">
@@ -1419,8 +1492,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Include Libraries -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <script>
+
+AOS.init();
+
     document.addEventListener("DOMContentLoaded", function() {
       function updateCounter(id, value) {
         document.getElementById(id).textContent = value;
